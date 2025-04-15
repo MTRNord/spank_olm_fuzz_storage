@@ -1,0 +1,4514 @@
+<!doctype html>
+<html>
+  <head>
+    <meta name='viewport' content='width=device-width,initial-scale=1'>
+    <meta charset='UTF-8'>
+    <link rel='stylesheet' type='text/css' href='../style.css'>
+    <!-- Custom style overrides -->
+    <style>
+      /* Copyright 2018 The Chromium Authors. All rights reserved.
+ * Use of this source code is governed by a BSD-style license that can be
+ * found in the LICENSE file. */
+
+th, td {
+  padding: 5px 16px;
+}
+
+tbody td, tfoot td {
+  font-size: 14px;
+}
+
+thead th {
+  font-size: 16px;
+}
+
+thead th, tfoot td {
+  background-color: #f5f5f5;
+  border-left: 1px solid #e4e4e4;
+  border-right: 1px solid #e4e4e4;
+  color: #484848;
+  text-transform: uppercase;
+}
+
+tbody tr:hover td, tfoot tr:hover td {
+  background-color: #f5f5f5;
+  border-color: #e4e4e4 !important;
+}
+    </style>
+  </head>
+  <body>
+    <h2>Coverage Report</h2>
+    <p>
+      View results by:
+            <a href='directory_view_index.html'>Directories</a>
+              | <a href='file_view_index.html'>Files</a>
+          </p>
+    <div class='centered'><table>
+  <thead>
+    <tr>
+      <th class="column-entry-bold">Path</th>
+      <th class="column-entry-bold" onclick="sortTable(SORT_COLUMN.LINE)" title=
+          "Line coverage is the percentage of code lines which have been executed at least once. Only executable lines within function bodies are considered to be code lines.">
+        Line Coverage
+      </th>
+      <th class="column-entry-bold" onclick="sortTable(SORT_COLUMN.FUNCTION)" title=
+          "Function coverage is the percentage of functions which have been executed at least once. A function is considered to be executed if any of its instantiations are executed.">
+        Function Coverage
+      </th>
+      <th class="column-entry-bold" onclick="sortTable(SORT_COLUMN.REGION)" title=
+          "Region coverage is the percentage of code regions which have been executed at least once. A code region may span multiple lines (e.g in a large function body with no control flow). However, it's also possible for a single line to contain multiple code regions (e.g in 'return x || y &amp;&amp; z').">
+        Region Coverage
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/build/include/internal/botan/internal/adler32.h.html'>src/botan/build/include/internal/botan/internal/adler32.h</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/9)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/6)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/6)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/build/include/internal/botan/internal/aes.h.html'>src/botan/build/include/internal/botan/internal/aes.h</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/6)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/6)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/6)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/build/include/internal/botan/internal/alignment_buffer.h.html'>src/botan/build/include/internal/botan/internal/alignment_buffer.h</a></pre>
+              </td>
+            <td class='column-entry-yellow'>
+        <pre> 80.00% (52/65)</pre>
+      </td>
+            <td class='column-entry-yellow'>
+        <pre> 82.35% (14/17)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 64.86% (48/74)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/build/include/internal/botan/internal/aria.h.html'>src/botan/build/include/internal/botan/internal/aria.h</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/6)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/6)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/6)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/build/include/internal/botan/internal/bit_ops.h.html'>src/botan/build/include/internal/botan/internal/bit_ops.h</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre> 12.77% (12/94)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 28.57% (4/14)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 13.79% (4/29)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/build/include/internal/botan/internal/blake2b.h.html'>src/botan/build/include/internal/botan/internal/blake2b.h</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/3)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/3)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/3)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/build/include/internal/botan/internal/blake2bmac.h.html'>src/botan/build/include/internal/botan/internal/blake2bmac.h</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/13)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/7)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/7)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/build/include/internal/botan/internal/blake2s.h.html'>src/botan/build/include/internal/botan/internal/blake2s.h</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/3)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/3)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/3)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/build/include/internal/botan/internal/blowfish.h.html'>src/botan/build/include/internal/botan/internal/blowfish.h</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/2)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/2)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/2)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/build/include/internal/botan/internal/bswap.h.html'>src/botan/build/include/internal/botan/internal/bswap.h</a></pre>
+              </td>
+            <td class='column-entry-green'>
+        <pre>100.00% (6/6)</pre>
+      </td>
+            <td class='column-entry-green'>
+        <pre>100.00% (1/1)</pre>
+      </td>
+            <td class='column-entry-green'>
+        <pre>100.00% (5/5)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/build/include/internal/botan/internal/camellia.h.html'>src/botan/build/include/internal/botan/internal/camellia.h</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/6)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/6)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/6)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/build/include/internal/botan/internal/cascade.h.html'>src/botan/build/include/internal/botan/internal/cascade.h</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/4)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/2)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/2)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/build/include/internal/botan/internal/cast128.h.html'>src/botan/build/include/internal/botan/internal/cast128.h</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/2)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/2)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/2)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/build/include/internal/botan/internal/cmac.h.html'>src/botan/build/include/internal/botan/internal/cmac.h</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/2)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/2)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/2)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/build/include/internal/botan/internal/codec_base.h.html'>src/botan/build/include/internal/botan/internal/codec_base.h</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/94)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/5)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/51)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/build/include/internal/botan/internal/comb4p.h.html'>src/botan/build/include/internal/botan/internal/comb4p.h</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/2)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/2)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/2)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/build/include/internal/botan/internal/cpuid.h.html'>src/botan/build/include/internal/botan/internal/cpuid.h</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre> 48.28% (14/29)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 40.00% (4/10)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 53.85% (7/13)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/build/include/internal/botan/internal/cpuid_features.h.html'>src/botan/build/include/internal/botan/internal/cpuid_features.h</a></pre>
+              </td>
+            <td class='column-entry-green'>
+        <pre>100.00% (2/2)</pre>
+      </td>
+            <td class='column-entry-green'>
+        <pre>100.00% (2/2)</pre>
+      </td>
+            <td class='column-entry-green'>
+        <pre>100.00% (3/3)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/build/include/internal/botan/internal/crc24.h.html'>src/botan/build/include/internal/botan/internal/crc24.h</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/6)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/6)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/6)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/build/include/internal/botan/internal/crc32.h.html'>src/botan/build/include/internal/botan/internal/crc32.h</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/6)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/6)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/6)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/build/include/internal/botan/internal/cshake_xof.h.html'>src/botan/build/include/internal/botan/internal/cshake_xof.h</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/14)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/14)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/18)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/build/include/internal/botan/internal/ct_utils.h.html'>src/botan/build/include/internal/botan/internal/ct_utils.h</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre> 23.46% (42/179)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 21.54% (14/65)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 25.81% (24/93)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/build/include/internal/botan/internal/des.h.html'>src/botan/build/include/internal/botan/internal/des.h</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/4)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/4)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/4)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/build/include/internal/botan/internal/divide.h.html'>src/botan/build/include/internal/botan/internal/divide.h</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/5)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/1)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/1)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/build/include/internal/botan/internal/donna128.h.html'>src/botan/build/include/internal/botan/internal/donna128.h</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  6.67% (6/90)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 11.11% (2/18)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 11.11% (2/18)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/build/include/internal/botan/internal/ed25519_fe.h.html'>src/botan/build/include/internal/botan/internal/ed25519_fe.h</a></pre>
+              </td>
+            <td class='column-entry-yellow'>
+        <pre> 96.43% (108/112)</pre>
+      </td>
+            <td class='column-entry-green'>
+        <pre>100.00% (28/28)</pre>
+      </td>
+            <td class='column-entry-yellow'>
+        <pre> 96.08% (49/51)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/build/include/internal/botan/internal/ed25519_internal.h.html'>src/botan/build/include/internal/botan/internal/ed25519_internal.h</a></pre>
+              </td>
+            <td class='column-entry-green'>
+        <pre>100.00% (34/34)</pre>
+      </td>
+            <td class='column-entry-green'>
+        <pre>100.00% (6/6)</pre>
+      </td>
+            <td class='column-entry-green'>
+        <pre>100.00% (6/6)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/build/include/internal/botan/internal/eme_raw.h.html'>src/botan/build/include/internal/botan/internal/eme_raw.h</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/1)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/1)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/1)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/build/include/internal/botan/internal/fmt.h.html'>src/botan/build/include/internal/botan/internal/fmt.h</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/21)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/3)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/13)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/build/include/internal/botan/internal/getentropy.h.html'>src/botan/build/include/internal/botan/internal/getentropy.h</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/1)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/1)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/1)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/build/include/internal/botan/internal/ghash.h.html'>src/botan/build/include/internal/botan/internal/ghash.h</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/2)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/2)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/2)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/build/include/internal/botan/internal/gost_28147.h.html'>src/botan/build/include/internal/botan/internal/gost_28147.h</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/6)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/4)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/8)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/build/include/internal/botan/internal/gost_3411.h.html'>src/botan/build/include/internal/botan/internal/gost_3411.h</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/4)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/4)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/4)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/build/include/internal/botan/internal/hkdf.h.html'>src/botan/build/include/internal/botan/internal/hkdf.h</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/3)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/3)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/6)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/build/include/internal/botan/internal/idea.h.html'>src/botan/build/include/internal/botan/internal/idea.h</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/2)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/2)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/2)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/build/include/internal/botan/internal/int_utils.h.html'>src/botan/build/include/internal/botan/internal/int_utils.h</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre> 10.64% (5/47)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 14.29% (1/7)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 21.74% (5/23)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/build/include/internal/botan/internal/kdf1.h.html'>src/botan/build/include/internal/botan/internal/kdf1.h</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/1)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/1)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/2)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/build/include/internal/botan/internal/kdf1_iso18033.h.html'>src/botan/build/include/internal/botan/internal/kdf1_iso18033.h</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/1)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/1)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/2)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/build/include/internal/botan/internal/kdf2.h.html'>src/botan/build/include/internal/botan/internal/kdf2.h</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/1)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/1)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/2)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/build/include/internal/botan/internal/keccak.h.html'>src/botan/build/include/internal/botan/internal/keccak.h</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/2)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/2)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/2)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/build/include/internal/botan/internal/keccak_helpers.h.html'>src/botan/build/include/internal/botan/internal/keccak_helpers.h</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/46)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/5)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/15)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/build/include/internal/botan/internal/keccak_perm.h.html'>src/botan/build/include/internal/botan/internal/keccak_perm.h</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/3)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/3)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/3)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/build/include/internal/botan/internal/keccak_perm_round.h.html'>src/botan/build/include/internal/botan/internal/keccak_perm_round.h</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/62)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/1)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/1)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/build/include/internal/botan/internal/kuznyechik.h.html'>src/botan/build/include/internal/botan/internal/kuznyechik.h</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/2)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/2)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/2)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/build/include/internal/botan/internal/lion.h.html'>src/botan/build/include/internal/botan/internal/lion.h</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/6)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/4)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/4)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/build/include/internal/botan/internal/loadstor.h.html'>src/botan/build/include/internal/botan/internal/loadstor.h</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre> 39.20% (127/324)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 42.86% (18/42)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 46.25% (37/80)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/build/include/internal/botan/internal/md4.h.html'>src/botan/build/include/internal/botan/internal/md4.h</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/4)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/4)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/4)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/build/include/internal/botan/internal/md5.h.html'>src/botan/build/include/internal/botan/internal/md5.h</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/4)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/4)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/4)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/build/include/internal/botan/internal/mdx_hash.h.html'>src/botan/build/include/internal/botan/internal/mdx_hash.h</a></pre>
+              </td>
+            <td class='column-entry-yellow'>
+        <pre> 96.23% (51/53)</pre>
+      </td>
+            <td class='column-entry-green'>
+        <pre>100.00% (7/7)</pre>
+      </td>
+            <td class='column-entry-yellow'>
+        <pre> 91.43% (32/35)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/build/include/internal/botan/internal/mgf1.h.html'>src/botan/build/include/internal/botan/internal/mgf1.h</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/3)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/1)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/1)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/build/include/internal/botan/internal/mp_asmi.h.html'>src/botan/build/include/internal/botan/internal/mp_asmi.h</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/240)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/16)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/75)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/build/include/internal/botan/internal/mp_core.h.html'>src/botan/build/include/internal/botan/internal/mp_core.h</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/347)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/27)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/207)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/build/include/internal/botan/internal/mul128.h.html'>src/botan/build/include/internal/botan/internal/mul128.h</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/44)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/1)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/1)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/build/include/internal/botan/internal/noekeon.h.html'>src/botan/build/include/internal/botan/internal/noekeon.h</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/2)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/2)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/2)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/build/include/internal/botan/internal/os_utils.h.html'>src/botan/build/include/internal/botan/internal/os_utils.h</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/1)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/1)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/1)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/build/include/internal/botan/internal/poly1305.h.html'>src/botan/build/include/internal/botan/internal/poly1305.h</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/5)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/5)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/5)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/build/include/internal/botan/internal/poly_dbl.h.html'>src/botan/build/include/internal/botan/internal/poly_dbl.h</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/6)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/2)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/12)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/build/include/internal/botan/internal/prefetch.h.html'>src/botan/build/include/internal/botan/internal/prefetch.h</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/3)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/1)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/1)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/build/include/internal/botan/internal/prf_tls.h.html'>src/botan/build/include/internal/botan/internal/prf_tls.h</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/1)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/1)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/2)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/build/include/internal/botan/internal/prf_x942.h.html'>src/botan/build/include/internal/botan/internal/prf_x942.h</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/3)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/3)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/5)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/build/include/internal/botan/internal/raw_hash.h.html'>src/botan/build/include/internal/botan/internal/raw_hash.h</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/3)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/3)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/6)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/build/include/internal/botan/internal/rc4.h.html'>src/botan/build/include/internal/botan/internal/rc4.h</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/1)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/1)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/1)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/build/include/internal/botan/internal/rdseed.h.html'>src/botan/build/include/internal/botan/internal/rdseed.h</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/1)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/1)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/1)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/build/include/internal/botan/internal/rmd160.h.html'>src/botan/build/include/internal/botan/internal/rmd160.h</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/4)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/4)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/4)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/build/include/internal/botan/internal/rotate.h.html'>src/botan/build/include/internal/botan/internal/rotate.h</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre> 40.00% (6/15)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 40.00% (2/5)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 25.00% (2/8)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/build/include/internal/botan/internal/rounding.h.html'>src/botan/build/include/internal/botan/internal/rounding.h</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/9)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/1)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/13)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/build/include/internal/botan/internal/scan_name.h.html'>src/botan/build/include/internal/botan/internal/scan_name.h</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre> 11.11% (2/18)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 28.57% (2/7)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 16.67% (2/12)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/build/include/internal/botan/internal/seed.h.html'>src/botan/build/include/internal/botan/internal/seed.h</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/2)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/2)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/2)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/build/include/internal/botan/internal/serpent.h.html'>src/botan/build/include/internal/botan/internal/serpent.h</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/3)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/3)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/3)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/build/include/internal/botan/internal/serpent_fn.h.html'>src/botan/build/include/internal/botan/internal/serpent_fn.h</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/34)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/5)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/6)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/build/include/internal/botan/internal/serpent_sbox.h.html'>src/botan/build/include/internal/botan/internal/serpent_sbox.h</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/382)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/16)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/16)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/build/include/internal/botan/internal/sha1.h.html'>src/botan/build/include/internal/botan/internal/sha1.h</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/4)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/4)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/4)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/build/include/internal/botan/internal/sha2_32.h.html'>src/botan/build/include/internal/botan/internal/sha2_32.h</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/8)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/8)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/8)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/build/include/internal/botan/internal/sha2_32_f.h.html'>src/botan/build/include/internal/botan/internal/sha2_32_f.h</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/17)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/2)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/2)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/build/include/internal/botan/internal/sha2_64.h.html'>src/botan/build/include/internal/botan/internal/sha2_64.h</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre> 25.00% (3/12)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 25.00% (3/12)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 25.00% (3/12)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/build/include/internal/botan/internal/sha2_64_f.h.html'>src/botan/build/include/internal/botan/internal/sha2_64_f.h</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre> 41.18% (7/17)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 50.00% (1/2)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 50.00% (1/2)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/build/include/internal/botan/internal/sha3.h.html'>src/botan/build/include/internal/botan/internal/sha3.h</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/6)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/6)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/6)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/build/include/internal/botan/internal/shacal2.h.html'>src/botan/build/include/internal/botan/internal/shacal2.h</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/2)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/2)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/2)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/build/include/internal/botan/internal/shake.h.html'>src/botan/build/include/internal/botan/internal/shake.h</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/8)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/8)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/8)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/build/include/internal/botan/internal/shake_cipher.h.html'>src/botan/build/include/internal/botan/internal/shake_cipher.h</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/6)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/6)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/6)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/build/include/internal/botan/internal/shake_xof.h.html'>src/botan/build/include/internal/botan/internal/shake_xof.h</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/11)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/11)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/13)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/build/include/internal/botan/internal/simd_2x64.h.html'>src/botan/build/include/internal/botan/internal/simd_2x64.h</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre> 48.65% (36/74)</pre>
+      </td>
+            <td class='column-entry-yellow'>
+        <pre> 82.35% (14/17)</pre>
+      </td>
+            <td class='column-entry-yellow'>
+        <pre> 86.36% (19/22)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/build/include/internal/botan/internal/simd_4x32.h.html'>src/botan/build/include/internal/botan/internal/simd_4x32.h</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  4.92% (9/183)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  6.12% (3/49)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  7.55% (4/53)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/build/include/internal/botan/internal/simd_4x64.h.html'>src/botan/build/include/internal/botan/internal/simd_4x64.h</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre> 69.01% (49/71)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 66.67% (14/21)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 73.08% (19/26)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/build/include/internal/botan/internal/simd_avx2.h.html'>src/botan/build/include/internal/botan/internal/simd_avx2.h</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/169)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/51)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/55)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/build/include/internal/botan/internal/simd_avx2_gfni.h.html'>src/botan/build/include/internal/botan/internal/simd_avx2_gfni.h</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/9)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/3)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/3)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/build/include/internal/botan/internal/simd_avx512.h.html'>src/botan/build/include/internal/botan/internal/simd_avx512.h</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/180)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/38)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/39)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/build/include/internal/botan/internal/siphash.h.html'>src/botan/build/include/internal/botan/internal/siphash.h</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/3)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/3)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/5)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/build/include/internal/botan/internal/skein_512.h.html'>src/botan/build/include/internal/botan/internal/skein_512.h</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/2)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/2)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/2)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/build/include/internal/botan/internal/sm3.h.html'>src/botan/build/include/internal/botan/internal/sm3.h</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/4)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/4)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/4)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/build/include/internal/botan/internal/sm4.h.html'>src/botan/build/include/internal/botan/internal/sm4.h</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/2)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/2)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/2)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/build/include/internal/botan/internal/sp800_56c_one_step.h.html'>src/botan/build/include/internal/botan/internal/sp800_56c_one_step.h</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/7)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/7)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/8)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/build/include/internal/botan/internal/sp800_56c_two_step.h.html'>src/botan/build/include/internal/botan/internal/sp800_56c_two_step.h</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/1)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/1)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/3)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/build/include/internal/botan/internal/stl_util.h.html'>src/botan/build/include/internal/botan/internal/stl_util.h</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  8.26% (9/109)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 14.29% (4/28)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 16.67% (9/54)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/build/include/internal/botan/internal/streebog.h.html'>src/botan/build/include/internal/botan/internal/streebog.h</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/3)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/3)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/3)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/build/include/internal/botan/internal/threefish_512.h.html'>src/botan/build/include/internal/botan/internal/threefish_512.h</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/2)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/2)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/2)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/build/include/internal/botan/internal/twofish.h.html'>src/botan/build/include/internal/botan/internal/twofish.h</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/2)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/2)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/2)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/build/include/internal/botan/internal/whirlpool.h.html'>src/botan/build/include/internal/botan/internal/whirlpool.h</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/4)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/4)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/4)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/build/include/internal/botan/internal/x919_mac.h.html'>src/botan/build/include/internal/botan/internal/x919_mac.h</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/2)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/2)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/2)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/build/include/public/botan/asn1_obj.h.html'>src/botan/build/include/public/botan/asn1_obj.h</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/46)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/30)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/34)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/build/include/public/botan/assert.h.html'>src/botan/build/include/public/botan/assert.h</a></pre>
+              </td>
+            <td class='column-entry-green'>
+        <pre>100.00% (4/4)</pre>
+      </td>
+            <td class='column-entry-green'>
+        <pre>100.00% (2/2)</pre>
+      </td>
+            <td class='column-entry-green'>
+        <pre>100.00% (2/2)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/build/include/public/botan/auto_rng.h.html'>src/botan/build/include/public/botan/auto_rng.h</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/1)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/1)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/1)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/build/include/public/botan/ber_dec.h.html'>src/botan/build/include/public/botan/ber_dec.h</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/34)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/14)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/17)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/build/include/public/botan/bigint.h.html'>src/botan/build/include/public/botan/bigint.h</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/255)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/100)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/128)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/build/include/public/botan/block_cipher.h.html'>src/botan/build/include/public/botan/block_cipher.h</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/42)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/16)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/16)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/build/include/public/botan/buf_comp.h.html'>src/botan/build/include/public/botan/buf_comp.h</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre> 33.33% (9/27)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 54.55% (6/11)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 54.55% (6/11)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/build/include/public/botan/concepts.h.html'>src/botan/build/include/public/botan/concepts.h</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre> 77.27% (17/22)</pre>
+      </td>
+            <td class='column-entry-green'>
+        <pre>100.00% (3/3)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 54.55% (6/11)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/build/include/public/botan/data_src.h.html'>src/botan/build/include/public/botan/data_src.h</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/9)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/9)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/13)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/build/include/public/botan/der_enc.h.html'>src/botan/build/include/public/botan/der_enc.h</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/57)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/16)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/26)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/build/include/public/botan/ed25519.h.html'>src/botan/build/include/public/botan/ed25519.h</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre> 55.56% (5/9)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 42.86% (3/7)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 50.00% (4/8)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/build/include/public/botan/entropy_src.h.html'>src/botan/build/include/public/botan/entropy_src.h</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/2)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/2)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/2)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/build/include/public/botan/exceptn.h.html'>src/botan/build/include/public/botan/exceptn.h</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/19)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/19)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/21)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/build/include/public/botan/hash.h.html'>src/botan/build/include/public/botan/hash.h</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/3)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/3)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/3)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/build/include/public/botan/hex.h.html'>src/botan/build/include/public/botan/hex.h</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/3)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/1)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/1)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/build/include/public/botan/hmac_drbg.h.html'>src/botan/build/include/public/botan/hmac_drbg.h</a></pre>
+              </td>
+            <td class='column-entry-green'>
+        <pre>100.00% (1/1)</pre>
+      </td>
+            <td class='column-entry-green'>
+        <pre>100.00% (1/1)</pre>
+      </td>
+            <td class='column-entry-green'>
+        <pre>100.00% (1/1)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/build/include/public/botan/kdf.h.html'>src/botan/build/include/public/botan/kdf.h</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/26)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/8)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/8)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/build/include/public/botan/mac.h.html'>src/botan/build/include/public/botan/mac.h</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre> 11.11% (1/9)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 11.11% (1/9)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 11.11% (1/9)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/build/include/public/botan/mem_ops.h.html'>src/botan/build/include/public/botan/mem_ops.h</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre> 34.21% (39/114)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 40.91% (9/22)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 40.85% (29/71)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/build/include/public/botan/pk_keys.h.html'>src/botan/build/include/public/botan/pk_keys.h</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre> 14.29% (1/7)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 20.00% (1/5)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 20.00% (1/5)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/build/include/public/botan/pk_ops.h.html'>src/botan/build/include/public/botan/pk_ops.h</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre> 28.57% (2/7)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 28.57% (2/7)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 28.57% (2/7)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/build/include/public/botan/processor_rng.h.html'>src/botan/build/include/public/botan/processor_rng.h</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/2)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/2)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/2)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/build/include/public/botan/pss_params.h.html'>src/botan/build/include/public/botan/pss_params.h</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/7)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/7)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/7)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/build/include/public/botan/pubkey.h.html'>src/botan/build/include/public/botan/pubkey.h</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/8)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/8)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/8)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/build/include/public/botan/rng.h.html'>src/botan/build/include/public/botan/rng.h</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre> 52.78% (19/36)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 50.00% (8/16)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 44.44% (8/18)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/build/include/public/botan/secmem.h.html'>src/botan/build/include/public/botan/secmem.h</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  9.09% (2/22)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 28.57% (2/7)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 28.57% (2/7)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/build/include/public/botan/stateful_rng.h.html'>src/botan/build/include/public/botan/stateful_rng.h</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre> 28.57% (2/7)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 28.57% (2/7)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 26.67% (4/15)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/build/include/public/botan/stream_cipher.h.html'>src/botan/build/include/public/botan/stream_cipher.h</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/13)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/13)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/13)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/build/include/public/botan/strong_type.h.html'>src/botan/build/include/public/botan/strong_type.h</a></pre>
+              </td>
+            <td class='column-entry-green'>
+        <pre>100.00% (8/8)</pre>
+      </td>
+            <td class='column-entry-green'>
+        <pre>100.00% (2/2)</pre>
+      </td>
+            <td class='column-entry-green'>
+        <pre>100.00% (4/4)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/build/include/public/botan/sym_algo.h.html'>src/botan/build/include/public/botan/sym_algo.h</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre> 45.45% (10/22)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 42.86% (6/14)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 55.17% (16/29)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/build/include/public/botan/symkey.h.html'>src/botan/build/include/public/botan/symkey.h</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/3)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/3)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/4)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/build/include/public/botan/system_rng.h.html'>src/botan/build/include/public/botan/system_rng.h</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/7)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/5)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/5)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/build/include/public/botan/x25519.h.html'>src/botan/build/include/public/botan/x25519.h</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre> 33.33% (2/6)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 33.33% (2/6)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 33.33% (2/6)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/build/include/public/botan/xof.h.html'>src/botan/build/include/public/botan/xof.h</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/30)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/10)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/13)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/src/lib/asn1/alg_id.cpp.html'>src/botan/src/lib/asn1/alg_id.cpp</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/35)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/9)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/32)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/src/lib/asn1/asn1_obj.cpp.html'>src/botan/src/lib/asn1/asn1_obj.cpp</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/129)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/13)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/73)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/src/lib/asn1/asn1_oid.cpp.html'>src/botan/src/lib/asn1/asn1_oid.cpp</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/235)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/19)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/139)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/src/lib/asn1/ber_dec.cpp.html'>src/botan/src/lib/asn1/ber_dec.cpp</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/344)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/35)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/229)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/src/lib/asn1/der_enc.cpp.html'>src/botan/src/lib/asn1/der_enc.cpp</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/208)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/31)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/117)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/src/lib/asn1/oid_map.cpp.html'>src/botan/src/lib/asn1/oid_map.cpp</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/49)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/7)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/25)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/src/lib/asn1/oid_maps.cpp.html'>src/botan/src/lib/asn1/oid_maps.cpp</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/682)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/2)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/4)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/src/lib/base/buf_comp.cpp.html'>src/botan/src/lib/base/buf_comp.cpp</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre> 10.81% (4/37)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 12.50% (1/8)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 38.46% (5/13)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/src/lib/base/sym_algo.cpp.html'>src/botan/src/lib/base/sym_algo.cpp</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre> 33.33% (4/12)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 33.33% (1/3)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 50.00% (3/6)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/src/lib/block/aes/aes.cpp.html'>src/botan/src/lib/block/aes/aes.cpp</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/780)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/38)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/269)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/src/lib/block/aes/aes_ni/aes_ni.cpp.html'>src/botan/src/lib/block/aes/aes_ni/aes_ni.cpp</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/546)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/21)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/54)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/src/lib/block/aes/aes_vaes/aes_vaes.cpp.html'>src/botan/src/lib/block/aes/aes_vaes/aes_vaes.cpp</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/510)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/15)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/51)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/src/lib/block/aes/aes_vperm/aes_vperm.cpp.html'>src/botan/src/lib/block/aes/aes_vperm/aes_vperm.cpp</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/370)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/29)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/67)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/src/lib/block/aria/aria.cpp.html'>src/botan/src/lib/block/aria/aria.cpp</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/263)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/23)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/57)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/src/lib/block/block_cipher.cpp.html'>src/botan/src/lib/block/block_cipher.cpp</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/138)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/3)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/106)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/src/lib/block/blowfish/blowfish.cpp.html'>src/botan/src/lib/block/blowfish/blowfish.cpp</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/179)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/9)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/65)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/src/lib/block/camellia/camellia.cpp.html'>src/botan/src/lib/block/camellia/camellia.cpp</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/261)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/24)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/56)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/src/lib/block/cascade/cascade.cpp.html'>src/botan/src/lib/block/cascade/cascade.cpp</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/36)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/8)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/20)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/src/lib/block/cast128/cast128.cpp.html'>src/botan/src/lib/block/cast128/cast128.cpp</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/340)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/11)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/26)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/src/lib/block/des/des.cpp.html'>src/botan/src/lib/block/des/des.cpp</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/285)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/18)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/52)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/src/lib/block/gost_28147/gost_28147.cpp.html'>src/botan/src/lib/block/gost_28147/gost_28147.cpp</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/97)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/11)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/41)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/src/lib/block/idea/idea.cpp.html'>src/botan/src/lib/block/idea/idea.cpp</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/140)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/10)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/45)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/src/lib/block/idea/idea_sse2/idea_sse2.cpp.html'>src/botan/src/lib/block/idea/idea_sse2/idea_sse2.cpp</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/114)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/4)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/7)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/src/lib/block/kuznyechik/kuznyechik.cpp.html'>src/botan/src/lib/block/kuznyechik/kuznyechik.cpp</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/208)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/12)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/53)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/src/lib/block/lion/lion.cpp.html'>src/botan/src/lib/block/lion/lion.cpp</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/75)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/8)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/24)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/src/lib/block/noekeon/noekeon.cpp.html'>src/botan/src/lib/block/noekeon/noekeon.cpp</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/156)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/10)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/39)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/src/lib/block/noekeon/noekeon_simd/noekeon_simd.cpp.html'>src/botan/src/lib/block/noekeon/noekeon_simd/noekeon_simd.cpp</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/82)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/4)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/10)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/src/lib/block/seed/seed.cpp.html'>src/botan/src/lib/block/seed/seed.cpp</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/109)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/6)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/24)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/src/lib/block/serpent/serpent.cpp.html'>src/botan/src/lib/block/serpent/serpent.cpp</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/343)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/6)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/51)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/src/lib/block/serpent/serpent_avx2/serpent_avx2.cpp.html'>src/botan/src/lib/block/serpent/serpent_avx2/serpent_avx2.cpp</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/224)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/2)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/2)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/src/lib/block/serpent/serpent_avx512/serpent_avx512.cpp.html'>src/botan/src/lib/block/serpent/serpent_avx512/serpent_avx512.cpp</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/457)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/18)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/18)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/src/lib/block/serpent/serpent_simd/serpent_simd.cpp.html'>src/botan/src/lib/block/serpent/serpent_simd/serpent_simd.cpp</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/220)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/2)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/2)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/src/lib/block/shacal2/shacal2.cpp.html'>src/botan/src/lib/block/shacal2/shacal2.cpp</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/178)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/9)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/67)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/src/lib/block/shacal2/shacal2_avx2/shacal2_avx2.cpp.html'>src/botan/src/lib/block/shacal2/shacal2_avx2/shacal2_avx2.cpp</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/74)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/4)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/10)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/src/lib/block/shacal2/shacal2_simd/shacal2_simd.cpp.html'>src/botan/src/lib/block/shacal2/shacal2_simd/shacal2_simd.cpp</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/74)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/4)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/10)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/src/lib/block/shacal2/shacal2_x86/shacal2_x86.cpp.html'>src/botan/src/lib/block/shacal2/shacal2_x86/shacal2_x86.cpp</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/62)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/1)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/11)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/src/lib/block/sm4/sm4.cpp.html'>src/botan/src/lib/block/sm4/sm4.cpp</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/190)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/14)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/45)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/src/lib/block/sm4/sm4_gfni/sm4_gfni.cpp.html'>src/botan/src/lib/block/sm4/sm4_gfni/sm4_gfni.cpp</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/102)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/6)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/20)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/src/lib/block/sm4/sm4_x86/sm4_x86.cpp.html'>src/botan/src/lib/block/sm4/sm4_x86/sm4_x86.cpp</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/95)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/7)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/31)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/src/lib/block/threefish_512/threefish_512.cpp.html'>src/botan/src/lib/block/threefish_512/threefish_512.cpp</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/172)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/14)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/40)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/src/lib/block/twofish/twofish.cpp.html'>src/botan/src/lib/block/twofish/twofish.cpp</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/209)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/7)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/58)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/src/lib/codec/base64/base64.cpp.html'>src/botan/src/lib/codec/base64/base64.cpp</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/102)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/27)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/40)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/src/lib/codec/hex/hex.cpp.html'>src/botan/src/lib/codec/hex/hex.cpp</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/91)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/12)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/42)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/src/lib/entropy/entropy_srcs.cpp.html'>src/botan/src/lib/entropy/entropy_srcs.cpp</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/82)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/12)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/40)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/src/lib/entropy/getentropy/getentropy.cpp.html'>src/botan/src/lib/entropy/getentropy/getentropy.cpp</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/8)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/1)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/4)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/src/lib/entropy/rdseed/rdseed.cpp.html'>src/botan/src/lib/entropy/rdseed/rdseed.cpp</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/33)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/2)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/18)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/src/lib/hash/blake2/blake2b.cpp.html'>src/botan/src/lib/hash/blake2/blake2b.cpp</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/127)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/14)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/55)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/src/lib/hash/blake2s/blake2s.cpp.html'>src/botan/src/lib/hash/blake2s/blake2s.cpp</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/113)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/10)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/47)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/src/lib/hash/checksum/adler32/adler32.cpp.html'>src/botan/src/lib/hash/checksum/adler32/adler32.cpp</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/61)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/4)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/11)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/src/lib/hash/checksum/crc24/crc24.cpp.html'>src/botan/src/lib/hash/checksum/crc24/crc24.cpp</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/37)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/5)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/15)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/src/lib/hash/checksum/crc32/crc32.cpp.html'>src/botan/src/lib/hash/checksum/crc32/crc32.cpp</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/33)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/3)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/9)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/src/lib/hash/comb4p/comb4p.cpp.html'>src/botan/src/lib/hash/comb4p/comb4p.cpp</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/59)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/9)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/20)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/src/lib/hash/gost_3411/gost_3411.cpp.html'>src/botan/src/lib/hash/gost_3411/gost_3411.cpp</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/159)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/6)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/39)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/src/lib/hash/hash.cpp.html'>src/botan/src/lib/hash/hash.cpp</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre> 12.10% (19/157)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 66.67% (2/3)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 14.17% (17/120)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/src/lib/hash/keccak/keccak.cpp.html'>src/botan/src/lib/hash/keccak/keccak.cpp</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/28)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/8)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/18)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/src/lib/hash/md4/md4.cpp.html'>src/botan/src/lib/hash/md4/md4.cpp</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/70)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/9)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/17)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/src/lib/hash/md5/md5.cpp.html'>src/botan/src/lib/hash/md5/md5.cpp</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/107)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/10)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/13)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/src/lib/hash/par_hash/par_hash.cpp.html'>src/botan/src/lib/hash/par_hash/par_hash.cpp</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/57)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/8)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/20)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/src/lib/hash/rmd160/rmd160.cpp.html'>src/botan/src/lib/hash/rmd160/rmd160.cpp</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/217)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/11)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/14)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/src/lib/hash/sha1/sha1.cpp.html'>src/botan/src/lib/hash/sha1/sha1.cpp</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/159)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/11)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/29)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/src/lib/hash/sha1/sha1_simd/sha1_simd.cpp.html'>src/botan/src/lib/hash/sha1/sha1_simd/sha1_simd.cpp</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/172)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/6)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/9)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/src/lib/hash/sha1/sha1_x86/sha1_x86.cpp.html'>src/botan/src/lib/hash/sha1/sha1_x86/sha1_x86.cpp</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/71)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/6)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/8)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/src/lib/hash/sha2_32/sha2_32.cpp.html'>src/botan/src/lib/hash/sha2_32/sha2_32.cpp</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/156)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/16)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/41)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/src/lib/hash/sha2_32/sha2_32_avx2/sha2_32_avx2.cpp.html'>src/botan/src/lib/hash/sha2_32/sha2_32_avx2/sha2_32_avx2.cpp</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/287)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/8)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/24)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/src/lib/hash/sha2_32/sha2_32_simd/sha2_32_simd.cpp.html'>src/botan/src/lib/hash/sha2_32/sha2_32_simd/sha2_32_simd.cpp</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/102)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/2)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/10)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/src/lib/hash/sha2_32/sha2_32_x86/sha2_32_x86.cpp.html'>src/botan/src/lib/hash/sha2_32/sha2_32_x86/sha2_32_x86.cpp</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/64)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/4)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/9)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/src/lib/hash/sha2_64/sha2_64.cpp.html'>src/botan/src/lib/hash/sha2_64/sha2_64.cpp</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre> 13.24% (27/204)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 21.74% (5/23)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 26.19% (11/42)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/src/lib/hash/sha2_64/sha2_64_avx2/sha2_64_avx2.cpp.html'>src/botan/src/lib/hash/sha2_64/sha2_64_avx2/sha2_64_avx2.cpp</a></pre>
+              </td>
+            <td class='column-entry-green'>
+        <pre>100.00% (317/317)</pre>
+      </td>
+            <td class='column-entry-green'>
+        <pre>100.00% (2/2)</pre>
+      </td>
+            <td class='column-entry-green'>
+        <pre>100.00% (18/18)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/src/lib/hash/sha2_64/sha2_64_x86/sha2_64_x86.cpp.html'>src/botan/src/lib/hash/sha2_64/sha2_64_x86/sha2_64_x86.cpp</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/74)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/4)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/10)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/src/lib/hash/sha3/sha3.cpp.html'>src/botan/src/lib/hash/sha3/sha3.cpp</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/28)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/8)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/18)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/src/lib/hash/shake/shake.cpp.html'>src/botan/src/lib/hash/shake/shake.cpp</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/44)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/12)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/20)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/src/lib/hash/skein/skein_512.cpp.html'>src/botan/src/lib/hash/skein/skein_512.cpp</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/94)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/10)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/45)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/src/lib/hash/sm3/sm3.cpp.html'>src/botan/src/lib/hash/sm3/sm3.cpp</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/178)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/11)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/14)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/src/lib/hash/streebog/streebog.cpp.html'>src/botan/src/lib/hash/streebog/streebog.cpp</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/104)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/10)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/59)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/src/lib/hash/trunc_hash/trunc_hash.cpp.html'>src/botan/src/lib/hash/trunc_hash/trunc_hash.cpp</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/37)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/8)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/26)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/src/lib/hash/whirlpool/whirlpool.cpp.html'>src/botan/src/lib/hash/whirlpool/whirlpool.cpp</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/106)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/7)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/16)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/src/lib/kdf/hkdf/hkdf.cpp.html'>src/botan/src/lib/kdf/hkdf/hkdf.cpp</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/80)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/10)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/58)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/src/lib/kdf/kdf.cpp.html'>src/botan/src/lib/kdf/kdf.cpp</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/131)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/4)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/148)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/src/lib/kdf/kdf1/kdf1.cpp.html'>src/botan/src/lib/kdf/kdf1/kdf1.cpp</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/22)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/3)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/14)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/src/lib/kdf/kdf1_iso18033/kdf1_iso18033.cpp.html'>src/botan/src/lib/kdf/kdf1_iso18033/kdf1_iso18033.cpp</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/27)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/3)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/17)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/src/lib/kdf/kdf2/kdf2.cpp.html'>src/botan/src/lib/kdf/kdf2/kdf2.cpp</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/28)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/3)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/22)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/src/lib/kdf/prf_tls/prf_tls.cpp.html'>src/botan/src/lib/kdf/prf_tls/prf_tls.cpp</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/25)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/3)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/8)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/src/lib/kdf/prf_x942/prf_x942.cpp.html'>src/botan/src/lib/kdf/prf_x942/prf_x942.cpp</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/44)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/3)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/22)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/src/lib/kdf/sp800_108/sp800_108.cpp.html'>src/botan/src/lib/kdf/sp800_108/sp800_108.cpp</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/205)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/19)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/116)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/src/lib/kdf/sp800_56a/sp800_56c_one_step.cpp.html'>src/botan/src/lib/kdf/sp800_56a/sp800_56c_one_step.cpp</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/74)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/14)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/38)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/src/lib/kdf/sp800_56c/sp800_56c_two_step.cpp.html'>src/botan/src/lib/kdf/sp800_56c/sp800_56c_two_step.cpp</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/12)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/3)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/3)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/src/lib/mac/blake2mac/blake2bmac.cpp.html'>src/botan/src/lib/mac/blake2mac/blake2bmac.cpp</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/7)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/3)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/4)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/src/lib/mac/cmac/cmac.cpp.html'>src/botan/src/lib/mac/cmac/cmac.cpp</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/68)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/8)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/21)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/src/lib/mac/gmac/gmac.cpp.html'>src/botan/src/lib/mac/gmac/gmac.cpp</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/51)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/12)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/22)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/src/lib/mac/hmac/hmac.cpp.html'>src/botan/src/lib/mac/hmac/hmac.cpp</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre> 66.67% (44/66)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 70.00% (7/10)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 65.62% (21/32)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/src/lib/mac/kmac/kmac.cpp.html'>src/botan/src/lib/mac/kmac/kmac.cpp</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/62)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/17)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/39)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/src/lib/mac/mac.cpp.html'>src/botan/src/lib/mac/mac.cpp</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre> 15.84% (16/101)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 20.00% (1/5)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 17.17% (17/99)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/src/lib/mac/poly1305/poly1305.cpp.html'>src/botan/src/lib/mac/poly1305/poly1305.cpp</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/138)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/8)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/24)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/src/lib/mac/siphash/siphash.cpp.html'>src/botan/src/lib/mac/siphash/siphash.cpp</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/96)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/8)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/28)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/src/lib/mac/x919_mac/x919_mac.cpp.html'>src/botan/src/lib/mac/x919_mac/x919_mac.cpp</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/51)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/8)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/22)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/src/lib/math/bigint/big_code.cpp.html'>src/botan/src/lib/math/bigint/big_code.cpp</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/107)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/5)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/80)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/src/lib/math/bigint/big_ops2.cpp.html'>src/botan/src/lib/math/bigint/big_ops2.cpp</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/167)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/14)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/122)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/src/lib/math/bigint/big_ops3.cpp.html'>src/botan/src/lib/math/bigint/big_ops3.cpp</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/129)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/9)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/87)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/src/lib/math/bigint/big_rand.cpp.html'>src/botan/src/lib/math/bigint/big_rand.cpp</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/31)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/2)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/29)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/src/lib/math/bigint/bigint.cpp.html'>src/botan/src/lib/math/bigint/bigint.cpp</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/362)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/42)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/207)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/src/lib/math/bigint/divide.cpp.html'>src/botan/src/lib/math/bigint/divide.cpp</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/198)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/9)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/126)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/src/lib/math/mp/mp_comba.cpp.html'>src/botan/src/lib/math/mp/mp_comba.cpp</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/1992)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/14)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/14)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/src/lib/math/mp/mp_karat.cpp.html'>src/botan/src/lib/math/mp/mp_karat.cpp</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/226)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/10)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/224)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/src/lib/permutations/keccak_perm/keccak_helpers.cpp.html'>src/botan/src/lib/permutations/keccak_perm/keccak_helpers.cpp</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/28)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/5)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/25)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/src/lib/permutations/keccak_perm/keccak_perm.cpp.html'>src/botan/src/lib/permutations/keccak_perm/keccak_perm.cpp</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/86)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/7)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/58)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/src/lib/permutations/keccak_perm/keccak_perm_bmi2/keccak_perm_bmi2.cpp.html'>src/botan/src/lib/permutations/keccak_perm/keccak_perm_bmi2/keccak_perm_bmi2.cpp</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/13)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/1)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/4)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/src/lib/pk_pad/eme.cpp.html'>src/botan/src/lib/pk_pad/eme.cpp</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/33)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/2)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/40)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/src/lib/pk_pad/eme_oaep/oaep.cpp.html'>src/botan/src/lib/pk_pad/eme_oaep/oaep.cpp</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/69)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/6)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/31)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/src/lib/pk_pad/eme_pkcs1/eme_pkcs.cpp.html'>src/botan/src/lib/pk_pad/eme_pkcs1/eme_pkcs.cpp</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/52)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/4)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/29)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/src/lib/pk_pad/eme_raw/eme_raw.cpp.html'>src/botan/src/lib/pk_pad/eme_raw/eme_raw.cpp</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/18)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/3)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/22)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/src/lib/pk_pad/mgf1/mgf1.cpp.html'>src/botan/src/lib/pk_pad/mgf1/mgf1.cpp</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/14)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/1)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/3)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/src/lib/pk_pad/raw_hash/raw_hash.cpp.html'>src/botan/src/lib/pk_pad/raw_hash/raw_hash.cpp</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/27)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/6)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/14)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/src/lib/pubkey/ed25519/ed25519.cpp.html'>src/botan/src/lib/pubkey/ed25519/ed25519.cpp</a></pre>
+              </td>
+            <td class='column-entry-yellow'>
+        <pre> 87.01% (67/77)</pre>
+      </td>
+            <td class='column-entry-green'>
+        <pre>100.00% (3/3)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 66.67% (14/21)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/src/lib/pubkey/ed25519/ed25519_fe.cpp.html'>src/botan/src/lib/pubkey/ed25519/ed25519_fe.cpp</a></pre>
+              </td>
+            <td class='column-entry-green'>
+        <pre>100.00% (545/545)</pre>
+      </td>
+            <td class='column-entry-green'>
+        <pre>100.00% (7/7)</pre>
+      </td>
+            <td class='column-entry-green'>
+        <pre>100.00% (10/10)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/src/lib/pubkey/ed25519/ed25519_key.cpp.html'>src/botan/src/lib/pubkey/ed25519/ed25519_key.cpp</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre> 43.52% (84/193)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 35.14% (13/37)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 43.70% (59/135)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/src/lib/pubkey/ed25519/ge.cpp.html'>src/botan/src/lib/pubkey/ed25519/ge.cpp</a></pre>
+              </td>
+            <td class='column-entry-yellow'>
+        <pre> 99.49% (394/396)</pre>
+      </td>
+            <td class='column-entry-green'>
+        <pre>100.00% (22/22)</pre>
+      </td>
+            <td class='column-entry-yellow'>
+        <pre> 98.95% (94/95)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/src/lib/pubkey/ed25519/sc_muladd.cpp.html'>src/botan/src/lib/pubkey/ed25519/sc_muladd.cpp</a></pre>
+              </td>
+            <td class='column-entry-green'>
+        <pre>100.00% (181/181)</pre>
+      </td>
+            <td class='column-entry-green'>
+        <pre>100.00% (1/1)</pre>
+      </td>
+            <td class='column-entry-green'>
+        <pre>100.00% (1/1)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/src/lib/pubkey/ed25519/sc_reduce.cpp.html'>src/botan/src/lib/pubkey/ed25519/sc_reduce.cpp</a></pre>
+              </td>
+            <td class='column-entry-green'>
+        <pre>100.00% (120/120)</pre>
+      </td>
+            <td class='column-entry-green'>
+        <pre>100.00% (1/1)</pre>
+      </td>
+            <td class='column-entry-green'>
+        <pre>100.00% (1/1)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/src/lib/pubkey/pk_keys.cpp.html'>src/botan/src/lib/pubkey/pk_keys.cpp</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/82)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/17)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/27)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/src/lib/pubkey/pk_ops.cpp.html'>src/botan/src/lib/pubkey/pk_ops.cpp</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/167)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/32)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/144)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/src/lib/pubkey/pubkey.cpp.html'>src/botan/src/lib/pubkey/pubkey.cpp</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre> 12.54% (39/311)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 15.62% (10/64)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 10.53% (22/209)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/src/lib/pubkey/x25519/donna.cpp.html'>src/botan/src/lib/pubkey/x25519/donna.cpp</a></pre>
+              </td>
+            <td class='column-entry-green'>
+        <pre>100.00% (299/299)</pre>
+      </td>
+            <td class='column-entry-green'>
+        <pre>100.00% (13/13)</pre>
+      </td>
+            <td class='column-entry-green'>
+        <pre>100.00% (25/25)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/src/lib/pubkey/x25519/x25519.cpp.html'>src/botan/src/lib/pubkey/x25519/x25519.cpp</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre> 36.14% (30/83)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 38.10% (8/21)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 24.32% (9/37)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/src/lib/rng/auto_rng/auto_rng.cpp.html'>src/botan/src/lib/rng/auto_rng/auto_rng.cpp</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre> 48.21% (27/56)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 41.67% (5/12)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 52.38% (11/21)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/src/lib/rng/hmac_drbg/hmac_drbg.cpp.html'>src/botan/src/lib/rng/hmac_drbg/hmac_drbg.cpp</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre> 64.08% (66/103)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 58.33% (7/12)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 50.00% (41/82)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/src/lib/rng/processor_rng/processor_rng.cpp.html'>src/botan/src/lib/rng/processor_rng/processor_rng.cpp</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/55)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/7)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/26)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/src/lib/rng/rng.cpp.html'>src/botan/src/lib/rng/rng.cpp</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre> 54.84% (17/31)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 50.00% (2/4)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 42.86% (6/14)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/src/lib/rng/stateful_rng/stateful_rng.cpp.html'>src/botan/src/lib/rng/stateful_rng/stateful_rng.cpp</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre> 73.86% (65/88)</pre>
+      </td>
+            <td class='column-entry-yellow'>
+        <pre> 80.00% (8/10)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 77.78% (42/54)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/src/lib/rng/system_rng/system_rng.cpp.html'>src/botan/src/lib/rng/system_rng/system_rng.cpp</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre> 61.54% (16/26)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 33.33% (2/6)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 42.86% (6/14)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/src/lib/stream/chacha/chacha.cpp.html'>src/botan/src/lib/stream/chacha/chacha.cpp</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/294)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/20)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/103)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/src/lib/stream/chacha/chacha_avx2/chacha_avx2.cpp.html'>src/botan/src/lib/stream/chacha/chacha_avx2/chacha_avx2.cpp</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/160)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/1)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/11)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/src/lib/stream/chacha/chacha_avx512/chacha_avx512.cpp.html'>src/botan/src/lib/stream/chacha/chacha_avx512/chacha_avx512.cpp</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/159)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/1)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/11)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/src/lib/stream/chacha/chacha_simd32/chacha_simd32.cpp.html'>src/botan/src/lib/stream/chacha/chacha_simd32/chacha_simd32.cpp</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/160)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/1)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/11)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/src/lib/stream/ctr/ctr.cpp.html'>src/botan/src/lib/stream/ctr/ctr.cpp</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/195)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/16)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/122)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/src/lib/stream/ofb/ofb.cpp.html'>src/botan/src/lib/stream/ofb/ofb.cpp</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/56)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/13)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/26)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/src/lib/stream/rc4/rc4.cpp.html'>src/botan/src/lib/stream/rc4/rc4.cpp</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/94)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/12)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/35)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/src/lib/stream/salsa20/salsa20.cpp.html'>src/botan/src/lib/stream/salsa20/salsa20.cpp</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/192)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/16)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/45)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/src/lib/stream/shake_cipher/shake_cipher.cpp.html'>src/botan/src/lib/stream/shake_cipher/shake_cipher.cpp</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/71)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/12)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/36)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/src/lib/stream/stream_cipher.cpp.html'>src/botan/src/lib/stream/stream_cipher.cpp</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/87)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/6)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/93)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/src/lib/utils/allocator.cpp.html'>src/botan/src/lib/utils/allocator.cpp</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre> 38.89% (14/36)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 66.67% (2/3)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 60.87% (14/23)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/src/lib/utils/assert.cpp.html'>src/botan/src/lib/utils/assert.cpp</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/26)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/4)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/11)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/src/lib/utils/charset.cpp.html'>src/botan/src/lib/utils/charset.cpp</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/82)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/5)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/49)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/src/lib/utils/cpuid/cpuid.cpp.html'>src/botan/src/lib/utils/cpuid/cpuid.cpp</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre> 34.29% (12/35)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 40.00% (2/5)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 20.00% (3/15)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/src/lib/utils/cpuid/cpuid_x86/cpuid_features.cpp.html'>src/botan/src/lib/utils/cpuid/cpuid_x86/cpuid_features.cpp</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/90)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/2)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/91)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/src/lib/utils/cpuid/cpuid_x86/cpuid_x86.cpp.html'>src/botan/src/lib/utils/cpuid/cpuid_x86/cpuid_x86.cpp</a></pre>
+              </td>
+            <td class='column-entry-yellow'>
+        <pre> 92.44% (110/119)</pre>
+      </td>
+            <td class='column-entry-green'>
+        <pre>100.00% (4/4)</pre>
+      </td>
+            <td class='column-entry-yellow'>
+        <pre> 85.71% (24/28)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/src/lib/utils/ct_utils.cpp.html'>src/botan/src/lib/utils/ct_utils.cpp</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/34)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/3)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/17)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/src/lib/utils/data_src.cpp.html'>src/botan/src/lib/utils/data_src.cpp</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/99)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/16)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/57)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/src/lib/utils/exceptn.cpp.html'>src/botan/src/lib/utils/exceptn.cpp</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/86)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/26)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/80)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/src/lib/utils/ghash/ghash.cpp.html'>src/botan/src/lib/utils/ghash/ghash.cpp</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/163)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/15)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/114)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/src/lib/utils/ghash/ghash_cpu/ghash_cpu.cpp.html'>src/botan/src/lib/utils/ghash/ghash_cpu/ghash_cpu.cpp</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/82)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/7)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/14)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/src/lib/utils/ghash/ghash_vperm/ghash_vperm.cpp.html'>src/botan/src/lib/utils/ghash/ghash_vperm/ghash_vperm.cpp</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/30)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/1)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/7)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/src/lib/utils/locking_allocator/locking_allocator.cpp.html'>src/botan/src/lib/utils/locking_allocator/locking_allocator.cpp</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre> 64.10% (25/39)</pre>
+      </td>
+            <td class='column-entry-yellow'>
+        <pre> 80.00% (4/5)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 72.00% (18/25)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/src/lib/utils/mem_pool/mem_pool.cpp.html'>src/botan/src/lib/utils/mem_pool/mem_pool.cpp</a></pre>
+              </td>
+            <td class='column-entry-yellow'>
+        <pre> 87.22% (157/180)</pre>
+      </td>
+            <td class='column-entry-yellow'>
+        <pre> 94.12% (16/17)</pre>
+      </td>
+            <td class='column-entry-yellow'>
+        <pre> 83.61% (102/122)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/src/lib/utils/mem_utils.cpp.html'>src/botan/src/lib/utils/mem_utils.cpp</a></pre>
+              </td>
+            <td class='column-entry-green'>
+        <pre>100.00% (2/2)</pre>
+      </td>
+            <td class='column-entry-green'>
+        <pre>100.00% (1/1)</pre>
+      </td>
+            <td class='column-entry-green'>
+        <pre>100.00% (1/1)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/src/lib/utils/os_utils/os_utils.cpp.html'>src/botan/src/lib/utils/os_utils/os_utils.cpp</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre> 33.23% (110/331)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 46.43% (13/28)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 33.91% (39/115)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/src/lib/utils/parsing.cpp.html'>src/botan/src/lib/utils/parsing.cpp</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/267)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/10)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/209)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/src/lib/utils/poly_dbl/poly_dbl.cpp.html'>src/botan/src/lib/utils/poly_dbl/poly_dbl.cpp</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/82)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/6)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/37)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/src/lib/utils/prefetch.cpp.html'>src/botan/src/lib/utils/prefetch.cpp</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/13)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/1)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/4)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/src/lib/utils/scan_name.cpp.html'>src/botan/src/lib/utils/scan_name.cpp</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre> 48.04% (49/102)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 42.86% (3/7)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 57.30% (51/89)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/src/lib/xof/cshake_xof/cshake_xof.cpp.html'>src/botan/src/lib/xof/cshake_xof/cshake_xof.cpp</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/36)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/10)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/39)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/src/lib/xof/shake_xof/shake_xof.cpp.html'>src/botan/src/lib/xof/shake_xof/shake_xof.cpp</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/18)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/4)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/20)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/botan/src/lib/xof/xof.cpp.html'>src/botan/src/lib/xof/xof.cpp</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/40)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/6)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/31)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/spank-olm/fuzz/olm_sign_fuzzer.cpp.html'>src/spank-olm/fuzz/olm_sign_fuzzer.cpp</a></pre>
+              </td>
+            <td class='column-entry-yellow'>
+        <pre> 81.25% (13/16)</pre>
+      </td>
+            <td class='column-entry-green'>
+        <pre>100.00% (2/2)</pre>
+      </td>
+            <td class='column-entry-yellow'>
+        <pre> 83.33% (5/6)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/spank-olm/include/account.hpp.html'>src/spank-olm/include/account.hpp</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  3.45% (1/29)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 25.00% (1/4)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 40.00% (2/5)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/spank-olm/include/errors.hpp.html'>src/spank-olm/include/errors.hpp</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/21)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/7)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/13)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/spank-olm/include/list.hpp.html'>src/spank-olm/include/list.hpp</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre> 15.07% (11/73)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 25.00% (3/12)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 12.50% (5/40)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/spank-olm/include/pickle.hpp.html'>src/spank-olm/include/pickle.hpp</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/24)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/2)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/14)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/spank-olm/src/account.cpp.html'>src/spank-olm/src/account.cpp</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  6.99% (13/186)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 18.18% (2/11)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  9.00% (9/100)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/spank-olm/src/pickle.cpp.html'>src/spank-olm/src/pickle.cpp</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/139)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/17)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/118)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='work/include/botan-3/botan/allocator.h.html'>work/include/botan-3/botan/allocator.h</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/1)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/1)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/1)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='work/include/botan-3/botan/asn1_obj.h.html'>work/include/botan-3/botan/asn1_obj.h</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/22)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/14)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/14)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='work/include/botan-3/botan/base64.h.html'>work/include/botan-3/botan/base64.h</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/3)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/1)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/1)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='work/include/botan-3/botan/ed25519.h.html'>work/include/botan-3/botan/ed25519.h</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre> 20.00% (1/5)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 33.33% (1/3)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 33.33% (1/3)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='work/include/botan-3/botan/exceptn.h.html'>work/include/botan-3/botan/exceptn.h</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/1)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/1)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/1)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='work/include/botan-3/botan/pk_keys.h.html'>work/include/botan-3/botan/pk_keys.h</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  9.09% (1/11)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 20.00% (1/5)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 20.00% (1/5)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='work/include/botan-3/botan/pubkey.h.html'>work/include/botan-3/botan/pubkey.h</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  1.59% (1/63)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  4.17% (1/24)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  4.17% (1/24)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='work/include/botan-3/botan/rng.h.html'>work/include/botan-3/botan/rng.h</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/7)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/3)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/3)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='work/include/botan-3/botan/secmem.h.html'>work/include/botan-3/botan/secmem.h</a></pre>
+              </td>
+            <td class='column-entry-green'>
+        <pre>100.00% (5/5)</pre>
+      </td>
+            <td class='column-entry-green'>
+        <pre>100.00% (3/3)</pre>
+      </td>
+            <td class='column-entry-green'>
+        <pre>100.00% (3/3)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='work/include/botan-3/botan/symkey.h.html'>work/include/botan-3/botan/symkey.h</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/5)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/5)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/5)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='work/include/botan-3/botan/x25519.h.html'>work/include/botan-3/botan/x25519.h</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/5)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/3)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/3)</pre>
+      </td>
+          </tr>
+      </tbody>
+      <tfoot>
+      <tr class="light-row-bold">
+        <td>
+          <pre>Totals</pre>
+        </td>
+                <td class='column-entry-red'>
+          <pre> 12.62% (3608/28594)</pre>
+        </td>
+                <td class='column-entry-red'>
+          <pre> 12.97% (374/2884)</pre>
+        </td>
+                <td class='column-entry-red'>
+          <pre> 11.11% (1081/9730)</pre>
+        </td>
+              </tr>
+    </tfoot>
+  </table>
+
+<script>
+  const SORT_COLUMN = {
+    LINE: 2,
+    FUNCTION: 3,
+    REGION: 4,
+  }
+
+  const SORT_TYPES = {
+    UNSET: -1,
+    PERCENT: 0,
+    AGGREGATE: 1,
+  }
+
+  var SORT_ORDER = {
+    [SORT_COLUMN.LINE]: [SORT_TYPES.UNSET],
+    [SORT_COLUMN.FUNCTION]: [SORT_TYPES.UNSET],
+    [SORT_COLUMN.REGION]: [SORT_TYPES.UNSET],
+  }
+
+  function sortTable(columnNumber) {
+    SORT_ORDER[columnNumber] = ++SORT_ORDER[columnNumber] % 2;
+
+    let columnSortOrder = SORT_ORDER[columnNumber];
+    let tbody = document.getElementsByTagName("tbody")[0];
+
+    [].slice.call(tbody.rows).sort(function(a, b) {
+      let aColumn = a.cells[columnNumber-1].textContent;
+      let bColumn = b.cells[columnNumber-1].textContent;
+
+      let aColumnCompare, bColumnCompare;
+      if (columnSortOrder == SORT_TYPES.PERCENT) {
+        aColumnCompare = parseFloat(/([0-9.]+)%/.exec(aColumn)[1]);
+        bColumnCompare = parseFloat(/([0-9.]+)%/.exec(bColumn)[1]);
+      } else {
+        aColumnCompare = parseInt(/\/(\d+)/.exec(aColumn)[1]);
+        bColumnCompare = parseInt(/\/(\d+)/.exec(bColumn)[1]);
+      }
+
+      return (
+          aColumnCompare < bColumnCompare ? -1:
+              aColumnCompare > bColumnCompare ? 1 : 0);
+    }).forEach(function(value, index) {
+      tbody.appendChild(value);
+    });
+  }
+
+</script>    </div>
+  </body>
+</html>
