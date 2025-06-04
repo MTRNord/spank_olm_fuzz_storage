@@ -154,10 +154,10 @@ _ZN5Botan14expand_top_bitImEET_S1_Qsr3std11is_integralIS1_EE5value:
    29|  25.6k|   return static_cast<T>(0) - (a >> (sizeof(T) * 8 - 1));
    30|  25.6k|}
 _ZN5Botan6chooseImEET_S1_S1_S1_:
-  204|  1.02M|BOTAN_FORCE_INLINE constexpr T choose(T mask, T a, T b) {
+  204|  1.03M|BOTAN_FORCE_INLINE constexpr T choose(T mask, T a, T b) {
   205|       |   //return (mask & a) | (~mask & b);
-  206|  1.02M|   return (b ^ (mask & (a ^ b)));
-  207|  1.02M|}
+  206|  1.03M|   return (b ^ (mask & (a ^ b)));
+  207|  1.03M|}
 _ZN5Botan10ct_is_zeroIhEET_S1_Qsr3std11is_integralIS1_EE5value:
    38|    150|{
    39|    150|   return expand_top_bit<T>(~x & (x - 1));
@@ -167,7 +167,7 @@ _ZN5Botan14expand_top_bitIhEET_S1_Qsr3std11is_integralIS1_EE5value:
    29|    150|   return static_cast<T>(0) - (a >> (sizeof(T) * 8 - 1));
    30|    150|}
 _ZN5Botan8majorityImEET_S1_S1_S1_:
-  210|   512k|BOTAN_FORCE_INLINE constexpr T majority(T a, T b, T c) {
+  210|   516k|BOTAN_FORCE_INLINE constexpr T majority(T a, T b, T c) {
   211|       |   /*
   212|       |   Considering each bit of a, b, c individually
   213|       |
@@ -177,8 +177,8 @@ _ZN5Botan8majorityImEET_S1_S1_S1_:
   217|       |   In either case the value of c doesn't matter, and examining b (or a)
   218|       |   allows us to determine which case we are in.
   219|       |   */
-  220|   512k|   return choose(a ^ b, c, b);
-  221|   512k|}
+  220|   516k|   return choose(a ^ b, c, b);
+  221|   516k|}
 
 _ZN5Botan13reverse_bytesITkNSt3__117unsigned_integralEmQooooooeqstT_Li1EeqstS2_Li2EeqstS2_Li4EeqstS2_Li8EEES2_S2_:
    27|  25.6k|inline constexpr T reverse_bytes(T x) {
@@ -214,7 +214,7 @@ _ZN5Botan13reverse_bytesITkNSt3__117unsigned_integralEmQooooooeqstT_Li1EeqstS2_L
    57|  25.6k|}
 
 _ZN5Botan5CPUID3hasENS_10CPUFeatureE:
-   94|  6.13k|      static bool has(CPUID::Feature feat) { return state().has_bit(feat.as_u32()); }
+   94|  6.12k|      static bool has(CPUID::Feature feat) { return state().has_bit(feat.as_u32()); }
 _ZN5Botan5CPUID3hasENS_10CPUFeatureES1_:
    99|  12.2k|      static bool has(CPUID::Feature feat1, CPUID::Feature feat2) {
   100|  12.2k|         return state().has_bit(feat1.as_u32() | feat2.as_u32());
@@ -455,20 +455,20 @@ _ZN5Botan8FE_25519C2Ellllllllll:
    63|   280k|         m_fe[9] = static_cast<int32_t>(h9);
    64|   280k|      }
 _ZNK5Botan8FE_255197is_zeroEv:
-   75|    162|      bool is_zero() const {
-   76|    162|         uint8_t s[32];
-   77|    162|         to_bytes(s);
+   75|    154|      bool is_zero() const {
+   76|    154|         uint8_t s[32];
+   77|    154|         to_bytes(s);
    78|       |
-   79|    162|         uint8_t sum = 0;
-   80|  5.34k|         for(size_t i = 0; i != 32; ++i) {
+   79|    154|         uint8_t sum = 0;
+   80|  5.08k|         for(size_t i = 0; i != 32; ++i) {
   ------------------
-  |  Branch (80:28): [True: 5.18k, False: 162]
+  |  Branch (80:28): [True: 4.92k, False: 154]
   ------------------
-   81|  5.18k|            sum |= s[i];
-   82|  5.18k|         }
+   81|  4.92k|            sum |= s[i];
+   82|  4.92k|         }
    83|       |
-   84|    162|         return (sum == 0);
-   85|    162|      }
+   84|    154|         return (sum == 0);
+   85|    154|      }
 _ZNK5Botan8FE_2551911is_negativeEv:
    91|    300|      bool is_negative() const {
    92|       |         // TODO could avoid most of the to_bytes computation here
@@ -528,12 +528,12 @@ _ZN5Botan7fe_copyERNS_8FE_25519ERKS0_:
   157|    800|   a = b;
   158|    800|}
 _ZN5Botan12fe_isnonzeroERKNS_8FE_25519E:
-  160|    162|inline int fe_isnonzero(const FE_25519& x) {
-  161|    162|   return x.is_zero() ? 0 : 1;
+  160|    154|inline int fe_isnonzero(const FE_25519& x) {
+  161|    154|   return x.is_zero() ? 0 : 1;
   ------------------
-  |  Branch (161:11): [True: 100, False: 62]
+  |  Branch (161:11): [True: 100, False: 54]
   ------------------
-  162|    162|}
+  162|    154|}
 _ZN5Botan13fe_isnegativeERKNS_8FE_25519E:
   164|    300|inline int fe_isnegative(const FE_25519& x) {
   165|    300|   return x.is_negative();
@@ -626,19 +626,19 @@ _ZN5Botan5carryILm25ELl19EEEvRlS1_QaagtT_Li0EltT_Li64E:
    35|   353k|   h0 -= c * X1;
    36|   353k|}
 _ZN5Botan6carry0ILm26EEEvRiS1_QaagtT_Li0EltT_Li32E:
-   51|  3.31k|{
-   52|  3.31k|   const int32_t X1 = (static_cast<int64_t>(1) << S);
-   53|  3.31k|   int32_t c = h0 >> S;
-   54|  3.31k|   h1 += c;
-   55|  3.31k|   h0 -= c * X1;
-   56|  3.31k|}
+   51|  3.27k|{
+   52|  3.27k|   const int32_t X1 = (static_cast<int64_t>(1) << S);
+   53|  3.27k|   int32_t c = h0 >> S;
+   54|  3.27k|   h1 += c;
+   55|  3.27k|   h0 -= c * X1;
+   56|  3.27k|}
 _ZN5Botan6carry0ILm25EEEvRiS1_QaagtT_Li0EltT_Li32E:
-   51|  2.64k|{
-   52|  2.64k|   const int32_t X1 = (static_cast<int64_t>(1) << S);
-   53|  2.64k|   int32_t c = h0 >> S;
-   54|  2.64k|   h1 += c;
-   55|  2.64k|   h0 -= c * X1;
-   56|  2.64k|}
+   51|  2.61k|{
+   52|  2.61k|   const int32_t X1 = (static_cast<int64_t>(1) << S);
+   53|  2.61k|   int32_t c = h0 >> S;
+   54|  2.61k|   h1 += c;
+   55|  2.61k|   h0 -= c * X1;
+   56|  2.61k|}
 _ZN5Botan5carryILm21ELl1EEEvRlS1_QaagtT_Li0EltT_Li64E:
    30|  5.75k|{
    31|  5.75k|   const int64_t X1 = (static_cast<int64_t>(1) << S);
@@ -1150,11 +1150,11 @@ _ZN5Botan18MerkleDamgard_HashINS_7SHA_512EE27append_counter_and_finalizeEv:
    90|       |         // enough space for the counter bytes.
    91|  2.85k|         if(m_buffer.elements_until_alignment() < MD::ctr_bytes) {
   ------------------
-  |  Branch (91:13): [True: 6, False: 2.84k]
+  |  Branch (91:13): [True: 4, False: 2.84k]
   ------------------
-   92|      6|            m_buffer.fill_up_with_zeros();
-   93|      6|            MD::compress_n(m_digest, m_buffer.consume(), 1);
-   94|      6|         }
+   92|      4|            m_buffer.fill_up_with_zeros();
+   93|      4|            MD::compress_n(m_digest, m_buffer.consume(), 1);
+   94|      4|         }
    95|       |
    96|       |         // Make sure that any remaining bytes in the very last block are zero.
    97|  2.85k|         BOTAN_ASSERT_NOMSG(m_buffer.elements_until_alignment() >= MD::ctr_bytes);
@@ -1208,37 +1208,37 @@ _ZN5Botan18MerkleDamgard_HashINS_7SHA_512EE11copy_outputENSt3__14spanIhLm1844674
   121|  2.85k|      }
 
 _ZN5Botan3rhoILm14ELm18ELm41EmEET2_S1_:
-   52|   512k|BOTAN_FORCE_INLINE constexpr T rho(T x) {
-   53|   512k|   return rotr<R1>(x) ^ rotr<R2>(x) ^ rotr<R3>(x);
-   54|   512k|}
+   52|   516k|BOTAN_FORCE_INLINE constexpr T rho(T x) {
+   53|   516k|   return rotr<R1>(x) ^ rotr<R2>(x) ^ rotr<R3>(x);
+   54|   516k|}
 _ZN5Botan4rotrILm14EmEET0_S1_QaagtT_Li0EltT_mlLi8EstS1_:
-   36|   512k|{
-   37|   512k|   return static_cast<T>((input >> ROT) | (input << (8 * sizeof(T) - ROT)));
-   38|   512k|}
+   36|   516k|{
+   37|   516k|   return static_cast<T>((input >> ROT) | (input << (8 * sizeof(T) - ROT)));
+   38|   516k|}
 _ZN5Botan4rotrILm18EmEET0_S1_QaagtT_Li0EltT_mlLi8EstS1_:
-   36|   512k|{
-   37|   512k|   return static_cast<T>((input >> ROT) | (input << (8 * sizeof(T) - ROT)));
-   38|   512k|}
+   36|   516k|{
+   37|   516k|   return static_cast<T>((input >> ROT) | (input << (8 * sizeof(T) - ROT)));
+   38|   516k|}
 _ZN5Botan4rotrILm41EmEET0_S1_QaagtT_Li0EltT_mlLi8EstS1_:
-   36|   512k|{
-   37|   512k|   return static_cast<T>((input >> ROT) | (input << (8 * sizeof(T) - ROT)));
-   38|   512k|}
+   36|   516k|{
+   37|   516k|   return static_cast<T>((input >> ROT) | (input << (8 * sizeof(T) - ROT)));
+   38|   516k|}
 _ZN5Botan3rhoILm28ELm34ELm39EmEET2_S1_:
-   52|   512k|BOTAN_FORCE_INLINE constexpr T rho(T x) {
-   53|   512k|   return rotr<R1>(x) ^ rotr<R2>(x) ^ rotr<R3>(x);
-   54|   512k|}
+   52|   516k|BOTAN_FORCE_INLINE constexpr T rho(T x) {
+   53|   516k|   return rotr<R1>(x) ^ rotr<R2>(x) ^ rotr<R3>(x);
+   54|   516k|}
 _ZN5Botan4rotrILm28EmEET0_S1_QaagtT_Li0EltT_mlLi8EstS1_:
-   36|   512k|{
-   37|   512k|   return static_cast<T>((input >> ROT) | (input << (8 * sizeof(T) - ROT)));
-   38|   512k|}
+   36|   516k|{
+   37|   516k|   return static_cast<T>((input >> ROT) | (input << (8 * sizeof(T) - ROT)));
+   38|   516k|}
 _ZN5Botan4rotrILm34EmEET0_S1_QaagtT_Li0EltT_mlLi8EstS1_:
-   36|   512k|{
-   37|   512k|   return static_cast<T>((input >> ROT) | (input << (8 * sizeof(T) - ROT)));
-   38|   512k|}
+   36|   516k|{
+   37|   516k|   return static_cast<T>((input >> ROT) | (input << (8 * sizeof(T) - ROT)));
+   38|   516k|}
 _ZN5Botan4rotrILm39EmEET0_S1_QaagtT_Li0EltT_mlLi8EstS1_:
-   36|   512k|{
-   37|   512k|   return static_cast<T>((input >> ROT) | (input << (8 * sizeof(T) - ROT)));
-   38|   512k|}
+   36|   516k|{
+   37|   516k|   return static_cast<T>((input >> ROT) | (input << (8 * sizeof(T) - ROT)));
+   38|   516k|}
 
 _ZNK5Botan9SCAN_Name9algo_nameEv:
    44|    200|      const std::string& algo_name() const { return m_alg_name; }
@@ -1253,13 +1253,13 @@ _ZN5Botan7SHA_5125clearEv:
    84|    600|      void clear() override { m_md.clear(); }
 
 _ZN5Botan9SHA2_64_FEmmmRmmmmS0_m:
-   46|   512k|   uint64_t A, uint64_t B, uint64_t C, uint64_t& D, uint64_t E, uint64_t F, uint64_t G, uint64_t& H, uint64_t M) {
-   47|   512k|   const uint64_t E_rho = rho<14, 18, 41>(E);
-   48|   512k|   const uint64_t A_rho = rho<28, 34, 39>(A);
-   49|   512k|   H += E_rho + choose(E, F, G) + M;
-   50|   512k|   D += H;
-   51|   512k|   H += A_rho + majority(A, B, C);
-   52|   512k|}
+   46|   516k|   uint64_t A, uint64_t B, uint64_t C, uint64_t& D, uint64_t E, uint64_t F, uint64_t G, uint64_t& H, uint64_t M) {
+   47|   516k|   const uint64_t E_rho = rho<14, 18, 41>(E);
+   48|   516k|   const uint64_t A_rho = rho<28, 34, 39>(A);
+   49|   516k|   H += E_rho + choose(E, F, G) + M;
+   50|   516k|   D += H;
+   51|   516k|   H += A_rho + majority(A, B, C);
+   52|   516k|}
 
 _ZN5Botan9SIMD_2x64C2Ev:
    34|  48.8k|      SIMD_2x64() { m_simd = _mm_setzero_si128(); }
@@ -1289,9 +1289,9 @@ _ZNK5Botan9SIMD_2x648store_leEPm:
 _ZNK5Botan9SIMD_2x648store_leEPh:
    49|   244k|      void store_le(uint8_t out[]) const { _mm_storeu_si128(reinterpret_cast<__m128i*>(out), m_simd); }
 _ZN5Botan9SIMD_2x647alignr8ERKS0_S2_:
-   99|   391k|      static SIMD_2x64 BOTAN_FN_ISA_SIMD_2X64 alignr8(const SIMD_2x64& a, const SIMD_2x64& b) {
-  100|   391k|         return SIMD_2x64(_mm_alignr_epi8(a.m_simd, b.m_simd, 8));
-  101|   391k|      }
+   99|   390k|      static SIMD_2x64 BOTAN_FN_ISA_SIMD_2X64 alignr8(const SIMD_2x64& a, const SIMD_2x64& b) {
+  100|   390k|         return SIMD_2x64(_mm_alignr_epi8(a.m_simd, b.m_simd, 8));
+  101|   390k|      }
 _ZNK5Botan9SIMD_2x644rotrILm1EEES0_vQaagtT_Li0EltT_Li64E:
    70|   195k|      {
    71|       |         if constexpr(ROT == 8) {
@@ -1312,13 +1312,13 @@ _ZNK5Botan9SIMD_2x644rotrILm1EEES0_vQaagtT_Li0EltT_Li64E:
    86|   195k|         }
    87|   195k|      }
 _ZNK5Botan9SIMD_2x64eoERKS0_:
-   57|   782k|      SIMD_2x64 operator^(const SIMD_2x64& other) const {
-   58|   782k|         SIMD_2x64 retval(*this);
-   59|   782k|         retval ^= other;
-   60|   782k|         return retval;
-   61|   782k|      }
+   57|   781k|      SIMD_2x64 operator^(const SIMD_2x64& other) const {
+   58|   781k|         SIMD_2x64 retval(*this);
+   59|   781k|         retval ^= other;
+   60|   781k|         return retval;
+   61|   781k|      }
 _ZN5Botan9SIMD_2x64eOERKS0_:
-   65|   782k|      void operator^=(const SIMD_2x64& other) { m_simd = _mm_xor_si128(m_simd, other.m_simd); }
+   65|   781k|      void operator^=(const SIMD_2x64& other) { m_simd = _mm_xor_si128(m_simd, other.m_simd); }
 _ZNK5Botan9SIMD_2x644rotrILm8EEES0_vQaagtT_Li0EltT_Li64E:
    70|   195k|      {
    71|   195k|         if constexpr(ROT == 8) {
@@ -1419,49 +1419,49 @@ _ZN5Botan9SIMD_4x32C2EDv2_x:
   756|      2|      explicit SIMD_4x32(native_simd_type x) noexcept : m_simd(x) {}
 
 _ZN5Botan9SIMD_4x64C2Ev:
-   32|  1.20k|      BOTAN_FN_ISA_SIMD_4X64 SIMD_4x64() { m_simd = _mm256_setzero_si256(); }
+   32|  1.37k|      BOTAN_FN_ISA_SIMD_4X64 SIMD_4x64() { m_simd = _mm256_setzero_si256(); }
 _ZN5Botan9SIMD_4x648load_be2EPKvS2_:
-   40|  1.20k|      static BOTAN_FN_ISA_SIMD_4X64 SIMD_4x64 load_be2(const void* inl, const void* inh) {
-   41|  1.20k|         return SIMD_4x64::load_le2(inl, inh).bswap();
-   42|  1.20k|      }
+   40|  1.37k|      static BOTAN_FN_ISA_SIMD_4X64 SIMD_4x64 load_be2(const void* inl, const void* inh) {
+   41|  1.37k|         return SIMD_4x64::load_le2(inl, inh).bswap();
+   42|  1.37k|      }
 _ZN5Botan9SIMD_4x648load_le2EPKvS2_:
-   35|  1.20k|      static BOTAN_FN_ISA_SIMD_4X64 SIMD_4x64 load_le2(const void* inl, const void* inh) {
-   36|  1.20k|         return SIMD_4x64(
-   37|  1.20k|            _mm256_loadu2_m128i(reinterpret_cast<const __m128i*>(inl), reinterpret_cast<const __m128i*>(inh)));
-   38|  1.20k|      }
+   35|  1.37k|      static BOTAN_FN_ISA_SIMD_4X64 SIMD_4x64 load_le2(const void* inl, const void* inh) {
+   36|  1.37k|         return SIMD_4x64(
+   37|  1.37k|            _mm256_loadu2_m128i(reinterpret_cast<const __m128i*>(inl), reinterpret_cast<const __m128i*>(inh)));
+   38|  1.37k|      }
 _ZN5Botan9SIMD_4x64C2EDv4_x:
-  160|  46.8k|      explicit BOTAN_FN_ISA_SIMD_4X64 SIMD_4x64(__m256i x) : m_simd(x) {}
+  160|  53.6k|      explicit BOTAN_FN_ISA_SIMD_4X64 SIMD_4x64(__m256i x) : m_simd(x) {}
 _ZNK5Botan9SIMD_4x645bswapEv:
-   50|  1.20k|      SIMD_4x64 BOTAN_FN_ISA_SIMD_4X64 bswap() const {
-   51|  1.20k|         const auto idx = _mm256_set_epi8(
-   52|  1.20k|            8, 9, 10, 11, 12, 13, 14, 15, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 0, 1, 2, 3, 4, 5, 6, 7);
+   50|  1.37k|      SIMD_4x64 BOTAN_FN_ISA_SIMD_4X64 bswap() const {
+   51|  1.37k|         const auto idx = _mm256_set_epi8(
+   52|  1.37k|            8, 9, 10, 11, 12, 13, 14, 15, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 0, 1, 2, 3, 4, 5, 6, 7);
    53|       |
-   54|  1.20k|         return SIMD_4x64(_mm256_shuffle_epi8(m_simd, idx));
-   55|  1.20k|      }
+   54|  1.37k|         return SIMD_4x64(_mm256_shuffle_epi8(m_simd, idx));
+   55|  1.37k|      }
 _ZNK5Botan9SIMD_4x64plERKS0_:
-   67|  20.4k|      SIMD_4x64 operator+(const SIMD_4x64& other) const {
-   68|  20.4k|         SIMD_4x64 retval(*this);
-   69|  20.4k|         retval += other;
-   70|  20.4k|         return retval;
-   71|  20.4k|      }
+   67|  23.3k|      SIMD_4x64 operator+(const SIMD_4x64& other) const {
+   68|  23.3k|         SIMD_4x64 retval(*this);
+   69|  23.3k|         retval += other;
+   70|  23.3k|         return retval;
+   71|  23.3k|      }
 _ZN5Botan9SIMD_4x64pLERKS0_:
-   79|  20.4k|      BOTAN_FN_ISA_SIMD_4X64 void operator+=(const SIMD_4x64& other) {
-   80|  20.4k|         m_simd = _mm256_add_epi64(m_simd, other.m_simd);
-   81|  20.4k|      }
+   79|  23.3k|      BOTAN_FN_ISA_SIMD_4X64 void operator+=(const SIMD_4x64& other) {
+   80|  23.3k|         m_simd = _mm256_add_epi64(m_simd, other.m_simd);
+   81|  23.3k|      }
 _ZN5Botan9SIMD_4x647load_leEPKv:
-   44|  6.00k|      static BOTAN_FN_ISA_SIMD_4X64 SIMD_4x64 load_le(const void* in) {
-   45|  6.00k|         return SIMD_4x64(_mm256_loadu_si256(reinterpret_cast<const __m256i*>(in)));
-   46|  6.00k|      }
+   44|  6.88k|      static BOTAN_FN_ISA_SIMD_4X64 SIMD_4x64 load_le(const void* in) {
+   45|  6.88k|         return SIMD_4x64(_mm256_loadu_si256(reinterpret_cast<const __m256i*>(in)));
+   46|  6.88k|      }
 _ZN5Botan9SIMD_4x649store_le2EPvS1_:
-   63|  6.00k|      BOTAN_FN_ISA_SIMD_4X64 void store_le2(void* outh, void* outl) {
-   64|  6.00k|         _mm256_storeu2_m128i(reinterpret_cast<__m128i*>(outh), reinterpret_cast<__m128i*>(outl), m_simd);
-   65|  6.00k|      }
+   63|  6.88k|      BOTAN_FN_ISA_SIMD_4X64 void store_le2(void* outh, void* outl) {
+   64|  6.88k|         _mm256_storeu2_m128i(reinterpret_cast<__m128i*>(outh), reinterpret_cast<__m128i*>(outl), m_simd);
+   65|  6.88k|      }
 _ZN5Botan9SIMD_4x647alignr8ERKS0_S2_:
-  131|  9.60k|      static SIMD_4x64 BOTAN_FN_ISA_SIMD_4X64 alignr8(const SIMD_4x64& a, const SIMD_4x64& b) {
-  132|  9.60k|         return SIMD_4x64(_mm256_alignr_epi8(a.m_simd, b.m_simd, 8));
-  133|  9.60k|      }
+  131|  11.0k|      static SIMD_4x64 BOTAN_FN_ISA_SIMD_4X64 alignr8(const SIMD_4x64& a, const SIMD_4x64& b) {
+  132|  11.0k|         return SIMD_4x64(_mm256_alignr_epi8(a.m_simd, b.m_simd, 8));
+  133|  11.0k|      }
 _ZNK5Botan9SIMD_4x644rotrILm1EEES0_vQaagtT_Li0EltT_Li64E:
-   90|  4.80k|      {
+   90|  5.50k|      {
    91|       |#if defined(__AVX512VL__)
    92|       |         return SIMD_4x64(_mm256_ror_epi64(m_simd, ROT));
    93|       |#else
@@ -1485,32 +1485,32 @@ _ZNK5Botan9SIMD_4x644rotrILm1EEES0_vQaagtT_Li0EltT_Li64E:
   111|       |               _mm256_set_epi64x(0x0b0a09080f0e0d0c, 0x0302010007060504, 0x0b0a09080f0e0d0c, 0x0302010007060504);
   112|       |
   113|       |            return SIMD_4x64(_mm256_shuffle_epi8(m_simd, shuf_rot_32));
-  114|  4.80k|         } else {
-  115|  4.80k|            return SIMD_4x64(_mm256_or_si256(_mm256_srli_epi64(m_simd, static_cast<int>(ROT)),
-  116|  4.80k|                                             _mm256_slli_epi64(m_simd, static_cast<int>(64 - ROT))));
-  117|  4.80k|         }
-  118|  4.80k|#endif
-  119|  4.80k|      }
+  114|  5.50k|         } else {
+  115|  5.50k|            return SIMD_4x64(_mm256_or_si256(_mm256_srli_epi64(m_simd, static_cast<int>(ROT)),
+  116|  5.50k|                                             _mm256_slli_epi64(m_simd, static_cast<int>(64 - ROT))));
+  117|  5.50k|         }
+  118|  5.50k|#endif
+  119|  5.50k|      }
 _ZNK5Botan9SIMD_4x64eoERKS0_:
-   73|  19.2k|      SIMD_4x64 operator^(const SIMD_4x64& other) const {
-   74|  19.2k|         SIMD_4x64 retval(*this);
-   75|  19.2k|         retval ^= other;
-   76|  19.2k|         return retval;
-   77|  19.2k|      }
+   73|  22.0k|      SIMD_4x64 operator^(const SIMD_4x64& other) const {
+   74|  22.0k|         SIMD_4x64 retval(*this);
+   75|  22.0k|         retval ^= other;
+   76|  22.0k|         return retval;
+   77|  22.0k|      }
 _ZN5Botan9SIMD_4x64eOERKS0_:
-   83|  19.2k|      BOTAN_FN_ISA_SIMD_4X64 void operator^=(const SIMD_4x64& other) {
-   84|  19.2k|         m_simd = _mm256_xor_si256(m_simd, other.m_simd);
-   85|  19.2k|      }
+   83|  22.0k|      BOTAN_FN_ISA_SIMD_4X64 void operator^=(const SIMD_4x64& other) {
+   84|  22.0k|         m_simd = _mm256_xor_si256(m_simd, other.m_simd);
+   85|  22.0k|      }
 _ZNK5Botan9SIMD_4x644rotrILm8EEES0_vQaagtT_Li0EltT_Li64E:
-   90|  4.80k|      {
+   90|  5.50k|      {
    91|       |#if defined(__AVX512VL__)
    92|       |         return SIMD_4x64(_mm256_ror_epi64(m_simd, ROT));
    93|       |#else
-   94|  4.80k|         if constexpr(ROT == 8) {
-   95|  4.80k|            auto shuf_rot_8 =
-   96|  4.80k|               _mm256_set_epi64x(0x080f0e0d0c0b0a09, 0x0007060504030201, 0x080f0e0d0c0b0a09, 0x0007060504030201);
+   94|  5.50k|         if constexpr(ROT == 8) {
+   95|  5.50k|            auto shuf_rot_8 =
+   96|  5.50k|               _mm256_set_epi64x(0x080f0e0d0c0b0a09, 0x0007060504030201, 0x080f0e0d0c0b0a09, 0x0007060504030201);
    97|       |
-   98|  4.80k|            return SIMD_4x64(_mm256_shuffle_epi8(m_simd, shuf_rot_8));
+   98|  5.50k|            return SIMD_4x64(_mm256_shuffle_epi8(m_simd, shuf_rot_8));
    99|       |         } else if constexpr(ROT == 16) {
   100|       |            auto shuf_rot_16 =
   101|       |               _mm256_set_epi64x(0x09080f0e0d0c0b0a, 0x0100070605040302, 0x09080f0e0d0c0b0a, 0x0100070605040302);
@@ -1530,14 +1530,14 @@ _ZNK5Botan9SIMD_4x644rotrILm8EEES0_vQaagtT_Li0EltT_Li64E:
   115|       |            return SIMD_4x64(_mm256_or_si256(_mm256_srli_epi64(m_simd, static_cast<int>(ROT)),
   116|       |                                             _mm256_slli_epi64(m_simd, static_cast<int>(64 - ROT))));
   117|       |         }
-  118|  4.80k|#endif
-  119|  4.80k|      }
+  118|  5.50k|#endif
+  119|  5.50k|      }
 _ZNK5Botan9SIMD_4x643shrILi7EEES0_v:
-  127|  4.80k|      SIMD_4x64 BOTAN_FN_ISA_SIMD_4X64 shr() const noexcept {
-  128|  4.80k|         return SIMD_4x64(_mm256_srli_epi64(m_simd, SHIFT));
-  129|  4.80k|      }
+  127|  5.50k|      SIMD_4x64 BOTAN_FN_ISA_SIMD_4X64 shr() const noexcept {
+  128|  5.50k|         return SIMD_4x64(_mm256_srli_epi64(m_simd, SHIFT));
+  129|  5.50k|      }
 _ZNK5Botan9SIMD_4x644rotrILm19EEES0_vQaagtT_Li0EltT_Li64E:
-   90|  4.80k|      {
+   90|  5.50k|      {
    91|       |#if defined(__AVX512VL__)
    92|       |         return SIMD_4x64(_mm256_ror_epi64(m_simd, ROT));
    93|       |#else
@@ -1561,14 +1561,14 @@ _ZNK5Botan9SIMD_4x644rotrILm19EEES0_vQaagtT_Li0EltT_Li64E:
   111|       |               _mm256_set_epi64x(0x0b0a09080f0e0d0c, 0x0302010007060504, 0x0b0a09080f0e0d0c, 0x0302010007060504);
   112|       |
   113|       |            return SIMD_4x64(_mm256_shuffle_epi8(m_simd, shuf_rot_32));
-  114|  4.80k|         } else {
-  115|  4.80k|            return SIMD_4x64(_mm256_or_si256(_mm256_srli_epi64(m_simd, static_cast<int>(ROT)),
-  116|  4.80k|                                             _mm256_slli_epi64(m_simd, static_cast<int>(64 - ROT))));
-  117|  4.80k|         }
-  118|  4.80k|#endif
-  119|  4.80k|      }
+  114|  5.50k|         } else {
+  115|  5.50k|            return SIMD_4x64(_mm256_or_si256(_mm256_srli_epi64(m_simd, static_cast<int>(ROT)),
+  116|  5.50k|                                             _mm256_slli_epi64(m_simd, static_cast<int>(64 - ROT))));
+  117|  5.50k|         }
+  118|  5.50k|#endif
+  119|  5.50k|      }
 _ZNK5Botan9SIMD_4x644rotrILm61EEES0_vQaagtT_Li0EltT_Li64E:
-   90|  4.80k|      {
+   90|  5.50k|      {
    91|       |#if defined(__AVX512VL__)
    92|       |         return SIMD_4x64(_mm256_ror_epi64(m_simd, ROT));
    93|       |#else
@@ -1592,16 +1592,16 @@ _ZNK5Botan9SIMD_4x644rotrILm61EEES0_vQaagtT_Li0EltT_Li64E:
   111|       |               _mm256_set_epi64x(0x0b0a09080f0e0d0c, 0x0302010007060504, 0x0b0a09080f0e0d0c, 0x0302010007060504);
   112|       |
   113|       |            return SIMD_4x64(_mm256_shuffle_epi8(m_simd, shuf_rot_32));
-  114|  4.80k|         } else {
-  115|  4.80k|            return SIMD_4x64(_mm256_or_si256(_mm256_srli_epi64(m_simd, static_cast<int>(ROT)),
-  116|  4.80k|                                             _mm256_slli_epi64(m_simd, static_cast<int>(64 - ROT))));
-  117|  4.80k|         }
-  118|  4.80k|#endif
-  119|  4.80k|      }
+  114|  5.50k|         } else {
+  115|  5.50k|            return SIMD_4x64(_mm256_or_si256(_mm256_srli_epi64(m_simd, static_cast<int>(ROT)),
+  116|  5.50k|                                             _mm256_slli_epi64(m_simd, static_cast<int>(64 - ROT))));
+  117|  5.50k|         }
+  118|  5.50k|#endif
+  119|  5.50k|      }
 _ZNK5Botan9SIMD_4x643shrILi6EEES0_v:
-  127|  4.80k|      SIMD_4x64 BOTAN_FN_ISA_SIMD_4X64 shr() const noexcept {
-  128|  4.80k|         return SIMD_4x64(_mm256_srli_epi64(m_simd, SHIFT));
-  129|  4.80k|      }
+  127|  5.50k|      SIMD_4x64 BOTAN_FN_ISA_SIMD_4X64 shr() const noexcept {
+  128|  5.50k|         return SIMD_4x64(_mm256_srli_epi64(m_simd, SHIFT));
+  129|  5.50k|      }
 
 _ZN5Botan12BufferSlicerC2ENSt3__14spanIKhLm18446744073709551615EEE:
    87|  7.40k|      BufferSlicer(std::span<const uint8_t> buffer) : m_remaining(buffer) {}
@@ -2519,15 +2519,15 @@ _ZN5Botan12HashFunction15create_or_throwENSt3__117basic_string_viewIcNS1_11char_
   303|    100|}
 
 _ZN5Botan7SHA_51215compress_digestERNSt3__16vectorImNS_16secure_allocatorImEEEENS1_4spanIKhLm18446744073709551615EEEm:
-   58|  6.13k|void SHA_512::compress_digest(digest_type& digest, std::span<const uint8_t> input, size_t blocks) {
-   59|  6.13k|#if defined(BOTAN_HAS_SHA2_64_X86)
-   60|  6.13k|   if(CPUID::has(CPUID::Feature::SHA512)) {
+   58|  6.12k|void SHA_512::compress_digest(digest_type& digest, std::span<const uint8_t> input, size_t blocks) {
+   59|  6.12k|#if defined(BOTAN_HAS_SHA2_64_X86)
+   60|  6.12k|   if(CPUID::has(CPUID::Feature::SHA512)) {
   ------------------
-  |  Branch (60:7): [True: 0, False: 6.13k]
+  |  Branch (60:7): [True: 0, False: 6.12k]
   ------------------
    61|      0|      return compress_digest_x86(digest, input, blocks);
    62|      0|   }
-   63|  6.13k|#endif
+   63|  6.12k|#endif
    64|       |
    65|       |#if defined(BOTAN_HAS_SHA2_64_ARMV8)
    66|       |   if(CPUID::has(CPUID::Feature::SHA2_512)) {
@@ -2535,22 +2535,22 @@ _ZN5Botan7SHA_51215compress_digestERNSt3__16vectorImNS_16secure_allocatorImEEEEN
    68|       |   }
    69|       |#endif
    70|       |
-   71|  6.13k|#if defined(BOTAN_HAS_SHA2_64_X86_AVX512)
-   72|  6.13k|   if(CPUID::has(CPUID::Feature::AVX512, CPUID::Feature::BMI)) {
+   71|  6.12k|#if defined(BOTAN_HAS_SHA2_64_X86_AVX512)
+   72|  6.12k|   if(CPUID::has(CPUID::Feature::AVX512, CPUID::Feature::BMI)) {
   ------------------
-  |  Branch (72:7): [True: 0, False: 6.13k]
+  |  Branch (72:7): [True: 0, False: 6.12k]
   ------------------
    73|      0|      return compress_digest_x86_avx512(digest, input, blocks);
    74|      0|   }
-   75|  6.13k|#endif
+   75|  6.12k|#endif
    76|       |
-   77|  6.13k|#if defined(BOTAN_HAS_SHA2_64_X86_AVX2)
-   78|  6.13k|   if(CPUID::has(CPUID::Feature::AVX2, CPUID::Feature::BMI)) {
+   77|  6.12k|#if defined(BOTAN_HAS_SHA2_64_X86_AVX2)
+   78|  6.12k|   if(CPUID::has(CPUID::Feature::AVX2, CPUID::Feature::BMI)) {
   ------------------
-  |  Branch (78:7): [True: 6.13k, False: 0]
+  |  Branch (78:7): [True: 6.12k, False: 0]
   ------------------
-   79|  6.13k|      return compress_digest_x86_avx2(digest, input, blocks);
-   80|  6.13k|   }
+   79|  6.12k|      return compress_digest_x86_avx2(digest, input, blocks);
+   80|  6.12k|   }
    81|      0|#endif
    82|       |
    83|      0|   uint64_t A = digest[0], B = digest[1], C = digest[2], D = digest[3], E = digest[4], F = digest[5], G = digest[6],
@@ -2662,9 +2662,9 @@ _ZN5Botan7SHA_51215compress_digestERNSt3__16vectorImNS_16secure_allocatorImEEEEN
   186|      0|   }
   187|      0|}
 _ZN5Botan7SHA_51210compress_nERNSt3__16vectorImNS_16secure_allocatorImEEEENS1_4spanIKhLm18446744073709551615EEEm:
-  209|  6.13k|void SHA_512::compress_n(digest_type& digest, std::span<const uint8_t> input, size_t blocks) {
-  210|  6.13k|   SHA_512::compress_digest(digest, input, blocks);
-  211|  6.13k|}
+  209|  6.12k|void SHA_512::compress_n(digest_type& digest, std::span<const uint8_t> input, size_t blocks) {
+  210|  6.12k|   SHA_512::compress_digest(digest, input, blocks);
+  211|  6.12k|}
 _ZN5Botan7SHA_5124initERNSt3__16vectorImNS_16secure_allocatorImEEEE:
   235|  3.75k|void SHA_512::init(digest_type& digest) {
   236|  3.75k|   digest.assign({0x6A09E667F3BCC908,
@@ -2686,300 +2686,300 @@ _ZN5Botan7SHA_51212final_resultENSt3__14spanIhLm18446744073709551615EEE:
   288|  2.85k|}
 
 _ZN5Botan7SHA_51224compress_digest_x86_avx2ERNSt3__16vectorImNS_16secure_allocatorImEEEENS1_4spanIKhLm18446744073709551615EEEm:
-   46|  6.13k|                                                              size_t blocks) {
+   46|  6.12k|                                                              size_t blocks) {
    47|       |   // clang-format off
-   48|  6.13k|   alignas(64) const uint64_t K[80] = {
-   49|  6.13k|      0x428A2F98D728AE22, 0x7137449123EF65CD, 0xB5C0FBCFEC4D3B2F, 0xE9B5DBA58189DBBC,
-   50|  6.13k|      0x3956C25BF348B538, 0x59F111F1B605D019, 0x923F82A4AF194F9B, 0xAB1C5ED5DA6D8118,
-   51|  6.13k|      0xD807AA98A3030242, 0x12835B0145706FBE, 0x243185BE4EE4B28C, 0x550C7DC3D5FFB4E2,
-   52|  6.13k|      0x72BE5D74F27B896F, 0x80DEB1FE3B1696B1, 0x9BDC06A725C71235, 0xC19BF174CF692694,
-   53|  6.13k|      0xE49B69C19EF14AD2, 0xEFBE4786384F25E3, 0x0FC19DC68B8CD5B5, 0x240CA1CC77AC9C65,
-   54|  6.13k|      0x2DE92C6F592B0275, 0x4A7484AA6EA6E483, 0x5CB0A9DCBD41FBD4, 0x76F988DA831153B5,
-   55|  6.13k|      0x983E5152EE66DFAB, 0xA831C66D2DB43210, 0xB00327C898FB213F, 0xBF597FC7BEEF0EE4,
-   56|  6.13k|      0xC6E00BF33DA88FC2, 0xD5A79147930AA725, 0x06CA6351E003826F, 0x142929670A0E6E70,
-   57|  6.13k|      0x27B70A8546D22FFC, 0x2E1B21385C26C926, 0x4D2C6DFC5AC42AED, 0x53380D139D95B3DF,
-   58|  6.13k|      0x650A73548BAF63DE, 0x766A0ABB3C77B2A8, 0x81C2C92E47EDAEE6, 0x92722C851482353B,
-   59|  6.13k|      0xA2BFE8A14CF10364, 0xA81A664BBC423001, 0xC24B8B70D0F89791, 0xC76C51A30654BE30,
-   60|  6.13k|      0xD192E819D6EF5218, 0xD69906245565A910, 0xF40E35855771202A, 0x106AA07032BBD1B8,
-   61|  6.13k|      0x19A4C116B8D2D0C8, 0x1E376C085141AB53, 0x2748774CDF8EEB99, 0x34B0BCB5E19B48A8,
-   62|  6.13k|      0x391C0CB3C5C95A63, 0x4ED8AA4AE3418ACB, 0x5B9CCA4F7763E373, 0x682E6FF3D6B2B8A3,
-   63|  6.13k|      0x748F82EE5DEFB2FC, 0x78A5636F43172F60, 0x84C87814A1F0AB72, 0x8CC702081A6439EC,
-   64|  6.13k|      0x90BEFFFA23631E28, 0xA4506CEBDE82BDE9, 0xBEF9A3F7B2C67915, 0xC67178F2E372532B,
-   65|  6.13k|      0xCA273ECEEA26619C, 0xD186B8C721C0C207, 0xEADA7DD6CDE0EB1E, 0xF57D4F7FEE6ED178,
-   66|  6.13k|      0x06F067AA72176FBA, 0x0A637DC5A2C898A6, 0x113F9804BEF90DAE, 0x1B710B35131C471B,
-   67|  6.13k|      0x28DB77F523047D84, 0x32CAAB7B40C72493, 0x3C9EBE0A15C9BEBC, 0x431D67C49C100D4C,
-   68|  6.13k|      0x4CC5D4BECB3E42B6, 0x597F299CFC657E2A, 0x5FCB6FAB3AD6FAEC, 0x6C44198C4A475817,
-   69|  6.13k|   };
+   48|  6.12k|   alignas(64) const uint64_t K[80] = {
+   49|  6.12k|      0x428A2F98D728AE22, 0x7137449123EF65CD, 0xB5C0FBCFEC4D3B2F, 0xE9B5DBA58189DBBC,
+   50|  6.12k|      0x3956C25BF348B538, 0x59F111F1B605D019, 0x923F82A4AF194F9B, 0xAB1C5ED5DA6D8118,
+   51|  6.12k|      0xD807AA98A3030242, 0x12835B0145706FBE, 0x243185BE4EE4B28C, 0x550C7DC3D5FFB4E2,
+   52|  6.12k|      0x72BE5D74F27B896F, 0x80DEB1FE3B1696B1, 0x9BDC06A725C71235, 0xC19BF174CF692694,
+   53|  6.12k|      0xE49B69C19EF14AD2, 0xEFBE4786384F25E3, 0x0FC19DC68B8CD5B5, 0x240CA1CC77AC9C65,
+   54|  6.12k|      0x2DE92C6F592B0275, 0x4A7484AA6EA6E483, 0x5CB0A9DCBD41FBD4, 0x76F988DA831153B5,
+   55|  6.12k|      0x983E5152EE66DFAB, 0xA831C66D2DB43210, 0xB00327C898FB213F, 0xBF597FC7BEEF0EE4,
+   56|  6.12k|      0xC6E00BF33DA88FC2, 0xD5A79147930AA725, 0x06CA6351E003826F, 0x142929670A0E6E70,
+   57|  6.12k|      0x27B70A8546D22FFC, 0x2E1B21385C26C926, 0x4D2C6DFC5AC42AED, 0x53380D139D95B3DF,
+   58|  6.12k|      0x650A73548BAF63DE, 0x766A0ABB3C77B2A8, 0x81C2C92E47EDAEE6, 0x92722C851482353B,
+   59|  6.12k|      0xA2BFE8A14CF10364, 0xA81A664BBC423001, 0xC24B8B70D0F89791, 0xC76C51A30654BE30,
+   60|  6.12k|      0xD192E819D6EF5218, 0xD69906245565A910, 0xF40E35855771202A, 0x106AA07032BBD1B8,
+   61|  6.12k|      0x19A4C116B8D2D0C8, 0x1E376C085141AB53, 0x2748774CDF8EEB99, 0x34B0BCB5E19B48A8,
+   62|  6.12k|      0x391C0CB3C5C95A63, 0x4ED8AA4AE3418ACB, 0x5B9CCA4F7763E373, 0x682E6FF3D6B2B8A3,
+   63|  6.12k|      0x748F82EE5DEFB2FC, 0x78A5636F43172F60, 0x84C87814A1F0AB72, 0x8CC702081A6439EC,
+   64|  6.12k|      0x90BEFFFA23631E28, 0xA4506CEBDE82BDE9, 0xBEF9A3F7B2C67915, 0xC67178F2E372532B,
+   65|  6.12k|      0xCA273ECEEA26619C, 0xD186B8C721C0C207, 0xEADA7DD6CDE0EB1E, 0xF57D4F7FEE6ED178,
+   66|  6.12k|      0x06F067AA72176FBA, 0x0A637DC5A2C898A6, 0x113F9804BEF90DAE, 0x1B710B35131C471B,
+   67|  6.12k|      0x28DB77F523047D84, 0x32CAAB7B40C72493, 0x3C9EBE0A15C9BEBC, 0x431D67C49C100D4C,
+   68|  6.12k|      0x4CC5D4BECB3E42B6, 0x597F299CFC657E2A, 0x5FCB6FAB3AD6FAEC, 0x6C44198C4A475817,
+   69|  6.12k|   };
    70|       |
    71|       |   // K2 is each pair of elements in K repeated since we are performing 2 parallel
    72|       |   // message expansions
-   73|  6.13k|   alignas(64) const uint64_t K2[2 * 80] = {
-   74|  6.13k|      0x428A2F98D728AE22, 0x7137449123EF65CD, 0x428A2F98D728AE22, 0x7137449123EF65CD,
-   75|  6.13k|      0xB5C0FBCFEC4D3B2F, 0xE9B5DBA58189DBBC, 0xB5C0FBCFEC4D3B2F, 0xE9B5DBA58189DBBC,
-   76|  6.13k|      0x3956C25BF348B538, 0x59F111F1B605D019, 0x3956C25BF348B538, 0x59F111F1B605D019,
-   77|  6.13k|      0x923F82A4AF194F9B, 0xAB1C5ED5DA6D8118, 0x923F82A4AF194F9B, 0xAB1C5ED5DA6D8118,
-   78|  6.13k|      0xD807AA98A3030242, 0x12835B0145706FBE, 0xD807AA98A3030242, 0x12835B0145706FBE,
-   79|  6.13k|      0x243185BE4EE4B28C, 0x550C7DC3D5FFB4E2, 0x243185BE4EE4B28C, 0x550C7DC3D5FFB4E2,
-   80|  6.13k|      0x72BE5D74F27B896F, 0x80DEB1FE3B1696B1, 0x72BE5D74F27B896F, 0x80DEB1FE3B1696B1,
-   81|  6.13k|      0x9BDC06A725C71235, 0xC19BF174CF692694, 0x9BDC06A725C71235, 0xC19BF174CF692694,
-   82|  6.13k|      0xE49B69C19EF14AD2, 0xEFBE4786384F25E3, 0xE49B69C19EF14AD2, 0xEFBE4786384F25E3,
-   83|  6.13k|      0x0FC19DC68B8CD5B5, 0x240CA1CC77AC9C65, 0x0FC19DC68B8CD5B5, 0x240CA1CC77AC9C65,
-   84|  6.13k|      0x2DE92C6F592B0275, 0x4A7484AA6EA6E483, 0x2DE92C6F592B0275, 0x4A7484AA6EA6E483,
-   85|  6.13k|      0x5CB0A9DCBD41FBD4, 0x76F988DA831153B5, 0x5CB0A9DCBD41FBD4, 0x76F988DA831153B5,
-   86|  6.13k|      0x983E5152EE66DFAB, 0xA831C66D2DB43210, 0x983E5152EE66DFAB, 0xA831C66D2DB43210,
-   87|  6.13k|      0xB00327C898FB213F, 0xBF597FC7BEEF0EE4, 0xB00327C898FB213F, 0xBF597FC7BEEF0EE4,
-   88|  6.13k|      0xC6E00BF33DA88FC2, 0xD5A79147930AA725, 0xC6E00BF33DA88FC2, 0xD5A79147930AA725,
-   89|  6.13k|      0x06CA6351E003826F, 0x142929670A0E6E70, 0x06CA6351E003826F, 0x142929670A0E6E70,
-   90|  6.13k|      0x27B70A8546D22FFC, 0x2E1B21385C26C926, 0x27B70A8546D22FFC, 0x2E1B21385C26C926,
-   91|  6.13k|      0x4D2C6DFC5AC42AED, 0x53380D139D95B3DF, 0x4D2C6DFC5AC42AED, 0x53380D139D95B3DF,
-   92|  6.13k|      0x650A73548BAF63DE, 0x766A0ABB3C77B2A8, 0x650A73548BAF63DE, 0x766A0ABB3C77B2A8,
-   93|  6.13k|      0x81C2C92E47EDAEE6, 0x92722C851482353B, 0x81C2C92E47EDAEE6, 0x92722C851482353B,
-   94|  6.13k|      0xA2BFE8A14CF10364, 0xA81A664BBC423001, 0xA2BFE8A14CF10364, 0xA81A664BBC423001,
-   95|  6.13k|      0xC24B8B70D0F89791, 0xC76C51A30654BE30, 0xC24B8B70D0F89791, 0xC76C51A30654BE30,
-   96|  6.13k|      0xD192E819D6EF5218, 0xD69906245565A910, 0xD192E819D6EF5218, 0xD69906245565A910,
-   97|  6.13k|      0xF40E35855771202A, 0x106AA07032BBD1B8, 0xF40E35855771202A, 0x106AA07032BBD1B8,
-   98|  6.13k|      0x19A4C116B8D2D0C8, 0x1E376C085141AB53, 0x19A4C116B8D2D0C8, 0x1E376C085141AB53,
-   99|  6.13k|      0x2748774CDF8EEB99, 0x34B0BCB5E19B48A8, 0x2748774CDF8EEB99, 0x34B0BCB5E19B48A8,
-  100|  6.13k|      0x391C0CB3C5C95A63, 0x4ED8AA4AE3418ACB, 0x391C0CB3C5C95A63, 0x4ED8AA4AE3418ACB,
-  101|  6.13k|      0x5B9CCA4F7763E373, 0x682E6FF3D6B2B8A3, 0x5B9CCA4F7763E373, 0x682E6FF3D6B2B8A3,
-  102|  6.13k|      0x748F82EE5DEFB2FC, 0x78A5636F43172F60, 0x748F82EE5DEFB2FC, 0x78A5636F43172F60,
-  103|  6.13k|      0x84C87814A1F0AB72, 0x8CC702081A6439EC, 0x84C87814A1F0AB72, 0x8CC702081A6439EC,
-  104|  6.13k|      0x90BEFFFA23631E28, 0xA4506CEBDE82BDE9, 0x90BEFFFA23631E28, 0xA4506CEBDE82BDE9,
-  105|  6.13k|      0xBEF9A3F7B2C67915, 0xC67178F2E372532B, 0xBEF9A3F7B2C67915, 0xC67178F2E372532B,
-  106|  6.13k|      0xCA273ECEEA26619C, 0xD186B8C721C0C207, 0xCA273ECEEA26619C, 0xD186B8C721C0C207,
-  107|  6.13k|      0xEADA7DD6CDE0EB1E, 0xF57D4F7FEE6ED178, 0xEADA7DD6CDE0EB1E, 0xF57D4F7FEE6ED178,
-  108|  6.13k|      0x06F067AA72176FBA, 0x0A637DC5A2C898A6, 0x06F067AA72176FBA, 0x0A637DC5A2C898A6,
-  109|  6.13k|      0x113F9804BEF90DAE, 0x1B710B35131C471B, 0x113F9804BEF90DAE, 0x1B710B35131C471B,
-  110|  6.13k|      0x28DB77F523047D84, 0x32CAAB7B40C72493, 0x28DB77F523047D84, 0x32CAAB7B40C72493,
-  111|  6.13k|      0x3C9EBE0A15C9BEBC, 0x431D67C49C100D4C, 0x3C9EBE0A15C9BEBC, 0x431D67C49C100D4C,
-  112|  6.13k|      0x4CC5D4BECB3E42B6, 0x597F299CFC657E2A, 0x4CC5D4BECB3E42B6, 0x597F299CFC657E2A,
-  113|  6.13k|      0x5FCB6FAB3AD6FAEC, 0x6C44198C4A475817, 0x5FCB6FAB3AD6FAEC, 0x6C44198C4A475817,
-  114|  6.13k|   };
+   73|  6.12k|   alignas(64) const uint64_t K2[2 * 80] = {
+   74|  6.12k|      0x428A2F98D728AE22, 0x7137449123EF65CD, 0x428A2F98D728AE22, 0x7137449123EF65CD,
+   75|  6.12k|      0xB5C0FBCFEC4D3B2F, 0xE9B5DBA58189DBBC, 0xB5C0FBCFEC4D3B2F, 0xE9B5DBA58189DBBC,
+   76|  6.12k|      0x3956C25BF348B538, 0x59F111F1B605D019, 0x3956C25BF348B538, 0x59F111F1B605D019,
+   77|  6.12k|      0x923F82A4AF194F9B, 0xAB1C5ED5DA6D8118, 0x923F82A4AF194F9B, 0xAB1C5ED5DA6D8118,
+   78|  6.12k|      0xD807AA98A3030242, 0x12835B0145706FBE, 0xD807AA98A3030242, 0x12835B0145706FBE,
+   79|  6.12k|      0x243185BE4EE4B28C, 0x550C7DC3D5FFB4E2, 0x243185BE4EE4B28C, 0x550C7DC3D5FFB4E2,
+   80|  6.12k|      0x72BE5D74F27B896F, 0x80DEB1FE3B1696B1, 0x72BE5D74F27B896F, 0x80DEB1FE3B1696B1,
+   81|  6.12k|      0x9BDC06A725C71235, 0xC19BF174CF692694, 0x9BDC06A725C71235, 0xC19BF174CF692694,
+   82|  6.12k|      0xE49B69C19EF14AD2, 0xEFBE4786384F25E3, 0xE49B69C19EF14AD2, 0xEFBE4786384F25E3,
+   83|  6.12k|      0x0FC19DC68B8CD5B5, 0x240CA1CC77AC9C65, 0x0FC19DC68B8CD5B5, 0x240CA1CC77AC9C65,
+   84|  6.12k|      0x2DE92C6F592B0275, 0x4A7484AA6EA6E483, 0x2DE92C6F592B0275, 0x4A7484AA6EA6E483,
+   85|  6.12k|      0x5CB0A9DCBD41FBD4, 0x76F988DA831153B5, 0x5CB0A9DCBD41FBD4, 0x76F988DA831153B5,
+   86|  6.12k|      0x983E5152EE66DFAB, 0xA831C66D2DB43210, 0x983E5152EE66DFAB, 0xA831C66D2DB43210,
+   87|  6.12k|      0xB00327C898FB213F, 0xBF597FC7BEEF0EE4, 0xB00327C898FB213F, 0xBF597FC7BEEF0EE4,
+   88|  6.12k|      0xC6E00BF33DA88FC2, 0xD5A79147930AA725, 0xC6E00BF33DA88FC2, 0xD5A79147930AA725,
+   89|  6.12k|      0x06CA6351E003826F, 0x142929670A0E6E70, 0x06CA6351E003826F, 0x142929670A0E6E70,
+   90|  6.12k|      0x27B70A8546D22FFC, 0x2E1B21385C26C926, 0x27B70A8546D22FFC, 0x2E1B21385C26C926,
+   91|  6.12k|      0x4D2C6DFC5AC42AED, 0x53380D139D95B3DF, 0x4D2C6DFC5AC42AED, 0x53380D139D95B3DF,
+   92|  6.12k|      0x650A73548BAF63DE, 0x766A0ABB3C77B2A8, 0x650A73548BAF63DE, 0x766A0ABB3C77B2A8,
+   93|  6.12k|      0x81C2C92E47EDAEE6, 0x92722C851482353B, 0x81C2C92E47EDAEE6, 0x92722C851482353B,
+   94|  6.12k|      0xA2BFE8A14CF10364, 0xA81A664BBC423001, 0xA2BFE8A14CF10364, 0xA81A664BBC423001,
+   95|  6.12k|      0xC24B8B70D0F89791, 0xC76C51A30654BE30, 0xC24B8B70D0F89791, 0xC76C51A30654BE30,
+   96|  6.12k|      0xD192E819D6EF5218, 0xD69906245565A910, 0xD192E819D6EF5218, 0xD69906245565A910,
+   97|  6.12k|      0xF40E35855771202A, 0x106AA07032BBD1B8, 0xF40E35855771202A, 0x106AA07032BBD1B8,
+   98|  6.12k|      0x19A4C116B8D2D0C8, 0x1E376C085141AB53, 0x19A4C116B8D2D0C8, 0x1E376C085141AB53,
+   99|  6.12k|      0x2748774CDF8EEB99, 0x34B0BCB5E19B48A8, 0x2748774CDF8EEB99, 0x34B0BCB5E19B48A8,
+  100|  6.12k|      0x391C0CB3C5C95A63, 0x4ED8AA4AE3418ACB, 0x391C0CB3C5C95A63, 0x4ED8AA4AE3418ACB,
+  101|  6.12k|      0x5B9CCA4F7763E373, 0x682E6FF3D6B2B8A3, 0x5B9CCA4F7763E373, 0x682E6FF3D6B2B8A3,
+  102|  6.12k|      0x748F82EE5DEFB2FC, 0x78A5636F43172F60, 0x748F82EE5DEFB2FC, 0x78A5636F43172F60,
+  103|  6.12k|      0x84C87814A1F0AB72, 0x8CC702081A6439EC, 0x84C87814A1F0AB72, 0x8CC702081A6439EC,
+  104|  6.12k|      0x90BEFFFA23631E28, 0xA4506CEBDE82BDE9, 0x90BEFFFA23631E28, 0xA4506CEBDE82BDE9,
+  105|  6.12k|      0xBEF9A3F7B2C67915, 0xC67178F2E372532B, 0xBEF9A3F7B2C67915, 0xC67178F2E372532B,
+  106|  6.12k|      0xCA273ECEEA26619C, 0xD186B8C721C0C207, 0xCA273ECEEA26619C, 0xD186B8C721C0C207,
+  107|  6.12k|      0xEADA7DD6CDE0EB1E, 0xF57D4F7FEE6ED178, 0xEADA7DD6CDE0EB1E, 0xF57D4F7FEE6ED178,
+  108|  6.12k|      0x06F067AA72176FBA, 0x0A637DC5A2C898A6, 0x06F067AA72176FBA, 0x0A637DC5A2C898A6,
+  109|  6.12k|      0x113F9804BEF90DAE, 0x1B710B35131C471B, 0x113F9804BEF90DAE, 0x1B710B35131C471B,
+  110|  6.12k|      0x28DB77F523047D84, 0x32CAAB7B40C72493, 0x28DB77F523047D84, 0x32CAAB7B40C72493,
+  111|  6.12k|      0x3C9EBE0A15C9BEBC, 0x431D67C49C100D4C, 0x3C9EBE0A15C9BEBC, 0x431D67C49C100D4C,
+  112|  6.12k|      0x4CC5D4BECB3E42B6, 0x597F299CFC657E2A, 0x4CC5D4BECB3E42B6, 0x597F299CFC657E2A,
+  113|  6.12k|      0x5FCB6FAB3AD6FAEC, 0x6C44198C4A475817, 0x5FCB6FAB3AD6FAEC, 0x6C44198C4A475817,
+  114|  6.12k|   };
   115|       |   // clang-format on
   116|       |
-  117|  6.13k|   alignas(64) uint64_t W[16] = {0};
-  118|  6.13k|   alignas(64) uint64_t W2[80];
+  117|  6.12k|   alignas(64) uint64_t W[16] = {0};
+  118|  6.12k|   alignas(64) uint64_t W2[80];
   119|       |
-  120|  6.13k|   uint64_t A = digest[0];
-  121|  6.13k|   uint64_t B = digest[1];
-  122|  6.13k|   uint64_t C = digest[2];
-  123|  6.13k|   uint64_t D = digest[3];
-  124|  6.13k|   uint64_t E = digest[4];
-  125|  6.13k|   uint64_t F = digest[5];
-  126|  6.13k|   uint64_t G = digest[6];
-  127|  6.13k|   uint64_t H = digest[7];
+  120|  6.12k|   uint64_t A = digest[0];
+  121|  6.12k|   uint64_t B = digest[1];
+  122|  6.12k|   uint64_t C = digest[2];
+  123|  6.12k|   uint64_t D = digest[3];
+  124|  6.12k|   uint64_t E = digest[4];
+  125|  6.12k|   uint64_t F = digest[5];
+  126|  6.12k|   uint64_t G = digest[6];
+  127|  6.12k|   uint64_t H = digest[7];
   128|       |
-  129|  6.13k|   const uint8_t* data = input.data();
+  129|  6.12k|   const uint8_t* data = input.data();
   130|       |
-  131|  6.28k|   while(blocks >= 2) {
+  131|  6.30k|   while(blocks >= 2) {
   ------------------
-  |  Branch (131:10): [True: 150, False: 6.13k]
+  |  Branch (131:10): [True: 172, False: 6.12k]
   ------------------
-  132|    150|      SIMD_4x64 WS[8];
+  132|    172|      SIMD_4x64 WS[8];
   133|       |
-  134|  1.35k|      for(size_t i = 0; i < 8; i++) {
+  134|  1.54k|      for(size_t i = 0; i < 8; i++) {
   ------------------
-  |  Branch (134:25): [True: 1.20k, False: 150]
+  |  Branch (134:25): [True: 1.37k, False: 172]
   ------------------
-  135|  1.20k|         WS[i] = SIMD_4x64::load_be2(&data[16 * i], &data[128 + 16 * i]);
-  136|  1.20k|         auto WK = WS[i] + SIMD_4x64::load_le(&K2[4 * i]);
-  137|  1.20k|         WK.store_le2(&W[2 * i], &W2[2 * i]);
-  138|  1.20k|      }
+  135|  1.37k|         WS[i] = SIMD_4x64::load_be2(&data[16 * i], &data[128 + 16 * i]);
+  136|  1.37k|         auto WK = WS[i] + SIMD_4x64::load_le(&K2[4 * i]);
+  137|  1.37k|         WK.store_le2(&W[2 * i], &W2[2 * i]);
+  138|  1.37k|      }
   139|       |
-  140|    150|      data += 2 * 128;
-  141|    150|      blocks -= 2;
+  140|    172|      data += 2 * 128;
+  141|    172|      blocks -= 2;
   142|       |
   143|       |      // First 64 rounds of SHA-512
-  144|    750|      for(size_t r = 0; r != 64; r += 16) {
+  144|    860|      for(size_t r = 0; r != 64; r += 16) {
   ------------------
-  |  Branch (144:25): [True: 600, False: 150]
+  |  Branch (144:25): [True: 688, False: 172]
   ------------------
-  145|    600|         auto w = sha512_next_w(WS) + SIMD_4x64::load_le(&K2[2 * (r + 16)]);
-  146|    600|         SHA2_64_F(A, B, C, D, E, F, G, H, W[0]);
-  147|    600|         SHA2_64_F(H, A, B, C, D, E, F, G, W[1]);
-  148|    600|         w.store_le2(&W[0], &W2[r + 16]);
+  145|    688|         auto w = sha512_next_w(WS) + SIMD_4x64::load_le(&K2[2 * (r + 16)]);
+  146|    688|         SHA2_64_F(A, B, C, D, E, F, G, H, W[0]);
+  147|    688|         SHA2_64_F(H, A, B, C, D, E, F, G, W[1]);
+  148|    688|         w.store_le2(&W[0], &W2[r + 16]);
   149|       |
-  150|    600|         w = sha512_next_w(WS) + SIMD_4x64::load_le(&K2[2 * (r + 18)]);
-  151|    600|         SHA2_64_F(G, H, A, B, C, D, E, F, W[2]);
-  152|    600|         SHA2_64_F(F, G, H, A, B, C, D, E, W[3]);
-  153|    600|         w.store_le2(&W[2], &W2[r + 18]);
+  150|    688|         w = sha512_next_w(WS) + SIMD_4x64::load_le(&K2[2 * (r + 18)]);
+  151|    688|         SHA2_64_F(G, H, A, B, C, D, E, F, W[2]);
+  152|    688|         SHA2_64_F(F, G, H, A, B, C, D, E, W[3]);
+  153|    688|         w.store_le2(&W[2], &W2[r + 18]);
   154|       |
-  155|    600|         w = sha512_next_w(WS) + SIMD_4x64::load_le(&K2[2 * (r + 20)]);
-  156|    600|         SHA2_64_F(E, F, G, H, A, B, C, D, W[4]);
-  157|    600|         SHA2_64_F(D, E, F, G, H, A, B, C, W[5]);
-  158|    600|         w.store_le2(&W[4], &W2[r + 20]);
+  155|    688|         w = sha512_next_w(WS) + SIMD_4x64::load_le(&K2[2 * (r + 20)]);
+  156|    688|         SHA2_64_F(E, F, G, H, A, B, C, D, W[4]);
+  157|    688|         SHA2_64_F(D, E, F, G, H, A, B, C, W[5]);
+  158|    688|         w.store_le2(&W[4], &W2[r + 20]);
   159|       |
-  160|    600|         w = sha512_next_w(WS) + SIMD_4x64::load_le(&K2[2 * (r + 22)]);
-  161|    600|         SHA2_64_F(C, D, E, F, G, H, A, B, W[6]);
-  162|    600|         SHA2_64_F(B, C, D, E, F, G, H, A, W[7]);
-  163|    600|         w.store_le2(&W[6], &W2[r + 22]);
+  160|    688|         w = sha512_next_w(WS) + SIMD_4x64::load_le(&K2[2 * (r + 22)]);
+  161|    688|         SHA2_64_F(C, D, E, F, G, H, A, B, W[6]);
+  162|    688|         SHA2_64_F(B, C, D, E, F, G, H, A, W[7]);
+  163|    688|         w.store_le2(&W[6], &W2[r + 22]);
   164|       |
-  165|    600|         w = sha512_next_w(WS) + SIMD_4x64::load_le(&K2[2 * (r + 24)]);
-  166|    600|         SHA2_64_F(A, B, C, D, E, F, G, H, W[8]);
-  167|    600|         SHA2_64_F(H, A, B, C, D, E, F, G, W[9]);
-  168|    600|         w.store_le2(&W[8], &W2[r + 24]);
+  165|    688|         w = sha512_next_w(WS) + SIMD_4x64::load_le(&K2[2 * (r + 24)]);
+  166|    688|         SHA2_64_F(A, B, C, D, E, F, G, H, W[8]);
+  167|    688|         SHA2_64_F(H, A, B, C, D, E, F, G, W[9]);
+  168|    688|         w.store_le2(&W[8], &W2[r + 24]);
   169|       |
-  170|    600|         w = sha512_next_w(WS) + SIMD_4x64::load_le(&K2[2 * (r + 26)]);
-  171|    600|         SHA2_64_F(G, H, A, B, C, D, E, F, W[10]);
-  172|    600|         SHA2_64_F(F, G, H, A, B, C, D, E, W[11]);
-  173|    600|         w.store_le2(&W[10], &W2[r + 26]);
+  170|    688|         w = sha512_next_w(WS) + SIMD_4x64::load_le(&K2[2 * (r + 26)]);
+  171|    688|         SHA2_64_F(G, H, A, B, C, D, E, F, W[10]);
+  172|    688|         SHA2_64_F(F, G, H, A, B, C, D, E, W[11]);
+  173|    688|         w.store_le2(&W[10], &W2[r + 26]);
   174|       |
-  175|    600|         w = sha512_next_w(WS) + SIMD_4x64::load_le(&K2[2 * (r + 28)]);
-  176|    600|         SHA2_64_F(E, F, G, H, A, B, C, D, W[12]);
-  177|    600|         SHA2_64_F(D, E, F, G, H, A, B, C, W[13]);
-  178|    600|         w.store_le2(&W[12], &W2[r + 28]);
+  175|    688|         w = sha512_next_w(WS) + SIMD_4x64::load_le(&K2[2 * (r + 28)]);
+  176|    688|         SHA2_64_F(E, F, G, H, A, B, C, D, W[12]);
+  177|    688|         SHA2_64_F(D, E, F, G, H, A, B, C, W[13]);
+  178|    688|         w.store_le2(&W[12], &W2[r + 28]);
   179|       |
-  180|    600|         w = sha512_next_w(WS) + SIMD_4x64::load_le(&K2[2 * (r + 30)]);
-  181|    600|         SHA2_64_F(C, D, E, F, G, H, A, B, W[14]);
-  182|    600|         SHA2_64_F(B, C, D, E, F, G, H, A, W[15]);
-  183|    600|         w.store_le2(&W[14], &W2[r + 30]);
-  184|    600|      }
+  180|    688|         w = sha512_next_w(WS) + SIMD_4x64::load_le(&K2[2 * (r + 30)]);
+  181|    688|         SHA2_64_F(C, D, E, F, G, H, A, B, W[14]);
+  182|    688|         SHA2_64_F(B, C, D, E, F, G, H, A, W[15]);
+  183|    688|         w.store_le2(&W[14], &W2[r + 30]);
+  184|    688|      }
   185|       |
   186|       |      // Final 16 rounds of SHA-512
-  187|    150|      SHA2_64_F(A, B, C, D, E, F, G, H, W[0]);
-  188|    150|      SHA2_64_F(H, A, B, C, D, E, F, G, W[1]);
-  189|    150|      SHA2_64_F(G, H, A, B, C, D, E, F, W[2]);
-  190|    150|      SHA2_64_F(F, G, H, A, B, C, D, E, W[3]);
-  191|    150|      SHA2_64_F(E, F, G, H, A, B, C, D, W[4]);
-  192|    150|      SHA2_64_F(D, E, F, G, H, A, B, C, W[5]);
-  193|    150|      SHA2_64_F(C, D, E, F, G, H, A, B, W[6]);
-  194|    150|      SHA2_64_F(B, C, D, E, F, G, H, A, W[7]);
-  195|    150|      SHA2_64_F(A, B, C, D, E, F, G, H, W[8]);
-  196|    150|      SHA2_64_F(H, A, B, C, D, E, F, G, W[9]);
-  197|    150|      SHA2_64_F(G, H, A, B, C, D, E, F, W[10]);
-  198|    150|      SHA2_64_F(F, G, H, A, B, C, D, E, W[11]);
-  199|    150|      SHA2_64_F(E, F, G, H, A, B, C, D, W[12]);
-  200|    150|      SHA2_64_F(D, E, F, G, H, A, B, C, W[13]);
-  201|    150|      SHA2_64_F(C, D, E, F, G, H, A, B, W[14]);
-  202|    150|      SHA2_64_F(B, C, D, E, F, G, H, A, W[15]);
+  187|    172|      SHA2_64_F(A, B, C, D, E, F, G, H, W[0]);
+  188|    172|      SHA2_64_F(H, A, B, C, D, E, F, G, W[1]);
+  189|    172|      SHA2_64_F(G, H, A, B, C, D, E, F, W[2]);
+  190|    172|      SHA2_64_F(F, G, H, A, B, C, D, E, W[3]);
+  191|    172|      SHA2_64_F(E, F, G, H, A, B, C, D, W[4]);
+  192|    172|      SHA2_64_F(D, E, F, G, H, A, B, C, W[5]);
+  193|    172|      SHA2_64_F(C, D, E, F, G, H, A, B, W[6]);
+  194|    172|      SHA2_64_F(B, C, D, E, F, G, H, A, W[7]);
+  195|    172|      SHA2_64_F(A, B, C, D, E, F, G, H, W[8]);
+  196|    172|      SHA2_64_F(H, A, B, C, D, E, F, G, W[9]);
+  197|    172|      SHA2_64_F(G, H, A, B, C, D, E, F, W[10]);
+  198|    172|      SHA2_64_F(F, G, H, A, B, C, D, E, W[11]);
+  199|    172|      SHA2_64_F(E, F, G, H, A, B, C, D, W[12]);
+  200|    172|      SHA2_64_F(D, E, F, G, H, A, B, C, W[13]);
+  201|    172|      SHA2_64_F(C, D, E, F, G, H, A, B, W[14]);
+  202|    172|      SHA2_64_F(B, C, D, E, F, G, H, A, W[15]);
   203|       |
-  204|    150|      A = (digest[0] += A);
-  205|    150|      B = (digest[1] += B);
-  206|    150|      C = (digest[2] += C);
-  207|    150|      D = (digest[3] += D);
-  208|    150|      E = (digest[4] += E);
-  209|    150|      F = (digest[5] += F);
-  210|    150|      G = (digest[6] += G);
-  211|    150|      H = (digest[7] += H);
+  204|    172|      A = (digest[0] += A);
+  205|    172|      B = (digest[1] += B);
+  206|    172|      C = (digest[2] += C);
+  207|    172|      D = (digest[3] += D);
+  208|    172|      E = (digest[4] += E);
+  209|    172|      F = (digest[5] += F);
+  210|    172|      G = (digest[6] += G);
+  211|    172|      H = (digest[7] += H);
   212|       |
   213|       |      // Second block of SHA-512 compression, with pre-expanded message
-  214|    150|      SHA2_64_F(A, B, C, D, E, F, G, H, W2[0]);
-  215|    150|      SHA2_64_F(H, A, B, C, D, E, F, G, W2[1]);
-  216|    150|      SHA2_64_F(G, H, A, B, C, D, E, F, W2[2]);
-  217|    150|      SHA2_64_F(F, G, H, A, B, C, D, E, W2[3]);
-  218|    150|      SHA2_64_F(E, F, G, H, A, B, C, D, W2[4]);
-  219|    150|      SHA2_64_F(D, E, F, G, H, A, B, C, W2[5]);
-  220|    150|      SHA2_64_F(C, D, E, F, G, H, A, B, W2[6]);
-  221|    150|      SHA2_64_F(B, C, D, E, F, G, H, A, W2[7]);
-  222|    150|      SHA2_64_F(A, B, C, D, E, F, G, H, W2[8]);
-  223|    150|      SHA2_64_F(H, A, B, C, D, E, F, G, W2[9]);
-  224|    150|      SHA2_64_F(G, H, A, B, C, D, E, F, W2[10]);
-  225|    150|      SHA2_64_F(F, G, H, A, B, C, D, E, W2[11]);
-  226|    150|      SHA2_64_F(E, F, G, H, A, B, C, D, W2[12]);
-  227|    150|      SHA2_64_F(D, E, F, G, H, A, B, C, W2[13]);
-  228|    150|      SHA2_64_F(C, D, E, F, G, H, A, B, W2[14]);
-  229|    150|      SHA2_64_F(B, C, D, E, F, G, H, A, W2[15]);
+  214|    172|      SHA2_64_F(A, B, C, D, E, F, G, H, W2[0]);
+  215|    172|      SHA2_64_F(H, A, B, C, D, E, F, G, W2[1]);
+  216|    172|      SHA2_64_F(G, H, A, B, C, D, E, F, W2[2]);
+  217|    172|      SHA2_64_F(F, G, H, A, B, C, D, E, W2[3]);
+  218|    172|      SHA2_64_F(E, F, G, H, A, B, C, D, W2[4]);
+  219|    172|      SHA2_64_F(D, E, F, G, H, A, B, C, W2[5]);
+  220|    172|      SHA2_64_F(C, D, E, F, G, H, A, B, W2[6]);
+  221|    172|      SHA2_64_F(B, C, D, E, F, G, H, A, W2[7]);
+  222|    172|      SHA2_64_F(A, B, C, D, E, F, G, H, W2[8]);
+  223|    172|      SHA2_64_F(H, A, B, C, D, E, F, G, W2[9]);
+  224|    172|      SHA2_64_F(G, H, A, B, C, D, E, F, W2[10]);
+  225|    172|      SHA2_64_F(F, G, H, A, B, C, D, E, W2[11]);
+  226|    172|      SHA2_64_F(E, F, G, H, A, B, C, D, W2[12]);
+  227|    172|      SHA2_64_F(D, E, F, G, H, A, B, C, W2[13]);
+  228|    172|      SHA2_64_F(C, D, E, F, G, H, A, B, W2[14]);
+  229|    172|      SHA2_64_F(B, C, D, E, F, G, H, A, W2[15]);
   230|       |
-  231|    150|      SHA2_64_F(A, B, C, D, E, F, G, H, W2[16]);
-  232|    150|      SHA2_64_F(H, A, B, C, D, E, F, G, W2[17]);
-  233|    150|      SHA2_64_F(G, H, A, B, C, D, E, F, W2[18]);
-  234|    150|      SHA2_64_F(F, G, H, A, B, C, D, E, W2[19]);
-  235|    150|      SHA2_64_F(E, F, G, H, A, B, C, D, W2[20]);
-  236|    150|      SHA2_64_F(D, E, F, G, H, A, B, C, W2[21]);
-  237|    150|      SHA2_64_F(C, D, E, F, G, H, A, B, W2[22]);
-  238|    150|      SHA2_64_F(B, C, D, E, F, G, H, A, W2[23]);
-  239|    150|      SHA2_64_F(A, B, C, D, E, F, G, H, W2[24]);
-  240|    150|      SHA2_64_F(H, A, B, C, D, E, F, G, W2[25]);
-  241|    150|      SHA2_64_F(G, H, A, B, C, D, E, F, W2[26]);
-  242|    150|      SHA2_64_F(F, G, H, A, B, C, D, E, W2[27]);
-  243|    150|      SHA2_64_F(E, F, G, H, A, B, C, D, W2[28]);
-  244|    150|      SHA2_64_F(D, E, F, G, H, A, B, C, W2[29]);
-  245|    150|      SHA2_64_F(C, D, E, F, G, H, A, B, W2[30]);
-  246|    150|      SHA2_64_F(B, C, D, E, F, G, H, A, W2[31]);
+  231|    172|      SHA2_64_F(A, B, C, D, E, F, G, H, W2[16]);
+  232|    172|      SHA2_64_F(H, A, B, C, D, E, F, G, W2[17]);
+  233|    172|      SHA2_64_F(G, H, A, B, C, D, E, F, W2[18]);
+  234|    172|      SHA2_64_F(F, G, H, A, B, C, D, E, W2[19]);
+  235|    172|      SHA2_64_F(E, F, G, H, A, B, C, D, W2[20]);
+  236|    172|      SHA2_64_F(D, E, F, G, H, A, B, C, W2[21]);
+  237|    172|      SHA2_64_F(C, D, E, F, G, H, A, B, W2[22]);
+  238|    172|      SHA2_64_F(B, C, D, E, F, G, H, A, W2[23]);
+  239|    172|      SHA2_64_F(A, B, C, D, E, F, G, H, W2[24]);
+  240|    172|      SHA2_64_F(H, A, B, C, D, E, F, G, W2[25]);
+  241|    172|      SHA2_64_F(G, H, A, B, C, D, E, F, W2[26]);
+  242|    172|      SHA2_64_F(F, G, H, A, B, C, D, E, W2[27]);
+  243|    172|      SHA2_64_F(E, F, G, H, A, B, C, D, W2[28]);
+  244|    172|      SHA2_64_F(D, E, F, G, H, A, B, C, W2[29]);
+  245|    172|      SHA2_64_F(C, D, E, F, G, H, A, B, W2[30]);
+  246|    172|      SHA2_64_F(B, C, D, E, F, G, H, A, W2[31]);
   247|       |
-  248|    150|      SHA2_64_F(A, B, C, D, E, F, G, H, W2[32]);
-  249|    150|      SHA2_64_F(H, A, B, C, D, E, F, G, W2[33]);
-  250|    150|      SHA2_64_F(G, H, A, B, C, D, E, F, W2[34]);
-  251|    150|      SHA2_64_F(F, G, H, A, B, C, D, E, W2[35]);
-  252|    150|      SHA2_64_F(E, F, G, H, A, B, C, D, W2[36]);
-  253|    150|      SHA2_64_F(D, E, F, G, H, A, B, C, W2[37]);
-  254|    150|      SHA2_64_F(C, D, E, F, G, H, A, B, W2[38]);
-  255|    150|      SHA2_64_F(B, C, D, E, F, G, H, A, W2[39]);
-  256|    150|      SHA2_64_F(A, B, C, D, E, F, G, H, W2[40]);
-  257|    150|      SHA2_64_F(H, A, B, C, D, E, F, G, W2[41]);
-  258|    150|      SHA2_64_F(G, H, A, B, C, D, E, F, W2[42]);
-  259|    150|      SHA2_64_F(F, G, H, A, B, C, D, E, W2[43]);
-  260|    150|      SHA2_64_F(E, F, G, H, A, B, C, D, W2[44]);
-  261|    150|      SHA2_64_F(D, E, F, G, H, A, B, C, W2[45]);
-  262|    150|      SHA2_64_F(C, D, E, F, G, H, A, B, W2[46]);
-  263|    150|      SHA2_64_F(B, C, D, E, F, G, H, A, W2[47]);
+  248|    172|      SHA2_64_F(A, B, C, D, E, F, G, H, W2[32]);
+  249|    172|      SHA2_64_F(H, A, B, C, D, E, F, G, W2[33]);
+  250|    172|      SHA2_64_F(G, H, A, B, C, D, E, F, W2[34]);
+  251|    172|      SHA2_64_F(F, G, H, A, B, C, D, E, W2[35]);
+  252|    172|      SHA2_64_F(E, F, G, H, A, B, C, D, W2[36]);
+  253|    172|      SHA2_64_F(D, E, F, G, H, A, B, C, W2[37]);
+  254|    172|      SHA2_64_F(C, D, E, F, G, H, A, B, W2[38]);
+  255|    172|      SHA2_64_F(B, C, D, E, F, G, H, A, W2[39]);
+  256|    172|      SHA2_64_F(A, B, C, D, E, F, G, H, W2[40]);
+  257|    172|      SHA2_64_F(H, A, B, C, D, E, F, G, W2[41]);
+  258|    172|      SHA2_64_F(G, H, A, B, C, D, E, F, W2[42]);
+  259|    172|      SHA2_64_F(F, G, H, A, B, C, D, E, W2[43]);
+  260|    172|      SHA2_64_F(E, F, G, H, A, B, C, D, W2[44]);
+  261|    172|      SHA2_64_F(D, E, F, G, H, A, B, C, W2[45]);
+  262|    172|      SHA2_64_F(C, D, E, F, G, H, A, B, W2[46]);
+  263|    172|      SHA2_64_F(B, C, D, E, F, G, H, A, W2[47]);
   264|       |
-  265|    150|      SHA2_64_F(A, B, C, D, E, F, G, H, W2[48]);
-  266|    150|      SHA2_64_F(H, A, B, C, D, E, F, G, W2[49]);
-  267|    150|      SHA2_64_F(G, H, A, B, C, D, E, F, W2[50]);
-  268|    150|      SHA2_64_F(F, G, H, A, B, C, D, E, W2[51]);
-  269|    150|      SHA2_64_F(E, F, G, H, A, B, C, D, W2[52]);
-  270|    150|      SHA2_64_F(D, E, F, G, H, A, B, C, W2[53]);
-  271|    150|      SHA2_64_F(C, D, E, F, G, H, A, B, W2[54]);
-  272|    150|      SHA2_64_F(B, C, D, E, F, G, H, A, W2[55]);
-  273|    150|      SHA2_64_F(A, B, C, D, E, F, G, H, W2[56]);
-  274|    150|      SHA2_64_F(H, A, B, C, D, E, F, G, W2[57]);
-  275|    150|      SHA2_64_F(G, H, A, B, C, D, E, F, W2[58]);
-  276|    150|      SHA2_64_F(F, G, H, A, B, C, D, E, W2[59]);
-  277|    150|      SHA2_64_F(E, F, G, H, A, B, C, D, W2[60]);
-  278|    150|      SHA2_64_F(D, E, F, G, H, A, B, C, W2[61]);
-  279|    150|      SHA2_64_F(C, D, E, F, G, H, A, B, W2[62]);
-  280|    150|      SHA2_64_F(B, C, D, E, F, G, H, A, W2[63]);
+  265|    172|      SHA2_64_F(A, B, C, D, E, F, G, H, W2[48]);
+  266|    172|      SHA2_64_F(H, A, B, C, D, E, F, G, W2[49]);
+  267|    172|      SHA2_64_F(G, H, A, B, C, D, E, F, W2[50]);
+  268|    172|      SHA2_64_F(F, G, H, A, B, C, D, E, W2[51]);
+  269|    172|      SHA2_64_F(E, F, G, H, A, B, C, D, W2[52]);
+  270|    172|      SHA2_64_F(D, E, F, G, H, A, B, C, W2[53]);
+  271|    172|      SHA2_64_F(C, D, E, F, G, H, A, B, W2[54]);
+  272|    172|      SHA2_64_F(B, C, D, E, F, G, H, A, W2[55]);
+  273|    172|      SHA2_64_F(A, B, C, D, E, F, G, H, W2[56]);
+  274|    172|      SHA2_64_F(H, A, B, C, D, E, F, G, W2[57]);
+  275|    172|      SHA2_64_F(G, H, A, B, C, D, E, F, W2[58]);
+  276|    172|      SHA2_64_F(F, G, H, A, B, C, D, E, W2[59]);
+  277|    172|      SHA2_64_F(E, F, G, H, A, B, C, D, W2[60]);
+  278|    172|      SHA2_64_F(D, E, F, G, H, A, B, C, W2[61]);
+  279|    172|      SHA2_64_F(C, D, E, F, G, H, A, B, W2[62]);
+  280|    172|      SHA2_64_F(B, C, D, E, F, G, H, A, W2[63]);
   281|       |
-  282|    150|      SHA2_64_F(A, B, C, D, E, F, G, H, W2[64]);
-  283|    150|      SHA2_64_F(H, A, B, C, D, E, F, G, W2[65]);
-  284|    150|      SHA2_64_F(G, H, A, B, C, D, E, F, W2[66]);
-  285|    150|      SHA2_64_F(F, G, H, A, B, C, D, E, W2[67]);
-  286|    150|      SHA2_64_F(E, F, G, H, A, B, C, D, W2[68]);
-  287|    150|      SHA2_64_F(D, E, F, G, H, A, B, C, W2[69]);
-  288|    150|      SHA2_64_F(C, D, E, F, G, H, A, B, W2[70]);
-  289|    150|      SHA2_64_F(B, C, D, E, F, G, H, A, W2[71]);
-  290|    150|      SHA2_64_F(A, B, C, D, E, F, G, H, W2[72]);
-  291|    150|      SHA2_64_F(H, A, B, C, D, E, F, G, W2[73]);
-  292|    150|      SHA2_64_F(G, H, A, B, C, D, E, F, W2[74]);
-  293|    150|      SHA2_64_F(F, G, H, A, B, C, D, E, W2[75]);
-  294|    150|      SHA2_64_F(E, F, G, H, A, B, C, D, W2[76]);
-  295|    150|      SHA2_64_F(D, E, F, G, H, A, B, C, W2[77]);
-  296|    150|      SHA2_64_F(C, D, E, F, G, H, A, B, W2[78]);
-  297|    150|      SHA2_64_F(B, C, D, E, F, G, H, A, W2[79]);
+  282|    172|      SHA2_64_F(A, B, C, D, E, F, G, H, W2[64]);
+  283|    172|      SHA2_64_F(H, A, B, C, D, E, F, G, W2[65]);
+  284|    172|      SHA2_64_F(G, H, A, B, C, D, E, F, W2[66]);
+  285|    172|      SHA2_64_F(F, G, H, A, B, C, D, E, W2[67]);
+  286|    172|      SHA2_64_F(E, F, G, H, A, B, C, D, W2[68]);
+  287|    172|      SHA2_64_F(D, E, F, G, H, A, B, C, W2[69]);
+  288|    172|      SHA2_64_F(C, D, E, F, G, H, A, B, W2[70]);
+  289|    172|      SHA2_64_F(B, C, D, E, F, G, H, A, W2[71]);
+  290|    172|      SHA2_64_F(A, B, C, D, E, F, G, H, W2[72]);
+  291|    172|      SHA2_64_F(H, A, B, C, D, E, F, G, W2[73]);
+  292|    172|      SHA2_64_F(G, H, A, B, C, D, E, F, W2[74]);
+  293|    172|      SHA2_64_F(F, G, H, A, B, C, D, E, W2[75]);
+  294|    172|      SHA2_64_F(E, F, G, H, A, B, C, D, W2[76]);
+  295|    172|      SHA2_64_F(D, E, F, G, H, A, B, C, W2[77]);
+  296|    172|      SHA2_64_F(C, D, E, F, G, H, A, B, W2[78]);
+  297|    172|      SHA2_64_F(B, C, D, E, F, G, H, A, W2[79]);
   298|       |
-  299|    150|      A = (digest[0] += A);
-  300|    150|      B = (digest[1] += B);
-  301|    150|      C = (digest[2] += C);
-  302|    150|      D = (digest[3] += D);
-  303|    150|      E = (digest[4] += E);
-  304|    150|      F = (digest[5] += F);
-  305|    150|      G = (digest[6] += G);
-  306|    150|      H = (digest[7] += H);
-  307|    150|   }
+  299|    172|      A = (digest[0] += A);
+  300|    172|      B = (digest[1] += B);
+  301|    172|      C = (digest[2] += C);
+  302|    172|      D = (digest[3] += D);
+  303|    172|      E = (digest[4] += E);
+  304|    172|      F = (digest[5] += F);
+  305|    172|      G = (digest[6] += G);
+  306|    172|      H = (digest[7] += H);
+  307|    172|   }
   308|       |
   309|  12.2k|   while(blocks > 0) {
   ------------------
-  |  Branch (309:10): [True: 6.11k, False: 6.13k]
+  |  Branch (309:10): [True: 6.10k, False: 6.12k]
   ------------------
-  310|  6.11k|      SIMD_2x64 WS[8];
+  310|  6.10k|      SIMD_2x64 WS[8];
   311|       |
   312|  54.9k|      for(size_t i = 0; i < 8; i++) {
   ------------------
-  |  Branch (312:25): [True: 48.8k, False: 6.11k]
+  |  Branch (312:25): [True: 48.8k, False: 6.10k]
   ------------------
   313|  48.8k|         WS[i] = SIMD_2x64::load_be(&data[16 * i]);
   314|  48.8k|         auto WK = WS[i] + SIMD_2x64::load_le(&K[2 * i]);
   315|  48.8k|         WK.store_le(&W[2 * i]);
   316|  48.8k|      }
   317|       |
-  318|  6.11k|      data += 128;
-  319|  6.11k|      blocks -= 1;
+  318|  6.10k|      data += 128;
+  319|  6.10k|      blocks -= 1;
   320|       |
   321|       |      // First 64 rounds of SHA-512
   322|  30.5k|      for(size_t r = 0; r != 64; r += 16) {
   ------------------
-  |  Branch (322:25): [True: 24.4k, False: 6.11k]
+  |  Branch (322:25): [True: 24.4k, False: 6.10k]
   ------------------
   323|  24.4k|         auto w = sha512_next_w(WS) + SIMD_2x64::load_le(&K[r + 16]);
   324|  24.4k|         SHA2_64_F(A, B, C, D, E, F, G, H, W[0]);
@@ -3023,54 +3023,54 @@ _ZN5Botan7SHA_51224compress_digest_x86_avx2ERNSt3__16vectorImNS_16secure_allocat
   362|  24.4k|      }
   363|       |
   364|       |      // Final 16 rounds of SHA-512
-  365|  6.11k|      SHA2_64_F(A, B, C, D, E, F, G, H, W[0]);
-  366|  6.11k|      SHA2_64_F(H, A, B, C, D, E, F, G, W[1]);
-  367|  6.11k|      SHA2_64_F(G, H, A, B, C, D, E, F, W[2]);
-  368|  6.11k|      SHA2_64_F(F, G, H, A, B, C, D, E, W[3]);
-  369|  6.11k|      SHA2_64_F(E, F, G, H, A, B, C, D, W[4]);
-  370|  6.11k|      SHA2_64_F(D, E, F, G, H, A, B, C, W[5]);
-  371|  6.11k|      SHA2_64_F(C, D, E, F, G, H, A, B, W[6]);
-  372|  6.11k|      SHA2_64_F(B, C, D, E, F, G, H, A, W[7]);
-  373|  6.11k|      SHA2_64_F(A, B, C, D, E, F, G, H, W[8]);
-  374|  6.11k|      SHA2_64_F(H, A, B, C, D, E, F, G, W[9]);
-  375|  6.11k|      SHA2_64_F(G, H, A, B, C, D, E, F, W[10]);
-  376|  6.11k|      SHA2_64_F(F, G, H, A, B, C, D, E, W[11]);
-  377|  6.11k|      SHA2_64_F(E, F, G, H, A, B, C, D, W[12]);
-  378|  6.11k|      SHA2_64_F(D, E, F, G, H, A, B, C, W[13]);
-  379|  6.11k|      SHA2_64_F(C, D, E, F, G, H, A, B, W[14]);
-  380|  6.11k|      SHA2_64_F(B, C, D, E, F, G, H, A, W[15]);
+  365|  6.10k|      SHA2_64_F(A, B, C, D, E, F, G, H, W[0]);
+  366|  6.10k|      SHA2_64_F(H, A, B, C, D, E, F, G, W[1]);
+  367|  6.10k|      SHA2_64_F(G, H, A, B, C, D, E, F, W[2]);
+  368|  6.10k|      SHA2_64_F(F, G, H, A, B, C, D, E, W[3]);
+  369|  6.10k|      SHA2_64_F(E, F, G, H, A, B, C, D, W[4]);
+  370|  6.10k|      SHA2_64_F(D, E, F, G, H, A, B, C, W[5]);
+  371|  6.10k|      SHA2_64_F(C, D, E, F, G, H, A, B, W[6]);
+  372|  6.10k|      SHA2_64_F(B, C, D, E, F, G, H, A, W[7]);
+  373|  6.10k|      SHA2_64_F(A, B, C, D, E, F, G, H, W[8]);
+  374|  6.10k|      SHA2_64_F(H, A, B, C, D, E, F, G, W[9]);
+  375|  6.10k|      SHA2_64_F(G, H, A, B, C, D, E, F, W[10]);
+  376|  6.10k|      SHA2_64_F(F, G, H, A, B, C, D, E, W[11]);
+  377|  6.10k|      SHA2_64_F(E, F, G, H, A, B, C, D, W[12]);
+  378|  6.10k|      SHA2_64_F(D, E, F, G, H, A, B, C, W[13]);
+  379|  6.10k|      SHA2_64_F(C, D, E, F, G, H, A, B, W[14]);
+  380|  6.10k|      SHA2_64_F(B, C, D, E, F, G, H, A, W[15]);
   381|       |
-  382|  6.11k|      A = (digest[0] += A);
-  383|  6.11k|      B = (digest[1] += B);
-  384|  6.11k|      C = (digest[2] += C);
-  385|  6.11k|      D = (digest[3] += D);
-  386|  6.11k|      E = (digest[4] += E);
-  387|  6.11k|      F = (digest[5] += F);
-  388|  6.11k|      G = (digest[6] += G);
-  389|  6.11k|      H = (digest[7] += H);
-  390|  6.11k|   }
-  391|  6.13k|}
+  382|  6.10k|      A = (digest[0] += A);
+  383|  6.10k|      B = (digest[1] += B);
+  384|  6.10k|      C = (digest[2] += C);
+  385|  6.10k|      D = (digest[3] += D);
+  386|  6.10k|      E = (digest[4] += E);
+  387|  6.10k|      F = (digest[5] += F);
+  388|  6.10k|      G = (digest[6] += G);
+  389|  6.10k|      H = (digest[7] += H);
+  390|  6.10k|   }
+  391|  6.12k|}
 sha2_64_avx2.cpp:_ZN5Botan12_GLOBAL__N_113sha512_next_wINS_9SIMD_4x64EEET_PS3_:
-   21|  4.80k|BOTAN_FORCE_INLINE BOTAN_FN_ISA_AVX2_BMI2 SIMD_T sha512_next_w(SIMD_T x[8]) {
-   22|  4.80k|   auto t0 = SIMD_T::alignr8(x[1], x[0]);
-   23|  4.80k|   auto t1 = SIMD_T::alignr8(x[5], x[4]);
+   21|  5.50k|BOTAN_FORCE_INLINE BOTAN_FN_ISA_AVX2_BMI2 SIMD_T sha512_next_w(SIMD_T x[8]) {
+   22|  5.50k|   auto t0 = SIMD_T::alignr8(x[1], x[0]);
+   23|  5.50k|   auto t1 = SIMD_T::alignr8(x[5], x[4]);
    24|       |
-   25|  4.80k|   auto s0 = t0.template rotr<1>() ^ t0.template rotr<8>() ^ t0.template shr<7>();
-   26|  4.80k|   auto s1 = x[7].template rotr<19>() ^ x[7].template rotr<61>() ^ x[7].template shr<6>();
+   25|  5.50k|   auto s0 = t0.template rotr<1>() ^ t0.template rotr<8>() ^ t0.template shr<7>();
+   26|  5.50k|   auto s1 = x[7].template rotr<19>() ^ x[7].template rotr<61>() ^ x[7].template shr<6>();
    27|       |
-   28|  4.80k|   auto nx = x[0] + s0 + s1 + t1;
+   28|  5.50k|   auto nx = x[0] + s0 + s1 + t1;
    29|       |
-   30|  4.80k|   x[0] = x[1];
-   31|  4.80k|   x[1] = x[2];
-   32|  4.80k|   x[2] = x[3];
-   33|  4.80k|   x[3] = x[4];
-   34|  4.80k|   x[4] = x[5];
-   35|  4.80k|   x[5] = x[6];
-   36|  4.80k|   x[6] = x[7];
-   37|  4.80k|   x[7] = nx;
+   30|  5.50k|   x[0] = x[1];
+   31|  5.50k|   x[1] = x[2];
+   32|  5.50k|   x[2] = x[3];
+   33|  5.50k|   x[3] = x[4];
+   34|  5.50k|   x[4] = x[5];
+   35|  5.50k|   x[5] = x[6];
+   36|  5.50k|   x[6] = x[7];
+   37|  5.50k|   x[7] = nx;
    38|       |
-   39|  4.80k|   return x[7];
-   40|  4.80k|}
+   39|  5.50k|   return x[7];
+   40|  5.50k|}
 sha2_64_avx2.cpp:_ZN5Botan12_GLOBAL__N_113sha512_next_wINS_9SIMD_2x64EEET_PS3_:
    21|   195k|BOTAN_FORCE_INLINE BOTAN_FN_ISA_AVX2_BMI2 SIMD_T sha512_next_w(SIMD_T x[8]) {
    22|   195k|   auto t0 = SIMD_T::alignr8(x[1], x[0]);
@@ -4063,49 +4063,49 @@ _ZN5Botan8FE_2551910from_bytesEPKh:
   633|    100|   m_fe[9] = static_cast<int32_t>(h9);
   634|    100|}
 _ZNK5Botan8FE_255198to_bytesEPh:
-  661|    662|void FE_25519::to_bytes(uint8_t s[32]) const {
-  662|    662|   const int64_t X25 = (1 << 25);
+  661|    654|void FE_25519::to_bytes(uint8_t s[32]) const {
+  662|    654|   const int64_t X25 = (1 << 25);
   663|       |
-  664|    662|   int32_t h0 = m_fe[0];
-  665|    662|   int32_t h1 = m_fe[1];
-  666|    662|   int32_t h2 = m_fe[2];
-  667|    662|   int32_t h3 = m_fe[3];
-  668|    662|   int32_t h4 = m_fe[4];
-  669|    662|   int32_t h5 = m_fe[5];
-  670|    662|   int32_t h6 = m_fe[6];
-  671|    662|   int32_t h7 = m_fe[7];
-  672|    662|   int32_t h8 = m_fe[8];
-  673|    662|   int32_t h9 = m_fe[9];
-  674|    662|   int32_t q;
+  664|    654|   int32_t h0 = m_fe[0];
+  665|    654|   int32_t h1 = m_fe[1];
+  666|    654|   int32_t h2 = m_fe[2];
+  667|    654|   int32_t h3 = m_fe[3];
+  668|    654|   int32_t h4 = m_fe[4];
+  669|    654|   int32_t h5 = m_fe[5];
+  670|    654|   int32_t h6 = m_fe[6];
+  671|    654|   int32_t h7 = m_fe[7];
+  672|    654|   int32_t h8 = m_fe[8];
+  673|    654|   int32_t h9 = m_fe[9];
+  674|    654|   int32_t q;
   675|       |
-  676|    662|   q = (19 * h9 + ((static_cast<int32_t>(1) << 24))) >> 25;
-  677|    662|   q = (h0 + q) >> 26;
-  678|    662|   q = (h1 + q) >> 25;
-  679|    662|   q = (h2 + q) >> 26;
-  680|    662|   q = (h3 + q) >> 25;
-  681|    662|   q = (h4 + q) >> 26;
-  682|    662|   q = (h5 + q) >> 25;
-  683|    662|   q = (h6 + q) >> 26;
-  684|    662|   q = (h7 + q) >> 25;
-  685|    662|   q = (h8 + q) >> 26;
-  686|    662|   q = (h9 + q) >> 25;
+  676|    654|   q = (19 * h9 + ((static_cast<int32_t>(1) << 24))) >> 25;
+  677|    654|   q = (h0 + q) >> 26;
+  678|    654|   q = (h1 + q) >> 25;
+  679|    654|   q = (h2 + q) >> 26;
+  680|    654|   q = (h3 + q) >> 25;
+  681|    654|   q = (h4 + q) >> 26;
+  682|    654|   q = (h5 + q) >> 25;
+  683|    654|   q = (h6 + q) >> 26;
+  684|    654|   q = (h7 + q) >> 25;
+  685|    654|   q = (h8 + q) >> 26;
+  686|    654|   q = (h9 + q) >> 25;
   687|       |
   688|       |   /* Goal: Output h-(2^255-19)q, which is between 0 and 2^255-20. */
-  689|    662|   h0 += 19 * q;
+  689|    654|   h0 += 19 * q;
   690|       |   /* Goal: Output h-2^255 q, which is between 0 and 2^255-20. */
   691|       |
-  692|    662|   carry0<26>(h0, h1);
-  693|    662|   carry0<25>(h1, h2);
-  694|    662|   carry0<26>(h2, h3);
-  695|    662|   carry0<25>(h3, h4);
-  696|    662|   carry0<26>(h4, h5);
-  697|    662|   carry0<25>(h5, h6);
-  698|    662|   carry0<26>(h6, h7);
-  699|    662|   carry0<25>(h7, h8);
-  700|    662|   carry0<26>(h8, h9);
+  692|    654|   carry0<26>(h0, h1);
+  693|    654|   carry0<25>(h1, h2);
+  694|    654|   carry0<26>(h2, h3);
+  695|    654|   carry0<25>(h3, h4);
+  696|    654|   carry0<26>(h4, h5);
+  697|    654|   carry0<25>(h5, h6);
+  698|    654|   carry0<26>(h6, h7);
+  699|    654|   carry0<25>(h7, h8);
+  700|    654|   carry0<26>(h8, h9);
   701|       |
-  702|    662|   int32_t carry9 = h9 >> 25;
-  703|    662|   h9 -= carry9 * X25;
+  702|    654|   int32_t carry9 = h9 >> 25;
+  703|    654|   h9 -= carry9 * X25;
   704|       |   /* h10 = carry9 */
   705|       |
   706|       |   /*
@@ -4115,39 +4115,39 @@ _ZNK5Botan8FE_255198to_bytesEPh:
   710|       |   Goal: Output h0+...+2^230 h9.
   711|       |   */
   712|       |
-  713|    662|   s[0] = static_cast<uint8_t>(h0 >> 0);
-  714|    662|   s[1] = static_cast<uint8_t>(h0 >> 8);
-  715|    662|   s[2] = static_cast<uint8_t>(h0 >> 16);
-  716|    662|   s[3] = static_cast<uint8_t>((h0 >> 24) | (h1 << 2));
-  717|    662|   s[4] = static_cast<uint8_t>(h1 >> 6);
-  718|    662|   s[5] = static_cast<uint8_t>(h1 >> 14);
-  719|    662|   s[6] = static_cast<uint8_t>((h1 >> 22) | (h2 << 3));
-  720|    662|   s[7] = static_cast<uint8_t>(h2 >> 5);
-  721|    662|   s[8] = static_cast<uint8_t>(h2 >> 13);
-  722|    662|   s[9] = static_cast<uint8_t>((h2 >> 21) | (h3 << 5));
-  723|    662|   s[10] = static_cast<uint8_t>(h3 >> 3);
-  724|    662|   s[11] = static_cast<uint8_t>(h3 >> 11);
-  725|    662|   s[12] = static_cast<uint8_t>((h3 >> 19) | (h4 << 6));
-  726|    662|   s[13] = static_cast<uint8_t>(h4 >> 2);
-  727|    662|   s[14] = static_cast<uint8_t>(h4 >> 10);
-  728|    662|   s[15] = static_cast<uint8_t>(h4 >> 18);
-  729|    662|   s[16] = static_cast<uint8_t>(h5 >> 0);
-  730|    662|   s[17] = static_cast<uint8_t>(h5 >> 8);
-  731|    662|   s[18] = static_cast<uint8_t>(h5 >> 16);
-  732|    662|   s[19] = static_cast<uint8_t>((h5 >> 24) | (h6 << 1));
-  733|    662|   s[20] = static_cast<uint8_t>(h6 >> 7);
-  734|    662|   s[21] = static_cast<uint8_t>(h6 >> 15);
-  735|    662|   s[22] = static_cast<uint8_t>((h6 >> 23) | (h7 << 3));
-  736|    662|   s[23] = static_cast<uint8_t>(h7 >> 5);
-  737|    662|   s[24] = static_cast<uint8_t>(h7 >> 13);
-  738|    662|   s[25] = static_cast<uint8_t>((h7 >> 21) | (h8 << 4));
-  739|    662|   s[26] = static_cast<uint8_t>(h8 >> 4);
-  740|    662|   s[27] = static_cast<uint8_t>(h8 >> 12);
-  741|    662|   s[28] = static_cast<uint8_t>((h8 >> 20) | (h9 << 6));
-  742|    662|   s[29] = static_cast<uint8_t>(h9 >> 2);
-  743|    662|   s[30] = static_cast<uint8_t>(h9 >> 10);
-  744|    662|   s[31] = static_cast<uint8_t>(h9 >> 18);
-  745|    662|}
+  713|    654|   s[0] = static_cast<uint8_t>(h0 >> 0);
+  714|    654|   s[1] = static_cast<uint8_t>(h0 >> 8);
+  715|    654|   s[2] = static_cast<uint8_t>(h0 >> 16);
+  716|    654|   s[3] = static_cast<uint8_t>((h0 >> 24) | (h1 << 2));
+  717|    654|   s[4] = static_cast<uint8_t>(h1 >> 6);
+  718|    654|   s[5] = static_cast<uint8_t>(h1 >> 14);
+  719|    654|   s[6] = static_cast<uint8_t>((h1 >> 22) | (h2 << 3));
+  720|    654|   s[7] = static_cast<uint8_t>(h2 >> 5);
+  721|    654|   s[8] = static_cast<uint8_t>(h2 >> 13);
+  722|    654|   s[9] = static_cast<uint8_t>((h2 >> 21) | (h3 << 5));
+  723|    654|   s[10] = static_cast<uint8_t>(h3 >> 3);
+  724|    654|   s[11] = static_cast<uint8_t>(h3 >> 11);
+  725|    654|   s[12] = static_cast<uint8_t>((h3 >> 19) | (h4 << 6));
+  726|    654|   s[13] = static_cast<uint8_t>(h4 >> 2);
+  727|    654|   s[14] = static_cast<uint8_t>(h4 >> 10);
+  728|    654|   s[15] = static_cast<uint8_t>(h4 >> 18);
+  729|    654|   s[16] = static_cast<uint8_t>(h5 >> 0);
+  730|    654|   s[17] = static_cast<uint8_t>(h5 >> 8);
+  731|    654|   s[18] = static_cast<uint8_t>(h5 >> 16);
+  732|    654|   s[19] = static_cast<uint8_t>((h5 >> 24) | (h6 << 1));
+  733|    654|   s[20] = static_cast<uint8_t>(h6 >> 7);
+  734|    654|   s[21] = static_cast<uint8_t>(h6 >> 15);
+  735|    654|   s[22] = static_cast<uint8_t>((h6 >> 23) | (h7 << 3));
+  736|    654|   s[23] = static_cast<uint8_t>(h7 >> 5);
+  737|    654|   s[24] = static_cast<uint8_t>(h7 >> 13);
+  738|    654|   s[25] = static_cast<uint8_t>((h7 >> 21) | (h8 << 4));
+  739|    654|   s[26] = static_cast<uint8_t>(h8 >> 4);
+  740|    654|   s[27] = static_cast<uint8_t>(h8 >> 12);
+  741|    654|   s[28] = static_cast<uint8_t>((h8 >> 20) | (h9 << 6));
+  742|    654|   s[29] = static_cast<uint8_t>(h9 >> 2);
+  743|    654|   s[30] = static_cast<uint8_t>(h9 >> 10);
+  744|    654|   s[31] = static_cast<uint8_t>(h9 >> 18);
+  745|    654|}
 
 _ZNK5Botan17Ed25519_PublicKey9check_keyERNS_21RandomNumberGeneratorEb:
    25|     50|bool Ed25519_PublicKey::check_key(RandomNumberGenerator& /*rng*/, bool /*strong*/) const {
@@ -4378,17 +4378,17 @@ _ZN5Botan27ge_frombytes_negate_vartimeEPNS_5ge_p3EPKh:
   456|    100|   fe_sub(check, vxx, u); /* vx^2-u */
   457|    100|   if(fe_isnonzero(check)) {
   ------------------
-  |  Branch (457:7): [True: 62, False: 38]
+  |  Branch (457:7): [True: 54, False: 46]
   ------------------
-  458|     62|      fe_add(check, vxx, u); /* vx^2+u */
-  459|     62|      if(fe_isnonzero(check)) {
+  458|     54|      fe_add(check, vxx, u); /* vx^2+u */
+  459|     54|      if(fe_isnonzero(check)) {
   ------------------
-  |  Branch (459:10): [True: 0, False: 62]
+  |  Branch (459:10): [True: 0, False: 54]
   ------------------
   460|      0|         return -1;
   461|      0|      }
-  462|     62|      fe_mul(h->X, h->X, sqrtm1);
-  463|     62|   }
+  462|     54|      fe_mul(h->X, h->X, sqrtm1);
+  463|     54|   }
   464|       |
   465|    100|   if(fe_isnegative(h->X) == (s[31] >> 7)) {
   ------------------
@@ -4484,18 +4484,18 @@ _ZN5Botan28ge_double_scalarmult_vartimeEPhPKhPKNS_5ge_p3ES2_:
   560|       |
   561|    100|   ge_p2_0(&r);
   562|       |
-  563|    485|   for(i = 255; i >= 0; --i) {
+  563|    474|   for(i = 255; i >= 0; --i) {
   ------------------
-  |  Branch (563:17): [True: 485, False: 0]
+  |  Branch (563:17): [True: 474, False: 0]
   ------------------
-  564|    485|      if(aslide[i] || bslide[i]) {
+  564|    474|      if(aslide[i] || bslide[i]) {
   ------------------
-  |  Branch (564:10): [True: 86, False: 399]
-  |  Branch (564:23): [True: 14, False: 385]
+  |  Branch (564:10): [True: 82, False: 392]
+  |  Branch (564:23): [True: 18, False: 374]
   ------------------
   565|    100|         break;
   566|    100|      }
-  567|    485|   }
+  567|    474|   }
   568|       |
   569|  25.3k|   for(; i >= 0; --i) {
   ------------------
@@ -4505,31 +4505,31 @@ _ZN5Botan28ge_double_scalarmult_vartimeEPhPKhPKNS_5ge_p3ES2_:
   571|       |
   572|  25.2k|      if(aslide[i] > 0) {
   ------------------
-  |  Branch (572:10): [True: 1.62k, False: 23.5k]
+  |  Branch (572:10): [True: 1.65k, False: 23.5k]
   ------------------
-  573|  1.62k|         ge_p1p1_to_p3(&u, &t);
-  574|  1.62k|         ge_add(&t, &u, &Ai[aslide[i] >> 1]);
+  573|  1.65k|         ge_p1p1_to_p3(&u, &t);
+  574|  1.65k|         ge_add(&t, &u, &Ai[aslide[i] >> 1]);
   575|  23.5k|      } else if(aslide[i] < 0) {
   ------------------
-  |  Branch (575:17): [True: 1.64k, False: 21.9k]
+  |  Branch (575:17): [True: 1.63k, False: 21.9k]
   ------------------
-  576|  1.64k|         ge_p1p1_to_p3(&u, &t);
-  577|  1.64k|         ge_sub(&t, &u, &Ai[(-aslide[i]) >> 1]);
-  578|  1.64k|      }
+  576|  1.63k|         ge_p1p1_to_p3(&u, &t);
+  577|  1.63k|         ge_sub(&t, &u, &Ai[(-aslide[i]) >> 1]);
+  578|  1.63k|      }
   579|       |
   580|  25.2k|      if(bslide[i] > 0) {
   ------------------
-  |  Branch (580:10): [True: 1.08k, False: 24.1k]
+  |  Branch (580:10): [True: 1.04k, False: 24.1k]
   ------------------
-  581|  1.08k|         ge_p1p1_to_p3(&u, &t);
-  582|  1.08k|         ge_madd(&t, &u, &Bi[bslide[i] >> 1]);
+  581|  1.04k|         ge_p1p1_to_p3(&u, &t);
+  582|  1.04k|         ge_madd(&t, &u, &Bi[bslide[i] >> 1]);
   583|  24.1k|      } else if(bslide[i] < 0) {
   ------------------
-  |  Branch (583:17): [True: 1.03k, False: 23.0k]
+  |  Branch (583:17): [True: 1.09k, False: 23.0k]
   ------------------
-  584|  1.03k|         ge_p1p1_to_p3(&u, &t);
-  585|  1.03k|         ge_msub(&t, &u, &Bi[(-bslide[i]) >> 1]);
-  586|  1.03k|      }
+  584|  1.09k|         ge_p1p1_to_p3(&u, &t);
+  585|  1.09k|         ge_msub(&t, &u, &Bi[(-bslide[i]) >> 1]);
+  586|  1.09k|      }
   587|       |
   588|  25.2k|      ge_p1p1_to_p2(&r, &t);
   589|  25.2k|   }
@@ -4614,47 +4614,47 @@ ge.cpp:_ZN5Botan12_GLOBAL__N_15slideEPaPKh:
   ------------------
   381|  51.2k|      if(r[i]) {
   ------------------
-  |  Branch (381:10): [True: 5.39k, False: 45.8k]
+  |  Branch (381:10): [True: 5.41k, False: 45.7k]
   ------------------
   382|  30.9k|         for(size_t b = 1; b <= 6 && i + b < 256; ++b) {
   ------------------
-  |  Branch (382:28): [True: 29.5k, False: 1.36k]
-  |  Branch (382:38): [True: 29.4k, False: 100]
+  |  Branch (382:28): [True: 29.5k, False: 1.35k]
+  |  Branch (382:38): [True: 29.4k, False: 110]
   ------------------
   383|  29.4k|            if(r[i + b]) {
   ------------------
-  |  Branch (383:16): [True: 14.9k, False: 14.5k]
+  |  Branch (383:16): [True: 15.0k, False: 14.4k]
   ------------------
-  384|  14.9k|               if(r[i] + (r[i + b] << b) <= 15) {
+  384|  15.0k|               if(r[i] + (r[i + b] << b) <= 15) {
   ------------------
-  |  Branch (384:19): [True: 8.33k, False: 6.62k]
+  |  Branch (384:19): [True: 8.34k, False: 6.66k]
   ------------------
-  385|  8.33k|                  r[i] += r[i + b] << b;
-  386|  8.33k|                  r[i + b] = 0;
-  387|  8.33k|               } else if(r[i] - (r[i + b] << b) >= -15) {
+  385|  8.34k|                  r[i] += r[i + b] << b;
+  386|  8.34k|                  r[i + b] = 0;
+  387|  8.34k|               } else if(r[i] - (r[i + b] << b) >= -15) {
   ------------------
-  |  Branch (387:26): [True: 2.68k, False: 3.93k]
+  |  Branch (387:26): [True: 2.72k, False: 3.94k]
   ------------------
-  388|  2.68k|                  r[i] -= r[i + b] << b;
-  389|  7.99k|                  for(size_t k = i + b; k < 256; ++k) {
+  388|  2.72k|                  r[i] -= r[i + b] << b;
+  389|  8.01k|                  for(size_t k = i + b; k < 256; ++k) {
   ------------------
-  |  Branch (389:41): [True: 7.99k, False: 0]
+  |  Branch (389:41): [True: 8.01k, False: 0]
   ------------------
-  390|  7.99k|                     if(!r[k]) {
+  390|  8.01k|                     if(!r[k]) {
   ------------------
-  |  Branch (390:25): [True: 2.68k, False: 5.31k]
+  |  Branch (390:25): [True: 2.72k, False: 5.28k]
   ------------------
-  391|  2.68k|                        r[k] = 1;
-  392|  2.68k|                        break;
-  393|  2.68k|                     }
-  394|  5.31k|                     r[k] = 0;
-  395|  5.31k|                  }
-  396|  3.93k|               } else {
-  397|  3.93k|                  break;
-  398|  3.93k|               }
-  399|  14.9k|            }
+  391|  2.72k|                        r[k] = 1;
+  392|  2.72k|                        break;
+  393|  2.72k|                     }
+  394|  5.28k|                     r[k] = 0;
+  395|  5.28k|                  }
+  396|  3.94k|               } else {
+  397|  3.94k|                  break;
+  398|  3.94k|               }
+  399|  15.0k|            }
   400|  29.4k|         }
-  401|  5.39k|      }
+  401|  5.41k|      }
   402|  51.2k|   }
   403|    200|}
 ge.cpp:_ZN5Botan12_GLOBAL__N_115ge_p3_to_cachedEPNS0_9ge_cachedEPKNS_5ge_p3E:
@@ -4676,70 +4676,70 @@ ge.cpp:_ZN5Botan12_GLOBAL__N_19ge_p3_dblEPNS0_7ge_p1p1EPKNS_5ge_p3E:
   297|    200|   ge_p2_dbl(r, &q);
   298|    200|}
 ge.cpp:_ZN5Botan12_GLOBAL__N_113ge_p1p1_to_p3EPNS_5ge_p3EPKNS0_7ge_p1p1E:
-  221|  12.6k|void ge_p1p1_to_p3(ge_p3* r, const ge_p1p1* p) {
-  222|  12.6k|   fe_mul(r->X, p->X, p->T);
-  223|  12.6k|   fe_mul(r->Y, p->Y, p->Z);
-  224|  12.6k|   fe_mul(r->Z, p->Z, p->T);
-  225|  12.6k|   fe_mul(r->T, p->X, p->Y);
-  226|  12.6k|}
+  221|  12.7k|void ge_p1p1_to_p3(ge_p3* r, const ge_p1p1* p) {
+  222|  12.7k|   fe_mul(r->X, p->X, p->T);
+  223|  12.7k|   fe_mul(r->Y, p->Y, p->Z);
+  224|  12.7k|   fe_mul(r->Z, p->Z, p->T);
+  225|  12.7k|   fe_mul(r->T, p->X, p->Y);
+  226|  12.7k|}
 ge.cpp:_ZN5Botan12_GLOBAL__N_16ge_addEPNS0_7ge_p1p1EPKNS_5ge_p3EPKNS0_9ge_cachedE:
-   54|  2.32k|void ge_add(ge_p1p1* r, const ge_p3* p, const ge_cached* q) {
-   55|  2.32k|   FE_25519 t0;
+   54|  2.35k|void ge_add(ge_p1p1* r, const ge_p3* p, const ge_cached* q) {
+   55|  2.35k|   FE_25519 t0;
    56|       |   /* qhasm: YpX1 = Y1+X1 */
    57|       |   /* asm 1: fe_add(>YpX1=fe#1,<Y1=fe#12,<X1=fe#11); */
    58|       |   /* asm 2: fe_add(>YpX1=r->X,<Y1=p->Y,<X1=p->X); */
-   59|  2.32k|   fe_add(r->X, p->Y, p->X);
+   59|  2.35k|   fe_add(r->X, p->Y, p->X);
    60|       |
    61|       |   /* qhasm: YmX1 = Y1-X1 */
    62|       |   /* asm 1: fe_sub(>YmX1=fe#2,<Y1=fe#12,<X1=fe#11); */
    63|       |   /* asm 2: fe_sub(>YmX1=r->Y,<Y1=p->Y,<X1=p->X); */
-   64|  2.32k|   fe_sub(r->Y, p->Y, p->X);
+   64|  2.35k|   fe_sub(r->Y, p->Y, p->X);
    65|       |
    66|       |   /* qhasm: A = YpX1*YpX2 */
    67|       |   /* asm 1: fe_mul(>A=fe#3,<YpX1=fe#1,<YpX2=fe#15); */
    68|       |   /* asm 2: fe_mul(>A=r->Z,<YpX1=r->X,<YpX2=q->YplusX); */
-   69|  2.32k|   fe_mul(r->Z, r->X, q->YplusX);
+   69|  2.35k|   fe_mul(r->Z, r->X, q->YplusX);
    70|       |
    71|       |   /* qhasm: B = YmX1*YmX2 */
    72|       |   /* asm 1: fe_mul(>B=fe#2,<YmX1=fe#2,<YmX2=fe#16); */
    73|       |   /* asm 2: fe_mul(>B=r->Y,<YmX1=r->Y,<YmX2=q->YminusX); */
-   74|  2.32k|   fe_mul(r->Y, r->Y, q->YminusX);
+   74|  2.35k|   fe_mul(r->Y, r->Y, q->YminusX);
    75|       |
    76|       |   /* qhasm: C = T2d2*T1 */
    77|       |   /* asm 1: fe_mul(>C=fe#4,<T2d2=fe#18,<T1=fe#14); */
    78|       |   /* asm 2: fe_mul(>C=r->T,<T2d2=q->T2d,<T1=p->T); */
-   79|  2.32k|   fe_mul(r->T, q->T2d, p->T);
+   79|  2.35k|   fe_mul(r->T, q->T2d, p->T);
    80|       |
    81|       |   /* qhasm: ZZ = Z1*Z2 */
    82|       |   /* asm 1: fe_mul(>ZZ=fe#1,<Z1=fe#13,<Z2=fe#17); */
    83|       |   /* asm 2: fe_mul(>ZZ=r->X,<Z1=p->Z,<Z2=q->Z); */
-   84|  2.32k|   fe_mul(r->X, p->Z, q->Z);
+   84|  2.35k|   fe_mul(r->X, p->Z, q->Z);
    85|       |
    86|       |   /* qhasm: D = 2*ZZ */
    87|       |   /* asm 1: fe_add(>D=fe#5,<ZZ=fe#1,<ZZ=fe#1); */
    88|       |   /* asm 2: fe_add(>D=t0,<ZZ=r->X,<ZZ=r->X); */
-   89|  2.32k|   fe_add(t0, r->X, r->X);
+   89|  2.35k|   fe_add(t0, r->X, r->X);
    90|       |
    91|       |   /* qhasm: X3 = A-B */
    92|       |   /* asm 1: fe_sub(>X3=fe#1,<A=fe#3,<B=fe#2); */
    93|       |   /* asm 2: fe_sub(>X3=r->X,<A=r->Z,<B=r->Y); */
-   94|  2.32k|   fe_sub(r->X, r->Z, r->Y);
+   94|  2.35k|   fe_sub(r->X, r->Z, r->Y);
    95|       |
    96|       |   /* qhasm: Y3 = A+B */
    97|       |   /* asm 1: fe_add(>Y3=fe#2,<A=fe#3,<B=fe#2); */
    98|       |   /* asm 2: fe_add(>Y3=r->Y,<A=r->Z,<B=r->Y); */
-   99|  2.32k|   fe_add(r->Y, r->Z, r->Y);
+   99|  2.35k|   fe_add(r->Y, r->Z, r->Y);
   100|       |
   101|       |   /* qhasm: Z3 = D+C */
   102|       |   /* asm 1: fe_add(>Z3=fe#3,<D=fe#5,<C=fe#4); */
   103|       |   /* asm 2: fe_add(>Z3=r->Z,<D=t0,<C=r->T); */
-  104|  2.32k|   fe_add(r->Z, t0, r->T);
+  104|  2.35k|   fe_add(r->Z, t0, r->T);
   105|       |
   106|       |   /* qhasm: T3 = D-C */
   107|       |   /* asm 1: fe_sub(>T3=fe#4,<D=fe#5,<C=fe#4); */
   108|       |   /* asm 2: fe_sub(>T3=r->T,<D=t0,<C=r->T); */
-  109|  2.32k|   fe_sub(r->T, t0, r->T);
-  110|  2.32k|}
+  109|  2.35k|   fe_sub(r->T, t0, r->T);
+  110|  2.35k|}
 ge.cpp:_ZN5Botan12_GLOBAL__N_17ge_p2_0EPNS0_5ge_p2E:
   417|    100|void ge_p2_0(ge_p2* h) {
   418|    100|   fe_0(h->X);
@@ -4795,150 +4795,150 @@ ge.cpp:_ZN5Botan12_GLOBAL__N_19ge_p2_dblEPNS0_7ge_p1p1EPKNS0_5ge_p2E:
   277|  25.7k|   fe_sub(r->T, r->T, r->Z);
   278|  25.7k|}
 ge.cpp:_ZN5Botan12_GLOBAL__N_16ge_subEPNS0_7ge_p1p1EPKNS_5ge_p3EPKNS0_9ge_cachedE:
-  317|  1.64k|void ge_sub(ge_p1p1* r, const ge_p3* p, const ge_cached* q) {
-  318|  1.64k|   FE_25519 t0;
+  317|  1.63k|void ge_sub(ge_p1p1* r, const ge_p3* p, const ge_cached* q) {
+  318|  1.63k|   FE_25519 t0;
   319|       |   /* qhasm: YpX1 = Y1+X1 */
   320|       |   /* asm 1: fe_add(>YpX1=fe#1,<Y1=fe#12,<X1=fe#11); */
   321|       |   /* asm 2: fe_add(>YpX1=r->X,<Y1=p->Y,<X1=p->X); */
-  322|  1.64k|   fe_add(r->X, p->Y, p->X);
+  322|  1.63k|   fe_add(r->X, p->Y, p->X);
   323|       |
   324|       |   /* qhasm: YmX1 = Y1-X1 */
   325|       |   /* asm 1: fe_sub(>YmX1=fe#2,<Y1=fe#12,<X1=fe#11); */
   326|       |   /* asm 2: fe_sub(>YmX1=r->Y,<Y1=p->Y,<X1=p->X); */
-  327|  1.64k|   fe_sub(r->Y, p->Y, p->X);
+  327|  1.63k|   fe_sub(r->Y, p->Y, p->X);
   328|       |
   329|       |   /* qhasm: A = YpX1*YmX2 */
   330|       |   /* asm 1: fe_mul(>A=fe#3,<YpX1=fe#1,<YmX2=fe#16); */
   331|       |   /* asm 2: fe_mul(>A=r->Z,<YpX1=r->X,<YmX2=q->YminusX); */
-  332|  1.64k|   fe_mul(r->Z, r->X, q->YminusX);
+  332|  1.63k|   fe_mul(r->Z, r->X, q->YminusX);
   333|       |
   334|       |   /* qhasm: B = YmX1*YpX2 */
   335|       |   /* asm 1: fe_mul(>B=fe#2,<YmX1=fe#2,<YpX2=fe#15); */
   336|       |   /* asm 2: fe_mul(>B=r->Y,<YmX1=r->Y,<YpX2=q->YplusX); */
-  337|  1.64k|   fe_mul(r->Y, r->Y, q->YplusX);
+  337|  1.63k|   fe_mul(r->Y, r->Y, q->YplusX);
   338|       |
   339|       |   /* qhasm: C = T2d2*T1 */
   340|       |   /* asm 1: fe_mul(>C=fe#4,<T2d2=fe#18,<T1=fe#14); */
   341|       |   /* asm 2: fe_mul(>C=r->T,<T2d2=q->T2d,<T1=p->T); */
-  342|  1.64k|   fe_mul(r->T, q->T2d, p->T);
+  342|  1.63k|   fe_mul(r->T, q->T2d, p->T);
   343|       |
   344|       |   /* qhasm: ZZ = Z1*Z2 */
   345|       |   /* asm 1: fe_mul(>ZZ=fe#1,<Z1=fe#13,<Z2=fe#17); */
   346|       |   /* asm 2: fe_mul(>ZZ=r->X,<Z1=p->Z,<Z2=q->Z); */
-  347|  1.64k|   fe_mul(r->X, p->Z, q->Z);
+  347|  1.63k|   fe_mul(r->X, p->Z, q->Z);
   348|       |
   349|       |   /* qhasm: D = 2*ZZ */
   350|       |   /* asm 1: fe_add(>D=fe#5,<ZZ=fe#1,<ZZ=fe#1); */
   351|       |   /* asm 2: fe_add(>D=t0,<ZZ=r->X,<ZZ=r->X); */
-  352|  1.64k|   fe_add(t0, r->X, r->X);
+  352|  1.63k|   fe_add(t0, r->X, r->X);
   353|       |
   354|       |   /* qhasm: X3 = A-B */
   355|       |   /* asm 1: fe_sub(>X3=fe#1,<A=fe#3,<B=fe#2); */
   356|       |   /* asm 2: fe_sub(>X3=r->X,<A=r->Z,<B=r->Y); */
-  357|  1.64k|   fe_sub(r->X, r->Z, r->Y);
+  357|  1.63k|   fe_sub(r->X, r->Z, r->Y);
   358|       |
   359|       |   /* qhasm: Y3 = A+B */
   360|       |   /* asm 1: fe_add(>Y3=fe#2,<A=fe#3,<B=fe#2); */
   361|       |   /* asm 2: fe_add(>Y3=r->Y,<A=r->Z,<B=r->Y); */
-  362|  1.64k|   fe_add(r->Y, r->Z, r->Y);
+  362|  1.63k|   fe_add(r->Y, r->Z, r->Y);
   363|       |
   364|       |   /* qhasm: Z3 = D-C */
   365|       |   /* asm 1: fe_sub(>Z3=fe#3,<D=fe#5,<C=fe#4); */
   366|       |   /* asm 2: fe_sub(>Z3=r->Z,<D=t0,<C=r->T); */
-  367|  1.64k|   fe_sub(r->Z, t0, r->T);
+  367|  1.63k|   fe_sub(r->Z, t0, r->T);
   368|       |
   369|       |   /* qhasm: T3 = D+C */
   370|       |   /* asm 1: fe_add(>T3=fe#4,<D=fe#5,<C=fe#4); */
   371|       |   /* asm 2: fe_add(>T3=r->T,<D=t0,<C=r->T); */
-  372|  1.64k|   fe_add(r->T, t0, r->T);
-  373|  1.64k|}
+  372|  1.63k|   fe_add(r->T, t0, r->T);
+  373|  1.63k|}
 ge.cpp:_ZN5Botan12_GLOBAL__N_17ge_maddEPNS0_7ge_p1p1EPKNS_5ge_p3EPKNS0_10ge_precompE:
-  116|  7.48k|void ge_madd(ge_p1p1* r, const ge_p3* p, const ge_precomp* q) {
-  117|  7.48k|   FE_25519 t0;
+  116|  7.44k|void ge_madd(ge_p1p1* r, const ge_p3* p, const ge_precomp* q) {
+  117|  7.44k|   FE_25519 t0;
   118|       |   /* qhasm: YpX1 = Y1+X1 */
-  119|  7.48k|   fe_add(r->X, p->Y, p->X);
+  119|  7.44k|   fe_add(r->X, p->Y, p->X);
   120|       |
   121|       |   /* qhasm: YmX1 = Y1-X1 */
-  122|  7.48k|   fe_sub(r->Y, p->Y, p->X);
+  122|  7.44k|   fe_sub(r->Y, p->Y, p->X);
   123|       |
   124|       |   /* qhasm: A = YpX1*ypx2 */
-  125|  7.48k|   fe_mul(r->Z, r->X, q->yplusx);
+  125|  7.44k|   fe_mul(r->Z, r->X, q->yplusx);
   126|       |
   127|       |   /* qhasm: B = YmX1*ymx2 */
-  128|  7.48k|   fe_mul(r->Y, r->Y, q->yminusx);
+  128|  7.44k|   fe_mul(r->Y, r->Y, q->yminusx);
   129|       |
   130|       |   /* qhasm: C = xy2d2*T1 */
-  131|  7.48k|   fe_mul(r->T, q->xy2d, p->T);
+  131|  7.44k|   fe_mul(r->T, q->xy2d, p->T);
   132|       |
   133|       |   /* qhasm: D = 2*Z1 */
-  134|  7.48k|   fe_add(t0, p->Z, p->Z);
+  134|  7.44k|   fe_add(t0, p->Z, p->Z);
   135|       |
   136|       |   /* qhasm: X3 = A-B */
-  137|  7.48k|   fe_sub(r->X, r->Z, r->Y);
+  137|  7.44k|   fe_sub(r->X, r->Z, r->Y);
   138|       |
   139|       |   /* qhasm: Y3 = A+B */
-  140|  7.48k|   fe_add(r->Y, r->Z, r->Y);
+  140|  7.44k|   fe_add(r->Y, r->Z, r->Y);
   141|       |
   142|       |   /* qhasm: Z3 = D+C */
-  143|  7.48k|   fe_add(r->Z, t0, r->T);
+  143|  7.44k|   fe_add(r->Z, t0, r->T);
   144|       |
   145|       |   /* qhasm: T3 = D-C */
-  146|  7.48k|   fe_sub(r->T, t0, r->T);
-  147|  7.48k|}
+  146|  7.44k|   fe_sub(r->T, t0, r->T);
+  147|  7.44k|}
 ge.cpp:_ZN5Botan12_GLOBAL__N_17ge_msubEPNS0_7ge_p1p1EPKNS_5ge_p3EPKNS0_10ge_precompE:
-  153|  1.03k|void ge_msub(ge_p1p1* r, const ge_p3* p, const ge_precomp* q) {
-  154|  1.03k|   FE_25519 t0;
+  153|  1.09k|void ge_msub(ge_p1p1* r, const ge_p3* p, const ge_precomp* q) {
+  154|  1.09k|   FE_25519 t0;
   155|       |
   156|       |   /* qhasm: YpX1 = Y1+X1 */
   157|       |   /* asm 1: fe_add(>YpX1=fe#1,<Y1=fe#12,<X1=fe#11); */
   158|       |   /* asm 2: fe_add(>YpX1=r->X,<Y1=p->Y,<X1=p->X); */
-  159|  1.03k|   fe_add(r->X, p->Y, p->X);
+  159|  1.09k|   fe_add(r->X, p->Y, p->X);
   160|       |
   161|       |   /* qhasm: YmX1 = Y1-X1 */
   162|       |   /* asm 1: fe_sub(>YmX1=fe#2,<Y1=fe#12,<X1=fe#11); */
   163|       |   /* asm 2: fe_sub(>YmX1=r->Y,<Y1=p->Y,<X1=p->X); */
-  164|  1.03k|   fe_sub(r->Y, p->Y, p->X);
+  164|  1.09k|   fe_sub(r->Y, p->Y, p->X);
   165|       |
   166|       |   /* qhasm: A = YpX1*ymx2 */
   167|       |   /* asm 1: fe_mul(>A=fe#3,<YpX1=fe#1,<ymx2=fe#16); */
   168|       |   /* asm 2: fe_mul(>A=r->Z,<YpX1=r->X,<ymx2=q->yminusx); */
-  169|  1.03k|   fe_mul(r->Z, r->X, q->yminusx);
+  169|  1.09k|   fe_mul(r->Z, r->X, q->yminusx);
   170|       |
   171|       |   /* qhasm: B = YmX1*ypx2 */
   172|       |   /* asm 1: fe_mul(>B=fe#2,<YmX1=fe#2,<ypx2=fe#15); */
   173|       |   /* asm 2: fe_mul(>B=r->Y,<YmX1=r->Y,<ypx2=q->yplusx); */
-  174|  1.03k|   fe_mul(r->Y, r->Y, q->yplusx);
+  174|  1.09k|   fe_mul(r->Y, r->Y, q->yplusx);
   175|       |
   176|       |   /* qhasm: C = xy2d2*T1 */
   177|       |   /* asm 1: fe_mul(>C=fe#4,<xy2d2=fe#17,<T1=fe#14); */
   178|       |   /* asm 2: fe_mul(>C=r->T,<xy2d2=q->xy2d,<T1=p->T); */
-  179|  1.03k|   fe_mul(r->T, q->xy2d, p->T);
+  179|  1.09k|   fe_mul(r->T, q->xy2d, p->T);
   180|       |
   181|       |   /* qhasm: D = 2*Z1 */
   182|       |   /* asm 1: fe_add(>D=fe#5,<Z1=fe#13,<Z1=fe#13); */
   183|       |   /* asm 2: fe_add(>D=t0,<Z1=p->Z,<Z1=p->Z); */
-  184|  1.03k|   fe_add(t0, p->Z, p->Z);
+  184|  1.09k|   fe_add(t0, p->Z, p->Z);
   185|       |
   186|       |   /* qhasm: X3 = A-B */
   187|       |   /* asm 1: fe_sub(>X3=fe#1,<A=fe#3,<B=fe#2); */
   188|       |   /* asm 2: fe_sub(>X3=r->X,<A=r->Z,<B=r->Y); */
-  189|  1.03k|   fe_sub(r->X, r->Z, r->Y);
+  189|  1.09k|   fe_sub(r->X, r->Z, r->Y);
   190|       |
   191|       |   /* qhasm: Y3 = A+B */
   192|       |   /* asm 1: fe_add(>Y3=fe#2,<A=fe#3,<B=fe#2); */
   193|       |   /* asm 2: fe_add(>Y3=r->Y,<A=r->Z,<B=r->Y); */
-  194|  1.03k|   fe_add(r->Y, r->Z, r->Y);
+  194|  1.09k|   fe_add(r->Y, r->Z, r->Y);
   195|       |
   196|       |   /* qhasm: Z3 = D-C */
   197|       |   /* asm 1: fe_sub(>Z3=fe#3,<D=fe#5,<C=fe#4); */
   198|       |   /* asm 2: fe_sub(>Z3=r->Z,<D=t0,<C=r->T); */
-  199|  1.03k|   fe_sub(r->Z, t0, r->T);
+  199|  1.09k|   fe_sub(r->Z, t0, r->T);
   200|       |
   201|       |   /* qhasm: T3 = D+C */
   202|       |   /* asm 1: fe_add(>T3=fe#4,<D=fe#5,<C=fe#4); */
   203|       |   /* asm 2: fe_add(>T3=r->T,<D=t0,<C=r->T); */
-  204|  1.03k|   fe_add(r->T, t0, r->T);
-  205|  1.03k|}
+  204|  1.09k|   fe_add(r->T, t0, r->T);
+  205|  1.09k|}
 ge.cpp:_ZN5Botan12_GLOBAL__N_113ge_p1p1_to_p2EPNS0_5ge_p2EPKNS0_7ge_p1p1E:
   211|  25.5k|void ge_p1p1_to_p2(ge_p2* r, const ge_p1p1* p) {
   212|  25.5k|   fe_mul(r->X, p->X, p->T);
