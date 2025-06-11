@@ -56,15 +56,15 @@ _ZN5Botan15AlignmentBufferIhLm128ELNS_25AlignmentBufferFinalBlockE0EE6appendENSt
    91|  7.28k|      void append(std::span<const T> elements) {
    92|  7.28k|         BOTAN_ASSERT_NOMSG(elements.size() <= elements_until_alignment());
   ------------------
-  |  |   62|  7.28k|   do {                                                                     \
-  |  |   63|  7.28k|      if(!(expr))                                                           \
+  |  |   64|  7.28k|   do {                                                                     \
+  |  |   65|  7.28k|      if(!(expr))                                                           \
   |  |  ------------------
-  |  |  |  Branch (63:10): [True: 0, False: 7.28k]
+  |  |  |  Branch (65:10): [True: 0, False: 7.28k]
   |  |  ------------------
-  |  |   64|  7.28k|         Botan::assertion_failure(#expr, "", __func__, __FILE__, __LINE__); \
-  |  |   65|  7.28k|   } while(0)
+  |  |   66|  7.28k|         Botan::assertion_failure(#expr, "", __func__, __FILE__, __LINE__); \
+  |  |   67|  7.28k|   } while(0)
   |  |  ------------------
-  |  |  |  Branch (65:12): [Folded - Ignored]
+  |  |  |  Branch (67:12): [Folded - Ignored]
   |  |  ------------------
   ------------------
    93|  7.28k|         std::copy(elements.begin(), elements.end(), m_buffer.begin() + m_position);
@@ -78,15 +78,15 @@ _ZN5Botan15AlignmentBufferIhLm128ELNS_25AlignmentBufferFinalBlockE0EE7consumeEv:
   201|  3.00k|      [[nodiscard]] std::span<const T> consume() {
   202|  3.00k|         BOTAN_ASSERT_NOMSG(ready_to_consume());
   ------------------
-  |  |   62|  3.00k|   do {                                                                     \
-  |  |   63|  3.00k|      if(!(expr))                                                           \
+  |  |   64|  3.00k|   do {                                                                     \
+  |  |   65|  3.00k|      if(!(expr))                                                           \
   |  |  ------------------
-  |  |  |  Branch (63:10): [True: 0, False: 3.00k]
+  |  |  |  Branch (65:10): [True: 0, False: 3.00k]
   |  |  ------------------
-  |  |   64|  3.00k|         Botan::assertion_failure(#expr, "", __func__, __FILE__, __LINE__); \
-  |  |   65|  3.00k|   } while(0)
+  |  |   66|  3.00k|         Botan::assertion_failure(#expr, "", __func__, __FILE__, __LINE__); \
+  |  |   67|  3.00k|   } while(0)
   |  |  ------------------
-  |  |  |  Branch (65:12): [Folded - Ignored]
+  |  |  |  Branch (67:12): [Folded - Ignored]
   |  |  ------------------
   ------------------
   203|  3.00k|         m_position = 0;
@@ -98,15 +98,15 @@ _ZNK5Botan15AlignmentBufferIhLm128ELNS_25AlignmentBufferFinalBlockE0EE23aligned_
   127|  3.27k|      [[nodiscard]] std::tuple<std::span<const uint8_t>, size_t> aligned_data_to_process(BufferSlicer& slicer) const {
   128|  3.27k|         BOTAN_ASSERT_NOMSG(in_alignment());
   ------------------
-  |  |   62|  3.27k|   do {                                                                     \
-  |  |   63|  3.27k|      if(!(expr))                                                           \
+  |  |   64|  3.27k|   do {                                                                     \
+  |  |   65|  3.27k|      if(!(expr))                                                           \
   |  |  ------------------
-  |  |  |  Branch (63:10): [True: 0, False: 3.27k]
+  |  |  |  Branch (65:10): [True: 0, False: 3.27k]
   |  |  ------------------
-  |  |   64|  3.27k|         Botan::assertion_failure(#expr, "", __func__, __FILE__, __LINE__); \
-  |  |   65|  3.27k|   } while(0)
+  |  |   66|  3.27k|         Botan::assertion_failure(#expr, "", __func__, __FILE__, __LINE__); \
+  |  |   67|  3.27k|   } while(0)
   |  |  ------------------
-  |  |  |  Branch (65:12): [Folded - Ignored]
+  |  |  |  Branch (67:12): [Folded - Ignored]
   |  |  ------------------
   ------------------
   129|       |
@@ -133,15 +133,15 @@ _ZN5Botan15AlignmentBufferIhLm128ELNS_25AlignmentBufferFinalBlockE0EE20directly_
   114|  2.85k|      std::span<T> directly_modify_last(size_t elements) {
   115|  2.85k|         BOTAN_ASSERT_NOMSG(size() >= elements);
   ------------------
-  |  |   62|  2.85k|   do {                                                                     \
-  |  |   63|  2.85k|      if(!(expr))                                                           \
+  |  |   64|  2.85k|   do {                                                                     \
+  |  |   65|  2.85k|      if(!(expr))                                                           \
   |  |  ------------------
-  |  |  |  Branch (63:10): [True: 0, False: 2.85k]
+  |  |  |  Branch (65:10): [True: 0, False: 2.85k]
   |  |  ------------------
-  |  |   64|  2.85k|         Botan::assertion_failure(#expr, "", __func__, __FILE__, __LINE__); \
-  |  |   65|  2.85k|   } while(0)
+  |  |   66|  2.85k|         Botan::assertion_failure(#expr, "", __func__, __FILE__, __LINE__); \
+  |  |   67|  2.85k|   } while(0)
   |  |  ------------------
-  |  |  |  Branch (65:12): [Folded - Ignored]
+  |  |  |  Branch (67:12): [Folded - Ignored]
   |  |  ------------------
   ------------------
   116|  2.85k|         return std::span(m_buffer).last(elements);
@@ -149,25 +149,25 @@ _ZN5Botan15AlignmentBufferIhLm128ELNS_25AlignmentBufferFinalBlockE0EE20directly_
 _ZNK5Botan15AlignmentBufferIhLm128ELNS_25AlignmentBufferFinalBlockE0EE4sizeEv:
   218|  2.85k|      constexpr size_t size() const { return m_buffer.size(); }
 
-_ZN5Botan14expand_top_bitImEET_S1_Qsr3std11is_integralIS1_EE5value:
+_ZN5Botan14expand_top_bitImEET_S1_Qsr3stdE13is_integral_vIS1_E:
    28|  25.6k|{
    29|  25.6k|   return static_cast<T>(0) - (a >> (sizeof(T) * 8 - 1));
    30|  25.6k|}
 _ZN5Botan6chooseImEET_S1_S1_S1_:
-  211|  1.00M|BOTAN_FORCE_INLINE constexpr T choose(T mask, T a, T b) {
+  211|  1.02M|BOTAN_FORCE_INLINE constexpr T choose(T mask, T a, T b) {
   212|       |   //return (mask & a) | (~mask & b);
-  213|  1.00M|   return (b ^ (mask & (a ^ b)));
-  214|  1.00M|}
-_ZN5Botan10ct_is_zeroIhEET_S1_Qsr3std11is_integralIS1_EE5value:
+  213|  1.02M|   return (b ^ (mask & (a ^ b)));
+  214|  1.02M|}
+_ZN5Botan10ct_is_zeroIhEET_S1_Qsr3stdE13is_integral_vIS1_E:
    38|    150|{
    39|    150|   return expand_top_bit<T>(~x & (x - 1));
    40|    150|}
-_ZN5Botan14expand_top_bitIhEET_S1_Qsr3std11is_integralIS1_EE5value:
+_ZN5Botan14expand_top_bitIhEET_S1_Qsr3stdE13is_integral_vIS1_E:
    28|    150|{
    29|    150|   return static_cast<T>(0) - (a >> (sizeof(T) * 8 - 1));
    30|    150|}
 _ZN5Botan8majorityImEET_S1_S1_S1_:
-  217|   504k|BOTAN_FORCE_INLINE constexpr T majority(T a, T b, T c) {
+  217|   514k|BOTAN_FORCE_INLINE constexpr T majority(T a, T b, T c) {
   218|       |   /*
   219|       |   Considering each bit of a, b, c individually
   220|       |
@@ -177,8 +177,8 @@ _ZN5Botan8majorityImEET_S1_S1_S1_:
   224|       |   In either case the value of c doesn't matter, and examining b (or a)
   225|       |   allows us to determine which case we are in.
   226|       |   */
-  227|   504k|   return choose(a ^ b, c, b);
-  228|   504k|}
+  227|   514k|   return choose(a ^ b, c, b);
+  228|   514k|}
 
 _ZN5Botan13reverse_bytesITkNSt3__117unsigned_integralEmQooooooeqstT_Li1EeqstS2_Li2EeqstS2_Li4EeqstS2_Li8EEES2_S2_:
    27|  25.6k|inline constexpr T reverse_bytes(T x) {
@@ -214,18 +214,18 @@ _ZN5Botan13reverse_bytesITkNSt3__117unsigned_integralEmQooooooeqstT_Li1EeqstS2_L
    57|  25.6k|}
 
 _ZN5Botan5CPUID3hasENS_10CPUFeatureE:
-   94|  6.12k|      static bool has(CPUID::Feature feat) { return state().has_bit(feat.as_u32()); }
+   94|  6.13k|      static bool has(CPUID::Feature feat) { return state().has_bit(feat.as_u32()); }
 _ZN5Botan5CPUID3hasENS_10CPUFeatureES1_:
    99|  12.2k|      static bool has(CPUID::Feature feat1, CPUID::Feature feat2) {
   100|  12.2k|         return state().has_bit(feat1.as_u32() | feat2.as_u32());
   101|  12.2k|      }
 _ZNK5Botan5CPUID10CPUID_Data7has_bitEj:
-  136|  18.3k|            bool has_bit(uint32_t bit) const { return (m_processor_features & bit) == bit; }
+  139|  18.3k|            bool has_bit(uint32_t bit) const { return (m_processor_features & bit) == bit; }
 _ZN5Botan5CPUID5stateEv:
-  148|  18.3k|      static CPUID_Data& state() {
-  149|  18.3k|         static CPUID::CPUID_Data g_cpuid;
-  150|  18.3k|         return g_cpuid;
-  151|  18.3k|      }
+  151|  18.3k|      static CPUID_Data& state() {
+  152|  18.3k|         static CPUID::CPUID_Data g_cpuid;
+  153|  18.3k|         return g_cpuid;
+  154|  18.3k|      }
 cpuid_x86.cpp:_ZN5Botan5CPUID6if_setIZNS0_10CPUID_Data19detect_cpu_featuresEjE16x86_CPUID_1_bitsEEjmT_NS_10CPUFeatureEj:
   117|      6|      static inline uint32_t if_set(uint64_t cpuid, T flag, CPUID::Feature bit, uint32_t allowed) {
   118|      6|         const uint64_t flag64 = static_cast<uint64_t>(flag);
@@ -269,106 +269,106 @@ _ZNK5Botan10CPUFeature6as_u32Ev:
    52|  30.6k|      uint32_t as_u32() const { return static_cast<uint32_t>(m_bit); }
 
 _ZN5Botan2CT13value_barrierImEET_S2_Qaasr3stdE17unsigned_integralIS2_Entsr3stdE7same_asIbS2_E:
-  275|   358k|{
-  276|   358k|   if(std::is_constant_evaluated()) {
+  278|   358k|{
+  279|   358k|   if(std::is_constant_evaluated()) {
   ------------------
-  |  Branch (276:7): [Folded - Ignored]
+  |  Branch (279:7): [Folded - Ignored]
   ------------------
-  277|      0|      return x;
-  278|   358k|   } else {
-  279|   358k|#if defined(BOTAN_CT_VALUE_BARRIER_USE_ASM)
-  280|       |      /*
-  281|       |      * We may want a "stronger" statement such as
-  282|       |      *     asm volatile("" : "+r,m"(x) : : "memory);
-  283|       |      * (see https://theunixzoo.co.uk/blog/2021-10-14-preventing-optimisations.html)
-  284|       |      * however the current approach seems sufficient with current compilers,
-  285|       |      * and is minimally damaging with regards to degrading code generation.
-  286|       |      */
-  287|   358k|      asm("" : "+r"(x) : /* no input */);
-  288|   358k|      return x;
-  289|       |#elif defined(BOTAN_CT_VALUE_BARRIER_USE_VOLATILE)
-  290|       |      volatile T vx = x;
-  291|       |      return vx;
-  292|       |#else
-  293|       |      return x;
-  294|       |#endif
-  295|   358k|   }
-  296|   358k|}
+  280|      0|      return x;
+  281|   358k|   } else {
+  282|   358k|#if defined(BOTAN_CT_VALUE_BARRIER_USE_ASM)
+  283|       |      /*
+  284|       |      * We may want a "stronger" statement such as
+  285|       |      *     asm volatile("" : "+r,m"(x) : : "memory);
+  286|       |      * (see https://theunixzoo.co.uk/blog/2021-10-14-preventing-optimisations.html)
+  287|       |      * however the current approach seems sufficient with current compilers,
+  288|       |      * and is minimally damaging with regards to degrading code generation.
+  289|       |      */
+  290|   358k|      asm("" : "+r"(x) : /* no input */);
+  291|   358k|      return x;
+  292|       |#elif defined(BOTAN_CT_VALUE_BARRIER_USE_VOLATILE)
+  293|       |      volatile T vx = x;
+  294|       |      return vx;
+  295|       |#else
+  296|       |      return x;
+  297|       |#endif
+  298|   358k|   }
+  299|   358k|}
 _ZNK5Botan2CT4MaskImE5valueEv:
-  636|   332k|      constexpr T value() const { return value_barrier<T>(m_mask); }
+  643|   332k|      constexpr T value() const { return value_barrier<T>(m_mask); }
 _ZN5Botan2CT8is_equalIhEENS0_4MaskIT_EEPKS3_S6_m:
-  804|    150|constexpr inline CT::Mask<T> is_equal(const T x[], const T y[], size_t len) {
-  805|    150|   if(std::is_constant_evaluated()) {
+  811|    150|constexpr inline CT::Mask<T> is_equal(const T x[], const T y[], size_t len) {
+  812|    150|   if(std::is_constant_evaluated()) {
   ------------------
-  |  Branch (805:7): [Folded - Ignored]
+  |  Branch (812:7): [Folded - Ignored]
   ------------------
-  806|      0|      T difference = 0;
-  807|       |
-  808|      0|      for(size_t i = 0; i != len; ++i) {
+  813|      0|      T difference = 0;
+  814|       |
+  815|      0|      for(size_t i = 0; i != len; ++i) {
   ------------------
-  |  Branch (808:25): [True: 0, False: 0]
+  |  Branch (815:25): [True: 0, False: 0]
   ------------------
-  809|      0|         difference = difference | (x[i] ^ y[i]);
-  810|      0|      }
-  811|       |
-  812|      0|      return CT::Mask<T>::is_zero(difference);
-  813|    150|   } else {
-  814|    150|      volatile T difference = 0;
-  815|       |
-  816|  4.95k|      for(size_t i = 0; i != len; ++i) {
+  816|      0|         difference = difference | (x[i] ^ y[i]);
+  817|      0|      }
+  818|       |
+  819|      0|      return CT::Mask<T>::is_zero(difference);
+  820|    150|   } else {
+  821|    150|      volatile T difference = 0;
+  822|       |
+  823|  4.95k|      for(size_t i = 0; i != len; ++i) {
   ------------------
-  |  Branch (816:25): [True: 4.80k, False: 150]
+  |  Branch (823:25): [True: 4.80k, False: 150]
   ------------------
-  817|  4.80k|         difference = difference | (x[i] ^ y[i]);
-  818|  4.80k|      }
-  819|       |
-  820|    150|      return CT::Mask<T>::is_zero(difference);
-  821|    150|   }
-  822|    150|}
+  824|  4.80k|         difference = difference | (x[i] ^ y[i]);
+  825|  4.80k|      }
+  826|       |
+  827|    150|      return CT::Mask<T>::is_zero(difference);
+  828|    150|   }
+  829|    150|}
 _ZN5Botan2CT4MaskIhE7is_zeroEh:
-  449|    150|      static constexpr Mask<T> is_zero(T x) { return Mask<T>(ct_is_zero<T>(value_barrier<T>(x))); }
+  456|    150|      static constexpr Mask<T> is_zero(T x) { return Mask<T>(ct_is_zero<T>(value_barrier<T>(x))); }
 _ZN5Botan2CT13value_barrierIhEET_S2_Qaasr3stdE17unsigned_integralIS2_Entsr3stdE7same_asIbS2_E:
-  275|    300|{
-  276|    300|   if(std::is_constant_evaluated()) {
+  278|    300|{
+  279|    300|   if(std::is_constant_evaluated()) {
   ------------------
-  |  Branch (276:7): [Folded - Ignored]
+  |  Branch (279:7): [Folded - Ignored]
   ------------------
-  277|      0|      return x;
-  278|    300|   } else {
-  279|    300|#if defined(BOTAN_CT_VALUE_BARRIER_USE_ASM)
-  280|       |      /*
-  281|       |      * We may want a "stronger" statement such as
-  282|       |      *     asm volatile("" : "+r,m"(x) : : "memory);
-  283|       |      * (see https://theunixzoo.co.uk/blog/2021-10-14-preventing-optimisations.html)
-  284|       |      * however the current approach seems sufficient with current compilers,
-  285|       |      * and is minimally damaging with regards to degrading code generation.
-  286|       |      */
-  287|    300|      asm("" : "+r"(x) : /* no input */);
-  288|    300|      return x;
-  289|       |#elif defined(BOTAN_CT_VALUE_BARRIER_USE_VOLATILE)
-  290|       |      volatile T vx = x;
-  291|       |      return vx;
-  292|       |#else
-  293|       |      return x;
-  294|       |#endif
-  295|    300|   }
-  296|    300|}
+  280|      0|      return x;
+  281|    300|   } else {
+  282|    300|#if defined(BOTAN_CT_VALUE_BARRIER_USE_ASM)
+  283|       |      /*
+  284|       |      * We may want a "stronger" statement such as
+  285|       |      *     asm volatile("" : "+r,m"(x) : : "memory);
+  286|       |      * (see https://theunixzoo.co.uk/blog/2021-10-14-preventing-optimisations.html)
+  287|       |      * however the current approach seems sufficient with current compilers,
+  288|       |      * and is minimally damaging with regards to degrading code generation.
+  289|       |      */
+  290|    300|      asm("" : "+r"(x) : /* no input */);
+  291|    300|      return x;
+  292|       |#elif defined(BOTAN_CT_VALUE_BARRIER_USE_VOLATILE)
+  293|       |      volatile T vx = x;
+  294|       |      return vx;
+  295|       |#else
+  296|       |      return x;
+  297|       |#endif
+  298|    300|   }
+  299|    300|}
 _ZN5Botan2CT4MaskIhEC2Eh:
-  643|    150|      constexpr Mask(T m) : m_mask(m) {}
+  650|    150|      constexpr Mask(T m) : m_mask(m) {}
 _ZNK5Botan2CT4MaskIhE7as_boolEv:
-  626|    150|      constexpr bool as_bool() const { return unpoisoned_value() != 0; }
+  633|    150|      constexpr bool as_bool() const { return unpoisoned_value() != 0; }
 _ZNK5Botan2CT4MaskIhE16unpoisoned_valueEv:
-  610|    150|      constexpr T unpoisoned_value() const {
-  611|    150|         T r = value();
-  612|    150|         CT::unpoison(r);
-  613|    150|         return r;
-  614|    150|      }
+  617|    150|      constexpr T unpoisoned_value() const {
+  618|    150|         T r = value();
+  619|    150|         CT::unpoison(r);
+  620|    150|         return r;
+  621|    150|      }
 _ZNK5Botan2CT4MaskIhE5valueEv:
-  636|    150|      constexpr T value() const { return value_barrier<T>(m_mask); }
-_ZN5Botan2CT8unpoisonITkNSt3__18integralEhEEvRT_:
-  105|    150|constexpr void unpoison(T& p) {
-  106|    150|   unpoison(&p, 1);
-  107|    150|}
+  643|    150|      constexpr T value() const { return value_barrier<T>(m_mask); }
+_ZN5Botan2CT8unpoisonITkNSt3__18integralEhEEvRKT_:
+  110|    150|constexpr void unpoison(const T& p) {
+  111|    150|   unpoison(&p, 1);
+  112|    150|}
 _ZN5Botan2CT8unpoisonIhEEvPKT_m:
    65|    450|constexpr inline void unpoison(const T* p, size_t n) {
    66|       |#if defined(BOTAN_HAS_VALGRIND)
@@ -379,15 +379,15 @@ _ZN5Botan2CT8unpoisonIhEEvPKT_m:
    71|       |
    72|    450|   BOTAN_UNUSED(p, n);
   ------------------
-  |  |  120|    450|#define BOTAN_UNUSED Botan::ignore_params
+  |  |  122|    450|#define BOTAN_UNUSED Botan::ignore_params
   ------------------
    73|    450|}
 _ZN5Botan2CT4MaskImEC2Em:
-  643|  48.0k|      constexpr Mask(T m) : m_mask(m) {}
+  650|  48.0k|      constexpr Mask(T m) : m_mask(m) {}
 _ZN5Botan2CT4MaskImE14expand_top_bitEm:
-  427|  25.6k|      static constexpr Mask<T> expand_top_bit(T v) { return Mask<T>(Botan::expand_top_bit<T>(value_barrier<T>(v))); }
+  434|  25.6k|      static constexpr Mask<T> expand_top_bit(T v) { return Mask<T>(Botan::expand_top_bit<T>(value_barrier<T>(v))); }
 _ZNK5Botan2CT4MaskImE13if_set_returnEm:
-  550|   288k|      constexpr T if_set_return(T x) const { return value() & x; }
+  557|   288k|      constexpr T if_set_return(T x) const { return value() & x; }
 _ZN5Botan2CT6poisonIhEEvPKT_m:
    54|    200|constexpr inline void poison(const T* p, size_t n) {
    55|       |#if defined(BOTAN_HAS_VALGRIND)
@@ -398,15 +398,15 @@ _ZN5Botan2CT6poisonIhEEvPKT_m:
    60|       |
    61|    200|   BOTAN_UNUSED(p, n);
   ------------------
-  |  |  120|    200|#define BOTAN_UNUSED Botan::ignore_params
+  |  |  122|    200|#define BOTAN_UNUSED Botan::ignore_params
   ------------------
    62|    200|}
 _ZN5Botan2CT4MaskImE10expand_bitEmm:
-  433|  25.6k|      static constexpr Mask<T> expand_bit(T v, size_t bit) {
-  434|  25.6k|         return CT::Mask<T>::expand_top_bit(v << (sizeof(v) * 8 - 1 - bit));
-  435|  25.6k|      }
+  440|  25.6k|      static constexpr Mask<T> expand_bit(T v, size_t bit) {
+  441|  25.6k|         return CT::Mask<T>::expand_top_bit(v << (sizeof(v) * 8 - 1 - bit));
+  442|  25.6k|      }
 _ZN5Botan2CTeoENS0_4MaskImEES2_:
-  535|  22.4k|      friend Mask<T> operator^(Mask<T> x, Mask<T> y) { return Mask<T>(x.value() ^ y.value()); }
+  542|  22.4k|      friend Mask<T> operator^(Mask<T> x, Mask<T> y) { return Mask<T>(x.value() ^ y.value()); }
 
 _ZN5Botan11carry_shiftEom:
   143|  1.41M|inline uint64_t carry_shift(const uint128_t a, size_t shift) {
@@ -455,20 +455,20 @@ _ZN5Botan8FE_25519C2Ellllllllll:
    63|   280k|         m_fe[9] = static_cast<int32_t>(h9);
    64|   280k|      }
 _ZNK5Botan8FE_255197is_zeroEv:
-   75|    152|      bool is_zero() const {
-   76|    152|         uint8_t s[32];
-   77|    152|         to_bytes(s);
+   75|    156|      bool is_zero() const {
+   76|    156|         uint8_t s[32];
+   77|    156|         to_bytes(s);
    78|       |
-   79|    152|         uint8_t sum = 0;
-   80|  5.01k|         for(size_t i = 0; i != 32; ++i) {
+   79|    156|         uint8_t sum = 0;
+   80|  5.14k|         for(size_t i = 0; i != 32; ++i) {
   ------------------
-  |  Branch (80:28): [True: 4.86k, False: 152]
+  |  Branch (80:28): [True: 4.99k, False: 156]
   ------------------
-   81|  4.86k|            sum |= s[i];
-   82|  4.86k|         }
+   81|  4.99k|            sum |= s[i];
+   82|  4.99k|         }
    83|       |
-   84|    152|         return (sum == 0);
-   85|    152|      }
+   84|    156|         return (sum == 0);
+   85|    156|      }
 _ZNK5Botan8FE_2551911is_negativeEv:
    91|    300|      bool is_negative() const {
    92|       |         // TODO could avoid most of the to_bytes computation here
@@ -510,7 +510,7 @@ _ZN5Botan8FE_255196negateERKS0_:
   119|  6.45k|         return z;
   120|  6.45k|      }
 _ZN5Botan8FE_255193sqrERKS0_:
-  125|  78.1k|      static FE_25519 sqr(const FE_25519& a) { return sqr_iter(a, 1); }
+  125|  78.2k|      static FE_25519 sqr(const FE_25519& a) { return sqr_iter(a, 1); }
 _ZNK5Botan8FE_25519ixEm:
   132|  10.5M|      int32_t operator[](size_t i) const { return m_fe[i]; }
 _ZN5Botan8FE_25519ixEm:
@@ -528,12 +528,12 @@ _ZN5Botan7fe_copyERNS_8FE_25519ERKS0_:
   157|    800|   a = b;
   158|    800|}
 _ZN5Botan12fe_isnonzeroERKNS_8FE_25519E:
-  160|    152|inline int fe_isnonzero(const FE_25519& x) {
-  161|    152|   return x.is_zero() ? 0 : 1;
+  160|    156|inline int fe_isnonzero(const FE_25519& x) {
+  161|    156|   return x.is_zero() ? 0 : 1;
   ------------------
-  |  Branch (161:11): [True: 100, False: 52]
+  |  Branch (161:11): [True: 100, False: 56]
   ------------------
-  162|    152|}
+  162|    156|}
 _ZN5Botan13fe_isnegativeERKNS_8FE_25519E:
   164|    300|inline int fe_isnegative(const FE_25519& x) {
   165|    300|   return x.is_negative();
@@ -563,9 +563,9 @@ _ZN5Botan6fe_mulERNS_8FE_25519ERKS0_S3_:
   189|   174k|   x = FE_25519::mul(a, b);
   190|   174k|}
 _ZN5Botan5fe_sqERNS_8FE_25519ERKS0_:
-  192|  78.1k|inline void fe_sq(FE_25519& x, const FE_25519& z) {
-  193|  78.1k|   x = FE_25519::sqr(z);
-  194|  78.1k|}
+  192|  78.2k|inline void fe_sq(FE_25519& x, const FE_25519& z) {
+  193|  78.2k|   x = FE_25519::sqr(z);
+  194|  78.2k|}
 _ZN5Botan10fe_sq_iterERNS_8FE_25519ERKS0_m:
   196|  2.70k|inline void fe_sq_iter(FE_25519& x, const FE_25519& z, size_t iter) {
   197|  2.70k|   x = FE_25519::sqr_iter(z, iter);
@@ -626,19 +626,19 @@ _ZN5Botan5carryILm25ELl19EEEvRlS1_QaagtT_Li0EltT_Li64E:
    35|   353k|   h0 -= c * X1;
    36|   353k|}
 _ZN5Botan6carry0ILm26EEEvRiS1_QaagtT_Li0EltT_Li32E:
-   51|  3.26k|{
-   52|  3.26k|   const int32_t X1 = (static_cast<int64_t>(1) << S);
-   53|  3.26k|   int32_t c = h0 >> S;
-   54|  3.26k|   h1 += c;
-   55|  3.26k|   h0 -= c * X1;
-   56|  3.26k|}
+   51|  3.28k|{
+   52|  3.28k|   const int32_t X1 = (static_cast<int64_t>(1) << S);
+   53|  3.28k|   int32_t c = h0 >> S;
+   54|  3.28k|   h1 += c;
+   55|  3.28k|   h0 -= c * X1;
+   56|  3.28k|}
 _ZN5Botan6carry0ILm25EEEvRiS1_QaagtT_Li0EltT_Li32E:
-   51|  2.60k|{
-   52|  2.60k|   const int32_t X1 = (static_cast<int64_t>(1) << S);
-   53|  2.60k|   int32_t c = h0 >> S;
-   54|  2.60k|   h1 += c;
-   55|  2.60k|   h0 -= c * X1;
-   56|  2.60k|}
+   51|  2.62k|{
+   52|  2.62k|   const int32_t X1 = (static_cast<int64_t>(1) << S);
+   53|  2.62k|   int32_t c = h0 >> S;
+   54|  2.62k|   h1 += c;
+   55|  2.62k|   h0 -= c * X1;
+   56|  2.62k|}
 _ZN5Botan5carryILm21ELl1EEEvRlS1_QaagtT_Li0EltT_Li64E:
    30|  5.75k|{
    31|  5.75k|   const int64_t X1 = (static_cast<int64_t>(1) << S);
@@ -720,7 +720,7 @@ _ZN5Botan8store_leINS_6detail10AutoDetectEJNSt3__14spanIhLm8EEEmEEEDaDpOT0_:
   737|    100|   return detail::store_any<std::endian::little, ModifierT>(std::forward<ParamTs>(params)...);
   738|    100|}
 _ZN5Botan6detail9store_anyILNSt3__16endianE57005ENS0_10AutoDetectETkNS_6ranges23contiguous_output_rangeIhEENS2_4spanIhLm8EEETpTkNS0_20unsigned_integralishEJmEQaagtsZT2_Li0Eooaasr3stdE7same_asIS4_T0_E10all_same_vIDpT2_Eaa20unsigned_integralishIS9_E10all_same_vIS9_SB_EEEvOT1_SB_:
-  582|    100|inline constexpr void store_any(OutR&& out, Ts... ins) {
+  582|    100|inline constexpr void store_any(OutR&& out /* NOLINT(*-std-forward) */, Ts... ins) {
   583|    100|   ranges::assert_exact_byte_length<(sizeof(Ts) + ...)>(out);
   584|    100|   auto store_one = [off = 0]<typename T>(auto o, T i) mutable {
   585|    100|      store_any<endianness, T>(i, o.subspan(off).template first<sizeof(T)>());
@@ -774,7 +774,7 @@ _ZN5Botan8store_leINS_6detail10AutoDetectEJNSt3__14spanIhLm4EEEjEEEDaDpOT0_:
   737|    100|   return detail::store_any<std::endian::little, ModifierT>(std::forward<ParamTs>(params)...);
   738|    100|}
 _ZN5Botan6detail9store_anyILNSt3__16endianE57005ENS0_10AutoDetectETkNS_6ranges23contiguous_output_rangeIhEENS2_4spanIhLm4EEETpTkNS0_20unsigned_integralishEJjEQaagtsZT2_Li0Eooaasr3stdE7same_asIS4_T0_E10all_same_vIDpT2_Eaa20unsigned_integralishIS9_E10all_same_vIS9_SB_EEEvOT1_SB_:
-  582|    100|inline constexpr void store_any(OutR&& out, Ts... ins) {
+  582|    100|inline constexpr void store_any(OutR&& out /* NOLINT(*-std-forward) */, Ts... ins) {
   583|    100|   ranges::assert_exact_byte_length<(sizeof(Ts) + ...)>(out);
   584|    100|   auto store_one = [off = 0]<typename T>(auto o, T i) mutable {
   585|    100|      store_any<endianness, T>(i, o.subspan(off).template first<sizeof(T)>());
@@ -870,8 +870,8 @@ _ZN5Botan6detail24wrap_strong_type_or_enumITkNS0_20unsigned_integralishEmTkNSt3_
   204|    700|      return Botan::wrap_strong_type<OutT>(t);
   205|    700|   }
   206|    700|}
-_ZN5Botan11copy_out_beITkNS_6ranges14spanable_rangeERNSt3__16vectorImNS_16secure_allocatorImEEEEEEvNS2_4spanIhLm18446744073709551615EEEOT_:
-  773|  2.85k|inline void copy_out_be(std::span<uint8_t> out, InR&& in) {
+_ZN5Botan11copy_out_beITkNS_6ranges14spanable_rangeENSt3__16vectorImNS_16secure_allocatorImEEEEEEvNS2_4spanIhLm18446744073709551615EEERKT_:
+  773|  2.85k|inline void copy_out_be(std::span<uint8_t> out, const InR& in) {
   774|  2.85k|   using T = std::ranges::range_value_t<InR>;
   775|  2.85k|   std::span<const T> in_s{in};
   776|  2.85k|   const auto remaining_bytes = detail::copy_out_any_word_aligned_portion<std::endian::big>(out, in_s);
@@ -891,15 +891,15 @@ _ZN5Botan6detail33copy_out_any_word_aligned_portionILNSt3__16endianE64206ETkNS0_
   755|  2.85k|   const size_t remaining_bytes = out.size() - full_word_bytes;
   756|  2.85k|   BOTAN_ASSERT_NOMSG(in.size_bytes() >= full_word_bytes + remaining_bytes);
   ------------------
-  |  |   62|  2.85k|   do {                                                                     \
-  |  |   63|  2.85k|      if(!(expr))                                                           \
+  |  |   64|  2.85k|   do {                                                                     \
+  |  |   65|  2.85k|      if(!(expr))                                                           \
   |  |  ------------------
-  |  |  |  Branch (63:10): [True: 0, False: 2.85k]
+  |  |  |  Branch (65:10): [True: 0, False: 2.85k]
   |  |  ------------------
-  |  |   64|  2.85k|         Botan::assertion_failure(#expr, "", __func__, __FILE__, __LINE__); \
-  |  |   65|  2.85k|   } while(0)
+  |  |   66|  2.85k|         Botan::assertion_failure(#expr, "", __func__, __FILE__, __LINE__); \
+  |  |   67|  2.85k|   } while(0)
   |  |  ------------------
-  |  |  |  Branch (65:12): [Folded - Ignored]
+  |  |  |  Branch (67:12): [Folded - Ignored]
   |  |  ------------------
   ------------------
   757|       |
@@ -910,8 +910,8 @@ _ZN5Botan6detail33copy_out_any_word_aligned_portionILNSt3__16endianE64206ETkNS0_
   762|       |
   763|  2.85k|   return remaining_bytes;
   764|  2.85k|}
-_ZN5Botan6detail9store_anyILNSt3__16endianE64206EmTkNS_6ranges23contiguous_output_rangeIhEENS2_4spanIhLm18446744073709551615EEETkNS4_14spanable_rangeENS6_IKmLm18446744073709551615EEEQoosr3stdE7same_asINS0_10AutoDetectET0_Esr3stdE7same_asISB_NS2_11conditionalIXsr21__is_primary_templateINS2_15iterator_traitsIu14__remove_cvrefIDTclL_ZNS2_6ranges5__cpo5beginEEclsr3stdE7declvalIRT2_EEEEEEEEE5valueENS2_26indirectly_readable_traitsISJ_EESK_E4type10value_typeEEEEvOT1_OSG_:
-  603|  2.85k|inline constexpr void store_any(OutR&& out, InR&& in) {
+_ZN5Botan6detail9store_anyILNSt3__16endianE64206EmTkNS_6ranges23contiguous_output_rangeIhEENS2_4spanIhLm18446744073709551615EEETkNS4_14spanable_rangeENS6_IKmLm18446744073709551615EEEQoosr3stdE7same_asINS0_10AutoDetectET0_Esr3stdE7same_asISB_NS2_11conditionalIXsr21__is_primary_templateINS2_15iterator_traitsIu14__remove_cvrefIDTclL_ZNS2_6ranges5__cpo5beginEEclsr3stdE7declvalIRT2_EEEEEEEEE5valueENS2_26indirectly_readable_traitsISJ_EESK_E4type10value_typeEEEEvOT1_RKSG_:
+  603|  2.85k|inline constexpr void store_any(OutR&& out /* NOLINT(*-std-forward) */, const InR& in) {
   604|  2.85k|   ranges::assert_equal_byte_lengths(out, in);
   605|  2.85k|   using element_type = std::ranges::range_value_t<InR>;
   606|       |
@@ -940,7 +940,7 @@ _ZN5Botan6detail9store_anyILNSt3__16endianE64206EmTkNS_6ranges23contiguous_outpu
   626|  2.85k|      }
   627|  2.85k|   }
   628|  2.85k|}
-_ZZN5Botan6detail9store_anyILNSt3__16endianE64206EmTkNS_6ranges23contiguous_output_rangeIhEENS2_4spanIhLm18446744073709551615EEETkNS4_14spanable_rangeENS6_IKmLm18446744073709551615EEEQoosr3stdE7same_asINS0_10AutoDetectET0_Esr3stdE7same_asISB_NS2_11conditionalIXsr21__is_primary_templateINS2_15iterator_traitsIu14__remove_cvrefIDTclL_ZNS2_6ranges5__cpo5beginEEclsr3stdE7declvalIRT2_EEEEEEEEE5valueENS2_26indirectly_readable_traitsISJ_EESK_E4type10value_typeEEEEvOT1_OSG_ENKUlvE_clEv:
+_ZZN5Botan6detail9store_anyILNSt3__16endianE64206EmTkNS_6ranges23contiguous_output_rangeIhEENS2_4spanIhLm18446744073709551615EEETkNS4_14spanable_rangeENS6_IKmLm18446744073709551615EEEQoosr3stdE7same_asINS0_10AutoDetectET0_Esr3stdE7same_asISB_NS2_11conditionalIXsr21__is_primary_templateINS2_15iterator_traitsIu14__remove_cvrefIDTclL_ZNS2_6ranges5__cpo5beginEEclsr3stdE7declvalIRT2_EEEEEEEEE5valueENS2_26indirectly_readable_traitsISJ_EESK_E4type10value_typeEEEEvOT1_RKSG_ENKUlvE_clEv:
   607|  2.85k|   auto store_elementwise = [&] {
   608|  2.85k|      constexpr size_t bytes_per_element = sizeof(element_type);
   609|  2.85k|      std::span<uint8_t> out_s(out);
@@ -953,7 +953,7 @@ _ZZN5Botan6detail9store_anyILNSt3__16endianE64206EmTkNS_6ranges23contiguous_outp
   613|  22.8k|      }
   614|  2.85k|   };
 _ZN5Botan6detail9store_anyILNSt3__16endianE64206EmTkNS_6ranges23contiguous_output_rangeIhEENS2_4spanIhLm8EEETpTkNS0_20unsigned_integralishEJmEQaagtsZT2_Li0Eooaasr3stdE7same_asINS0_10AutoDetectET0_E10all_same_vIDpT2_Eaa20unsigned_integralishIS9_E10all_same_vIS9_SB_EEEvOT1_SB_:
-  582|  22.8k|inline constexpr void store_any(OutR&& out, Ts... ins) {
+  582|  22.8k|inline constexpr void store_any(OutR&& out /* NOLINT(*-std-forward) */, Ts... ins) {
   583|  22.8k|   ranges::assert_exact_byte_length<(sizeof(Ts) + ...)>(out);
   584|  22.8k|   auto store_one = [off = 0]<typename T>(auto o, T i) mutable {
   585|  22.8k|      store_any<endianness, T>(i, o.subspan(off).template first<sizeof(T)>());
@@ -1060,7 +1060,7 @@ _ZN5Botan6detail9store_anyILNSt3__16endianE57005ENS0_10AutoDetectETkNS0_20unsign
   726|    100|   store_any<endianness, T0>(std::span<uint8_t, bytes>(out, bytes), in0, ins...);
   727|    100|}
 _ZN5Botan6detail9store_anyILNSt3__16endianE57005EmTkNS_6ranges23contiguous_output_rangeIhEENS2_4spanIhLm32EEETpTkNS0_20unsigned_integralishEJmmmmEQaagtsZT2_Li0Eooaasr3stdE7same_asINS0_10AutoDetectET0_E10all_same_vIDpT2_Eaa20unsigned_integralishIS9_E10all_same_vIS9_SB_EEEvOT1_SB_:
-  582|    100|inline constexpr void store_any(OutR&& out, Ts... ins) {
+  582|    100|inline constexpr void store_any(OutR&& out /* NOLINT(*-std-forward) */, Ts... ins) {
   583|    100|   ranges::assert_exact_byte_length<(sizeof(Ts) + ...)>(out);
   584|    100|   auto store_one = [off = 0]<typename T>(auto o, T i) mutable {
   585|    100|      store_any<endianness, T>(i, o.subspan(off).template first<sizeof(T)>());
@@ -1125,15 +1125,15 @@ _ZN5Botan18MerkleDamgard_HashINS_7SHA_512EE18append_padding_bitEv:
    77|  2.85k|      void append_padding_bit() {
    78|  2.85k|         BOTAN_ASSERT_NOMSG(!m_buffer.ready_to_consume());
   ------------------
-  |  |   62|  2.85k|   do {                                                                     \
-  |  |   63|  2.85k|      if(!(expr))                                                           \
+  |  |   64|  2.85k|   do {                                                                     \
+  |  |   65|  2.85k|      if(!(expr))                                                           \
   |  |  ------------------
-  |  |  |  Branch (63:10): [True: 0, False: 2.85k]
+  |  |  |  Branch (65:10): [True: 0, False: 2.85k]
   |  |  ------------------
-  |  |   64|  2.85k|         Botan::assertion_failure(#expr, "", __func__, __FILE__, __LINE__); \
-  |  |   65|  2.85k|   } while(0)
+  |  |   66|  2.85k|         Botan::assertion_failure(#expr, "", __func__, __FILE__, __LINE__); \
+  |  |   67|  2.85k|   } while(0)
   |  |  ------------------
-  |  |  |  Branch (65:12): [Folded - Ignored]
+  |  |  |  Branch (67:12): [Folded - Ignored]
   |  |  ------------------
   ------------------
    79|  2.85k|         if constexpr(MD::bit_endianness == MD_Endian::Big) {
@@ -1159,15 +1159,15 @@ _ZN5Botan18MerkleDamgard_HashINS_7SHA_512EE27append_counter_and_finalizeEv:
    96|       |         // Make sure that any remaining bytes in the very last block are zero.
    97|  2.85k|         BOTAN_ASSERT_NOMSG(m_buffer.elements_until_alignment() >= MD::ctr_bytes);
   ------------------
-  |  |   62|  2.85k|   do {                                                                     \
-  |  |   63|  2.85k|      if(!(expr))                                                           \
+  |  |   64|  2.85k|   do {                                                                     \
+  |  |   65|  2.85k|      if(!(expr))                                                           \
   |  |  ------------------
-  |  |  |  Branch (63:10): [True: 0, False: 2.85k]
+  |  |  |  Branch (65:10): [True: 0, False: 2.85k]
   |  |  ------------------
-  |  |   64|  2.85k|         Botan::assertion_failure(#expr, "", __func__, __FILE__, __LINE__); \
-  |  |   65|  2.85k|   } while(0)
+  |  |   66|  2.85k|         Botan::assertion_failure(#expr, "", __func__, __FILE__, __LINE__); \
+  |  |   67|  2.85k|   } while(0)
   |  |  ------------------
-  |  |  |  Branch (65:12): [Folded - Ignored]
+  |  |  |  Branch (67:12): [Folded - Ignored]
   |  |  ------------------
   ------------------
    98|  2.85k|         m_buffer.fill_up_with_zeros();
@@ -1188,15 +1188,15 @@ _ZN5Botan18MerkleDamgard_HashINS_7SHA_512EE11copy_outputENSt3__14spanIhLm1844674
   113|  2.85k|      void copy_output(std::span<uint8_t> output) {
   114|  2.85k|         BOTAN_ASSERT_NOMSG(output.size() >= MD::output_bytes);
   ------------------
-  |  |   62|  2.85k|   do {                                                                     \
-  |  |   63|  2.85k|      if(!(expr))                                                           \
+  |  |   64|  2.85k|   do {                                                                     \
+  |  |   65|  2.85k|      if(!(expr))                                                           \
   |  |  ------------------
-  |  |  |  Branch (63:10): [True: 0, False: 2.85k]
+  |  |  |  Branch (65:10): [True: 0, False: 2.85k]
   |  |  ------------------
-  |  |   64|  2.85k|         Botan::assertion_failure(#expr, "", __func__, __FILE__, __LINE__); \
-  |  |   65|  2.85k|   } while(0)
+  |  |   66|  2.85k|         Botan::assertion_failure(#expr, "", __func__, __FILE__, __LINE__); \
+  |  |   67|  2.85k|   } while(0)
   |  |  ------------------
-  |  |  |  Branch (65:12): [Folded - Ignored]
+  |  |  |  Branch (67:12): [Folded - Ignored]
   |  |  ------------------
   ------------------
   115|       |
@@ -1208,37 +1208,37 @@ _ZN5Botan18MerkleDamgard_HashINS_7SHA_512EE11copy_outputENSt3__14spanIhLm1844674
   121|  2.85k|      }
 
 _ZN5Botan3rhoILm14ELm18ELm41EmEET2_S1_:
-   52|   504k|BOTAN_FORCE_INLINE constexpr T rho(T x) {
-   53|   504k|   return rotr<R1>(x) ^ rotr<R2>(x) ^ rotr<R3>(x);
-   54|   504k|}
+   52|   514k|BOTAN_FORCE_INLINE constexpr T rho(T x) {
+   53|   514k|   return rotr<R1>(x) ^ rotr<R2>(x) ^ rotr<R3>(x);
+   54|   514k|}
 _ZN5Botan4rotrILm14EmEET0_S1_QaagtT_Li0EltT_mlLi8EstS1_:
-   36|   504k|{
-   37|   504k|   return static_cast<T>((input >> ROT) | (input << (8 * sizeof(T) - ROT)));
-   38|   504k|}
+   36|   514k|{
+   37|   514k|   return static_cast<T>((input >> ROT) | (input << (8 * sizeof(T) - ROT)));
+   38|   514k|}
 _ZN5Botan4rotrILm18EmEET0_S1_QaagtT_Li0EltT_mlLi8EstS1_:
-   36|   504k|{
-   37|   504k|   return static_cast<T>((input >> ROT) | (input << (8 * sizeof(T) - ROT)));
-   38|   504k|}
+   36|   514k|{
+   37|   514k|   return static_cast<T>((input >> ROT) | (input << (8 * sizeof(T) - ROT)));
+   38|   514k|}
 _ZN5Botan4rotrILm41EmEET0_S1_QaagtT_Li0EltT_mlLi8EstS1_:
-   36|   504k|{
-   37|   504k|   return static_cast<T>((input >> ROT) | (input << (8 * sizeof(T) - ROT)));
-   38|   504k|}
+   36|   514k|{
+   37|   514k|   return static_cast<T>((input >> ROT) | (input << (8 * sizeof(T) - ROT)));
+   38|   514k|}
 _ZN5Botan3rhoILm28ELm34ELm39EmEET2_S1_:
-   52|   504k|BOTAN_FORCE_INLINE constexpr T rho(T x) {
-   53|   504k|   return rotr<R1>(x) ^ rotr<R2>(x) ^ rotr<R3>(x);
-   54|   504k|}
+   52|   514k|BOTAN_FORCE_INLINE constexpr T rho(T x) {
+   53|   514k|   return rotr<R1>(x) ^ rotr<R2>(x) ^ rotr<R3>(x);
+   54|   514k|}
 _ZN5Botan4rotrILm28EmEET0_S1_QaagtT_Li0EltT_mlLi8EstS1_:
-   36|   504k|{
-   37|   504k|   return static_cast<T>((input >> ROT) | (input << (8 * sizeof(T) - ROT)));
-   38|   504k|}
+   36|   514k|{
+   37|   514k|   return static_cast<T>((input >> ROT) | (input << (8 * sizeof(T) - ROT)));
+   38|   514k|}
 _ZN5Botan4rotrILm34EmEET0_S1_QaagtT_Li0EltT_mlLi8EstS1_:
-   36|   504k|{
-   37|   504k|   return static_cast<T>((input >> ROT) | (input << (8 * sizeof(T) - ROT)));
-   38|   504k|}
+   36|   514k|{
+   37|   514k|   return static_cast<T>((input >> ROT) | (input << (8 * sizeof(T) - ROT)));
+   38|   514k|}
 _ZN5Botan4rotrILm39EmEET0_S1_QaagtT_Li0EltT_mlLi8EstS1_:
-   36|   504k|{
-   37|   504k|   return static_cast<T>((input >> ROT) | (input << (8 * sizeof(T) - ROT)));
-   38|   504k|}
+   36|   514k|{
+   37|   514k|   return static_cast<T>((input >> ROT) | (input << (8 * sizeof(T) - ROT)));
+   38|   514k|}
 
 _ZNK5Botan9SCAN_Name9algo_nameEv:
    44|    200|      const std::string& algo_name() const { return m_alg_name; }
@@ -1253,13 +1253,13 @@ _ZN5Botan7SHA_5125clearEv:
    84|    600|      void clear() override { m_md.clear(); }
 
 _ZN5Botan9SHA2_64_FEmmmRmmmmS0_m:
-   46|   504k|   uint64_t A, uint64_t B, uint64_t C, uint64_t& D, uint64_t E, uint64_t F, uint64_t G, uint64_t& H, uint64_t M) {
-   47|   504k|   const uint64_t E_rho = rho<14, 18, 41>(E);
-   48|   504k|   const uint64_t A_rho = rho<28, 34, 39>(A);
-   49|   504k|   H += E_rho + choose(E, F, G) + M;
-   50|   504k|   D += H;
-   51|   504k|   H += A_rho + majority(A, B, C);
-   52|   504k|}
+   46|   514k|   uint64_t A, uint64_t B, uint64_t C, uint64_t& D, uint64_t E, uint64_t F, uint64_t G, uint64_t& H, uint64_t M) {
+   47|   514k|   const uint64_t E_rho = rho<14, 18, 41>(E);
+   48|   514k|   const uint64_t A_rho = rho<28, 34, 39>(A);
+   49|   514k|   H += E_rho + choose(E, F, G) + M;
+   50|   514k|   D += H;
+   51|   514k|   H += A_rho + majority(A, B, C);
+   52|   514k|}
 
 _ZN5Botan9SIMD_2x64C2Ev:
    34|  48.8k|      SIMD_2x64() { m_simd = _mm_setzero_si128(); }
@@ -1419,49 +1419,49 @@ _ZN5Botan9SIMD_4x32C2EDv2_x:
   756|      2|      explicit SIMD_4x32(native_simd_type x) noexcept : m_simd(x) {}
 
 _ZN5Botan9SIMD_4x64C2Ev:
-   32|    816|      BOTAN_FN_ISA_SIMD_4X64 SIMD_4x64() { m_simd = _mm256_setzero_si256(); }
+   32|  1.29k|      BOTAN_FN_ISA_SIMD_4X64 SIMD_4x64() { m_simd = _mm256_setzero_si256(); }
 _ZN5Botan9SIMD_4x648load_be2EPKvS2_:
-   40|    816|      static BOTAN_FN_ISA_SIMD_4X64 SIMD_4x64 load_be2(const void* inl, const void* inh) {
-   41|    816|         return SIMD_4x64::load_le2(inl, inh).bswap();
-   42|    816|      }
+   40|  1.29k|      static BOTAN_FN_ISA_SIMD_4X64 SIMD_4x64 load_be2(const void* inl, const void* inh) {
+   41|  1.29k|         return SIMD_4x64::load_le2(inl, inh).bswap();
+   42|  1.29k|      }
 _ZN5Botan9SIMD_4x648load_le2EPKvS2_:
-   35|    816|      static BOTAN_FN_ISA_SIMD_4X64 SIMD_4x64 load_le2(const void* inl, const void* inh) {
-   36|    816|         return SIMD_4x64(
-   37|    816|            _mm256_loadu2_m128i(reinterpret_cast<const __m128i*>(inl), reinterpret_cast<const __m128i*>(inh)));
-   38|    816|      }
+   35|  1.29k|      static BOTAN_FN_ISA_SIMD_4X64 SIMD_4x64 load_le2(const void* inl, const void* inh) {
+   36|  1.29k|         return SIMD_4x64(
+   37|  1.29k|            _mm256_loadu2_m128i(reinterpret_cast<const __m128i*>(inl), reinterpret_cast<const __m128i*>(inh)));
+   38|  1.29k|      }
 _ZN5Botan9SIMD_4x64C2EDv4_x:
-  160|  31.8k|      explicit BOTAN_FN_ISA_SIMD_4X64 SIMD_4x64(__m256i x) : m_simd(x) {}
+  160|  50.5k|      explicit BOTAN_FN_ISA_SIMD_4X64 SIMD_4x64(__m256i x) : m_simd(x) {}
 _ZNK5Botan9SIMD_4x645bswapEv:
-   50|    816|      SIMD_4x64 BOTAN_FN_ISA_SIMD_4X64 bswap() const {
-   51|    816|         const auto idx = _mm256_set_epi8(
-   52|    816|            8, 9, 10, 11, 12, 13, 14, 15, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 0, 1, 2, 3, 4, 5, 6, 7);
+   50|  1.29k|      SIMD_4x64 BOTAN_FN_ISA_SIMD_4X64 bswap() const {
+   51|  1.29k|         const auto idx = _mm256_set_epi8(
+   52|  1.29k|            8, 9, 10, 11, 12, 13, 14, 15, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 0, 1, 2, 3, 4, 5, 6, 7);
    53|       |
-   54|    816|         return SIMD_4x64(_mm256_shuffle_epi8(m_simd, idx));
-   55|    816|      }
+   54|  1.29k|         return SIMD_4x64(_mm256_shuffle_epi8(m_simd, idx));
+   55|  1.29k|      }
 _ZNK5Botan9SIMD_4x64plERKS0_:
-   67|  13.8k|      SIMD_4x64 operator+(const SIMD_4x64& other) const {
-   68|  13.8k|         SIMD_4x64 retval(*this);
-   69|  13.8k|         retval += other;
-   70|  13.8k|         return retval;
-   71|  13.8k|      }
+   67|  22.0k|      SIMD_4x64 operator+(const SIMD_4x64& other) const {
+   68|  22.0k|         SIMD_4x64 retval(*this);
+   69|  22.0k|         retval += other;
+   70|  22.0k|         return retval;
+   71|  22.0k|      }
 _ZN5Botan9SIMD_4x64pLERKS0_:
-   79|  13.8k|      BOTAN_FN_ISA_SIMD_4X64 void operator+=(const SIMD_4x64& other) {
-   80|  13.8k|         m_simd = _mm256_add_epi64(m_simd, other.m_simd);
-   81|  13.8k|      }
+   79|  22.0k|      BOTAN_FN_ISA_SIMD_4X64 void operator+=(const SIMD_4x64& other) {
+   80|  22.0k|         m_simd = _mm256_add_epi64(m_simd, other.m_simd);
+   81|  22.0k|      }
 _ZN5Botan9SIMD_4x647load_leEPKv:
-   44|  4.08k|      static BOTAN_FN_ISA_SIMD_4X64 SIMD_4x64 load_le(const void* in) {
-   45|  4.08k|         return SIMD_4x64(_mm256_loadu_si256(reinterpret_cast<const __m256i*>(in)));
-   46|  4.08k|      }
+   44|  6.48k|      static BOTAN_FN_ISA_SIMD_4X64 SIMD_4x64 load_le(const void* in) {
+   45|  6.48k|         return SIMD_4x64(_mm256_loadu_si256(reinterpret_cast<const __m256i*>(in)));
+   46|  6.48k|      }
 _ZN5Botan9SIMD_4x649store_le2EPvS1_:
-   63|  4.08k|      BOTAN_FN_ISA_SIMD_4X64 void store_le2(void* outh, void* outl) {
-   64|  4.08k|         _mm256_storeu2_m128i(reinterpret_cast<__m128i*>(outh), reinterpret_cast<__m128i*>(outl), m_simd);
-   65|  4.08k|      }
+   63|  6.48k|      BOTAN_FN_ISA_SIMD_4X64 void store_le2(void* outh, void* outl) {
+   64|  6.48k|         _mm256_storeu2_m128i(reinterpret_cast<__m128i*>(outh), reinterpret_cast<__m128i*>(outl), m_simd);
+   65|  6.48k|      }
 _ZN5Botan9SIMD_4x647alignr8ERKS0_S2_:
-  131|  6.52k|      static SIMD_4x64 BOTAN_FN_ISA_SIMD_4X64 alignr8(const SIMD_4x64& a, const SIMD_4x64& b) {
-  132|  6.52k|         return SIMD_4x64(_mm256_alignr_epi8(a.m_simd, b.m_simd, 8));
-  133|  6.52k|      }
+  131|  10.3k|      static SIMD_4x64 BOTAN_FN_ISA_SIMD_4X64 alignr8(const SIMD_4x64& a, const SIMD_4x64& b) {
+  132|  10.3k|         return SIMD_4x64(_mm256_alignr_epi8(a.m_simd, b.m_simd, 8));
+  133|  10.3k|      }
 _ZNK5Botan9SIMD_4x644rotrILm1EEES0_vQaagtT_Li0EltT_Li64E:
-   90|  3.26k|      {
+   90|  5.18k|      {
    91|       |#if defined(__AVX512VL__)
    92|       |         return SIMD_4x64(_mm256_ror_epi64(m_simd, ROT));
    93|       |#else
@@ -1485,32 +1485,32 @@ _ZNK5Botan9SIMD_4x644rotrILm1EEES0_vQaagtT_Li0EltT_Li64E:
   111|       |               _mm256_set_epi64x(0x0b0a09080f0e0d0c, 0x0302010007060504, 0x0b0a09080f0e0d0c, 0x0302010007060504);
   112|       |
   113|       |            return SIMD_4x64(_mm256_shuffle_epi8(m_simd, shuf_rot_32));
-  114|  3.26k|         } else {
-  115|  3.26k|            return SIMD_4x64(_mm256_or_si256(_mm256_srli_epi64(m_simd, static_cast<int>(ROT)),
-  116|  3.26k|                                             _mm256_slli_epi64(m_simd, static_cast<int>(64 - ROT))));
-  117|  3.26k|         }
-  118|  3.26k|#endif
-  119|  3.26k|      }
+  114|  5.18k|         } else {
+  115|  5.18k|            return SIMD_4x64(_mm256_or_si256(_mm256_srli_epi64(m_simd, static_cast<int>(ROT)),
+  116|  5.18k|                                             _mm256_slli_epi64(m_simd, static_cast<int>(64 - ROT))));
+  117|  5.18k|         }
+  118|  5.18k|#endif
+  119|  5.18k|      }
 _ZNK5Botan9SIMD_4x64eoERKS0_:
-   73|  13.0k|      SIMD_4x64 operator^(const SIMD_4x64& other) const {
-   74|  13.0k|         SIMD_4x64 retval(*this);
-   75|  13.0k|         retval ^= other;
-   76|  13.0k|         return retval;
-   77|  13.0k|      }
+   73|  20.7k|      SIMD_4x64 operator^(const SIMD_4x64& other) const {
+   74|  20.7k|         SIMD_4x64 retval(*this);
+   75|  20.7k|         retval ^= other;
+   76|  20.7k|         return retval;
+   77|  20.7k|      }
 _ZN5Botan9SIMD_4x64eOERKS0_:
-   83|  13.0k|      BOTAN_FN_ISA_SIMD_4X64 void operator^=(const SIMD_4x64& other) {
-   84|  13.0k|         m_simd = _mm256_xor_si256(m_simd, other.m_simd);
-   85|  13.0k|      }
+   83|  20.7k|      BOTAN_FN_ISA_SIMD_4X64 void operator^=(const SIMD_4x64& other) {
+   84|  20.7k|         m_simd = _mm256_xor_si256(m_simd, other.m_simd);
+   85|  20.7k|      }
 _ZNK5Botan9SIMD_4x644rotrILm8EEES0_vQaagtT_Li0EltT_Li64E:
-   90|  3.26k|      {
+   90|  5.18k|      {
    91|       |#if defined(__AVX512VL__)
    92|       |         return SIMD_4x64(_mm256_ror_epi64(m_simd, ROT));
    93|       |#else
-   94|  3.26k|         if constexpr(ROT == 8) {
-   95|  3.26k|            auto shuf_rot_8 =
-   96|  3.26k|               _mm256_set_epi64x(0x080f0e0d0c0b0a09, 0x0007060504030201, 0x080f0e0d0c0b0a09, 0x0007060504030201);
+   94|  5.18k|         if constexpr(ROT == 8) {
+   95|  5.18k|            auto shuf_rot_8 =
+   96|  5.18k|               _mm256_set_epi64x(0x080f0e0d0c0b0a09, 0x0007060504030201, 0x080f0e0d0c0b0a09, 0x0007060504030201);
    97|       |
-   98|  3.26k|            return SIMD_4x64(_mm256_shuffle_epi8(m_simd, shuf_rot_8));
+   98|  5.18k|            return SIMD_4x64(_mm256_shuffle_epi8(m_simd, shuf_rot_8));
    99|       |         } else if constexpr(ROT == 16) {
   100|       |            auto shuf_rot_16 =
   101|       |               _mm256_set_epi64x(0x09080f0e0d0c0b0a, 0x0100070605040302, 0x09080f0e0d0c0b0a, 0x0100070605040302);
@@ -1530,14 +1530,14 @@ _ZNK5Botan9SIMD_4x644rotrILm8EEES0_vQaagtT_Li0EltT_Li64E:
   115|       |            return SIMD_4x64(_mm256_or_si256(_mm256_srli_epi64(m_simd, static_cast<int>(ROT)),
   116|       |                                             _mm256_slli_epi64(m_simd, static_cast<int>(64 - ROT))));
   117|       |         }
-  118|  3.26k|#endif
-  119|  3.26k|      }
+  118|  5.18k|#endif
+  119|  5.18k|      }
 _ZNK5Botan9SIMD_4x643shrILi7EEES0_v:
-  127|  3.26k|      SIMD_4x64 BOTAN_FN_ISA_SIMD_4X64 shr() const noexcept {
-  128|  3.26k|         return SIMD_4x64(_mm256_srli_epi64(m_simd, SHIFT));
-  129|  3.26k|      }
+  127|  5.18k|      SIMD_4x64 BOTAN_FN_ISA_SIMD_4X64 shr() const noexcept {
+  128|  5.18k|         return SIMD_4x64(_mm256_srli_epi64(m_simd, SHIFT));
+  129|  5.18k|      }
 _ZNK5Botan9SIMD_4x644rotrILm19EEES0_vQaagtT_Li0EltT_Li64E:
-   90|  3.26k|      {
+   90|  5.18k|      {
    91|       |#if defined(__AVX512VL__)
    92|       |         return SIMD_4x64(_mm256_ror_epi64(m_simd, ROT));
    93|       |#else
@@ -1561,14 +1561,14 @@ _ZNK5Botan9SIMD_4x644rotrILm19EEES0_vQaagtT_Li0EltT_Li64E:
   111|       |               _mm256_set_epi64x(0x0b0a09080f0e0d0c, 0x0302010007060504, 0x0b0a09080f0e0d0c, 0x0302010007060504);
   112|       |
   113|       |            return SIMD_4x64(_mm256_shuffle_epi8(m_simd, shuf_rot_32));
-  114|  3.26k|         } else {
-  115|  3.26k|            return SIMD_4x64(_mm256_or_si256(_mm256_srli_epi64(m_simd, static_cast<int>(ROT)),
-  116|  3.26k|                                             _mm256_slli_epi64(m_simd, static_cast<int>(64 - ROT))));
-  117|  3.26k|         }
-  118|  3.26k|#endif
-  119|  3.26k|      }
+  114|  5.18k|         } else {
+  115|  5.18k|            return SIMD_4x64(_mm256_or_si256(_mm256_srli_epi64(m_simd, static_cast<int>(ROT)),
+  116|  5.18k|                                             _mm256_slli_epi64(m_simd, static_cast<int>(64 - ROT))));
+  117|  5.18k|         }
+  118|  5.18k|#endif
+  119|  5.18k|      }
 _ZNK5Botan9SIMD_4x644rotrILm61EEES0_vQaagtT_Li0EltT_Li64E:
-   90|  3.26k|      {
+   90|  5.18k|      {
    91|       |#if defined(__AVX512VL__)
    92|       |         return SIMD_4x64(_mm256_ror_epi64(m_simd, ROT));
    93|       |#else
@@ -1592,16 +1592,16 @@ _ZNK5Botan9SIMD_4x644rotrILm61EEES0_vQaagtT_Li0EltT_Li64E:
   111|       |               _mm256_set_epi64x(0x0b0a09080f0e0d0c, 0x0302010007060504, 0x0b0a09080f0e0d0c, 0x0302010007060504);
   112|       |
   113|       |            return SIMD_4x64(_mm256_shuffle_epi8(m_simd, shuf_rot_32));
-  114|  3.26k|         } else {
-  115|  3.26k|            return SIMD_4x64(_mm256_or_si256(_mm256_srli_epi64(m_simd, static_cast<int>(ROT)),
-  116|  3.26k|                                             _mm256_slli_epi64(m_simd, static_cast<int>(64 - ROT))));
-  117|  3.26k|         }
-  118|  3.26k|#endif
-  119|  3.26k|      }
+  114|  5.18k|         } else {
+  115|  5.18k|            return SIMD_4x64(_mm256_or_si256(_mm256_srli_epi64(m_simd, static_cast<int>(ROT)),
+  116|  5.18k|                                             _mm256_slli_epi64(m_simd, static_cast<int>(64 - ROT))));
+  117|  5.18k|         }
+  118|  5.18k|#endif
+  119|  5.18k|      }
 _ZNK5Botan9SIMD_4x643shrILi6EEES0_v:
-  127|  3.26k|      SIMD_4x64 BOTAN_FN_ISA_SIMD_4X64 shr() const noexcept {
-  128|  3.26k|         return SIMD_4x64(_mm256_srli_epi64(m_simd, SHIFT));
-  129|  3.26k|      }
+  127|  5.18k|      SIMD_4x64 BOTAN_FN_ISA_SIMD_4X64 shr() const noexcept {
+  128|  5.18k|         return SIMD_4x64(_mm256_srli_epi64(m_simd, SHIFT));
+  129|  5.18k|      }
 
 _ZN5Botan12BufferSlicerC2ENSt3__14spanIKhLm18446744073709551615EEE:
    87|  7.40k|      BufferSlicer(std::span<const uint8_t> buffer) : m_remaining(buffer) {}
@@ -1609,15 +1609,15 @@ _ZN5Botan12BufferSlicer4takeEm:
    99|  7.70k|      std::span<const uint8_t> take(const size_t count) {
   100|  7.70k|         BOTAN_STATE_CHECK(remaining() >= count);
   ------------------
-  |  |   44|  7.70k|   do {                                                         \
-  |  |   45|  7.70k|      if(!(expr))                                               \
+  |  |   46|  7.70k|   do {                                                         \
+  |  |   47|  7.70k|      if(!(expr))                                               \
   |  |  ------------------
-  |  |  |  Branch (45:10): [True: 0, False: 7.70k]
+  |  |  |  Branch (47:10): [True: 0, False: 7.70k]
   |  |  ------------------
-  |  |   46|  7.70k|         Botan::throw_invalid_state(#expr, __func__, __FILE__); \
-  |  |   47|  7.70k|   } while(0)
+  |  |   48|  7.70k|         Botan::throw_invalid_state(#expr, __func__, __FILE__); \
+  |  |   49|  7.70k|   } while(0)
   |  |  ------------------
-  |  |  |  Branch (47:12): [Folded - Ignored]
+  |  |  |  Branch (49:12): [Folded - Ignored]
   |  |  ------------------
   ------------------
   101|  7.70k|         auto result = m_remaining.first(count);
@@ -1630,19 +1630,19 @@ _ZNK5Botan12BufferSlicer5emptyEv:
   130|  14.9k|      bool empty() const { return m_remaining.empty(); }
 
 _ZN5Botan13ignore_paramsIJRPKhRmEEEvDpOT_:
-  116|    650|constexpr void ignore_params(T&&... args) {
-  117|    650|   (ignore_param(args), ...);
-  118|    650|}
+  118|    650|constexpr void ignore_params(T&&... args) {
+  119|    650|   (ignore_param(args), ...);
+  120|    650|}
 _ZN5Botan12ignore_paramIRPKhEEvOT_:
-  113|    650|constexpr void ignore_param(T&&) {}
+  115|    650|constexpr void ignore_param(T&&) {}
 _ZN5Botan12ignore_paramIRmEEvOT_:
-  113|    906|constexpr void ignore_param(T&&) {}
+  115|    906|constexpr void ignore_param(T&&) {}
 _ZN5Botan13ignore_paramsIJRPvRmEEEvDpOT_:
-  116|    256|constexpr void ignore_params(T&&... args) {
-  117|    256|   (ignore_param(args), ...);
-  118|    256|}
+  118|    256|constexpr void ignore_params(T&&... args) {
+  119|    256|   (ignore_param(args), ...);
+  120|    256|}
 _ZN5Botan12ignore_paramIRPvEEvOT_:
-  113|    256|constexpr void ignore_param(T&&) {}
+  115|    256|constexpr void ignore_param(T&&) {}
 
 _ZN5Botan20Buffered_Computation6updateENSt3__14spanIKhLm18446744073709551615EEE:
    40|  8.50k|      void update(std::span<const uint8_t> in) { add_data(in); }
@@ -1660,211 +1660,211 @@ _ZN5Botan20Buffered_Computation5finalITkNS_8concepts21resizable_byte_bufferENSt3
    90|  1.25k|         final_result(out);
    91|  1.25k|      }
 
-_ZN5Botan6ranges24assert_exact_byte_lengthILm32ETkNS0_14spanable_rangeERNSt3__14spanIhLm32EEEEEvOT0_:
-  108|    100|inline constexpr void assert_exact_byte_length(R&& r) {
-  109|    100|   const std::span s{r};
-  110|    100|   if constexpr(statically_spanable_range<R>) {
-  111|    100|      static_assert(s.size_bytes() == expected, "memory region does not have expected byte lengths");
-  112|       |   } else {
-  113|       |      if(s.size_bytes() != expected) {
-  114|       |         throw Invalid_Argument("Memory regions did not have expected byte lengths");
-  115|       |      }
-  116|       |   }
-  117|    100|}
-_ZN5Botan6ranges25assert_equal_byte_lengthsITkNS0_14spanable_rangeERNSt3__14spanIhLm18446744073709551615EEETpTkNS0_14spanable_rangeEJRNS3_IKhLm18446744073709551615EEEEEEvOT_DpOT0_QgtsZT0_Li0E:
-  131|    600|{
-  132|    600|   const std::span s0{r0};
-  133|       |
-  134|       |   if constexpr(statically_spanable_range<R0>) {
-  135|       |      constexpr size_t expected_size = s0.size_bytes();
-  136|       |      (assert_exact_byte_length<expected_size>(rs), ...);
-  137|    600|   } else {
-  138|    600|      const size_t expected_size = s0.size_bytes();
-  139|    600|      const bool correct_size =
-  140|    600|         ((std::span<const std::ranges::range_value_t<Rs>>{rs}.size_bytes() == expected_size) && ...);
-  141|       |
-  142|    600|      if(!correct_size) {
+_ZN5Botan6ranges24assert_exact_byte_lengthILm32ETkNS0_14spanable_rangeENSt3__14spanIhLm32EEEEEvRKT0_:
+  107|    100|inline constexpr void assert_exact_byte_length(const R& r) {
+  108|    100|   const std::span s{r};
+  109|    100|   if constexpr(statically_spanable_range<R>) {
+  110|    100|      static_assert(s.size_bytes() == expected, "memory region does not have expected byte lengths");
+  111|       |   } else {
+  112|       |      if(s.size_bytes() != expected) {
+  113|       |         throw Invalid_Argument("Memory regions did not have expected byte lengths");
+  114|       |      }
+  115|       |   }
+  116|    100|}
+_ZN5Botan6ranges25assert_equal_byte_lengthsITkNS0_14spanable_rangeENSt3__14spanIhLm18446744073709551615EEETpTkNS0_14spanable_rangeEJNS3_IKhLm18446744073709551615EEEEEEvRKT_DpRKT0_QgtsZT0_Li0E:
+  130|    600|{
+  131|    600|   const std::span s0{r0};
+  132|       |
+  133|       |   if constexpr(statically_spanable_range<R0>) {
+  134|       |      constexpr size_t expected_size = s0.size_bytes();
+  135|       |      (assert_exact_byte_length<expected_size>(rs), ...);
+  136|    600|   } else {
+  137|    600|      const size_t expected_size = s0.size_bytes();
+  138|    600|      const bool correct_size =
+  139|    600|         ((std::span<const std::ranges::range_value_t<Rs>>{rs}.size_bytes() == expected_size) && ...);
+  140|       |
+  141|    600|      if(!correct_size) {
   ------------------
-  |  Branch (142:10): [True: 0, False: 600]
+  |  Branch (141:10): [True: 0, False: 600]
   ------------------
-  143|      0|         throw Invalid_Argument("Memory regions did not have equal lengths");
-  144|      0|      }
-  145|    600|   }
-  146|    600|}
-_ZN5Botan6ranges24assert_exact_byte_lengthILm4ETkNS0_14spanable_rangeERNSt3__14spanIKhLm4EEEEEvOT0_:
-  108|  6.10k|inline constexpr void assert_exact_byte_length(R&& r) {
-  109|  6.10k|   const std::span s{r};
-  110|  6.10k|   if constexpr(statically_spanable_range<R>) {
-  111|  6.10k|      static_assert(s.size_bytes() == expected, "memory region does not have expected byte lengths");
-  112|       |   } else {
-  113|       |      if(s.size_bytes() != expected) {
-  114|       |         throw Invalid_Argument("Memory regions did not have expected byte lengths");
-  115|       |      }
-  116|       |   }
-  117|  6.10k|}
-_ZN5Botan6ranges25assert_equal_byte_lengthsITkNS0_14spanable_rangeERNSt3__14spanIjLm1EEETpTkNS0_14spanable_rangeEJRNS3_IKhLm4EEEEEEvOT_DpOT0_QgtsZT0_Li0E:
-  131|  3.05k|{
-  132|  3.05k|   const std::span s0{r0};
-  133|       |
-  134|  3.05k|   if constexpr(statically_spanable_range<R0>) {
-  135|  3.05k|      constexpr size_t expected_size = s0.size_bytes();
-  136|  3.05k|      (assert_exact_byte_length<expected_size>(rs), ...);
-  137|       |   } else {
-  138|       |      const size_t expected_size = s0.size_bytes();
-  139|       |      const bool correct_size =
-  140|       |         ((std::span<const std::ranges::range_value_t<Rs>>{rs}.size_bytes() == expected_size) && ...);
-  141|       |
-  142|       |      if(!correct_size) {
-  143|       |         throw Invalid_Argument("Memory regions did not have equal lengths");
-  144|       |      }
-  145|       |   }
-  146|  3.05k|}
-_ZN5Botan6ranges10size_bytesITkNS0_14spanable_rangeERNSt3__14spanIjLm1EEEEEmOT_:
-   95|  3.05k|inline constexpr size_t size_bytes(spanable_range auto&& r) {
-   96|  3.05k|   return std::span{r}.size_bytes();
-   97|  3.05k|}
-_ZN5Botan6ranges24assert_exact_byte_lengthILm8ETkNS0_14spanable_rangeERNSt3__14spanIhLm8EEEEEvOT0_:
-  108|  49.0k|inline constexpr void assert_exact_byte_length(R&& r) {
-  109|  49.0k|   const std::span s{r};
-  110|  49.0k|   if constexpr(statically_spanable_range<R>) {
-  111|  49.0k|      static_assert(s.size_bytes() == expected, "memory region does not have expected byte lengths");
-  112|       |   } else {
-  113|       |      if(s.size_bytes() != expected) {
-  114|       |         throw Invalid_Argument("Memory regions did not have expected byte lengths");
-  115|       |      }
-  116|       |   }
-  117|  49.0k|}
-_ZN5Botan6ranges25assert_equal_byte_lengthsITkNS0_14spanable_rangeERNSt3__14spanIhLm8EEETpTkNS0_14spanable_rangeEJRNS3_IKmLm1EEEEEEvOT_DpOT0_QgtsZT0_Li0E:
-  131|  26.1k|{
-  132|  26.1k|   const std::span s0{r0};
-  133|       |
-  134|  26.1k|   if constexpr(statically_spanable_range<R0>) {
-  135|  26.1k|      constexpr size_t expected_size = s0.size_bytes();
-  136|  26.1k|      (assert_exact_byte_length<expected_size>(rs), ...);
-  137|       |   } else {
-  138|       |      const size_t expected_size = s0.size_bytes();
-  139|       |      const bool correct_size =
-  140|       |         ((std::span<const std::ranges::range_value_t<Rs>>{rs}.size_bytes() == expected_size) && ...);
-  141|       |
-  142|       |      if(!correct_size) {
-  143|       |         throw Invalid_Argument("Memory regions did not have equal lengths");
-  144|       |      }
-  145|       |   }
-  146|  26.1k|}
-_ZN5Botan6ranges24assert_exact_byte_lengthILm8ETkNS0_14spanable_rangeERNSt3__14spanIKmLm1EEEEEvOT0_:
-  108|  26.1k|inline constexpr void assert_exact_byte_length(R&& r) {
-  109|  26.1k|   const std::span s{r};
-  110|  26.1k|   if constexpr(statically_spanable_range<R>) {
-  111|  26.1k|      static_assert(s.size_bytes() == expected, "memory region does not have expected byte lengths");
-  112|       |   } else {
-  113|       |      if(s.size_bytes() != expected) {
-  114|       |         throw Invalid_Argument("Memory regions did not have expected byte lengths");
-  115|       |      }
-  116|       |   }
-  117|  26.1k|}
-_ZN5Botan6ranges10size_bytesITkNS0_14spanable_rangeERNSt3__14spanIhLm8EEEEEmOT_:
-   95|  26.1k|inline constexpr size_t size_bytes(spanable_range auto&& r) {
-   96|  26.1k|   return std::span{r}.size_bytes();
-   97|  26.1k|}
-_ZN5Botan6ranges24assert_exact_byte_lengthILm4ETkNS0_14spanable_rangeERNSt3__14spanIhLm4EEEEEvOT0_:
-  108|    200|inline constexpr void assert_exact_byte_length(R&& r) {
-  109|    200|   const std::span s{r};
-  110|    200|   if constexpr(statically_spanable_range<R>) {
-  111|    200|      static_assert(s.size_bytes() == expected, "memory region does not have expected byte lengths");
-  112|       |   } else {
-  113|       |      if(s.size_bytes() != expected) {
-  114|       |         throw Invalid_Argument("Memory regions did not have expected byte lengths");
-  115|       |      }
-  116|       |   }
-  117|    200|}
-_ZN5Botan6ranges25assert_equal_byte_lengthsITkNS0_14spanable_rangeERNSt3__14spanIhLm4EEETpTkNS0_14spanable_rangeEJRNS3_IKjLm1EEEEEEvOT_DpOT0_QgtsZT0_Li0E:
-  131|    100|{
-  132|    100|   const std::span s0{r0};
-  133|       |
-  134|    100|   if constexpr(statically_spanable_range<R0>) {
-  135|    100|      constexpr size_t expected_size = s0.size_bytes();
-  136|    100|      (assert_exact_byte_length<expected_size>(rs), ...);
-  137|       |   } else {
-  138|       |      const size_t expected_size = s0.size_bytes();
-  139|       |      const bool correct_size =
-  140|       |         ((std::span<const std::ranges::range_value_t<Rs>>{rs}.size_bytes() == expected_size) && ...);
-  141|       |
-  142|       |      if(!correct_size) {
-  143|       |         throw Invalid_Argument("Memory regions did not have equal lengths");
-  144|       |      }
-  145|       |   }
-  146|    100|}
-_ZN5Botan6ranges24assert_exact_byte_lengthILm4ETkNS0_14spanable_rangeERNSt3__14spanIKjLm1EEEEEvOT0_:
-  108|    100|inline constexpr void assert_exact_byte_length(R&& r) {
-  109|    100|   const std::span s{r};
-  110|    100|   if constexpr(statically_spanable_range<R>) {
-  111|    100|      static_assert(s.size_bytes() == expected, "memory region does not have expected byte lengths");
-  112|       |   } else {
-  113|       |      if(s.size_bytes() != expected) {
-  114|       |         throw Invalid_Argument("Memory regions did not have expected byte lengths");
-  115|       |      }
-  116|       |   }
-  117|    100|}
-_ZN5Botan6ranges10size_bytesITkNS0_14spanable_rangeERNSt3__14spanIhLm4EEEEEmOT_:
-   95|    100|inline constexpr size_t size_bytes(spanable_range auto&& r) {
-   96|    100|   return std::span{r}.size_bytes();
-   97|    100|}
-_ZN5Botan6ranges10size_bytesITkNS0_14spanable_rangeERNSt3__14spanIhLm18446744073709551615EEEEEmOT_:
-   95|  1.20k|inline constexpr size_t size_bytes(spanable_range auto&& r) {
-   96|  1.20k|   return std::span{r}.size_bytes();
-   97|  1.20k|}
-_ZN5Botan6ranges24assert_exact_byte_lengthILm8ETkNS0_14spanable_rangeERNSt3__14spanIKhLm8EEEEEvOT0_:
-  108|  1.40k|inline constexpr void assert_exact_byte_length(R&& r) {
-  109|  1.40k|   const std::span s{r};
-  110|  1.40k|   if constexpr(statically_spanable_range<R>) {
-  111|  1.40k|      static_assert(s.size_bytes() == expected, "memory region does not have expected byte lengths");
-  112|       |   } else {
-  113|       |      if(s.size_bytes() != expected) {
-  114|       |         throw Invalid_Argument("Memory regions did not have expected byte lengths");
-  115|       |      }
-  116|       |   }
-  117|  1.40k|}
-_ZN5Botan6ranges25assert_equal_byte_lengthsITkNS0_14spanable_rangeERNSt3__14spanImLm1EEETpTkNS0_14spanable_rangeEJRNS3_IKhLm8EEEEEEvOT_DpOT0_QgtsZT0_Li0E:
-  131|    700|{
-  132|    700|   const std::span s0{r0};
-  133|       |
-  134|    700|   if constexpr(statically_spanable_range<R0>) {
-  135|    700|      constexpr size_t expected_size = s0.size_bytes();
-  136|    700|      (assert_exact_byte_length<expected_size>(rs), ...);
-  137|       |   } else {
-  138|       |      const size_t expected_size = s0.size_bytes();
-  139|       |      const bool correct_size =
-  140|       |         ((std::span<const std::ranges::range_value_t<Rs>>{rs}.size_bytes() == expected_size) && ...);
-  141|       |
-  142|       |      if(!correct_size) {
-  143|       |         throw Invalid_Argument("Memory regions did not have equal lengths");
-  144|       |      }
-  145|       |   }
-  146|    700|}
-_ZN5Botan6ranges10size_bytesITkNS0_14spanable_rangeERNSt3__14spanImLm1EEEEEmOT_:
-   95|    700|inline constexpr size_t size_bytes(spanable_range auto&& r) {
-   96|    700|   return std::span{r}.size_bytes();
-   97|    700|}
-_ZN5Botan6ranges25assert_equal_byte_lengthsITkNS0_14spanable_rangeERNSt3__14spanIhLm18446744073709551615EEETpTkNS0_14spanable_rangeEJRNS3_IKmLm18446744073709551615EEEEEEvOT_DpOT0_QgtsZT0_Li0E:
-  131|  2.85k|{
-  132|  2.85k|   const std::span s0{r0};
-  133|       |
-  134|       |   if constexpr(statically_spanable_range<R0>) {
-  135|       |      constexpr size_t expected_size = s0.size_bytes();
-  136|       |      (assert_exact_byte_length<expected_size>(rs), ...);
-  137|  2.85k|   } else {
-  138|  2.85k|      const size_t expected_size = s0.size_bytes();
-  139|  2.85k|      const bool correct_size =
-  140|  2.85k|         ((std::span<const std::ranges::range_value_t<Rs>>{rs}.size_bytes() == expected_size) && ...);
-  141|       |
-  142|  2.85k|      if(!correct_size) {
+  142|      0|         throw Invalid_Argument("Memory regions did not have equal lengths");
+  143|      0|      }
+  144|    600|   }
+  145|    600|}
+_ZN5Botan6ranges24assert_exact_byte_lengthILm4ETkNS0_14spanable_rangeENSt3__14spanIKhLm4EEEEEvRKT0_:
+  107|  6.10k|inline constexpr void assert_exact_byte_length(const R& r) {
+  108|  6.10k|   const std::span s{r};
+  109|  6.10k|   if constexpr(statically_spanable_range<R>) {
+  110|  6.10k|      static_assert(s.size_bytes() == expected, "memory region does not have expected byte lengths");
+  111|       |   } else {
+  112|       |      if(s.size_bytes() != expected) {
+  113|       |         throw Invalid_Argument("Memory regions did not have expected byte lengths");
+  114|       |      }
+  115|       |   }
+  116|  6.10k|}
+_ZN5Botan6ranges25assert_equal_byte_lengthsITkNS0_14spanable_rangeENSt3__14spanIjLm1EEETpTkNS0_14spanable_rangeEJNS3_IKhLm4EEEEEEvRKT_DpRKT0_QgtsZT0_Li0E:
+  130|  3.05k|{
+  131|  3.05k|   const std::span s0{r0};
+  132|       |
+  133|  3.05k|   if constexpr(statically_spanable_range<R0>) {
+  134|  3.05k|      constexpr size_t expected_size = s0.size_bytes();
+  135|  3.05k|      (assert_exact_byte_length<expected_size>(rs), ...);
+  136|       |   } else {
+  137|       |      const size_t expected_size = s0.size_bytes();
+  138|       |      const bool correct_size =
+  139|       |         ((std::span<const std::ranges::range_value_t<Rs>>{rs}.size_bytes() == expected_size) && ...);
+  140|       |
+  141|       |      if(!correct_size) {
+  142|       |         throw Invalid_Argument("Memory regions did not have equal lengths");
+  143|       |      }
+  144|       |   }
+  145|  3.05k|}
+_ZN5Botan6ranges10size_bytesITkNS0_14spanable_rangeENSt3__14spanIjLm1EEEEEmRKT_:
+   94|  3.05k|inline constexpr size_t size_bytes(const spanable_range auto& r) {
+   95|  3.05k|   return std::span{r}.size_bytes();
+   96|  3.05k|}
+_ZN5Botan6ranges24assert_exact_byte_lengthILm8ETkNS0_14spanable_rangeENSt3__14spanIhLm8EEEEEvRKT0_:
+  107|  49.0k|inline constexpr void assert_exact_byte_length(const R& r) {
+  108|  49.0k|   const std::span s{r};
+  109|  49.0k|   if constexpr(statically_spanable_range<R>) {
+  110|  49.0k|      static_assert(s.size_bytes() == expected, "memory region does not have expected byte lengths");
+  111|       |   } else {
+  112|       |      if(s.size_bytes() != expected) {
+  113|       |         throw Invalid_Argument("Memory regions did not have expected byte lengths");
+  114|       |      }
+  115|       |   }
+  116|  49.0k|}
+_ZN5Botan6ranges25assert_equal_byte_lengthsITkNS0_14spanable_rangeENSt3__14spanIhLm8EEETpTkNS0_14spanable_rangeEJNS3_IKmLm1EEEEEEvRKT_DpRKT0_QgtsZT0_Li0E:
+  130|  26.1k|{
+  131|  26.1k|   const std::span s0{r0};
+  132|       |
+  133|  26.1k|   if constexpr(statically_spanable_range<R0>) {
+  134|  26.1k|      constexpr size_t expected_size = s0.size_bytes();
+  135|  26.1k|      (assert_exact_byte_length<expected_size>(rs), ...);
+  136|       |   } else {
+  137|       |      const size_t expected_size = s0.size_bytes();
+  138|       |      const bool correct_size =
+  139|       |         ((std::span<const std::ranges::range_value_t<Rs>>{rs}.size_bytes() == expected_size) && ...);
+  140|       |
+  141|       |      if(!correct_size) {
+  142|       |         throw Invalid_Argument("Memory regions did not have equal lengths");
+  143|       |      }
+  144|       |   }
+  145|  26.1k|}
+_ZN5Botan6ranges24assert_exact_byte_lengthILm8ETkNS0_14spanable_rangeENSt3__14spanIKmLm1EEEEEvRKT0_:
+  107|  26.1k|inline constexpr void assert_exact_byte_length(const R& r) {
+  108|  26.1k|   const std::span s{r};
+  109|  26.1k|   if constexpr(statically_spanable_range<R>) {
+  110|  26.1k|      static_assert(s.size_bytes() == expected, "memory region does not have expected byte lengths");
+  111|       |   } else {
+  112|       |      if(s.size_bytes() != expected) {
+  113|       |         throw Invalid_Argument("Memory regions did not have expected byte lengths");
+  114|       |      }
+  115|       |   }
+  116|  26.1k|}
+_ZN5Botan6ranges10size_bytesITkNS0_14spanable_rangeENSt3__14spanIhLm8EEEEEmRKT_:
+   94|  26.1k|inline constexpr size_t size_bytes(const spanable_range auto& r) {
+   95|  26.1k|   return std::span{r}.size_bytes();
+   96|  26.1k|}
+_ZN5Botan6ranges24assert_exact_byte_lengthILm4ETkNS0_14spanable_rangeENSt3__14spanIhLm4EEEEEvRKT0_:
+  107|    200|inline constexpr void assert_exact_byte_length(const R& r) {
+  108|    200|   const std::span s{r};
+  109|    200|   if constexpr(statically_spanable_range<R>) {
+  110|    200|      static_assert(s.size_bytes() == expected, "memory region does not have expected byte lengths");
+  111|       |   } else {
+  112|       |      if(s.size_bytes() != expected) {
+  113|       |         throw Invalid_Argument("Memory regions did not have expected byte lengths");
+  114|       |      }
+  115|       |   }
+  116|    200|}
+_ZN5Botan6ranges25assert_equal_byte_lengthsITkNS0_14spanable_rangeENSt3__14spanIhLm4EEETpTkNS0_14spanable_rangeEJNS3_IKjLm1EEEEEEvRKT_DpRKT0_QgtsZT0_Li0E:
+  130|    100|{
+  131|    100|   const std::span s0{r0};
+  132|       |
+  133|    100|   if constexpr(statically_spanable_range<R0>) {
+  134|    100|      constexpr size_t expected_size = s0.size_bytes();
+  135|    100|      (assert_exact_byte_length<expected_size>(rs), ...);
+  136|       |   } else {
+  137|       |      const size_t expected_size = s0.size_bytes();
+  138|       |      const bool correct_size =
+  139|       |         ((std::span<const std::ranges::range_value_t<Rs>>{rs}.size_bytes() == expected_size) && ...);
+  140|       |
+  141|       |      if(!correct_size) {
+  142|       |         throw Invalid_Argument("Memory regions did not have equal lengths");
+  143|       |      }
+  144|       |   }
+  145|    100|}
+_ZN5Botan6ranges24assert_exact_byte_lengthILm4ETkNS0_14spanable_rangeENSt3__14spanIKjLm1EEEEEvRKT0_:
+  107|    100|inline constexpr void assert_exact_byte_length(const R& r) {
+  108|    100|   const std::span s{r};
+  109|    100|   if constexpr(statically_spanable_range<R>) {
+  110|    100|      static_assert(s.size_bytes() == expected, "memory region does not have expected byte lengths");
+  111|       |   } else {
+  112|       |      if(s.size_bytes() != expected) {
+  113|       |         throw Invalid_Argument("Memory regions did not have expected byte lengths");
+  114|       |      }
+  115|       |   }
+  116|    100|}
+_ZN5Botan6ranges10size_bytesITkNS0_14spanable_rangeENSt3__14spanIhLm4EEEEEmRKT_:
+   94|    100|inline constexpr size_t size_bytes(const spanable_range auto& r) {
+   95|    100|   return std::span{r}.size_bytes();
+   96|    100|}
+_ZN5Botan6ranges10size_bytesITkNS0_14spanable_rangeENSt3__14spanIhLm18446744073709551615EEEEEmRKT_:
+   94|  1.20k|inline constexpr size_t size_bytes(const spanable_range auto& r) {
+   95|  1.20k|   return std::span{r}.size_bytes();
+   96|  1.20k|}
+_ZN5Botan6ranges24assert_exact_byte_lengthILm8ETkNS0_14spanable_rangeENSt3__14spanIKhLm8EEEEEvRKT0_:
+  107|  1.40k|inline constexpr void assert_exact_byte_length(const R& r) {
+  108|  1.40k|   const std::span s{r};
+  109|  1.40k|   if constexpr(statically_spanable_range<R>) {
+  110|  1.40k|      static_assert(s.size_bytes() == expected, "memory region does not have expected byte lengths");
+  111|       |   } else {
+  112|       |      if(s.size_bytes() != expected) {
+  113|       |         throw Invalid_Argument("Memory regions did not have expected byte lengths");
+  114|       |      }
+  115|       |   }
+  116|  1.40k|}
+_ZN5Botan6ranges25assert_equal_byte_lengthsITkNS0_14spanable_rangeENSt3__14spanImLm1EEETpTkNS0_14spanable_rangeEJNS3_IKhLm8EEEEEEvRKT_DpRKT0_QgtsZT0_Li0E:
+  130|    700|{
+  131|    700|   const std::span s0{r0};
+  132|       |
+  133|    700|   if constexpr(statically_spanable_range<R0>) {
+  134|    700|      constexpr size_t expected_size = s0.size_bytes();
+  135|    700|      (assert_exact_byte_length<expected_size>(rs), ...);
+  136|       |   } else {
+  137|       |      const size_t expected_size = s0.size_bytes();
+  138|       |      const bool correct_size =
+  139|       |         ((std::span<const std::ranges::range_value_t<Rs>>{rs}.size_bytes() == expected_size) && ...);
+  140|       |
+  141|       |      if(!correct_size) {
+  142|       |         throw Invalid_Argument("Memory regions did not have equal lengths");
+  143|       |      }
+  144|       |   }
+  145|    700|}
+_ZN5Botan6ranges10size_bytesITkNS0_14spanable_rangeENSt3__14spanImLm1EEEEEmRKT_:
+   94|    700|inline constexpr size_t size_bytes(const spanable_range auto& r) {
+   95|    700|   return std::span{r}.size_bytes();
+   96|    700|}
+_ZN5Botan6ranges25assert_equal_byte_lengthsITkNS0_14spanable_rangeENSt3__14spanIhLm18446744073709551615EEETpTkNS0_14spanable_rangeEJNS3_IKmLm18446744073709551615EEEEEEvRKT_DpRKT0_QgtsZT0_Li0E:
+  130|  2.85k|{
+  131|  2.85k|   const std::span s0{r0};
+  132|       |
+  133|       |   if constexpr(statically_spanable_range<R0>) {
+  134|       |      constexpr size_t expected_size = s0.size_bytes();
+  135|       |      (assert_exact_byte_length<expected_size>(rs), ...);
+  136|  2.85k|   } else {
+  137|  2.85k|      const size_t expected_size = s0.size_bytes();
+  138|  2.85k|      const bool correct_size =
+  139|  2.85k|         ((std::span<const std::ranges::range_value_t<Rs>>{rs}.size_bytes() == expected_size) && ...);
+  140|       |
+  141|  2.85k|      if(!correct_size) {
   ------------------
-  |  Branch (142:10): [True: 0, False: 2.85k]
+  |  Branch (141:10): [True: 0, False: 2.85k]
   ------------------
-  143|      0|         throw Invalid_Argument("Memory regions did not have equal lengths");
-  144|      0|      }
-  145|  2.85k|   }
-  146|  2.85k|}
+  142|      0|         throw Invalid_Argument("Memory regions did not have equal lengths");
+  143|      0|      }
+  144|  2.85k|   }
+  145|  2.85k|}
 
 _ZNK5Botan17Ed25519_PublicKey14get_public_keyEv:
    37|    100|      BOTAN_DEPRECATED("Use raw_public_key_bits") const std::vector<uint8_t>& get_public_key() const {
@@ -1874,6 +1874,9 @@ _ZN5Botan17Ed25519_PublicKeyC2Ev:
    59|     50|      Ed25519_PublicKey() = default;
 _ZN5Botan17Ed25519_PublicKeyC1ENSt3__14spanIKhLm18446744073709551615EEE:
    48|     50|      Ed25519_PublicKey(std::span<const uint8_t> pub) : Ed25519_PublicKey(pub.data(), pub.size()) {}
+
+_ZN5Botan12HashFunctionC2Ev:
+   53|    300|      HashFunction() = default;
 
 _ZNK5Botan9HMAC_DRBG31max_number_of_bytes_per_requestEv:
   130|    150|      size_t max_number_of_bytes_per_request() const override { return m_max_number_of_bytes_per_request; }
@@ -1898,21 +1901,21 @@ _ZN5Botan22cast_char_ptr_to_uint8EPKc:
   276|    100|inline const uint8_t* cast_char_ptr_to_uint8(const char* s) {
   277|    100|   return reinterpret_cast<const uint8_t*>(s);
   278|    100|}
-_ZN5Botan8copy_memIhQsr3std10is_trivialINSt3__15decayIT_E4typeEEE5valueEEvPS3_PKS3_m:
+_ZN5Botan8copy_memIhQsr3stdE12is_trivial_vIu7__decayIT_EEEEvPS1_PKS1_m:
   149|    400|inline constexpr void copy_mem(T* out, const T* in, size_t n) {
   150|    400|   BOTAN_ASSERT_IMPLICATION(n > 0, in != nullptr && out != nullptr, "If n > 0 then args are not null");
   ------------------
-  |  |   80|    400|   do {                                                                                          \
-  |  |   81|    800|      if((expr1) && !(expr2))                                                                    \
+  |  |   82|    400|   do {                                                                                          \
+  |  |   83|    800|      if((expr1) && !(expr2))                                                                    \
   |  |  ------------------
-  |  |  |  Branch (81:10): [True: 400, False: 0]
-  |  |  |  Branch (81:23): [True: 400, False: 0]
-  |  |  |  Branch (81:23): [True: 400, False: 0]
+  |  |  |  Branch (83:10): [True: 400, False: 0]
+  |  |  |  Branch (83:23): [True: 400, False: 0]
+  |  |  |  Branch (83:23): [True: 400, False: 0]
   |  |  ------------------
-  |  |   82|    400|         Botan::assertion_failure(#expr1 " implies " #expr2, msg, __func__, __FILE__, __LINE__); \
-  |  |   83|    400|   } while(0)
+  |  |   84|    400|         Botan::assertion_failure(#expr1 " implies " #expr2, msg, __func__, __FILE__, __LINE__); \
+  |  |   85|    400|   } while(0)
   |  |  ------------------
-  |  |  |  Branch (83:12): [Folded - Ignored]
+  |  |  |  Branch (85:12): [Folded - Ignored]
   |  |  ------------------
   ------------------
   151|       |
@@ -1929,21 +1932,21 @@ _ZN5Botan9clear_memIiEEvPT_m:
   123|   298k|inline constexpr void clear_mem(T* ptr, size_t n) {
   124|   298k|   clear_bytes(ptr, sizeof(T) * n);
   125|   298k|}
-_ZN5Botan8copy_memIiQsr3std10is_trivialINSt3__15decayIT_E4typeEEE5valueEEvPS3_PKS3_m:
+_ZN5Botan8copy_memIiQsr3stdE12is_trivial_vIu7__decayIT_EEEEvPS1_PKS1_m:
   149|  1.56k|inline constexpr void copy_mem(T* out, const T* in, size_t n) {
   150|  1.56k|   BOTAN_ASSERT_IMPLICATION(n > 0, in != nullptr && out != nullptr, "If n > 0 then args are not null");
   ------------------
-  |  |   80|  1.56k|   do {                                                                                          \
-  |  |   81|  3.12k|      if((expr1) && !(expr2))                                                                    \
+  |  |   82|  1.56k|   do {                                                                                          \
+  |  |   83|  3.12k|      if((expr1) && !(expr2))                                                                    \
   |  |  ------------------
-  |  |  |  Branch (81:10): [True: 1.56k, False: 0]
-  |  |  |  Branch (81:23): [True: 1.56k, False: 0]
-  |  |  |  Branch (81:23): [True: 1.56k, False: 0]
+  |  |  |  Branch (83:10): [True: 1.56k, False: 0]
+  |  |  |  Branch (83:23): [True: 1.56k, False: 0]
+  |  |  |  Branch (83:23): [True: 1.56k, False: 0]
   |  |  ------------------
-  |  |   82|  1.56k|         Botan::assertion_failure(#expr1 " implies " #expr2, msg, __func__, __FILE__, __LINE__); \
-  |  |   83|  1.56k|   } while(0)
+  |  |   84|  1.56k|         Botan::assertion_failure(#expr1 " implies " #expr2, msg, __func__, __FILE__, __LINE__); \
+  |  |   85|  1.56k|   } while(0)
   |  |  ------------------
-  |  |  |  Branch (83:12): [Folded - Ignored]
+  |  |  |  Branch (85:12): [Folded - Ignored]
   |  |  ------------------
   ------------------
   151|       |
@@ -1956,69 +1959,69 @@ _ZN5Botan8copy_memIiQsr3std10is_trivialINSt3__15decayIT_E4typeEEE5valueEEvPS3_PK
   153|  1.56k|      std::memmove(out, in, sizeof(T) * n);
   154|  1.56k|   }
   155|  1.56k|}
-_ZN5Botan13typecast_copyITkNS_6ranges23contiguous_output_rangeENSt3__14spanIjLm1EEETkNS1_16contiguous_rangeERNS3_IKhLm4EEEQaasr3stdE23is_trivially_copyable_vINS2_11conditionalIXsr21__is_primary_templateINS2_15iterator_traitsIu14__remove_cvrefIDTclL_ZNS2_6ranges5__cpo5beginEEclsr3stdE7declvalIRT0_EEEEEEEEE5valueENS2_26indirectly_readable_traitsISF_EESG_E4type10value_typeEEsr3stdE23is_trivially_copyable_vINS8_IXsr21__is_primary_templateINS9_Iu14__remove_cvrefIDTclL_ZNSB_5beginEEclsr3stdE7declvalIRT_EEEEEEEEE5valueENSH_ISP_EESQ_E4type10value_typeEEEEvOSM_OSC_:
-  181|  3.05k|inline constexpr void typecast_copy(ToR&& out, FromR&& in) {
+_ZN5Botan13typecast_copyITkNS_6ranges23contiguous_output_rangeENSt3__14spanIjLm1EEETkNS1_16contiguous_rangeENS3_IKhLm4EEEQaasr3stdE23is_trivially_copyable_vINS2_11conditionalIXsr21__is_primary_templateINS2_15iterator_traitsIu14__remove_cvrefIDTclL_ZNS2_6ranges5__cpo5beginEEclsr3stdE7declvalIRT0_EEEEEEEEE5valueENS2_26indirectly_readable_traitsISE_EESF_E4type10value_typeEEsr3stdE23is_trivially_copyable_vINS7_IXsr21__is_primary_templateINS8_Iu14__remove_cvrefIDTclL_ZNSA_5beginEEclsr3stdE7declvalIRT_EEEEEEEEE5valueENSG_ISO_EESP_E4type10value_typeEEEEvOSL_RKSB_:
+  181|  3.05k|inline constexpr void typecast_copy(ToR&& out /* NOLINT(*-std-forward) */, const FromR& in) {
   182|  3.05k|   ranges::assert_equal_byte_lengths(out, in);
   183|  3.05k|   std::memcpy(std::ranges::data(out), std::ranges::data(in), ranges::size_bytes(out));
   184|  3.05k|}
-_ZN5Botan13typecast_copyIjTkNS_6ranges16contiguous_rangeERNSt3__14spanIKhLm4EEEQaaaasr3stdE23is_trivially_copyable_vINS2_11conditionalIXsr21__is_primary_templateINS2_15iterator_traitsIu14__remove_cvrefIDTclL_ZNS2_6ranges5__cpo5beginEEclsr3stdE7declvalIRT0_EEEEEEEEE5valueENS2_26indirectly_readable_traitsISE_EESF_E4type10value_typeEEsr3stdE23is_trivially_copyable_vIT_Entsr3std6rangesE5rangeISL_EEEvRSL_OSB_:
-  193|  3.05k|inline constexpr void typecast_copy(ToT& out, FromR&& in) noexcept {
+_ZN5Botan13typecast_copyIjTkNS_6ranges16contiguous_rangeENSt3__14spanIKhLm4EEEQaaaasr3stdE23is_trivially_copyable_vINS2_11conditionalIXsr21__is_primary_templateINS2_15iterator_traitsIu14__remove_cvrefIDTclL_ZNS2_6ranges5__cpo5beginEEclsr3stdE7declvalIRT0_EEEEEEEEE5valueENS2_26indirectly_readable_traitsISD_EESE_E4type10value_typeEEsr3stdE23is_trivially_copyable_vIT_Entsr3std6rangesE5rangeISK_EEEvRSK_RKSA_:
+  193|  3.05k|inline constexpr void typecast_copy(ToT& out, const FromR& in) noexcept {
   194|  3.05k|   typecast_copy(std::span<ToT, 1>(&out, 1), in);
   195|  3.05k|}
-_ZN5Botan13typecast_copyIjTkNS_6ranges16contiguous_rangeERNSt3__14spanIKhLm4EEEQaaaasr3stdE26is_default_constructible_vIT_Esr3stdE23is_trivially_copyable_vIS7_Esr3stdE23is_trivially_copyable_vINS2_11conditionalIXsr21__is_primary_templateINS2_15iterator_traitsIu14__remove_cvrefIDTclL_ZNS2_6ranges5__cpo5beginEEclsr3stdE7declvalIRT0_EEEEEEEEE5valueENS2_26indirectly_readable_traitsISF_EESG_E4type10value_typeEEEES7_OSC_:
-  215|  3.05k|inline constexpr ToT typecast_copy(FromR&& src) noexcept {
+_ZN5Botan13typecast_copyIjTkNS_6ranges16contiguous_rangeENSt3__14spanIKhLm4EEEQaaaasr3stdE26is_default_constructible_vIT_Esr3stdE23is_trivially_copyable_vIS6_Esr3stdE23is_trivially_copyable_vINS2_11conditionalIXsr21__is_primary_templateINS2_15iterator_traitsIu14__remove_cvrefIDTclL_ZNS2_6ranges5__cpo5beginEEclsr3stdE7declvalIRT0_EEEEEEEEE5valueENS2_26indirectly_readable_traitsISE_EESF_E4type10value_typeEEEES6_RKSB_:
+  215|  3.05k|inline constexpr ToT typecast_copy(const FromR& src) noexcept {
   216|  3.05k|   ToT dst;
   217|  3.05k|   typecast_copy(dst, src);
   218|  3.05k|   return dst;
   219|  3.05k|}
 _ZN5Botan13typecast_copyITkNS_6ranges23contiguous_output_rangeERNSt3__14spanIhLm8EEEmQaaaasr3stdE23is_trivially_copyable_vIT0_Entsr3std6rangesE5rangeIS6_Esr3stdE23is_trivially_copyable_vINS2_11conditionalIXsr21__is_primary_templateINS2_15iterator_traitsIu14__remove_cvrefIDTclL_ZNS2_6ranges5__cpo5beginEEclsr3stdE7declvalIRT_EEEEEEEEE5valueENS2_26indirectly_readable_traitsISE_EESF_E4type10value_typeEEEEvOSB_RKS6_:
-  204|  26.1k|inline constexpr void typecast_copy(ToR&& out, const FromT& in) {
+  204|  26.1k|inline constexpr void typecast_copy(ToR&& out /* NOLINT(*-std-forward) */, const FromT& in) {
   205|  26.1k|   typecast_copy(out, std::span<const FromT, 1>(&in, 1));
   206|  26.1k|}
-_ZN5Botan13typecast_copyITkNS_6ranges23contiguous_output_rangeERNSt3__14spanIhLm8EEETkNS1_16contiguous_rangeENS3_IKmLm1EEEQaasr3stdE23is_trivially_copyable_vINS2_11conditionalIXsr21__is_primary_templateINS2_15iterator_traitsIu14__remove_cvrefIDTclL_ZNS2_6ranges5__cpo5beginEEclsr3stdE7declvalIRT0_EEEEEEEEE5valueENS2_26indirectly_readable_traitsISF_EESG_E4type10value_typeEEsr3stdE23is_trivially_copyable_vINS8_IXsr21__is_primary_templateINS9_Iu14__remove_cvrefIDTclL_ZNSB_5beginEEclsr3stdE7declvalIRT_EEEEEEEEE5valueENSH_ISP_EESQ_E4type10value_typeEEEEvOSM_OSC_:
-  181|  26.1k|inline constexpr void typecast_copy(ToR&& out, FromR&& in) {
+_ZN5Botan13typecast_copyITkNS_6ranges23contiguous_output_rangeERNSt3__14spanIhLm8EEETkNS1_16contiguous_rangeENS3_IKmLm1EEEQaasr3stdE23is_trivially_copyable_vINS2_11conditionalIXsr21__is_primary_templateINS2_15iterator_traitsIu14__remove_cvrefIDTclL_ZNS2_6ranges5__cpo5beginEEclsr3stdE7declvalIRT0_EEEEEEEEE5valueENS2_26indirectly_readable_traitsISF_EESG_E4type10value_typeEEsr3stdE23is_trivially_copyable_vINS8_IXsr21__is_primary_templateINS9_Iu14__remove_cvrefIDTclL_ZNSB_5beginEEclsr3stdE7declvalIRT_EEEEEEEEE5valueENSH_ISP_EESQ_E4type10value_typeEEEEvOSM_RKSC_:
+  181|  26.1k|inline constexpr void typecast_copy(ToR&& out /* NOLINT(*-std-forward) */, const FromR& in) {
   182|  26.1k|   ranges::assert_equal_byte_lengths(out, in);
   183|  26.1k|   std::memcpy(std::ranges::data(out), std::ranges::data(in), ranges::size_bytes(out));
   184|  26.1k|}
 _ZN5Botan13typecast_copyITkNS_6ranges23contiguous_output_rangeERNSt3__14spanIhLm4EEEjQaaaasr3stdE23is_trivially_copyable_vIT0_Entsr3std6rangesE5rangeIS6_Esr3stdE23is_trivially_copyable_vINS2_11conditionalIXsr21__is_primary_templateINS2_15iterator_traitsIu14__remove_cvrefIDTclL_ZNS2_6ranges5__cpo5beginEEclsr3stdE7declvalIRT_EEEEEEEEE5valueENS2_26indirectly_readable_traitsISE_EESF_E4type10value_typeEEEEvOSB_RKS6_:
-  204|    100|inline constexpr void typecast_copy(ToR&& out, const FromT& in) {
+  204|    100|inline constexpr void typecast_copy(ToR&& out /* NOLINT(*-std-forward) */, const FromT& in) {
   205|    100|   typecast_copy(out, std::span<const FromT, 1>(&in, 1));
   206|    100|}
-_ZN5Botan13typecast_copyITkNS_6ranges23contiguous_output_rangeERNSt3__14spanIhLm4EEETkNS1_16contiguous_rangeENS3_IKjLm1EEEQaasr3stdE23is_trivially_copyable_vINS2_11conditionalIXsr21__is_primary_templateINS2_15iterator_traitsIu14__remove_cvrefIDTclL_ZNS2_6ranges5__cpo5beginEEclsr3stdE7declvalIRT0_EEEEEEEEE5valueENS2_26indirectly_readable_traitsISF_EESG_E4type10value_typeEEsr3stdE23is_trivially_copyable_vINS8_IXsr21__is_primary_templateINS9_Iu14__remove_cvrefIDTclL_ZNSB_5beginEEclsr3stdE7declvalIRT_EEEEEEEEE5valueENSH_ISP_EESQ_E4type10value_typeEEEEvOSM_OSC_:
-  181|    100|inline constexpr void typecast_copy(ToR&& out, FromR&& in) {
+_ZN5Botan13typecast_copyITkNS_6ranges23contiguous_output_rangeERNSt3__14spanIhLm4EEETkNS1_16contiguous_rangeENS3_IKjLm1EEEQaasr3stdE23is_trivially_copyable_vINS2_11conditionalIXsr21__is_primary_templateINS2_15iterator_traitsIu14__remove_cvrefIDTclL_ZNS2_6ranges5__cpo5beginEEclsr3stdE7declvalIRT0_EEEEEEEEE5valueENS2_26indirectly_readable_traitsISF_EESG_E4type10value_typeEEsr3stdE23is_trivially_copyable_vINS8_IXsr21__is_primary_templateINS9_Iu14__remove_cvrefIDTclL_ZNSB_5beginEEclsr3stdE7declvalIRT_EEEEEEEEE5valueENSH_ISP_EESQ_E4type10value_typeEEEEvOSM_RKSC_:
+  181|    100|inline constexpr void typecast_copy(ToR&& out /* NOLINT(*-std-forward) */, const FromR& in) {
   182|    100|   ranges::assert_equal_byte_lengths(out, in);
   183|    100|   std::memcpy(std::ranges::data(out), std::ranges::data(in), ranges::size_bytes(out));
   184|    100|}
-_ZN5Botan13typecast_copyImTkNS_6ranges16contiguous_rangeERNSt3__14spanIKhLm8EEEQaaaasr3stdE26is_default_constructible_vIT_Esr3stdE23is_trivially_copyable_vIS7_Esr3stdE23is_trivially_copyable_vINS2_11conditionalIXsr21__is_primary_templateINS2_15iterator_traitsIu14__remove_cvrefIDTclL_ZNS2_6ranges5__cpo5beginEEclsr3stdE7declvalIRT0_EEEEEEEEE5valueENS2_26indirectly_readable_traitsISF_EESG_E4type10value_typeEEEES7_OSC_:
-  215|    700|inline constexpr ToT typecast_copy(FromR&& src) noexcept {
+_ZN5Botan13typecast_copyImTkNS_6ranges16contiguous_rangeENSt3__14spanIKhLm8EEEQaaaasr3stdE26is_default_constructible_vIT_Esr3stdE23is_trivially_copyable_vIS6_Esr3stdE23is_trivially_copyable_vINS2_11conditionalIXsr21__is_primary_templateINS2_15iterator_traitsIu14__remove_cvrefIDTclL_ZNS2_6ranges5__cpo5beginEEclsr3stdE7declvalIRT0_EEEEEEEEE5valueENS2_26indirectly_readable_traitsISE_EESF_E4type10value_typeEEEES6_RKSB_:
+  215|    700|inline constexpr ToT typecast_copy(const FromR& src) noexcept {
   216|    700|   ToT dst;
   217|    700|   typecast_copy(dst, src);
   218|    700|   return dst;
   219|    700|}
-_ZN5Botan13typecast_copyImTkNS_6ranges16contiguous_rangeERNSt3__14spanIKhLm8EEEQaaaasr3stdE23is_trivially_copyable_vINS2_11conditionalIXsr21__is_primary_templateINS2_15iterator_traitsIu14__remove_cvrefIDTclL_ZNS2_6ranges5__cpo5beginEEclsr3stdE7declvalIRT0_EEEEEEEEE5valueENS2_26indirectly_readable_traitsISE_EESF_E4type10value_typeEEsr3stdE23is_trivially_copyable_vIT_Entsr3std6rangesE5rangeISL_EEEvRSL_OSB_:
-  193|    700|inline constexpr void typecast_copy(ToT& out, FromR&& in) noexcept {
+_ZN5Botan13typecast_copyImTkNS_6ranges16contiguous_rangeENSt3__14spanIKhLm8EEEQaaaasr3stdE23is_trivially_copyable_vINS2_11conditionalIXsr21__is_primary_templateINS2_15iterator_traitsIu14__remove_cvrefIDTclL_ZNS2_6ranges5__cpo5beginEEclsr3stdE7declvalIRT0_EEEEEEEEE5valueENS2_26indirectly_readable_traitsISD_EESE_E4type10value_typeEEsr3stdE23is_trivially_copyable_vIT_Entsr3std6rangesE5rangeISK_EEEvRSK_RKSA_:
+  193|    700|inline constexpr void typecast_copy(ToT& out, const FromR& in) noexcept {
   194|    700|   typecast_copy(std::span<ToT, 1>(&out, 1), in);
   195|    700|}
-_ZN5Botan13typecast_copyITkNS_6ranges23contiguous_output_rangeENSt3__14spanImLm1EEETkNS1_16contiguous_rangeERNS3_IKhLm8EEEQaasr3stdE23is_trivially_copyable_vINS2_11conditionalIXsr21__is_primary_templateINS2_15iterator_traitsIu14__remove_cvrefIDTclL_ZNS2_6ranges5__cpo5beginEEclsr3stdE7declvalIRT0_EEEEEEEEE5valueENS2_26indirectly_readable_traitsISF_EESG_E4type10value_typeEEsr3stdE23is_trivially_copyable_vINS8_IXsr21__is_primary_templateINS9_Iu14__remove_cvrefIDTclL_ZNSB_5beginEEclsr3stdE7declvalIRT_EEEEEEEEE5valueENSH_ISP_EESQ_E4type10value_typeEEEEvOSM_OSC_:
-  181|    700|inline constexpr void typecast_copy(ToR&& out, FromR&& in) {
+_ZN5Botan13typecast_copyITkNS_6ranges23contiguous_output_rangeENSt3__14spanImLm1EEETkNS1_16contiguous_rangeENS3_IKhLm8EEEQaasr3stdE23is_trivially_copyable_vINS2_11conditionalIXsr21__is_primary_templateINS2_15iterator_traitsIu14__remove_cvrefIDTclL_ZNS2_6ranges5__cpo5beginEEclsr3stdE7declvalIRT0_EEEEEEEEE5valueENS2_26indirectly_readable_traitsISE_EESF_E4type10value_typeEEsr3stdE23is_trivially_copyable_vINS7_IXsr21__is_primary_templateINS8_Iu14__remove_cvrefIDTclL_ZNSA_5beginEEclsr3stdE7declvalIRT_EEEEEEEEE5valueENSG_ISO_EESP_E4type10value_typeEEEEvOSL_RKSB_:
+  181|    700|inline constexpr void typecast_copy(ToR&& out /* NOLINT(*-std-forward) */, const FromR& in) {
   182|    700|   ranges::assert_equal_byte_lengths(out, in);
   183|    700|   std::memcpy(std::ranges::data(out), std::ranges::data(in), ranges::size_bytes(out));
   184|    700|}
-_ZN5Botan8copy_memImQsr3std10is_trivialINSt3__15decayIT_E4typeEEE5valueEEvPS3_PKS3_m:
+_ZN5Botan8copy_memImQsr3stdE12is_trivial_vIu7__decayIT_EEEEvPS1_PKS1_m:
   149|  77.1k|inline constexpr void copy_mem(T* out, const T* in, size_t n) {
   150|  77.1k|   BOTAN_ASSERT_IMPLICATION(n > 0, in != nullptr && out != nullptr, "If n > 0 then args are not null");
   ------------------
-  |  |   80|  77.1k|   do {                                                                                          \
-  |  |   81|   154k|      if((expr1) && !(expr2))                                                                    \
+  |  |   82|  77.1k|   do {                                                                                          \
+  |  |   83|   154k|      if((expr1) && !(expr2))                                                                    \
   |  |  ------------------
-  |  |  |  Branch (81:10): [True: 77.1k, False: 0]
-  |  |  |  Branch (81:23): [True: 77.1k, False: 0]
-  |  |  |  Branch (81:23): [True: 77.1k, False: 0]
+  |  |  |  Branch (83:10): [True: 77.1k, False: 0]
+  |  |  |  Branch (83:23): [True: 77.1k, False: 0]
+  |  |  |  Branch (83:23): [True: 77.1k, False: 0]
   |  |  ------------------
-  |  |   82|  77.1k|         Botan::assertion_failure(#expr1 " implies " #expr2, msg, __func__, __FILE__, __LINE__); \
-  |  |   83|  77.1k|   } while(0)
+  |  |   84|  77.1k|         Botan::assertion_failure(#expr1 " implies " #expr2, msg, __func__, __FILE__, __LINE__); \
+  |  |   85|  77.1k|   } while(0)
   |  |  ------------------
-  |  |  |  Branch (83:12): [Folded - Ignored]
+  |  |  |  Branch (85:12): [Folded - Ignored]
   |  |  ------------------
   ------------------
   151|       |
@@ -2031,8 +2034,8 @@ _ZN5Botan8copy_memImQsr3std10is_trivialINSt3__15decayIT_E4typeEEE5valueEEvPS3_PK
   153|  77.1k|      std::memmove(out, in, sizeof(T) * n);
   154|  77.1k|   }
   155|  77.1k|}
-_ZN5Botan8copy_memITkNS_6ranges23contiguous_output_rangeENSt3__14spanIhLm18446744073709551615EEETkNS1_16contiguous_rangeERNS3_IKhLm18446744073709551615EEEQaasr3stdE9is_same_vINS2_11conditionalIXsr21__is_primary_templateINS2_15iterator_traitsIu14__remove_cvrefIDTclL_ZNS2_6ranges5__cpo5beginEEclsr3stdE7declvalIRT_EEEEEEEEE5valueENS2_26indirectly_readable_traitsISF_EESG_E4type10value_typeENS8_IXsr21__is_primary_templateINS9_Iu14__remove_cvrefIDTclL_ZNSB_5beginEEclsr3stdE7declvalIRT0_EEEEEEEEE5valueENSH_ISP_EESQ_E4type10value_typeEEsr3stdE23is_trivially_copyable_vISU_EEEvOSC_OSM_:
-  165|    600|inline constexpr void copy_mem(OutR&& out, InR&& in) {
+_ZN5Botan8copy_memITkNS_6ranges23contiguous_output_rangeENSt3__14spanIhLm18446744073709551615EEETkNS1_16contiguous_rangeENS3_IKhLm18446744073709551615EEEQaasr3stdE9is_same_vINS2_11conditionalIXsr21__is_primary_templateINS2_15iterator_traitsIu14__remove_cvrefIDTclL_ZNS2_6ranges5__cpo5beginEEclsr3stdE7declvalIRT_EEEEEEEEE5valueENS2_26indirectly_readable_traitsISE_EESF_E4type10value_typeENS7_IXsr21__is_primary_templateINS8_Iu14__remove_cvrefIDTclL_ZNSA_5beginEEclsr3stdE7declvalIRT0_EEEEEEEEE5valueENSG_ISO_EESP_E4type10value_typeEEsr3stdE23is_trivially_copyable_vIST_EEEvOSB_RKSL_:
+  165|    600|inline constexpr void copy_mem(OutR&& out /* NOLINT(*-std-forward) */, const InR& in) {
   166|    600|   ranges::assert_equal_byte_lengths(out, in);
   167|    600|   if(std::is_constant_evaluated()) {
   ------------------
@@ -2087,10 +2090,10 @@ _ZN5Botan21RandomNumberGeneratorD2Ev:
 _ZN5Botan21RandomNumberGeneratorC2Ev:
    50|    100|      RandomNumberGenerator() = default;
 
-_ZN5Botan16secure_allocatorImE8allocateEm:
-   49|    300|      T* allocate(std::size_t n) { return static_cast<T*>(allocate_memory(n, sizeof(T))); }
 _ZN5Botan16secure_allocatorImE10deallocateEPmm:
-   51|    300|      void deallocate(T* p, std::size_t n) { deallocate_memory(p, n, sizeof(T)); }
+   54|    300|      void deallocate(T* p, std::size_t n) { deallocate_memory(p, n, sizeof(T)); }
+_ZN5Botan16secure_allocatorImE8allocateEm:
+   52|    300|      T* allocate(std::size_t n) { return static_cast<T*>(allocate_memory(n, sizeof(T))); }
 
 _ZN5Botan12Stateful_RNGC2ERNS_21RandomNumberGeneratorEm:
    45|     50|            m_underlying_rng(&rng), m_reseed_interval(reseed_interval) {}
@@ -2098,55 +2101,55 @@ _ZNK5Botan12Stateful_RNG13accepts_inputEv:
    71|    150|      bool accepts_input() const final { return true; }
 
 _ZN5Botan16wrap_strong_typeIjRjQoosr3stdE18constructible_fromIT_T0_Eaasr8conceptsE11strong_typeIS2_Esr3stdE18constructible_fromINS2_12wrapped_typeES3_EEEDcOS3_:
-  248|  3.05k|[[nodiscard]] constexpr decltype(auto) wrap_strong_type(ParamT&& t) {
-  249|  3.05k|   if constexpr(std::same_as<std::remove_cvref_t<ParamT>, T>) {
-  250|       |      // Noop, if the parameter type already is the desired return type.
-  251|  3.05k|      return std::forward<ParamT>(t);
-  252|       |   } else if constexpr(std::constructible_from<T, ParamT>) {
-  253|       |      // Implicit conversion from the parameter type to the return type.
-  254|       |      return T{std::forward<ParamT>(t)};
-  255|       |   } else {
-  256|       |      // Explicitly calling the wrapped type's constructor to support
-  257|       |      // implicit conversions on types that mark their constructors as explicit.
-  258|       |      static_assert(concepts::strong_type<T> && std::constructible_from<typename T::wrapped_type, ParamT>);
-  259|       |      return T{typename T::wrapped_type{std::forward<ParamT>(t)}};
-  260|       |   }
-  261|  3.05k|}
+  249|  3.05k|[[nodiscard]] constexpr decltype(auto) wrap_strong_type(ParamT&& t) {
+  250|  3.05k|   if constexpr(std::same_as<std::remove_cvref_t<ParamT>, T>) {
+  251|       |      // Noop, if the parameter type already is the desired return type.
+  252|  3.05k|      return std::forward<ParamT>(t);
+  253|       |   } else if constexpr(std::constructible_from<T, ParamT>) {
+  254|       |      // Implicit conversion from the parameter type to the return type.
+  255|       |      return T{std::forward<ParamT>(t)};
+  256|       |   } else {
+  257|       |      // Explicitly calling the wrapped type's constructor to support
+  258|       |      // implicit conversions on types that mark their constructors as explicit.
+  259|       |      static_assert(concepts::strong_type<T> && std::constructible_from<typename T::wrapped_type, ParamT>);
+  260|       |      return T{typename T::wrapped_type{std::forward<ParamT>(t)}};
+  261|       |   }
+  262|  3.05k|}
 _ZN5Botan18unwrap_strong_typeIRmEEDcOT_:
-  223|  26.1k|[[nodiscard]] constexpr decltype(auto) unwrap_strong_type(T&& t) {
-  224|  26.1k|   if constexpr(!concepts::strong_type<std::remove_cvref_t<T>>) {
-  225|       |      // If the parameter type isn't a strong type, return it as is.
-  226|  26.1k|      return std::forward<T>(t);
-  227|       |   } else {
-  228|       |      // Unwrap the strong type and return the underlying value.
-  229|       |      return std::forward<T>(t).get();
-  230|       |   }
-  231|  26.1k|}
+  224|  26.1k|[[nodiscard]] constexpr decltype(auto) unwrap_strong_type(T&& t) {
+  225|  26.1k|   if constexpr(!concepts::strong_type<std::remove_cvref_t<T>>) {
+  226|       |      // If the parameter type isn't a strong type, return it as is.
+  227|  26.1k|      return std::forward<T>(t);
+  228|       |   } else {
+  229|       |      // Unwrap the strong type and return the underlying value.
+  230|       |      return std::forward<T>(t).get();
+  231|       |   }
+  232|  26.1k|}
 _ZN5Botan18unwrap_strong_typeIRjEEDcOT_:
-  223|    100|[[nodiscard]] constexpr decltype(auto) unwrap_strong_type(T&& t) {
-  224|    100|   if constexpr(!concepts::strong_type<std::remove_cvref_t<T>>) {
-  225|       |      // If the parameter type isn't a strong type, return it as is.
-  226|    100|      return std::forward<T>(t);
-  227|       |   } else {
-  228|       |      // Unwrap the strong type and return the underlying value.
-  229|       |      return std::forward<T>(t).get();
-  230|       |   }
-  231|    100|}
+  224|    100|[[nodiscard]] constexpr decltype(auto) unwrap_strong_type(T&& t) {
+  225|    100|   if constexpr(!concepts::strong_type<std::remove_cvref_t<T>>) {
+  226|       |      // If the parameter type isn't a strong type, return it as is.
+  227|    100|      return std::forward<T>(t);
+  228|       |   } else {
+  229|       |      // Unwrap the strong type and return the underlying value.
+  230|       |      return std::forward<T>(t).get();
+  231|       |   }
+  232|    100|}
 _ZN5Botan16wrap_strong_typeImRmQoosr3stdE18constructible_fromIT_T0_Eaasr8conceptsE11strong_typeIS2_Esr3stdE18constructible_fromINS2_12wrapped_typeES3_EEEDcOS3_:
-  248|    700|[[nodiscard]] constexpr decltype(auto) wrap_strong_type(ParamT&& t) {
-  249|    700|   if constexpr(std::same_as<std::remove_cvref_t<ParamT>, T>) {
-  250|       |      // Noop, if the parameter type already is the desired return type.
-  251|    700|      return std::forward<ParamT>(t);
-  252|       |   } else if constexpr(std::constructible_from<T, ParamT>) {
-  253|       |      // Implicit conversion from the parameter type to the return type.
-  254|       |      return T{std::forward<ParamT>(t)};
-  255|       |   } else {
-  256|       |      // Explicitly calling the wrapped type's constructor to support
-  257|       |      // implicit conversions on types that mark their constructors as explicit.
-  258|       |      static_assert(concepts::strong_type<T> && std::constructible_from<typename T::wrapped_type, ParamT>);
-  259|       |      return T{typename T::wrapped_type{std::forward<ParamT>(t)}};
-  260|       |   }
-  261|    700|}
+  249|    700|[[nodiscard]] constexpr decltype(auto) wrap_strong_type(ParamT&& t) {
+  250|    700|   if constexpr(std::same_as<std::remove_cvref_t<ParamT>, T>) {
+  251|       |      // Noop, if the parameter type already is the desired return type.
+  252|    700|      return std::forward<ParamT>(t);
+  253|       |   } else if constexpr(std::constructible_from<T, ParamT>) {
+  254|       |      // Implicit conversion from the parameter type to the return type.
+  255|       |      return T{std::forward<ParamT>(t)};
+  256|       |   } else {
+  257|       |      // Explicitly calling the wrapped type's constructor to support
+  258|       |      // implicit conversions on types that mark their constructors as explicit.
+  259|       |      static_assert(concepts::strong_type<T> && std::constructible_from<typename T::wrapped_type, ParamT>);
+  260|       |      return T{typename T::wrapped_type{std::forward<ParamT>(t)}};
+  261|       |   }
+  262|    700|}
 
 _ZN5Botan24Key_Length_SpecificationC2Emmm:
    38|    600|            m_min_keylen(min_k), m_max_keylen(max_k ? max_k : min_k), m_keylen_mod(k_mod) {}
@@ -2163,20 +2166,22 @@ _ZNK5Botan24Key_Length_Specification15valid_keylengthEm:
   ------------------
    46|    600|      }
 _ZNK5Botan18SymmetricAlgorithm15valid_keylengthEm:
-  109|    600|      bool valid_keylength(size_t length) const { return key_spec().valid_keylength(length); }
+  114|    600|      bool valid_keylength(size_t length) const { return key_spec().valid_keylength(length); }
 _ZNK5Botan18SymmetricAlgorithm23assert_key_material_setEv:
-  141|  3.55k|      void assert_key_material_set() const { assert_key_material_set(has_keying_material()); }
+  146|  3.55k|      void assert_key_material_set() const { assert_key_material_set(has_keying_material()); }
 _ZNK5Botan18SymmetricAlgorithm23assert_key_material_setEb:
-  143|  3.55k|      void assert_key_material_set(bool predicate) const {
-  144|  3.55k|         if(!predicate) {
+  148|  3.55k|      void assert_key_material_set(bool predicate) const {
+  149|  3.55k|         if(!predicate) {
   ------------------
-  |  Branch (144:13): [True: 0, False: 3.55k]
+  |  Branch (149:13): [True: 0, False: 3.55k]
   ------------------
-  145|      0|            throw_key_not_set_error();
-  146|      0|         }
-  147|  3.55k|      }
+  150|      0|            throw_key_not_set_error();
+  151|      0|         }
+  152|  3.55k|      }
 _ZN5Botan18SymmetricAlgorithmD2Ev:
-   81|     50|      virtual ~SymmetricAlgorithm() = default;
+   82|     50|      virtual ~SymmetricAlgorithm() = default;
+_ZN5Botan18SymmetricAlgorithmC2Ev:
+   81|     50|      SymmetricAlgorithm() = default;
 
 _ZNK5Botan17X25519_PrivateKey12public_valueEv:
    82|     50|      std::vector<uint8_t> public_value() const override { return raw_public_key_bits(); }
@@ -2187,15 +2192,15 @@ _ZN5Botan20Buffered_Computation5finalENSt3__14spanIhLm18446744073709551615EEE:
    53|  2.50k|void Buffered_Computation::final(std::span<uint8_t> out) {
    54|  2.50k|   BOTAN_ARG_CHECK(out.size() >= output_length(), "provided output buffer has insufficient capacity");
   ------------------
-  |  |   32|  2.50k|   do {                                                          \
-  |  |   33|  2.50k|      if(!(expr))                                                \
+  |  |   34|  2.50k|   do {                                                          \
+  |  |   35|  2.50k|      if(!(expr))                                                \
   |  |  ------------------
-  |  |  |  Branch (33:10): [True: 0, False: 2.50k]
+  |  |  |  Branch (35:10): [True: 0, False: 2.50k]
   |  |  ------------------
-  |  |   34|  2.50k|         Botan::throw_invalid_argument(msg, __func__, __FILE__); \
-  |  |   35|  2.50k|   } while(0)
+  |  |   36|  2.50k|         Botan::throw_invalid_argument(msg, __func__, __FILE__); \
+  |  |   37|  2.50k|   } while(0)
   |  |  ------------------
-  |  |  |  Branch (35:12): [Folded - Ignored]
+  |  |  |  Branch (37:12): [Folded - Ignored]
   |  |  ------------------
   ------------------
    55|  2.50k|   final_result(out);
@@ -2519,15 +2524,15 @@ _ZN5Botan12HashFunction15create_or_throwENSt3__117basic_string_viewIcNS1_11char_
   303|    100|}
 
 _ZN5Botan7SHA_51215compress_digestERNSt3__16vectorImNS_16secure_allocatorImEEEENS1_4spanIKhLm18446744073709551615EEEm:
-   58|  6.12k|void SHA_512::compress_digest(digest_type& digest, std::span<const uint8_t> input, size_t blocks) {
-   59|  6.12k|#if defined(BOTAN_HAS_SHA2_64_X86)
-   60|  6.12k|   if(CPUID::has(CPUID::Feature::SHA512)) {
+   58|  6.13k|void SHA_512::compress_digest(digest_type& digest, std::span<const uint8_t> input, size_t blocks) {
+   59|  6.13k|#if defined(BOTAN_HAS_SHA2_64_X86)
+   60|  6.13k|   if(CPUID::has(CPUID::Feature::SHA512)) {
   ------------------
-  |  Branch (60:7): [True: 0, False: 6.12k]
+  |  Branch (60:7): [True: 0, False: 6.13k]
   ------------------
    61|      0|      return compress_digest_x86(digest, input, blocks);
    62|      0|   }
-   63|  6.12k|#endif
+   63|  6.13k|#endif
    64|       |
    65|       |#if defined(BOTAN_HAS_SHA2_64_ARMV8)
    66|       |   if(CPUID::has(CPUID::Feature::SHA2_512)) {
@@ -2535,22 +2540,22 @@ _ZN5Botan7SHA_51215compress_digestERNSt3__16vectorImNS_16secure_allocatorImEEEEN
    68|       |   }
    69|       |#endif
    70|       |
-   71|  6.12k|#if defined(BOTAN_HAS_SHA2_64_X86_AVX512)
-   72|  6.12k|   if(CPUID::has(CPUID::Feature::AVX512, CPUID::Feature::BMI)) {
+   71|  6.13k|#if defined(BOTAN_HAS_SHA2_64_X86_AVX512)
+   72|  6.13k|   if(CPUID::has(CPUID::Feature::AVX512, CPUID::Feature::BMI)) {
   ------------------
-  |  Branch (72:7): [True: 0, False: 6.12k]
+  |  Branch (72:7): [True: 0, False: 6.13k]
   ------------------
    73|      0|      return compress_digest_x86_avx512(digest, input, blocks);
    74|      0|   }
-   75|  6.12k|#endif
+   75|  6.13k|#endif
    76|       |
-   77|  6.12k|#if defined(BOTAN_HAS_SHA2_64_X86_AVX2)
-   78|  6.12k|   if(CPUID::has(CPUID::Feature::AVX2, CPUID::Feature::BMI)) {
+   77|  6.13k|#if defined(BOTAN_HAS_SHA2_64_X86_AVX2)
+   78|  6.13k|   if(CPUID::has(CPUID::Feature::AVX2, CPUID::Feature::BMI)) {
   ------------------
-  |  Branch (78:7): [True: 6.12k, False: 0]
+  |  Branch (78:7): [True: 6.13k, False: 0]
   ------------------
-   79|  6.12k|      return compress_digest_x86_avx2(digest, input, blocks);
-   80|  6.12k|   }
+   79|  6.13k|      return compress_digest_x86_avx2(digest, input, blocks);
+   80|  6.13k|   }
    81|      0|#endif
    82|       |
    83|      0|   uint64_t A = digest[0], B = digest[1], C = digest[2], D = digest[3], E = digest[4], F = digest[5], G = digest[6],
@@ -2662,9 +2667,9 @@ _ZN5Botan7SHA_51215compress_digestERNSt3__16vectorImNS_16secure_allocatorImEEEEN
   186|      0|   }
   187|      0|}
 _ZN5Botan7SHA_51210compress_nERNSt3__16vectorImNS_16secure_allocatorImEEEENS1_4spanIKhLm18446744073709551615EEEm:
-  209|  6.12k|void SHA_512::compress_n(digest_type& digest, std::span<const uint8_t> input, size_t blocks) {
-  210|  6.12k|   SHA_512::compress_digest(digest, input, blocks);
-  211|  6.12k|}
+  209|  6.13k|void SHA_512::compress_n(digest_type& digest, std::span<const uint8_t> input, size_t blocks) {
+  210|  6.13k|   SHA_512::compress_digest(digest, input, blocks);
+  211|  6.13k|}
 _ZN5Botan7SHA_5124initERNSt3__16vectorImNS_16secure_allocatorImEEEE:
   235|  3.75k|void SHA_512::init(digest_type& digest) {
   236|  3.75k|   digest.assign({0x6A09E667F3BCC908,
@@ -2686,281 +2691,281 @@ _ZN5Botan7SHA_51212final_resultENSt3__14spanIhLm18446744073709551615EEE:
   288|  2.85k|}
 
 _ZN5Botan7SHA_51224compress_digest_x86_avx2ERNSt3__16vectorImNS_16secure_allocatorImEEEENS1_4spanIKhLm18446744073709551615EEEm:
-   46|  6.12k|                                                              size_t blocks) {
+   46|  6.13k|                                                              size_t blocks) {
    47|       |   // clang-format off
-   48|  6.12k|   alignas(64) const uint64_t K[80] = {
-   49|  6.12k|      0x428A2F98D728AE22, 0x7137449123EF65CD, 0xB5C0FBCFEC4D3B2F, 0xE9B5DBA58189DBBC,
-   50|  6.12k|      0x3956C25BF348B538, 0x59F111F1B605D019, 0x923F82A4AF194F9B, 0xAB1C5ED5DA6D8118,
-   51|  6.12k|      0xD807AA98A3030242, 0x12835B0145706FBE, 0x243185BE4EE4B28C, 0x550C7DC3D5FFB4E2,
-   52|  6.12k|      0x72BE5D74F27B896F, 0x80DEB1FE3B1696B1, 0x9BDC06A725C71235, 0xC19BF174CF692694,
-   53|  6.12k|      0xE49B69C19EF14AD2, 0xEFBE4786384F25E3, 0x0FC19DC68B8CD5B5, 0x240CA1CC77AC9C65,
-   54|  6.12k|      0x2DE92C6F592B0275, 0x4A7484AA6EA6E483, 0x5CB0A9DCBD41FBD4, 0x76F988DA831153B5,
-   55|  6.12k|      0x983E5152EE66DFAB, 0xA831C66D2DB43210, 0xB00327C898FB213F, 0xBF597FC7BEEF0EE4,
-   56|  6.12k|      0xC6E00BF33DA88FC2, 0xD5A79147930AA725, 0x06CA6351E003826F, 0x142929670A0E6E70,
-   57|  6.12k|      0x27B70A8546D22FFC, 0x2E1B21385C26C926, 0x4D2C6DFC5AC42AED, 0x53380D139D95B3DF,
-   58|  6.12k|      0x650A73548BAF63DE, 0x766A0ABB3C77B2A8, 0x81C2C92E47EDAEE6, 0x92722C851482353B,
-   59|  6.12k|      0xA2BFE8A14CF10364, 0xA81A664BBC423001, 0xC24B8B70D0F89791, 0xC76C51A30654BE30,
-   60|  6.12k|      0xD192E819D6EF5218, 0xD69906245565A910, 0xF40E35855771202A, 0x106AA07032BBD1B8,
-   61|  6.12k|      0x19A4C116B8D2D0C8, 0x1E376C085141AB53, 0x2748774CDF8EEB99, 0x34B0BCB5E19B48A8,
-   62|  6.12k|      0x391C0CB3C5C95A63, 0x4ED8AA4AE3418ACB, 0x5B9CCA4F7763E373, 0x682E6FF3D6B2B8A3,
-   63|  6.12k|      0x748F82EE5DEFB2FC, 0x78A5636F43172F60, 0x84C87814A1F0AB72, 0x8CC702081A6439EC,
-   64|  6.12k|      0x90BEFFFA23631E28, 0xA4506CEBDE82BDE9, 0xBEF9A3F7B2C67915, 0xC67178F2E372532B,
-   65|  6.12k|      0xCA273ECEEA26619C, 0xD186B8C721C0C207, 0xEADA7DD6CDE0EB1E, 0xF57D4F7FEE6ED178,
-   66|  6.12k|      0x06F067AA72176FBA, 0x0A637DC5A2C898A6, 0x113F9804BEF90DAE, 0x1B710B35131C471B,
-   67|  6.12k|      0x28DB77F523047D84, 0x32CAAB7B40C72493, 0x3C9EBE0A15C9BEBC, 0x431D67C49C100D4C,
-   68|  6.12k|      0x4CC5D4BECB3E42B6, 0x597F299CFC657E2A, 0x5FCB6FAB3AD6FAEC, 0x6C44198C4A475817,
-   69|  6.12k|   };
+   48|  6.13k|   alignas(64) const uint64_t K[80] = {
+   49|  6.13k|      0x428A2F98D728AE22, 0x7137449123EF65CD, 0xB5C0FBCFEC4D3B2F, 0xE9B5DBA58189DBBC,
+   50|  6.13k|      0x3956C25BF348B538, 0x59F111F1B605D019, 0x923F82A4AF194F9B, 0xAB1C5ED5DA6D8118,
+   51|  6.13k|      0xD807AA98A3030242, 0x12835B0145706FBE, 0x243185BE4EE4B28C, 0x550C7DC3D5FFB4E2,
+   52|  6.13k|      0x72BE5D74F27B896F, 0x80DEB1FE3B1696B1, 0x9BDC06A725C71235, 0xC19BF174CF692694,
+   53|  6.13k|      0xE49B69C19EF14AD2, 0xEFBE4786384F25E3, 0x0FC19DC68B8CD5B5, 0x240CA1CC77AC9C65,
+   54|  6.13k|      0x2DE92C6F592B0275, 0x4A7484AA6EA6E483, 0x5CB0A9DCBD41FBD4, 0x76F988DA831153B5,
+   55|  6.13k|      0x983E5152EE66DFAB, 0xA831C66D2DB43210, 0xB00327C898FB213F, 0xBF597FC7BEEF0EE4,
+   56|  6.13k|      0xC6E00BF33DA88FC2, 0xD5A79147930AA725, 0x06CA6351E003826F, 0x142929670A0E6E70,
+   57|  6.13k|      0x27B70A8546D22FFC, 0x2E1B21385C26C926, 0x4D2C6DFC5AC42AED, 0x53380D139D95B3DF,
+   58|  6.13k|      0x650A73548BAF63DE, 0x766A0ABB3C77B2A8, 0x81C2C92E47EDAEE6, 0x92722C851482353B,
+   59|  6.13k|      0xA2BFE8A14CF10364, 0xA81A664BBC423001, 0xC24B8B70D0F89791, 0xC76C51A30654BE30,
+   60|  6.13k|      0xD192E819D6EF5218, 0xD69906245565A910, 0xF40E35855771202A, 0x106AA07032BBD1B8,
+   61|  6.13k|      0x19A4C116B8D2D0C8, 0x1E376C085141AB53, 0x2748774CDF8EEB99, 0x34B0BCB5E19B48A8,
+   62|  6.13k|      0x391C0CB3C5C95A63, 0x4ED8AA4AE3418ACB, 0x5B9CCA4F7763E373, 0x682E6FF3D6B2B8A3,
+   63|  6.13k|      0x748F82EE5DEFB2FC, 0x78A5636F43172F60, 0x84C87814A1F0AB72, 0x8CC702081A6439EC,
+   64|  6.13k|      0x90BEFFFA23631E28, 0xA4506CEBDE82BDE9, 0xBEF9A3F7B2C67915, 0xC67178F2E372532B,
+   65|  6.13k|      0xCA273ECEEA26619C, 0xD186B8C721C0C207, 0xEADA7DD6CDE0EB1E, 0xF57D4F7FEE6ED178,
+   66|  6.13k|      0x06F067AA72176FBA, 0x0A637DC5A2C898A6, 0x113F9804BEF90DAE, 0x1B710B35131C471B,
+   67|  6.13k|      0x28DB77F523047D84, 0x32CAAB7B40C72493, 0x3C9EBE0A15C9BEBC, 0x431D67C49C100D4C,
+   68|  6.13k|      0x4CC5D4BECB3E42B6, 0x597F299CFC657E2A, 0x5FCB6FAB3AD6FAEC, 0x6C44198C4A475817,
+   69|  6.13k|   };
    70|       |
    71|       |   // K2 is each pair of elements in K repeated since we are performing 2 parallel
    72|       |   // message expansions
-   73|  6.12k|   alignas(64) const uint64_t K2[2 * 80] = {
-   74|  6.12k|      0x428A2F98D728AE22, 0x7137449123EF65CD, 0x428A2F98D728AE22, 0x7137449123EF65CD,
-   75|  6.12k|      0xB5C0FBCFEC4D3B2F, 0xE9B5DBA58189DBBC, 0xB5C0FBCFEC4D3B2F, 0xE9B5DBA58189DBBC,
-   76|  6.12k|      0x3956C25BF348B538, 0x59F111F1B605D019, 0x3956C25BF348B538, 0x59F111F1B605D019,
-   77|  6.12k|      0x923F82A4AF194F9B, 0xAB1C5ED5DA6D8118, 0x923F82A4AF194F9B, 0xAB1C5ED5DA6D8118,
-   78|  6.12k|      0xD807AA98A3030242, 0x12835B0145706FBE, 0xD807AA98A3030242, 0x12835B0145706FBE,
-   79|  6.12k|      0x243185BE4EE4B28C, 0x550C7DC3D5FFB4E2, 0x243185BE4EE4B28C, 0x550C7DC3D5FFB4E2,
-   80|  6.12k|      0x72BE5D74F27B896F, 0x80DEB1FE3B1696B1, 0x72BE5D74F27B896F, 0x80DEB1FE3B1696B1,
-   81|  6.12k|      0x9BDC06A725C71235, 0xC19BF174CF692694, 0x9BDC06A725C71235, 0xC19BF174CF692694,
-   82|  6.12k|      0xE49B69C19EF14AD2, 0xEFBE4786384F25E3, 0xE49B69C19EF14AD2, 0xEFBE4786384F25E3,
-   83|  6.12k|      0x0FC19DC68B8CD5B5, 0x240CA1CC77AC9C65, 0x0FC19DC68B8CD5B5, 0x240CA1CC77AC9C65,
-   84|  6.12k|      0x2DE92C6F592B0275, 0x4A7484AA6EA6E483, 0x2DE92C6F592B0275, 0x4A7484AA6EA6E483,
-   85|  6.12k|      0x5CB0A9DCBD41FBD4, 0x76F988DA831153B5, 0x5CB0A9DCBD41FBD4, 0x76F988DA831153B5,
-   86|  6.12k|      0x983E5152EE66DFAB, 0xA831C66D2DB43210, 0x983E5152EE66DFAB, 0xA831C66D2DB43210,
-   87|  6.12k|      0xB00327C898FB213F, 0xBF597FC7BEEF0EE4, 0xB00327C898FB213F, 0xBF597FC7BEEF0EE4,
-   88|  6.12k|      0xC6E00BF33DA88FC2, 0xD5A79147930AA725, 0xC6E00BF33DA88FC2, 0xD5A79147930AA725,
-   89|  6.12k|      0x06CA6351E003826F, 0x142929670A0E6E70, 0x06CA6351E003826F, 0x142929670A0E6E70,
-   90|  6.12k|      0x27B70A8546D22FFC, 0x2E1B21385C26C926, 0x27B70A8546D22FFC, 0x2E1B21385C26C926,
-   91|  6.12k|      0x4D2C6DFC5AC42AED, 0x53380D139D95B3DF, 0x4D2C6DFC5AC42AED, 0x53380D139D95B3DF,
-   92|  6.12k|      0x650A73548BAF63DE, 0x766A0ABB3C77B2A8, 0x650A73548BAF63DE, 0x766A0ABB3C77B2A8,
-   93|  6.12k|      0x81C2C92E47EDAEE6, 0x92722C851482353B, 0x81C2C92E47EDAEE6, 0x92722C851482353B,
-   94|  6.12k|      0xA2BFE8A14CF10364, 0xA81A664BBC423001, 0xA2BFE8A14CF10364, 0xA81A664BBC423001,
-   95|  6.12k|      0xC24B8B70D0F89791, 0xC76C51A30654BE30, 0xC24B8B70D0F89791, 0xC76C51A30654BE30,
-   96|  6.12k|      0xD192E819D6EF5218, 0xD69906245565A910, 0xD192E819D6EF5218, 0xD69906245565A910,
-   97|  6.12k|      0xF40E35855771202A, 0x106AA07032BBD1B8, 0xF40E35855771202A, 0x106AA07032BBD1B8,
-   98|  6.12k|      0x19A4C116B8D2D0C8, 0x1E376C085141AB53, 0x19A4C116B8D2D0C8, 0x1E376C085141AB53,
-   99|  6.12k|      0x2748774CDF8EEB99, 0x34B0BCB5E19B48A8, 0x2748774CDF8EEB99, 0x34B0BCB5E19B48A8,
-  100|  6.12k|      0x391C0CB3C5C95A63, 0x4ED8AA4AE3418ACB, 0x391C0CB3C5C95A63, 0x4ED8AA4AE3418ACB,
-  101|  6.12k|      0x5B9CCA4F7763E373, 0x682E6FF3D6B2B8A3, 0x5B9CCA4F7763E373, 0x682E6FF3D6B2B8A3,
-  102|  6.12k|      0x748F82EE5DEFB2FC, 0x78A5636F43172F60, 0x748F82EE5DEFB2FC, 0x78A5636F43172F60,
-  103|  6.12k|      0x84C87814A1F0AB72, 0x8CC702081A6439EC, 0x84C87814A1F0AB72, 0x8CC702081A6439EC,
-  104|  6.12k|      0x90BEFFFA23631E28, 0xA4506CEBDE82BDE9, 0x90BEFFFA23631E28, 0xA4506CEBDE82BDE9,
-  105|  6.12k|      0xBEF9A3F7B2C67915, 0xC67178F2E372532B, 0xBEF9A3F7B2C67915, 0xC67178F2E372532B,
-  106|  6.12k|      0xCA273ECEEA26619C, 0xD186B8C721C0C207, 0xCA273ECEEA26619C, 0xD186B8C721C0C207,
-  107|  6.12k|      0xEADA7DD6CDE0EB1E, 0xF57D4F7FEE6ED178, 0xEADA7DD6CDE0EB1E, 0xF57D4F7FEE6ED178,
-  108|  6.12k|      0x06F067AA72176FBA, 0x0A637DC5A2C898A6, 0x06F067AA72176FBA, 0x0A637DC5A2C898A6,
-  109|  6.12k|      0x113F9804BEF90DAE, 0x1B710B35131C471B, 0x113F9804BEF90DAE, 0x1B710B35131C471B,
-  110|  6.12k|      0x28DB77F523047D84, 0x32CAAB7B40C72493, 0x28DB77F523047D84, 0x32CAAB7B40C72493,
-  111|  6.12k|      0x3C9EBE0A15C9BEBC, 0x431D67C49C100D4C, 0x3C9EBE0A15C9BEBC, 0x431D67C49C100D4C,
-  112|  6.12k|      0x4CC5D4BECB3E42B6, 0x597F299CFC657E2A, 0x4CC5D4BECB3E42B6, 0x597F299CFC657E2A,
-  113|  6.12k|      0x5FCB6FAB3AD6FAEC, 0x6C44198C4A475817, 0x5FCB6FAB3AD6FAEC, 0x6C44198C4A475817,
-  114|  6.12k|   };
+   73|  6.13k|   alignas(64) const uint64_t K2[2 * 80] = {
+   74|  6.13k|      0x428A2F98D728AE22, 0x7137449123EF65CD, 0x428A2F98D728AE22, 0x7137449123EF65CD,
+   75|  6.13k|      0xB5C0FBCFEC4D3B2F, 0xE9B5DBA58189DBBC, 0xB5C0FBCFEC4D3B2F, 0xE9B5DBA58189DBBC,
+   76|  6.13k|      0x3956C25BF348B538, 0x59F111F1B605D019, 0x3956C25BF348B538, 0x59F111F1B605D019,
+   77|  6.13k|      0x923F82A4AF194F9B, 0xAB1C5ED5DA6D8118, 0x923F82A4AF194F9B, 0xAB1C5ED5DA6D8118,
+   78|  6.13k|      0xD807AA98A3030242, 0x12835B0145706FBE, 0xD807AA98A3030242, 0x12835B0145706FBE,
+   79|  6.13k|      0x243185BE4EE4B28C, 0x550C7DC3D5FFB4E2, 0x243185BE4EE4B28C, 0x550C7DC3D5FFB4E2,
+   80|  6.13k|      0x72BE5D74F27B896F, 0x80DEB1FE3B1696B1, 0x72BE5D74F27B896F, 0x80DEB1FE3B1696B1,
+   81|  6.13k|      0x9BDC06A725C71235, 0xC19BF174CF692694, 0x9BDC06A725C71235, 0xC19BF174CF692694,
+   82|  6.13k|      0xE49B69C19EF14AD2, 0xEFBE4786384F25E3, 0xE49B69C19EF14AD2, 0xEFBE4786384F25E3,
+   83|  6.13k|      0x0FC19DC68B8CD5B5, 0x240CA1CC77AC9C65, 0x0FC19DC68B8CD5B5, 0x240CA1CC77AC9C65,
+   84|  6.13k|      0x2DE92C6F592B0275, 0x4A7484AA6EA6E483, 0x2DE92C6F592B0275, 0x4A7484AA6EA6E483,
+   85|  6.13k|      0x5CB0A9DCBD41FBD4, 0x76F988DA831153B5, 0x5CB0A9DCBD41FBD4, 0x76F988DA831153B5,
+   86|  6.13k|      0x983E5152EE66DFAB, 0xA831C66D2DB43210, 0x983E5152EE66DFAB, 0xA831C66D2DB43210,
+   87|  6.13k|      0xB00327C898FB213F, 0xBF597FC7BEEF0EE4, 0xB00327C898FB213F, 0xBF597FC7BEEF0EE4,
+   88|  6.13k|      0xC6E00BF33DA88FC2, 0xD5A79147930AA725, 0xC6E00BF33DA88FC2, 0xD5A79147930AA725,
+   89|  6.13k|      0x06CA6351E003826F, 0x142929670A0E6E70, 0x06CA6351E003826F, 0x142929670A0E6E70,
+   90|  6.13k|      0x27B70A8546D22FFC, 0x2E1B21385C26C926, 0x27B70A8546D22FFC, 0x2E1B21385C26C926,
+   91|  6.13k|      0x4D2C6DFC5AC42AED, 0x53380D139D95B3DF, 0x4D2C6DFC5AC42AED, 0x53380D139D95B3DF,
+   92|  6.13k|      0x650A73548BAF63DE, 0x766A0ABB3C77B2A8, 0x650A73548BAF63DE, 0x766A0ABB3C77B2A8,
+   93|  6.13k|      0x81C2C92E47EDAEE6, 0x92722C851482353B, 0x81C2C92E47EDAEE6, 0x92722C851482353B,
+   94|  6.13k|      0xA2BFE8A14CF10364, 0xA81A664BBC423001, 0xA2BFE8A14CF10364, 0xA81A664BBC423001,
+   95|  6.13k|      0xC24B8B70D0F89791, 0xC76C51A30654BE30, 0xC24B8B70D0F89791, 0xC76C51A30654BE30,
+   96|  6.13k|      0xD192E819D6EF5218, 0xD69906245565A910, 0xD192E819D6EF5218, 0xD69906245565A910,
+   97|  6.13k|      0xF40E35855771202A, 0x106AA07032BBD1B8, 0xF40E35855771202A, 0x106AA07032BBD1B8,
+   98|  6.13k|      0x19A4C116B8D2D0C8, 0x1E376C085141AB53, 0x19A4C116B8D2D0C8, 0x1E376C085141AB53,
+   99|  6.13k|      0x2748774CDF8EEB99, 0x34B0BCB5E19B48A8, 0x2748774CDF8EEB99, 0x34B0BCB5E19B48A8,
+  100|  6.13k|      0x391C0CB3C5C95A63, 0x4ED8AA4AE3418ACB, 0x391C0CB3C5C95A63, 0x4ED8AA4AE3418ACB,
+  101|  6.13k|      0x5B9CCA4F7763E373, 0x682E6FF3D6B2B8A3, 0x5B9CCA4F7763E373, 0x682E6FF3D6B2B8A3,
+  102|  6.13k|      0x748F82EE5DEFB2FC, 0x78A5636F43172F60, 0x748F82EE5DEFB2FC, 0x78A5636F43172F60,
+  103|  6.13k|      0x84C87814A1F0AB72, 0x8CC702081A6439EC, 0x84C87814A1F0AB72, 0x8CC702081A6439EC,
+  104|  6.13k|      0x90BEFFFA23631E28, 0xA4506CEBDE82BDE9, 0x90BEFFFA23631E28, 0xA4506CEBDE82BDE9,
+  105|  6.13k|      0xBEF9A3F7B2C67915, 0xC67178F2E372532B, 0xBEF9A3F7B2C67915, 0xC67178F2E372532B,
+  106|  6.13k|      0xCA273ECEEA26619C, 0xD186B8C721C0C207, 0xCA273ECEEA26619C, 0xD186B8C721C0C207,
+  107|  6.13k|      0xEADA7DD6CDE0EB1E, 0xF57D4F7FEE6ED178, 0xEADA7DD6CDE0EB1E, 0xF57D4F7FEE6ED178,
+  108|  6.13k|      0x06F067AA72176FBA, 0x0A637DC5A2C898A6, 0x06F067AA72176FBA, 0x0A637DC5A2C898A6,
+  109|  6.13k|      0x113F9804BEF90DAE, 0x1B710B35131C471B, 0x113F9804BEF90DAE, 0x1B710B35131C471B,
+  110|  6.13k|      0x28DB77F523047D84, 0x32CAAB7B40C72493, 0x28DB77F523047D84, 0x32CAAB7B40C72493,
+  111|  6.13k|      0x3C9EBE0A15C9BEBC, 0x431D67C49C100D4C, 0x3C9EBE0A15C9BEBC, 0x431D67C49C100D4C,
+  112|  6.13k|      0x4CC5D4BECB3E42B6, 0x597F299CFC657E2A, 0x4CC5D4BECB3E42B6, 0x597F299CFC657E2A,
+  113|  6.13k|      0x5FCB6FAB3AD6FAEC, 0x6C44198C4A475817, 0x5FCB6FAB3AD6FAEC, 0x6C44198C4A475817,
+  114|  6.13k|   };
   115|       |   // clang-format on
   116|       |
-  117|  6.12k|   alignas(64) uint64_t W[16] = {0};
-  118|  6.12k|   alignas(64) uint64_t W2[80];
+  117|  6.13k|   alignas(64) uint64_t W[16] = {0};
+  118|  6.13k|   alignas(64) uint64_t W2[80];
   119|       |
-  120|  6.12k|   uint64_t A = digest[0];
-  121|  6.12k|   uint64_t B = digest[1];
-  122|  6.12k|   uint64_t C = digest[2];
-  123|  6.12k|   uint64_t D = digest[3];
-  124|  6.12k|   uint64_t E = digest[4];
-  125|  6.12k|   uint64_t F = digest[5];
-  126|  6.12k|   uint64_t G = digest[6];
-  127|  6.12k|   uint64_t H = digest[7];
+  120|  6.13k|   uint64_t A = digest[0];
+  121|  6.13k|   uint64_t B = digest[1];
+  122|  6.13k|   uint64_t C = digest[2];
+  123|  6.13k|   uint64_t D = digest[3];
+  124|  6.13k|   uint64_t E = digest[4];
+  125|  6.13k|   uint64_t F = digest[5];
+  126|  6.13k|   uint64_t G = digest[6];
+  127|  6.13k|   uint64_t H = digest[7];
   128|       |
-  129|  6.12k|   const uint8_t* data = input.data();
+  129|  6.13k|   const uint8_t* data = input.data();
   130|       |
-  131|  6.22k|   while(blocks >= 2) {
+  131|  6.29k|   while(blocks >= 2) {
   ------------------
-  |  Branch (131:10): [True: 102, False: 6.12k]
+  |  Branch (131:10): [True: 162, False: 6.13k]
   ------------------
-  132|    102|      SIMD_4x64 WS[8];
+  132|    162|      SIMD_4x64 WS[8];
   133|       |
-  134|    918|      for(size_t i = 0; i < 8; i++) {
+  134|  1.45k|      for(size_t i = 0; i < 8; i++) {
   ------------------
-  |  Branch (134:25): [True: 816, False: 102]
+  |  Branch (134:25): [True: 1.29k, False: 162]
   ------------------
-  135|    816|         WS[i] = SIMD_4x64::load_be2(&data[16 * i], &data[128 + 16 * i]);
-  136|    816|         auto WK = WS[i] + SIMD_4x64::load_le(&K2[4 * i]);
-  137|    816|         WK.store_le2(&W[2 * i], &W2[2 * i]);
-  138|    816|      }
+  135|  1.29k|         WS[i] = SIMD_4x64::load_be2(&data[16 * i], &data[128 + 16 * i]);
+  136|  1.29k|         auto WK = WS[i] + SIMD_4x64::load_le(&K2[4 * i]);
+  137|  1.29k|         WK.store_le2(&W[2 * i], &W2[2 * i]);
+  138|  1.29k|      }
   139|       |
-  140|    102|      data += 2 * 128;
-  141|    102|      blocks -= 2;
+  140|    162|      data += 2 * 128;
+  141|    162|      blocks -= 2;
   142|       |
   143|       |      // First 64 rounds of SHA-512
-  144|    510|      for(size_t r = 0; r != 64; r += 16) {
+  144|    810|      for(size_t r = 0; r != 64; r += 16) {
   ------------------
-  |  Branch (144:25): [True: 408, False: 102]
+  |  Branch (144:25): [True: 648, False: 162]
   ------------------
-  145|    408|         auto w = sha512_next_w(WS) + SIMD_4x64::load_le(&K2[2 * (r + 16)]);
-  146|    408|         SHA2_64_F(A, B, C, D, E, F, G, H, W[0]);
-  147|    408|         SHA2_64_F(H, A, B, C, D, E, F, G, W[1]);
-  148|    408|         w.store_le2(&W[0], &W2[r + 16]);
+  145|    648|         auto w = sha512_next_w(WS) + SIMD_4x64::load_le(&K2[2 * (r + 16)]);
+  146|    648|         SHA2_64_F(A, B, C, D, E, F, G, H, W[0]);
+  147|    648|         SHA2_64_F(H, A, B, C, D, E, F, G, W[1]);
+  148|    648|         w.store_le2(&W[0], &W2[r + 16]);
   149|       |
-  150|    408|         w = sha512_next_w(WS) + SIMD_4x64::load_le(&K2[2 * (r + 18)]);
-  151|    408|         SHA2_64_F(G, H, A, B, C, D, E, F, W[2]);
-  152|    408|         SHA2_64_F(F, G, H, A, B, C, D, E, W[3]);
-  153|    408|         w.store_le2(&W[2], &W2[r + 18]);
+  150|    648|         w = sha512_next_w(WS) + SIMD_4x64::load_le(&K2[2 * (r + 18)]);
+  151|    648|         SHA2_64_F(G, H, A, B, C, D, E, F, W[2]);
+  152|    648|         SHA2_64_F(F, G, H, A, B, C, D, E, W[3]);
+  153|    648|         w.store_le2(&W[2], &W2[r + 18]);
   154|       |
-  155|    408|         w = sha512_next_w(WS) + SIMD_4x64::load_le(&K2[2 * (r + 20)]);
-  156|    408|         SHA2_64_F(E, F, G, H, A, B, C, D, W[4]);
-  157|    408|         SHA2_64_F(D, E, F, G, H, A, B, C, W[5]);
-  158|    408|         w.store_le2(&W[4], &W2[r + 20]);
+  155|    648|         w = sha512_next_w(WS) + SIMD_4x64::load_le(&K2[2 * (r + 20)]);
+  156|    648|         SHA2_64_F(E, F, G, H, A, B, C, D, W[4]);
+  157|    648|         SHA2_64_F(D, E, F, G, H, A, B, C, W[5]);
+  158|    648|         w.store_le2(&W[4], &W2[r + 20]);
   159|       |
-  160|    408|         w = sha512_next_w(WS) + SIMD_4x64::load_le(&K2[2 * (r + 22)]);
-  161|    408|         SHA2_64_F(C, D, E, F, G, H, A, B, W[6]);
-  162|    408|         SHA2_64_F(B, C, D, E, F, G, H, A, W[7]);
-  163|    408|         w.store_le2(&W[6], &W2[r + 22]);
+  160|    648|         w = sha512_next_w(WS) + SIMD_4x64::load_le(&K2[2 * (r + 22)]);
+  161|    648|         SHA2_64_F(C, D, E, F, G, H, A, B, W[6]);
+  162|    648|         SHA2_64_F(B, C, D, E, F, G, H, A, W[7]);
+  163|    648|         w.store_le2(&W[6], &W2[r + 22]);
   164|       |
-  165|    408|         w = sha512_next_w(WS) + SIMD_4x64::load_le(&K2[2 * (r + 24)]);
-  166|    408|         SHA2_64_F(A, B, C, D, E, F, G, H, W[8]);
-  167|    408|         SHA2_64_F(H, A, B, C, D, E, F, G, W[9]);
-  168|    408|         w.store_le2(&W[8], &W2[r + 24]);
+  165|    648|         w = sha512_next_w(WS) + SIMD_4x64::load_le(&K2[2 * (r + 24)]);
+  166|    648|         SHA2_64_F(A, B, C, D, E, F, G, H, W[8]);
+  167|    648|         SHA2_64_F(H, A, B, C, D, E, F, G, W[9]);
+  168|    648|         w.store_le2(&W[8], &W2[r + 24]);
   169|       |
-  170|    408|         w = sha512_next_w(WS) + SIMD_4x64::load_le(&K2[2 * (r + 26)]);
-  171|    408|         SHA2_64_F(G, H, A, B, C, D, E, F, W[10]);
-  172|    408|         SHA2_64_F(F, G, H, A, B, C, D, E, W[11]);
-  173|    408|         w.store_le2(&W[10], &W2[r + 26]);
+  170|    648|         w = sha512_next_w(WS) + SIMD_4x64::load_le(&K2[2 * (r + 26)]);
+  171|    648|         SHA2_64_F(G, H, A, B, C, D, E, F, W[10]);
+  172|    648|         SHA2_64_F(F, G, H, A, B, C, D, E, W[11]);
+  173|    648|         w.store_le2(&W[10], &W2[r + 26]);
   174|       |
-  175|    408|         w = sha512_next_w(WS) + SIMD_4x64::load_le(&K2[2 * (r + 28)]);
-  176|    408|         SHA2_64_F(E, F, G, H, A, B, C, D, W[12]);
-  177|    408|         SHA2_64_F(D, E, F, G, H, A, B, C, W[13]);
-  178|    408|         w.store_le2(&W[12], &W2[r + 28]);
+  175|    648|         w = sha512_next_w(WS) + SIMD_4x64::load_le(&K2[2 * (r + 28)]);
+  176|    648|         SHA2_64_F(E, F, G, H, A, B, C, D, W[12]);
+  177|    648|         SHA2_64_F(D, E, F, G, H, A, B, C, W[13]);
+  178|    648|         w.store_le2(&W[12], &W2[r + 28]);
   179|       |
-  180|    408|         w = sha512_next_w(WS) + SIMD_4x64::load_le(&K2[2 * (r + 30)]);
-  181|    408|         SHA2_64_F(C, D, E, F, G, H, A, B, W[14]);
-  182|    408|         SHA2_64_F(B, C, D, E, F, G, H, A, W[15]);
-  183|    408|         w.store_le2(&W[14], &W2[r + 30]);
-  184|    408|      }
+  180|    648|         w = sha512_next_w(WS) + SIMD_4x64::load_le(&K2[2 * (r + 30)]);
+  181|    648|         SHA2_64_F(C, D, E, F, G, H, A, B, W[14]);
+  182|    648|         SHA2_64_F(B, C, D, E, F, G, H, A, W[15]);
+  183|    648|         w.store_le2(&W[14], &W2[r + 30]);
+  184|    648|      }
   185|       |
   186|       |      // Final 16 rounds of SHA-512
-  187|    102|      SHA2_64_F(A, B, C, D, E, F, G, H, W[0]);
-  188|    102|      SHA2_64_F(H, A, B, C, D, E, F, G, W[1]);
-  189|    102|      SHA2_64_F(G, H, A, B, C, D, E, F, W[2]);
-  190|    102|      SHA2_64_F(F, G, H, A, B, C, D, E, W[3]);
-  191|    102|      SHA2_64_F(E, F, G, H, A, B, C, D, W[4]);
-  192|    102|      SHA2_64_F(D, E, F, G, H, A, B, C, W[5]);
-  193|    102|      SHA2_64_F(C, D, E, F, G, H, A, B, W[6]);
-  194|    102|      SHA2_64_F(B, C, D, E, F, G, H, A, W[7]);
-  195|    102|      SHA2_64_F(A, B, C, D, E, F, G, H, W[8]);
-  196|    102|      SHA2_64_F(H, A, B, C, D, E, F, G, W[9]);
-  197|    102|      SHA2_64_F(G, H, A, B, C, D, E, F, W[10]);
-  198|    102|      SHA2_64_F(F, G, H, A, B, C, D, E, W[11]);
-  199|    102|      SHA2_64_F(E, F, G, H, A, B, C, D, W[12]);
-  200|    102|      SHA2_64_F(D, E, F, G, H, A, B, C, W[13]);
-  201|    102|      SHA2_64_F(C, D, E, F, G, H, A, B, W[14]);
-  202|    102|      SHA2_64_F(B, C, D, E, F, G, H, A, W[15]);
+  187|    162|      SHA2_64_F(A, B, C, D, E, F, G, H, W[0]);
+  188|    162|      SHA2_64_F(H, A, B, C, D, E, F, G, W[1]);
+  189|    162|      SHA2_64_F(G, H, A, B, C, D, E, F, W[2]);
+  190|    162|      SHA2_64_F(F, G, H, A, B, C, D, E, W[3]);
+  191|    162|      SHA2_64_F(E, F, G, H, A, B, C, D, W[4]);
+  192|    162|      SHA2_64_F(D, E, F, G, H, A, B, C, W[5]);
+  193|    162|      SHA2_64_F(C, D, E, F, G, H, A, B, W[6]);
+  194|    162|      SHA2_64_F(B, C, D, E, F, G, H, A, W[7]);
+  195|    162|      SHA2_64_F(A, B, C, D, E, F, G, H, W[8]);
+  196|    162|      SHA2_64_F(H, A, B, C, D, E, F, G, W[9]);
+  197|    162|      SHA2_64_F(G, H, A, B, C, D, E, F, W[10]);
+  198|    162|      SHA2_64_F(F, G, H, A, B, C, D, E, W[11]);
+  199|    162|      SHA2_64_F(E, F, G, H, A, B, C, D, W[12]);
+  200|    162|      SHA2_64_F(D, E, F, G, H, A, B, C, W[13]);
+  201|    162|      SHA2_64_F(C, D, E, F, G, H, A, B, W[14]);
+  202|    162|      SHA2_64_F(B, C, D, E, F, G, H, A, W[15]);
   203|       |
-  204|    102|      A = (digest[0] += A);
-  205|    102|      B = (digest[1] += B);
-  206|    102|      C = (digest[2] += C);
-  207|    102|      D = (digest[3] += D);
-  208|    102|      E = (digest[4] += E);
-  209|    102|      F = (digest[5] += F);
-  210|    102|      G = (digest[6] += G);
-  211|    102|      H = (digest[7] += H);
+  204|    162|      A = (digest[0] += A);
+  205|    162|      B = (digest[1] += B);
+  206|    162|      C = (digest[2] += C);
+  207|    162|      D = (digest[3] += D);
+  208|    162|      E = (digest[4] += E);
+  209|    162|      F = (digest[5] += F);
+  210|    162|      G = (digest[6] += G);
+  211|    162|      H = (digest[7] += H);
   212|       |
   213|       |      // Second block of SHA-512 compression, with pre-expanded message
-  214|    102|      SHA2_64_F(A, B, C, D, E, F, G, H, W2[0]);
-  215|    102|      SHA2_64_F(H, A, B, C, D, E, F, G, W2[1]);
-  216|    102|      SHA2_64_F(G, H, A, B, C, D, E, F, W2[2]);
-  217|    102|      SHA2_64_F(F, G, H, A, B, C, D, E, W2[3]);
-  218|    102|      SHA2_64_F(E, F, G, H, A, B, C, D, W2[4]);
-  219|    102|      SHA2_64_F(D, E, F, G, H, A, B, C, W2[5]);
-  220|    102|      SHA2_64_F(C, D, E, F, G, H, A, B, W2[6]);
-  221|    102|      SHA2_64_F(B, C, D, E, F, G, H, A, W2[7]);
-  222|    102|      SHA2_64_F(A, B, C, D, E, F, G, H, W2[8]);
-  223|    102|      SHA2_64_F(H, A, B, C, D, E, F, G, W2[9]);
-  224|    102|      SHA2_64_F(G, H, A, B, C, D, E, F, W2[10]);
-  225|    102|      SHA2_64_F(F, G, H, A, B, C, D, E, W2[11]);
-  226|    102|      SHA2_64_F(E, F, G, H, A, B, C, D, W2[12]);
-  227|    102|      SHA2_64_F(D, E, F, G, H, A, B, C, W2[13]);
-  228|    102|      SHA2_64_F(C, D, E, F, G, H, A, B, W2[14]);
-  229|    102|      SHA2_64_F(B, C, D, E, F, G, H, A, W2[15]);
+  214|    162|      SHA2_64_F(A, B, C, D, E, F, G, H, W2[0]);
+  215|    162|      SHA2_64_F(H, A, B, C, D, E, F, G, W2[1]);
+  216|    162|      SHA2_64_F(G, H, A, B, C, D, E, F, W2[2]);
+  217|    162|      SHA2_64_F(F, G, H, A, B, C, D, E, W2[3]);
+  218|    162|      SHA2_64_F(E, F, G, H, A, B, C, D, W2[4]);
+  219|    162|      SHA2_64_F(D, E, F, G, H, A, B, C, W2[5]);
+  220|    162|      SHA2_64_F(C, D, E, F, G, H, A, B, W2[6]);
+  221|    162|      SHA2_64_F(B, C, D, E, F, G, H, A, W2[7]);
+  222|    162|      SHA2_64_F(A, B, C, D, E, F, G, H, W2[8]);
+  223|    162|      SHA2_64_F(H, A, B, C, D, E, F, G, W2[9]);
+  224|    162|      SHA2_64_F(G, H, A, B, C, D, E, F, W2[10]);
+  225|    162|      SHA2_64_F(F, G, H, A, B, C, D, E, W2[11]);
+  226|    162|      SHA2_64_F(E, F, G, H, A, B, C, D, W2[12]);
+  227|    162|      SHA2_64_F(D, E, F, G, H, A, B, C, W2[13]);
+  228|    162|      SHA2_64_F(C, D, E, F, G, H, A, B, W2[14]);
+  229|    162|      SHA2_64_F(B, C, D, E, F, G, H, A, W2[15]);
   230|       |
-  231|    102|      SHA2_64_F(A, B, C, D, E, F, G, H, W2[16]);
-  232|    102|      SHA2_64_F(H, A, B, C, D, E, F, G, W2[17]);
-  233|    102|      SHA2_64_F(G, H, A, B, C, D, E, F, W2[18]);
-  234|    102|      SHA2_64_F(F, G, H, A, B, C, D, E, W2[19]);
-  235|    102|      SHA2_64_F(E, F, G, H, A, B, C, D, W2[20]);
-  236|    102|      SHA2_64_F(D, E, F, G, H, A, B, C, W2[21]);
-  237|    102|      SHA2_64_F(C, D, E, F, G, H, A, B, W2[22]);
-  238|    102|      SHA2_64_F(B, C, D, E, F, G, H, A, W2[23]);
-  239|    102|      SHA2_64_F(A, B, C, D, E, F, G, H, W2[24]);
-  240|    102|      SHA2_64_F(H, A, B, C, D, E, F, G, W2[25]);
-  241|    102|      SHA2_64_F(G, H, A, B, C, D, E, F, W2[26]);
-  242|    102|      SHA2_64_F(F, G, H, A, B, C, D, E, W2[27]);
-  243|    102|      SHA2_64_F(E, F, G, H, A, B, C, D, W2[28]);
-  244|    102|      SHA2_64_F(D, E, F, G, H, A, B, C, W2[29]);
-  245|    102|      SHA2_64_F(C, D, E, F, G, H, A, B, W2[30]);
-  246|    102|      SHA2_64_F(B, C, D, E, F, G, H, A, W2[31]);
+  231|    162|      SHA2_64_F(A, B, C, D, E, F, G, H, W2[16]);
+  232|    162|      SHA2_64_F(H, A, B, C, D, E, F, G, W2[17]);
+  233|    162|      SHA2_64_F(G, H, A, B, C, D, E, F, W2[18]);
+  234|    162|      SHA2_64_F(F, G, H, A, B, C, D, E, W2[19]);
+  235|    162|      SHA2_64_F(E, F, G, H, A, B, C, D, W2[20]);
+  236|    162|      SHA2_64_F(D, E, F, G, H, A, B, C, W2[21]);
+  237|    162|      SHA2_64_F(C, D, E, F, G, H, A, B, W2[22]);
+  238|    162|      SHA2_64_F(B, C, D, E, F, G, H, A, W2[23]);
+  239|    162|      SHA2_64_F(A, B, C, D, E, F, G, H, W2[24]);
+  240|    162|      SHA2_64_F(H, A, B, C, D, E, F, G, W2[25]);
+  241|    162|      SHA2_64_F(G, H, A, B, C, D, E, F, W2[26]);
+  242|    162|      SHA2_64_F(F, G, H, A, B, C, D, E, W2[27]);
+  243|    162|      SHA2_64_F(E, F, G, H, A, B, C, D, W2[28]);
+  244|    162|      SHA2_64_F(D, E, F, G, H, A, B, C, W2[29]);
+  245|    162|      SHA2_64_F(C, D, E, F, G, H, A, B, W2[30]);
+  246|    162|      SHA2_64_F(B, C, D, E, F, G, H, A, W2[31]);
   247|       |
-  248|    102|      SHA2_64_F(A, B, C, D, E, F, G, H, W2[32]);
-  249|    102|      SHA2_64_F(H, A, B, C, D, E, F, G, W2[33]);
-  250|    102|      SHA2_64_F(G, H, A, B, C, D, E, F, W2[34]);
-  251|    102|      SHA2_64_F(F, G, H, A, B, C, D, E, W2[35]);
-  252|    102|      SHA2_64_F(E, F, G, H, A, B, C, D, W2[36]);
-  253|    102|      SHA2_64_F(D, E, F, G, H, A, B, C, W2[37]);
-  254|    102|      SHA2_64_F(C, D, E, F, G, H, A, B, W2[38]);
-  255|    102|      SHA2_64_F(B, C, D, E, F, G, H, A, W2[39]);
-  256|    102|      SHA2_64_F(A, B, C, D, E, F, G, H, W2[40]);
-  257|    102|      SHA2_64_F(H, A, B, C, D, E, F, G, W2[41]);
-  258|    102|      SHA2_64_F(G, H, A, B, C, D, E, F, W2[42]);
-  259|    102|      SHA2_64_F(F, G, H, A, B, C, D, E, W2[43]);
-  260|    102|      SHA2_64_F(E, F, G, H, A, B, C, D, W2[44]);
-  261|    102|      SHA2_64_F(D, E, F, G, H, A, B, C, W2[45]);
-  262|    102|      SHA2_64_F(C, D, E, F, G, H, A, B, W2[46]);
-  263|    102|      SHA2_64_F(B, C, D, E, F, G, H, A, W2[47]);
+  248|    162|      SHA2_64_F(A, B, C, D, E, F, G, H, W2[32]);
+  249|    162|      SHA2_64_F(H, A, B, C, D, E, F, G, W2[33]);
+  250|    162|      SHA2_64_F(G, H, A, B, C, D, E, F, W2[34]);
+  251|    162|      SHA2_64_F(F, G, H, A, B, C, D, E, W2[35]);
+  252|    162|      SHA2_64_F(E, F, G, H, A, B, C, D, W2[36]);
+  253|    162|      SHA2_64_F(D, E, F, G, H, A, B, C, W2[37]);
+  254|    162|      SHA2_64_F(C, D, E, F, G, H, A, B, W2[38]);
+  255|    162|      SHA2_64_F(B, C, D, E, F, G, H, A, W2[39]);
+  256|    162|      SHA2_64_F(A, B, C, D, E, F, G, H, W2[40]);
+  257|    162|      SHA2_64_F(H, A, B, C, D, E, F, G, W2[41]);
+  258|    162|      SHA2_64_F(G, H, A, B, C, D, E, F, W2[42]);
+  259|    162|      SHA2_64_F(F, G, H, A, B, C, D, E, W2[43]);
+  260|    162|      SHA2_64_F(E, F, G, H, A, B, C, D, W2[44]);
+  261|    162|      SHA2_64_F(D, E, F, G, H, A, B, C, W2[45]);
+  262|    162|      SHA2_64_F(C, D, E, F, G, H, A, B, W2[46]);
+  263|    162|      SHA2_64_F(B, C, D, E, F, G, H, A, W2[47]);
   264|       |
-  265|    102|      SHA2_64_F(A, B, C, D, E, F, G, H, W2[48]);
-  266|    102|      SHA2_64_F(H, A, B, C, D, E, F, G, W2[49]);
-  267|    102|      SHA2_64_F(G, H, A, B, C, D, E, F, W2[50]);
-  268|    102|      SHA2_64_F(F, G, H, A, B, C, D, E, W2[51]);
-  269|    102|      SHA2_64_F(E, F, G, H, A, B, C, D, W2[52]);
-  270|    102|      SHA2_64_F(D, E, F, G, H, A, B, C, W2[53]);
-  271|    102|      SHA2_64_F(C, D, E, F, G, H, A, B, W2[54]);
-  272|    102|      SHA2_64_F(B, C, D, E, F, G, H, A, W2[55]);
-  273|    102|      SHA2_64_F(A, B, C, D, E, F, G, H, W2[56]);
-  274|    102|      SHA2_64_F(H, A, B, C, D, E, F, G, W2[57]);
-  275|    102|      SHA2_64_F(G, H, A, B, C, D, E, F, W2[58]);
-  276|    102|      SHA2_64_F(F, G, H, A, B, C, D, E, W2[59]);
-  277|    102|      SHA2_64_F(E, F, G, H, A, B, C, D, W2[60]);
-  278|    102|      SHA2_64_F(D, E, F, G, H, A, B, C, W2[61]);
-  279|    102|      SHA2_64_F(C, D, E, F, G, H, A, B, W2[62]);
-  280|    102|      SHA2_64_F(B, C, D, E, F, G, H, A, W2[63]);
+  265|    162|      SHA2_64_F(A, B, C, D, E, F, G, H, W2[48]);
+  266|    162|      SHA2_64_F(H, A, B, C, D, E, F, G, W2[49]);
+  267|    162|      SHA2_64_F(G, H, A, B, C, D, E, F, W2[50]);
+  268|    162|      SHA2_64_F(F, G, H, A, B, C, D, E, W2[51]);
+  269|    162|      SHA2_64_F(E, F, G, H, A, B, C, D, W2[52]);
+  270|    162|      SHA2_64_F(D, E, F, G, H, A, B, C, W2[53]);
+  271|    162|      SHA2_64_F(C, D, E, F, G, H, A, B, W2[54]);
+  272|    162|      SHA2_64_F(B, C, D, E, F, G, H, A, W2[55]);
+  273|    162|      SHA2_64_F(A, B, C, D, E, F, G, H, W2[56]);
+  274|    162|      SHA2_64_F(H, A, B, C, D, E, F, G, W2[57]);
+  275|    162|      SHA2_64_F(G, H, A, B, C, D, E, F, W2[58]);
+  276|    162|      SHA2_64_F(F, G, H, A, B, C, D, E, W2[59]);
+  277|    162|      SHA2_64_F(E, F, G, H, A, B, C, D, W2[60]);
+  278|    162|      SHA2_64_F(D, E, F, G, H, A, B, C, W2[61]);
+  279|    162|      SHA2_64_F(C, D, E, F, G, H, A, B, W2[62]);
+  280|    162|      SHA2_64_F(B, C, D, E, F, G, H, A, W2[63]);
   281|       |
-  282|    102|      SHA2_64_F(A, B, C, D, E, F, G, H, W2[64]);
-  283|    102|      SHA2_64_F(H, A, B, C, D, E, F, G, W2[65]);
-  284|    102|      SHA2_64_F(G, H, A, B, C, D, E, F, W2[66]);
-  285|    102|      SHA2_64_F(F, G, H, A, B, C, D, E, W2[67]);
-  286|    102|      SHA2_64_F(E, F, G, H, A, B, C, D, W2[68]);
-  287|    102|      SHA2_64_F(D, E, F, G, H, A, B, C, W2[69]);
-  288|    102|      SHA2_64_F(C, D, E, F, G, H, A, B, W2[70]);
-  289|    102|      SHA2_64_F(B, C, D, E, F, G, H, A, W2[71]);
-  290|    102|      SHA2_64_F(A, B, C, D, E, F, G, H, W2[72]);
-  291|    102|      SHA2_64_F(H, A, B, C, D, E, F, G, W2[73]);
-  292|    102|      SHA2_64_F(G, H, A, B, C, D, E, F, W2[74]);
-  293|    102|      SHA2_64_F(F, G, H, A, B, C, D, E, W2[75]);
-  294|    102|      SHA2_64_F(E, F, G, H, A, B, C, D, W2[76]);
-  295|    102|      SHA2_64_F(D, E, F, G, H, A, B, C, W2[77]);
-  296|    102|      SHA2_64_F(C, D, E, F, G, H, A, B, W2[78]);
-  297|    102|      SHA2_64_F(B, C, D, E, F, G, H, A, W2[79]);
+  282|    162|      SHA2_64_F(A, B, C, D, E, F, G, H, W2[64]);
+  283|    162|      SHA2_64_F(H, A, B, C, D, E, F, G, W2[65]);
+  284|    162|      SHA2_64_F(G, H, A, B, C, D, E, F, W2[66]);
+  285|    162|      SHA2_64_F(F, G, H, A, B, C, D, E, W2[67]);
+  286|    162|      SHA2_64_F(E, F, G, H, A, B, C, D, W2[68]);
+  287|    162|      SHA2_64_F(D, E, F, G, H, A, B, C, W2[69]);
+  288|    162|      SHA2_64_F(C, D, E, F, G, H, A, B, W2[70]);
+  289|    162|      SHA2_64_F(B, C, D, E, F, G, H, A, W2[71]);
+  290|    162|      SHA2_64_F(A, B, C, D, E, F, G, H, W2[72]);
+  291|    162|      SHA2_64_F(H, A, B, C, D, E, F, G, W2[73]);
+  292|    162|      SHA2_64_F(G, H, A, B, C, D, E, F, W2[74]);
+  293|    162|      SHA2_64_F(F, G, H, A, B, C, D, E, W2[75]);
+  294|    162|      SHA2_64_F(E, F, G, H, A, B, C, D, W2[76]);
+  295|    162|      SHA2_64_F(D, E, F, G, H, A, B, C, W2[77]);
+  296|    162|      SHA2_64_F(C, D, E, F, G, H, A, B, W2[78]);
+  297|    162|      SHA2_64_F(B, C, D, E, F, G, H, A, W2[79]);
   298|       |
-  299|    102|      A = (digest[0] += A);
-  300|    102|      B = (digest[1] += B);
-  301|    102|      C = (digest[2] += C);
-  302|    102|      D = (digest[3] += D);
-  303|    102|      E = (digest[4] += E);
-  304|    102|      F = (digest[5] += F);
-  305|    102|      G = (digest[6] += G);
-  306|    102|      H = (digest[7] += H);
-  307|    102|   }
+  299|    162|      A = (digest[0] += A);
+  300|    162|      B = (digest[1] += B);
+  301|    162|      C = (digest[2] += C);
+  302|    162|      D = (digest[3] += D);
+  303|    162|      E = (digest[4] += E);
+  304|    162|      F = (digest[5] += F);
+  305|    162|      G = (digest[6] += G);
+  306|    162|      H = (digest[7] += H);
+  307|    162|   }
   308|       |
   309|  12.2k|   while(blocks > 0) {
   ------------------
-  |  Branch (309:10): [True: 6.10k, False: 6.12k]
+  |  Branch (309:10): [True: 6.10k, False: 6.13k]
   ------------------
   310|  6.10k|      SIMD_2x64 WS[8];
   311|       |
@@ -3049,28 +3054,28 @@ _ZN5Botan7SHA_51224compress_digest_x86_avx2ERNSt3__16vectorImNS_16secure_allocat
   388|  6.10k|      G = (digest[6] += G);
   389|  6.10k|      H = (digest[7] += H);
   390|  6.10k|   }
-  391|  6.12k|}
+  391|  6.13k|}
 sha2_64_avx2.cpp:_ZN5Botan12_GLOBAL__N_113sha512_next_wINS_9SIMD_4x64EEET_PS3_:
-   21|  3.26k|BOTAN_FORCE_INLINE BOTAN_FN_ISA_AVX2_BMI2 SIMD_T sha512_next_w(SIMD_T x[8]) {
-   22|  3.26k|   auto t0 = SIMD_T::alignr8(x[1], x[0]);
-   23|  3.26k|   auto t1 = SIMD_T::alignr8(x[5], x[4]);
+   21|  5.18k|BOTAN_FORCE_INLINE BOTAN_FN_ISA_AVX2_BMI2 SIMD_T sha512_next_w(SIMD_T x[8]) {
+   22|  5.18k|   auto t0 = SIMD_T::alignr8(x[1], x[0]);
+   23|  5.18k|   auto t1 = SIMD_T::alignr8(x[5], x[4]);
    24|       |
-   25|  3.26k|   auto s0 = t0.template rotr<1>() ^ t0.template rotr<8>() ^ t0.template shr<7>();
-   26|  3.26k|   auto s1 = x[7].template rotr<19>() ^ x[7].template rotr<61>() ^ x[7].template shr<6>();
+   25|  5.18k|   auto s0 = t0.template rotr<1>() ^ t0.template rotr<8>() ^ t0.template shr<7>();
+   26|  5.18k|   auto s1 = x[7].template rotr<19>() ^ x[7].template rotr<61>() ^ x[7].template shr<6>();
    27|       |
-   28|  3.26k|   auto nx = x[0] + s0 + s1 + t1;
+   28|  5.18k|   auto nx = x[0] + s0 + s1 + t1;
    29|       |
-   30|  3.26k|   x[0] = x[1];
-   31|  3.26k|   x[1] = x[2];
-   32|  3.26k|   x[2] = x[3];
-   33|  3.26k|   x[3] = x[4];
-   34|  3.26k|   x[4] = x[5];
-   35|  3.26k|   x[5] = x[6];
-   36|  3.26k|   x[6] = x[7];
-   37|  3.26k|   x[7] = nx;
+   30|  5.18k|   x[0] = x[1];
+   31|  5.18k|   x[1] = x[2];
+   32|  5.18k|   x[2] = x[3];
+   33|  5.18k|   x[3] = x[4];
+   34|  5.18k|   x[4] = x[5];
+   35|  5.18k|   x[5] = x[6];
+   36|  5.18k|   x[6] = x[7];
+   37|  5.18k|   x[7] = nx;
    38|       |
-   39|  3.26k|   return x[7];
-   40|  3.26k|}
+   39|  5.18k|   return x[7];
+   40|  5.18k|}
 sha2_64_avx2.cpp:_ZN5Botan12_GLOBAL__N_113sha512_next_wINS_9SIMD_2x64EEET_PS3_:
    21|   195k|BOTAN_FORCE_INLINE BOTAN_FN_ISA_AVX2_BMI2 SIMD_T sha512_next_w(SIMD_T x[8]) {
    22|   195k|   auto t0 = SIMD_T::alignr8(x[1], x[0]);
@@ -3201,15 +3206,15 @@ _ZN5Botan4HMACC2ENSt3__110unique_ptrINS_12HashFunctionENS1_14default_deleteIS3_E
   142|     50|      m_hash_block_size(m_hash->hash_block_size()) {
   143|     50|   BOTAN_ARG_CHECK(m_hash_block_size >= m_hash_output_length, "HMAC is not compatible with this hash function");
   ------------------
-  |  |   32|     50|   do {                                                          \
-  |  |   33|     50|      if(!(expr))                                                \
+  |  |   34|     50|   do {                                                          \
+  |  |   35|     50|      if(!(expr))                                                \
   |  |  ------------------
-  |  |  |  Branch (33:10): [True: 0, False: 50]
+  |  |  |  Branch (35:10): [True: 0, False: 50]
   |  |  ------------------
-  |  |   34|     50|         Botan::throw_invalid_argument(msg, __func__, __FILE__); \
-  |  |   35|     50|   } while(0)
+  |  |   36|     50|         Botan::throw_invalid_argument(msg, __func__, __FILE__); \
+  |  |   37|     50|   } while(0)
   |  |  ------------------
-  |  |  |  Branch (35:12): [Folded - Ignored]
+  |  |  |  Branch (37:12): [Folded - Ignored]
   |  |  ------------------
   ------------------
   144|     50|}
@@ -3382,11 +3387,11 @@ _ZN5Botan25MessageAuthenticationCode6createENSt3__117basic_string_viewIcNS1_11ch
   136|       |
   137|      0|   BOTAN_UNUSED(req);
   ------------------
-  |  |  120|      0|#define BOTAN_UNUSED Botan::ignore_params
+  |  |  122|      0|#define BOTAN_UNUSED Botan::ignore_params
   ------------------
   138|      0|   BOTAN_UNUSED(provider);
   ------------------
-  |  |  120|      0|#define BOTAN_UNUSED Botan::ignore_params
+  |  |  122|      0|#define BOTAN_UNUSED Botan::ignore_params
   ------------------
   139|       |
   140|      0|   return nullptr;
@@ -3779,21 +3784,21 @@ _ZN5Botan8FE_255193mulERKS0_S2_:
   316|   174k|   return FE_25519(h0, h1, h2, h3, h4, h5, h6, h7, h8, h9);
   317|   174k|}
 _ZN5Botan8FE_255198sqr_iterERKS0_m:
-  335|  80.8k|FE_25519 FE_25519::sqr_iter(const FE_25519& f, size_t iter) {
-  336|  80.8k|   int32_t f0 = f[0];
-  337|  80.8k|   int32_t f1 = f[1];
-  338|  80.8k|   int32_t f2 = f[2];
-  339|  80.8k|   int32_t f3 = f[3];
-  340|  80.8k|   int32_t f4 = f[4];
-  341|  80.8k|   int32_t f5 = f[5];
-  342|  80.8k|   int32_t f6 = f[6];
-  343|  80.8k|   int32_t f7 = f[7];
-  344|  80.8k|   int32_t f8 = f[8];
-  345|  80.8k|   int32_t f9 = f[9];
+  335|  80.9k|FE_25519 FE_25519::sqr_iter(const FE_25519& f, size_t iter) {
+  336|  80.9k|   int32_t f0 = f[0];
+  337|  80.9k|   int32_t f1 = f[1];
+  338|  80.9k|   int32_t f2 = f[2];
+  339|  80.9k|   int32_t f3 = f[3];
+  340|  80.9k|   int32_t f4 = f[4];
+  341|  80.9k|   int32_t f5 = f[5];
+  342|  80.9k|   int32_t f6 = f[6];
+  343|  80.9k|   int32_t f7 = f[7];
+  344|  80.9k|   int32_t f8 = f[8];
+  345|  80.9k|   int32_t f9 = f[9];
   346|       |
   347|   234k|   for(size_t i = 0; i != iter; ++i) {
   ------------------
-  |  Branch (347:22): [True: 153k, False: 80.8k]
+  |  Branch (347:22): [True: 153k, False: 80.9k]
   ------------------
   348|   153k|      const int32_t f0_2 = 2 * f0;
   349|   153k|      const int32_t f1_2 = 2 * f1;
@@ -3903,8 +3908,8 @@ _ZN5Botan8FE_255198sqr_iterERKS0_m:
   453|   153k|      f9 = static_cast<int32_t>(h9);
   454|   153k|   }
   455|       |
-  456|  80.8k|   return FE_25519(f0, f1, f2, f3, f4, f5, f6, f7, f8, f9);
-  457|  80.8k|}
+  456|  80.9k|   return FE_25519(f0, f1, f2, f3, f4, f5, f6, f7, f8, f9);
+  457|  80.9k|}
 _ZN5Botan8FE_255194sqr2ERKS0_:
   475|  25.7k|FE_25519 FE_25519::sqr2(const FE_25519& f) {
   476|  25.7k|   const int32_t f0 = f[0];
@@ -4063,49 +4068,49 @@ _ZN5Botan8FE_2551910from_bytesEPKh:
   633|    100|   m_fe[9] = static_cast<int32_t>(h9);
   634|    100|}
 _ZNK5Botan8FE_255198to_bytesEPh:
-  661|    652|void FE_25519::to_bytes(uint8_t s[32]) const {
-  662|    652|   const int64_t X25 = (1 << 25);
+  661|    656|void FE_25519::to_bytes(uint8_t s[32]) const {
+  662|    656|   const int64_t X25 = (1 << 25);
   663|       |
-  664|    652|   int32_t h0 = m_fe[0];
-  665|    652|   int32_t h1 = m_fe[1];
-  666|    652|   int32_t h2 = m_fe[2];
-  667|    652|   int32_t h3 = m_fe[3];
-  668|    652|   int32_t h4 = m_fe[4];
-  669|    652|   int32_t h5 = m_fe[5];
-  670|    652|   int32_t h6 = m_fe[6];
-  671|    652|   int32_t h7 = m_fe[7];
-  672|    652|   int32_t h8 = m_fe[8];
-  673|    652|   int32_t h9 = m_fe[9];
-  674|    652|   int32_t q;
+  664|    656|   int32_t h0 = m_fe[0];
+  665|    656|   int32_t h1 = m_fe[1];
+  666|    656|   int32_t h2 = m_fe[2];
+  667|    656|   int32_t h3 = m_fe[3];
+  668|    656|   int32_t h4 = m_fe[4];
+  669|    656|   int32_t h5 = m_fe[5];
+  670|    656|   int32_t h6 = m_fe[6];
+  671|    656|   int32_t h7 = m_fe[7];
+  672|    656|   int32_t h8 = m_fe[8];
+  673|    656|   int32_t h9 = m_fe[9];
+  674|    656|   int32_t q;
   675|       |
-  676|    652|   q = (19 * h9 + ((static_cast<int32_t>(1) << 24))) >> 25;
-  677|    652|   q = (h0 + q) >> 26;
-  678|    652|   q = (h1 + q) >> 25;
-  679|    652|   q = (h2 + q) >> 26;
-  680|    652|   q = (h3 + q) >> 25;
-  681|    652|   q = (h4 + q) >> 26;
-  682|    652|   q = (h5 + q) >> 25;
-  683|    652|   q = (h6 + q) >> 26;
-  684|    652|   q = (h7 + q) >> 25;
-  685|    652|   q = (h8 + q) >> 26;
-  686|    652|   q = (h9 + q) >> 25;
+  676|    656|   q = (19 * h9 + ((static_cast<int32_t>(1) << 24))) >> 25;
+  677|    656|   q = (h0 + q) >> 26;
+  678|    656|   q = (h1 + q) >> 25;
+  679|    656|   q = (h2 + q) >> 26;
+  680|    656|   q = (h3 + q) >> 25;
+  681|    656|   q = (h4 + q) >> 26;
+  682|    656|   q = (h5 + q) >> 25;
+  683|    656|   q = (h6 + q) >> 26;
+  684|    656|   q = (h7 + q) >> 25;
+  685|    656|   q = (h8 + q) >> 26;
+  686|    656|   q = (h9 + q) >> 25;
   687|       |
   688|       |   /* Goal: Output h-(2^255-19)q, which is between 0 and 2^255-20. */
-  689|    652|   h0 += 19 * q;
+  689|    656|   h0 += 19 * q;
   690|       |   /* Goal: Output h-2^255 q, which is between 0 and 2^255-20. */
   691|       |
-  692|    652|   carry0<26>(h0, h1);
-  693|    652|   carry0<25>(h1, h2);
-  694|    652|   carry0<26>(h2, h3);
-  695|    652|   carry0<25>(h3, h4);
-  696|    652|   carry0<26>(h4, h5);
-  697|    652|   carry0<25>(h5, h6);
-  698|    652|   carry0<26>(h6, h7);
-  699|    652|   carry0<25>(h7, h8);
-  700|    652|   carry0<26>(h8, h9);
+  692|    656|   carry0<26>(h0, h1);
+  693|    656|   carry0<25>(h1, h2);
+  694|    656|   carry0<26>(h2, h3);
+  695|    656|   carry0<25>(h3, h4);
+  696|    656|   carry0<26>(h4, h5);
+  697|    656|   carry0<25>(h5, h6);
+  698|    656|   carry0<26>(h6, h7);
+  699|    656|   carry0<25>(h7, h8);
+  700|    656|   carry0<26>(h8, h9);
   701|       |
-  702|    652|   int32_t carry9 = h9 >> 25;
-  703|    652|   h9 -= carry9 * X25;
+  702|    656|   int32_t carry9 = h9 >> 25;
+  703|    656|   h9 -= carry9 * X25;
   704|       |   /* h10 = carry9 */
   705|       |
   706|       |   /*
@@ -4115,39 +4120,39 @@ _ZNK5Botan8FE_255198to_bytesEPh:
   710|       |   Goal: Output h0+...+2^230 h9.
   711|       |   */
   712|       |
-  713|    652|   s[0] = static_cast<uint8_t>(h0 >> 0);
-  714|    652|   s[1] = static_cast<uint8_t>(h0 >> 8);
-  715|    652|   s[2] = static_cast<uint8_t>(h0 >> 16);
-  716|    652|   s[3] = static_cast<uint8_t>((h0 >> 24) | (h1 << 2));
-  717|    652|   s[4] = static_cast<uint8_t>(h1 >> 6);
-  718|    652|   s[5] = static_cast<uint8_t>(h1 >> 14);
-  719|    652|   s[6] = static_cast<uint8_t>((h1 >> 22) | (h2 << 3));
-  720|    652|   s[7] = static_cast<uint8_t>(h2 >> 5);
-  721|    652|   s[8] = static_cast<uint8_t>(h2 >> 13);
-  722|    652|   s[9] = static_cast<uint8_t>((h2 >> 21) | (h3 << 5));
-  723|    652|   s[10] = static_cast<uint8_t>(h3 >> 3);
-  724|    652|   s[11] = static_cast<uint8_t>(h3 >> 11);
-  725|    652|   s[12] = static_cast<uint8_t>((h3 >> 19) | (h4 << 6));
-  726|    652|   s[13] = static_cast<uint8_t>(h4 >> 2);
-  727|    652|   s[14] = static_cast<uint8_t>(h4 >> 10);
-  728|    652|   s[15] = static_cast<uint8_t>(h4 >> 18);
-  729|    652|   s[16] = static_cast<uint8_t>(h5 >> 0);
-  730|    652|   s[17] = static_cast<uint8_t>(h5 >> 8);
-  731|    652|   s[18] = static_cast<uint8_t>(h5 >> 16);
-  732|    652|   s[19] = static_cast<uint8_t>((h5 >> 24) | (h6 << 1));
-  733|    652|   s[20] = static_cast<uint8_t>(h6 >> 7);
-  734|    652|   s[21] = static_cast<uint8_t>(h6 >> 15);
-  735|    652|   s[22] = static_cast<uint8_t>((h6 >> 23) | (h7 << 3));
-  736|    652|   s[23] = static_cast<uint8_t>(h7 >> 5);
-  737|    652|   s[24] = static_cast<uint8_t>(h7 >> 13);
-  738|    652|   s[25] = static_cast<uint8_t>((h7 >> 21) | (h8 << 4));
-  739|    652|   s[26] = static_cast<uint8_t>(h8 >> 4);
-  740|    652|   s[27] = static_cast<uint8_t>(h8 >> 12);
-  741|    652|   s[28] = static_cast<uint8_t>((h8 >> 20) | (h9 << 6));
-  742|    652|   s[29] = static_cast<uint8_t>(h9 >> 2);
-  743|    652|   s[30] = static_cast<uint8_t>(h9 >> 10);
-  744|    652|   s[31] = static_cast<uint8_t>(h9 >> 18);
-  745|    652|}
+  713|    656|   s[0] = static_cast<uint8_t>(h0 >> 0);
+  714|    656|   s[1] = static_cast<uint8_t>(h0 >> 8);
+  715|    656|   s[2] = static_cast<uint8_t>(h0 >> 16);
+  716|    656|   s[3] = static_cast<uint8_t>((h0 >> 24) | (h1 << 2));
+  717|    656|   s[4] = static_cast<uint8_t>(h1 >> 6);
+  718|    656|   s[5] = static_cast<uint8_t>(h1 >> 14);
+  719|    656|   s[6] = static_cast<uint8_t>((h1 >> 22) | (h2 << 3));
+  720|    656|   s[7] = static_cast<uint8_t>(h2 >> 5);
+  721|    656|   s[8] = static_cast<uint8_t>(h2 >> 13);
+  722|    656|   s[9] = static_cast<uint8_t>((h2 >> 21) | (h3 << 5));
+  723|    656|   s[10] = static_cast<uint8_t>(h3 >> 3);
+  724|    656|   s[11] = static_cast<uint8_t>(h3 >> 11);
+  725|    656|   s[12] = static_cast<uint8_t>((h3 >> 19) | (h4 << 6));
+  726|    656|   s[13] = static_cast<uint8_t>(h4 >> 2);
+  727|    656|   s[14] = static_cast<uint8_t>(h4 >> 10);
+  728|    656|   s[15] = static_cast<uint8_t>(h4 >> 18);
+  729|    656|   s[16] = static_cast<uint8_t>(h5 >> 0);
+  730|    656|   s[17] = static_cast<uint8_t>(h5 >> 8);
+  731|    656|   s[18] = static_cast<uint8_t>(h5 >> 16);
+  732|    656|   s[19] = static_cast<uint8_t>((h5 >> 24) | (h6 << 1));
+  733|    656|   s[20] = static_cast<uint8_t>(h6 >> 7);
+  734|    656|   s[21] = static_cast<uint8_t>(h6 >> 15);
+  735|    656|   s[22] = static_cast<uint8_t>((h6 >> 23) | (h7 << 3));
+  736|    656|   s[23] = static_cast<uint8_t>(h7 >> 5);
+  737|    656|   s[24] = static_cast<uint8_t>(h7 >> 13);
+  738|    656|   s[25] = static_cast<uint8_t>((h7 >> 21) | (h8 << 4));
+  739|    656|   s[26] = static_cast<uint8_t>(h8 >> 4);
+  740|    656|   s[27] = static_cast<uint8_t>(h8 >> 12);
+  741|    656|   s[28] = static_cast<uint8_t>((h8 >> 20) | (h9 << 6));
+  742|    656|   s[29] = static_cast<uint8_t>(h9 >> 2);
+  743|    656|   s[30] = static_cast<uint8_t>(h9 >> 10);
+  744|    656|   s[31] = static_cast<uint8_t>(h9 >> 18);
+  745|    656|}
 
 _ZNK5Botan17Ed25519_PublicKey9check_keyERNS_21RandomNumberGeneratorEb:
    25|     50|bool Ed25519_PublicKey::check_key(RandomNumberGenerator& /*rng*/, bool /*strong*/) const {
@@ -4304,15 +4309,15 @@ ed25519_key.cpp:_ZN5Botan12_GLOBAL__N_131Ed25519_Hashed_Verify_Operation18is_val
   202|       |
   203|     50|         BOTAN_ASSERT_EQUAL(m_key.size(), 32, "Expected size");
   ------------------
-  |  |   71|     50|   do {                                                                                                \
-  |  |   72|     50|      if((expr1) != (expr2))                                                                           \
+  |  |   73|     50|   do {                                                                                                \
+  |  |   74|     50|      if((expr1) != (expr2))                                                                           \
   |  |  ------------------
-  |  |  |  Branch (72:10): [True: 0, False: 50]
+  |  |  |  Branch (74:10): [True: 0, False: 50]
   |  |  ------------------
-  |  |   73|     50|         Botan::assertion_failure(#expr1 " == " #expr2, assertion_made, __func__, __FILE__, __LINE__); \
-  |  |   74|     50|   } while(0)
+  |  |   75|     50|         Botan::assertion_failure(#expr1 " == " #expr2, assertion_made, __func__, __FILE__, __LINE__); \
+  |  |   76|     50|   } while(0)
   |  |  ------------------
-  |  |  |  Branch (74:12): [Folded - Ignored]
+  |  |  |  Branch (76:12): [Folded - Ignored]
   |  |  ------------------
   ------------------
   204|     50|         return ed25519_verify(
@@ -4378,17 +4383,17 @@ _ZN5Botan27ge_frombytes_negate_vartimeEPNS_5ge_p3EPKh:
   456|    100|   fe_sub(check, vxx, u); /* vx^2-u */
   457|    100|   if(fe_isnonzero(check)) {
   ------------------
-  |  Branch (457:7): [True: 52, False: 48]
+  |  Branch (457:7): [True: 56, False: 44]
   ------------------
-  458|     52|      fe_add(check, vxx, u); /* vx^2+u */
-  459|     52|      if(fe_isnonzero(check)) {
+  458|     56|      fe_add(check, vxx, u); /* vx^2+u */
+  459|     56|      if(fe_isnonzero(check)) {
   ------------------
-  |  Branch (459:10): [True: 0, False: 52]
+  |  Branch (459:10): [True: 0, False: 56]
   ------------------
   460|      0|         return -1;
   461|      0|      }
-  462|     52|      fe_mul(h->X, h->X, sqrtm1);
-  463|     52|   }
+  462|     56|      fe_mul(h->X, h->X, sqrtm1);
+  463|     56|   }
   464|       |
   465|    100|   if(fe_isnegative(h->X) == (s[31] >> 7)) {
   ------------------
@@ -4484,18 +4489,18 @@ _ZN5Botan28ge_double_scalarmult_vartimeEPhPKhPKNS_5ge_p3ES2_:
   560|       |
   561|    100|   ge_p2_0(&r);
   562|       |
-  563|    471|   for(i = 255; i >= 0; --i) {
+  563|    466|   for(i = 255; i >= 0; --i) {
   ------------------
-  |  Branch (563:17): [True: 471, False: 0]
+  |  Branch (563:17): [True: 466, False: 0]
   ------------------
-  564|    471|      if(aslide[i] || bslide[i]) {
+  564|    466|      if(aslide[i] || bslide[i]) {
   ------------------
-  |  Branch (564:10): [True: 80, False: 391]
-  |  Branch (564:23): [True: 20, False: 371]
+  |  Branch (564:10): [True: 72, False: 394]
+  |  Branch (564:23): [True: 28, False: 366]
   ------------------
   565|    100|         break;
   566|    100|      }
-  567|    471|   }
+  567|    466|   }
   568|       |
   569|  25.3k|   for(; i >= 0; --i) {
   ------------------
@@ -4505,31 +4510,31 @@ _ZN5Botan28ge_double_scalarmult_vartimeEPhPKhPKNS_5ge_p3ES2_:
   571|       |
   572|  25.2k|      if(aslide[i] > 0) {
   ------------------
-  |  Branch (572:10): [True: 1.67k, False: 23.5k]
+  |  Branch (572:10): [True: 1.56k, False: 23.6k]
   ------------------
-  573|  1.67k|         ge_p1p1_to_p3(&u, &t);
-  574|  1.67k|         ge_add(&t, &u, &Ai[aslide[i] >> 1]);
-  575|  23.5k|      } else if(aslide[i] < 0) {
+  573|  1.56k|         ge_p1p1_to_p3(&u, &t);
+  574|  1.56k|         ge_add(&t, &u, &Ai[aslide[i] >> 1]);
+  575|  23.6k|      } else if(aslide[i] < 0) {
   ------------------
-  |  Branch (575:17): [True: 1.62k, False: 21.9k]
+  |  Branch (575:17): [True: 1.71k, False: 21.9k]
   ------------------
-  576|  1.62k|         ge_p1p1_to_p3(&u, &t);
-  577|  1.62k|         ge_sub(&t, &u, &Ai[(-aslide[i]) >> 1]);
-  578|  1.62k|      }
+  576|  1.71k|         ge_p1p1_to_p3(&u, &t);
+  577|  1.71k|         ge_sub(&t, &u, &Ai[(-aslide[i]) >> 1]);
+  578|  1.71k|      }
   579|       |
   580|  25.2k|      if(bslide[i] > 0) {
   ------------------
-  |  Branch (580:10): [True: 1.06k, False: 24.1k]
+  |  Branch (580:10): [True: 1.04k, False: 24.1k]
   ------------------
-  581|  1.06k|         ge_p1p1_to_p3(&u, &t);
-  582|  1.06k|         ge_madd(&t, &u, &Bi[bslide[i] >> 1]);
+  581|  1.04k|         ge_p1p1_to_p3(&u, &t);
+  582|  1.04k|         ge_madd(&t, &u, &Bi[bslide[i] >> 1]);
   583|  24.1k|      } else if(bslide[i] < 0) {
   ------------------
-  |  Branch (583:17): [True: 1.06k, False: 23.1k]
+  |  Branch (583:17): [True: 1.09k, False: 23.0k]
   ------------------
-  584|  1.06k|         ge_p1p1_to_p3(&u, &t);
-  585|  1.06k|         ge_msub(&t, &u, &Bi[(-bslide[i]) >> 1]);
-  586|  1.06k|      }
+  584|  1.09k|         ge_p1p1_to_p3(&u, &t);
+  585|  1.09k|         ge_msub(&t, &u, &Bi[(-bslide[i]) >> 1]);
+  586|  1.09k|      }
   587|       |
   588|  25.2k|      ge_p1p1_to_p2(&r, &t);
   589|  25.2k|   }
@@ -4616,43 +4621,43 @@ ge.cpp:_ZN5Botan12_GLOBAL__N_15slideEPaPKh:
   ------------------
   |  Branch (381:10): [True: 5.41k, False: 45.7k]
   ------------------
-  382|  30.9k|         for(size_t b = 1; b <= 6 && i + b < 256; ++b) {
+  382|  31.0k|         for(size_t b = 1; b <= 6 && i + b < 256; ++b) {
   ------------------
-  |  Branch (382:28): [True: 29.6k, False: 1.31k]
-  |  Branch (382:38): [True: 29.5k, False: 98]
+  |  Branch (382:28): [True: 29.6k, False: 1.36k]
+  |  Branch (382:38): [True: 29.5k, False: 102]
   ------------------
   383|  29.5k|            if(r[i + b]) {
   ------------------
-  |  Branch (383:16): [True: 14.9k, False: 14.5k]
+  |  Branch (383:16): [True: 15.0k, False: 14.4k]
   ------------------
-  384|  14.9k|               if(r[i] + (r[i + b] << b) <= 15) {
+  384|  15.0k|               if(r[i] + (r[i + b] << b) <= 15) {
   ------------------
-  |  Branch (384:19): [True: 8.30k, False: 6.68k]
+  |  Branch (384:19): [True: 8.34k, False: 6.75k]
   ------------------
-  385|  8.30k|                  r[i] += r[i + b] << b;
-  386|  8.30k|                  r[i + b] = 0;
-  387|  8.30k|               } else if(r[i] - (r[i + b] << b) >= -15) {
+  385|  8.34k|                  r[i] += r[i + b] << b;
+  386|  8.34k|                  r[i + b] = 0;
+  387|  8.34k|               } else if(r[i] - (r[i + b] << b) >= -15) {
   ------------------
-  |  Branch (387:26): [True: 2.68k, False: 4.00k]
+  |  Branch (387:26): [True: 2.80k, False: 3.94k]
   ------------------
-  388|  2.68k|                  r[i] -= r[i + b] << b;
-  389|  7.90k|                  for(size_t k = i + b; k < 256; ++k) {
+  388|  2.80k|                  r[i] -= r[i + b] << b;
+  389|  8.27k|                  for(size_t k = i + b; k < 256; ++k) {
   ------------------
-  |  Branch (389:41): [True: 7.90k, False: 0]
+  |  Branch (389:41): [True: 8.27k, False: 0]
   ------------------
-  390|  7.90k|                     if(!r[k]) {
+  390|  8.27k|                     if(!r[k]) {
   ------------------
-  |  Branch (390:25): [True: 2.68k, False: 5.21k]
+  |  Branch (390:25): [True: 2.80k, False: 5.46k]
   ------------------
-  391|  2.68k|                        r[k] = 1;
-  392|  2.68k|                        break;
-  393|  2.68k|                     }
-  394|  5.21k|                     r[k] = 0;
-  395|  5.21k|                  }
-  396|  4.00k|               } else {
-  397|  4.00k|                  break;
-  398|  4.00k|               }
-  399|  14.9k|            }
+  391|  2.80k|                        r[k] = 1;
+  392|  2.80k|                        break;
+  393|  2.80k|                     }
+  394|  5.46k|                     r[k] = 0;
+  395|  5.46k|                  }
+  396|  3.94k|               } else {
+  397|  3.94k|                  break;
+  398|  3.94k|               }
+  399|  15.0k|            }
   400|  29.5k|         }
   401|  5.41k|      }
   402|  51.2k|   }
@@ -4683,63 +4688,63 @@ ge.cpp:_ZN5Botan12_GLOBAL__N_113ge_p1p1_to_p3EPNS_5ge_p3EPKNS0_7ge_p1p1E:
   225|  12.7k|   fe_mul(r->T, p->X, p->Y);
   226|  12.7k|}
 ge.cpp:_ZN5Botan12_GLOBAL__N_16ge_addEPNS0_7ge_p1p1EPKNS_5ge_p3EPKNS0_9ge_cachedE:
-   54|  2.37k|void ge_add(ge_p1p1* r, const ge_p3* p, const ge_cached* q) {
-   55|  2.37k|   FE_25519 t0;
+   54|  2.26k|void ge_add(ge_p1p1* r, const ge_p3* p, const ge_cached* q) {
+   55|  2.26k|   FE_25519 t0;
    56|       |   /* qhasm: YpX1 = Y1+X1 */
    57|       |   /* asm 1: fe_add(>YpX1=fe#1,<Y1=fe#12,<X1=fe#11); */
    58|       |   /* asm 2: fe_add(>YpX1=r->X,<Y1=p->Y,<X1=p->X); */
-   59|  2.37k|   fe_add(r->X, p->Y, p->X);
+   59|  2.26k|   fe_add(r->X, p->Y, p->X);
    60|       |
    61|       |   /* qhasm: YmX1 = Y1-X1 */
    62|       |   /* asm 1: fe_sub(>YmX1=fe#2,<Y1=fe#12,<X1=fe#11); */
    63|       |   /* asm 2: fe_sub(>YmX1=r->Y,<Y1=p->Y,<X1=p->X); */
-   64|  2.37k|   fe_sub(r->Y, p->Y, p->X);
+   64|  2.26k|   fe_sub(r->Y, p->Y, p->X);
    65|       |
    66|       |   /* qhasm: A = YpX1*YpX2 */
    67|       |   /* asm 1: fe_mul(>A=fe#3,<YpX1=fe#1,<YpX2=fe#15); */
    68|       |   /* asm 2: fe_mul(>A=r->Z,<YpX1=r->X,<YpX2=q->YplusX); */
-   69|  2.37k|   fe_mul(r->Z, r->X, q->YplusX);
+   69|  2.26k|   fe_mul(r->Z, r->X, q->YplusX);
    70|       |
    71|       |   /* qhasm: B = YmX1*YmX2 */
    72|       |   /* asm 1: fe_mul(>B=fe#2,<YmX1=fe#2,<YmX2=fe#16); */
    73|       |   /* asm 2: fe_mul(>B=r->Y,<YmX1=r->Y,<YmX2=q->YminusX); */
-   74|  2.37k|   fe_mul(r->Y, r->Y, q->YminusX);
+   74|  2.26k|   fe_mul(r->Y, r->Y, q->YminusX);
    75|       |
    76|       |   /* qhasm: C = T2d2*T1 */
    77|       |   /* asm 1: fe_mul(>C=fe#4,<T2d2=fe#18,<T1=fe#14); */
    78|       |   /* asm 2: fe_mul(>C=r->T,<T2d2=q->T2d,<T1=p->T); */
-   79|  2.37k|   fe_mul(r->T, q->T2d, p->T);
+   79|  2.26k|   fe_mul(r->T, q->T2d, p->T);
    80|       |
    81|       |   /* qhasm: ZZ = Z1*Z2 */
    82|       |   /* asm 1: fe_mul(>ZZ=fe#1,<Z1=fe#13,<Z2=fe#17); */
    83|       |   /* asm 2: fe_mul(>ZZ=r->X,<Z1=p->Z,<Z2=q->Z); */
-   84|  2.37k|   fe_mul(r->X, p->Z, q->Z);
+   84|  2.26k|   fe_mul(r->X, p->Z, q->Z);
    85|       |
    86|       |   /* qhasm: D = 2*ZZ */
    87|       |   /* asm 1: fe_add(>D=fe#5,<ZZ=fe#1,<ZZ=fe#1); */
    88|       |   /* asm 2: fe_add(>D=t0,<ZZ=r->X,<ZZ=r->X); */
-   89|  2.37k|   fe_add(t0, r->X, r->X);
+   89|  2.26k|   fe_add(t0, r->X, r->X);
    90|       |
    91|       |   /* qhasm: X3 = A-B */
    92|       |   /* asm 1: fe_sub(>X3=fe#1,<A=fe#3,<B=fe#2); */
    93|       |   /* asm 2: fe_sub(>X3=r->X,<A=r->Z,<B=r->Y); */
-   94|  2.37k|   fe_sub(r->X, r->Z, r->Y);
+   94|  2.26k|   fe_sub(r->X, r->Z, r->Y);
    95|       |
    96|       |   /* qhasm: Y3 = A+B */
    97|       |   /* asm 1: fe_add(>Y3=fe#2,<A=fe#3,<B=fe#2); */
    98|       |   /* asm 2: fe_add(>Y3=r->Y,<A=r->Z,<B=r->Y); */
-   99|  2.37k|   fe_add(r->Y, r->Z, r->Y);
+   99|  2.26k|   fe_add(r->Y, r->Z, r->Y);
   100|       |
   101|       |   /* qhasm: Z3 = D+C */
   102|       |   /* asm 1: fe_add(>Z3=fe#3,<D=fe#5,<C=fe#4); */
   103|       |   /* asm 2: fe_add(>Z3=r->Z,<D=t0,<C=r->T); */
-  104|  2.37k|   fe_add(r->Z, t0, r->T);
+  104|  2.26k|   fe_add(r->Z, t0, r->T);
   105|       |
   106|       |   /* qhasm: T3 = D-C */
   107|       |   /* asm 1: fe_sub(>T3=fe#4,<D=fe#5,<C=fe#4); */
   108|       |   /* asm 2: fe_sub(>T3=r->T,<D=t0,<C=r->T); */
-  109|  2.37k|   fe_sub(r->T, t0, r->T);
-  110|  2.37k|}
+  109|  2.26k|   fe_sub(r->T, t0, r->T);
+  110|  2.26k|}
 ge.cpp:_ZN5Botan12_GLOBAL__N_17ge_p2_0EPNS0_5ge_p2E:
   417|    100|void ge_p2_0(ge_p2* h) {
   418|    100|   fe_0(h->X);
@@ -4795,150 +4800,150 @@ ge.cpp:_ZN5Botan12_GLOBAL__N_19ge_p2_dblEPNS0_7ge_p1p1EPKNS0_5ge_p2E:
   277|  25.7k|   fe_sub(r->T, r->T, r->Z);
   278|  25.7k|}
 ge.cpp:_ZN5Botan12_GLOBAL__N_16ge_subEPNS0_7ge_p1p1EPKNS_5ge_p3EPKNS0_9ge_cachedE:
-  317|  1.62k|void ge_sub(ge_p1p1* r, const ge_p3* p, const ge_cached* q) {
-  318|  1.62k|   FE_25519 t0;
+  317|  1.71k|void ge_sub(ge_p1p1* r, const ge_p3* p, const ge_cached* q) {
+  318|  1.71k|   FE_25519 t0;
   319|       |   /* qhasm: YpX1 = Y1+X1 */
   320|       |   /* asm 1: fe_add(>YpX1=fe#1,<Y1=fe#12,<X1=fe#11); */
   321|       |   /* asm 2: fe_add(>YpX1=r->X,<Y1=p->Y,<X1=p->X); */
-  322|  1.62k|   fe_add(r->X, p->Y, p->X);
+  322|  1.71k|   fe_add(r->X, p->Y, p->X);
   323|       |
   324|       |   /* qhasm: YmX1 = Y1-X1 */
   325|       |   /* asm 1: fe_sub(>YmX1=fe#2,<Y1=fe#12,<X1=fe#11); */
   326|       |   /* asm 2: fe_sub(>YmX1=r->Y,<Y1=p->Y,<X1=p->X); */
-  327|  1.62k|   fe_sub(r->Y, p->Y, p->X);
+  327|  1.71k|   fe_sub(r->Y, p->Y, p->X);
   328|       |
   329|       |   /* qhasm: A = YpX1*YmX2 */
   330|       |   /* asm 1: fe_mul(>A=fe#3,<YpX1=fe#1,<YmX2=fe#16); */
   331|       |   /* asm 2: fe_mul(>A=r->Z,<YpX1=r->X,<YmX2=q->YminusX); */
-  332|  1.62k|   fe_mul(r->Z, r->X, q->YminusX);
+  332|  1.71k|   fe_mul(r->Z, r->X, q->YminusX);
   333|       |
   334|       |   /* qhasm: B = YmX1*YpX2 */
   335|       |   /* asm 1: fe_mul(>B=fe#2,<YmX1=fe#2,<YpX2=fe#15); */
   336|       |   /* asm 2: fe_mul(>B=r->Y,<YmX1=r->Y,<YpX2=q->YplusX); */
-  337|  1.62k|   fe_mul(r->Y, r->Y, q->YplusX);
+  337|  1.71k|   fe_mul(r->Y, r->Y, q->YplusX);
   338|       |
   339|       |   /* qhasm: C = T2d2*T1 */
   340|       |   /* asm 1: fe_mul(>C=fe#4,<T2d2=fe#18,<T1=fe#14); */
   341|       |   /* asm 2: fe_mul(>C=r->T,<T2d2=q->T2d,<T1=p->T); */
-  342|  1.62k|   fe_mul(r->T, q->T2d, p->T);
+  342|  1.71k|   fe_mul(r->T, q->T2d, p->T);
   343|       |
   344|       |   /* qhasm: ZZ = Z1*Z2 */
   345|       |   /* asm 1: fe_mul(>ZZ=fe#1,<Z1=fe#13,<Z2=fe#17); */
   346|       |   /* asm 2: fe_mul(>ZZ=r->X,<Z1=p->Z,<Z2=q->Z); */
-  347|  1.62k|   fe_mul(r->X, p->Z, q->Z);
+  347|  1.71k|   fe_mul(r->X, p->Z, q->Z);
   348|       |
   349|       |   /* qhasm: D = 2*ZZ */
   350|       |   /* asm 1: fe_add(>D=fe#5,<ZZ=fe#1,<ZZ=fe#1); */
   351|       |   /* asm 2: fe_add(>D=t0,<ZZ=r->X,<ZZ=r->X); */
-  352|  1.62k|   fe_add(t0, r->X, r->X);
+  352|  1.71k|   fe_add(t0, r->X, r->X);
   353|       |
   354|       |   /* qhasm: X3 = A-B */
   355|       |   /* asm 1: fe_sub(>X3=fe#1,<A=fe#3,<B=fe#2); */
   356|       |   /* asm 2: fe_sub(>X3=r->X,<A=r->Z,<B=r->Y); */
-  357|  1.62k|   fe_sub(r->X, r->Z, r->Y);
+  357|  1.71k|   fe_sub(r->X, r->Z, r->Y);
   358|       |
   359|       |   /* qhasm: Y3 = A+B */
   360|       |   /* asm 1: fe_add(>Y3=fe#2,<A=fe#3,<B=fe#2); */
   361|       |   /* asm 2: fe_add(>Y3=r->Y,<A=r->Z,<B=r->Y); */
-  362|  1.62k|   fe_add(r->Y, r->Z, r->Y);
+  362|  1.71k|   fe_add(r->Y, r->Z, r->Y);
   363|       |
   364|       |   /* qhasm: Z3 = D-C */
   365|       |   /* asm 1: fe_sub(>Z3=fe#3,<D=fe#5,<C=fe#4); */
   366|       |   /* asm 2: fe_sub(>Z3=r->Z,<D=t0,<C=r->T); */
-  367|  1.62k|   fe_sub(r->Z, t0, r->T);
+  367|  1.71k|   fe_sub(r->Z, t0, r->T);
   368|       |
   369|       |   /* qhasm: T3 = D+C */
   370|       |   /* asm 1: fe_add(>T3=fe#4,<D=fe#5,<C=fe#4); */
   371|       |   /* asm 2: fe_add(>T3=r->T,<D=t0,<C=r->T); */
-  372|  1.62k|   fe_add(r->T, t0, r->T);
-  373|  1.62k|}
+  372|  1.71k|   fe_add(r->T, t0, r->T);
+  373|  1.71k|}
 ge.cpp:_ZN5Botan12_GLOBAL__N_17ge_maddEPNS0_7ge_p1p1EPKNS_5ge_p3EPKNS0_10ge_precompE:
-  116|  7.46k|void ge_madd(ge_p1p1* r, const ge_p3* p, const ge_precomp* q) {
-  117|  7.46k|   FE_25519 t0;
+  116|  7.44k|void ge_madd(ge_p1p1* r, const ge_p3* p, const ge_precomp* q) {
+  117|  7.44k|   FE_25519 t0;
   118|       |   /* qhasm: YpX1 = Y1+X1 */
-  119|  7.46k|   fe_add(r->X, p->Y, p->X);
+  119|  7.44k|   fe_add(r->X, p->Y, p->X);
   120|       |
   121|       |   /* qhasm: YmX1 = Y1-X1 */
-  122|  7.46k|   fe_sub(r->Y, p->Y, p->X);
+  122|  7.44k|   fe_sub(r->Y, p->Y, p->X);
   123|       |
   124|       |   /* qhasm: A = YpX1*ypx2 */
-  125|  7.46k|   fe_mul(r->Z, r->X, q->yplusx);
+  125|  7.44k|   fe_mul(r->Z, r->X, q->yplusx);
   126|       |
   127|       |   /* qhasm: B = YmX1*ymx2 */
-  128|  7.46k|   fe_mul(r->Y, r->Y, q->yminusx);
+  128|  7.44k|   fe_mul(r->Y, r->Y, q->yminusx);
   129|       |
   130|       |   /* qhasm: C = xy2d2*T1 */
-  131|  7.46k|   fe_mul(r->T, q->xy2d, p->T);
+  131|  7.44k|   fe_mul(r->T, q->xy2d, p->T);
   132|       |
   133|       |   /* qhasm: D = 2*Z1 */
-  134|  7.46k|   fe_add(t0, p->Z, p->Z);
+  134|  7.44k|   fe_add(t0, p->Z, p->Z);
   135|       |
   136|       |   /* qhasm: X3 = A-B */
-  137|  7.46k|   fe_sub(r->X, r->Z, r->Y);
+  137|  7.44k|   fe_sub(r->X, r->Z, r->Y);
   138|       |
   139|       |   /* qhasm: Y3 = A+B */
-  140|  7.46k|   fe_add(r->Y, r->Z, r->Y);
+  140|  7.44k|   fe_add(r->Y, r->Z, r->Y);
   141|       |
   142|       |   /* qhasm: Z3 = D+C */
-  143|  7.46k|   fe_add(r->Z, t0, r->T);
+  143|  7.44k|   fe_add(r->Z, t0, r->T);
   144|       |
   145|       |   /* qhasm: T3 = D-C */
-  146|  7.46k|   fe_sub(r->T, t0, r->T);
-  147|  7.46k|}
+  146|  7.44k|   fe_sub(r->T, t0, r->T);
+  147|  7.44k|}
 ge.cpp:_ZN5Botan12_GLOBAL__N_17ge_msubEPNS0_7ge_p1p1EPKNS_5ge_p3EPKNS0_10ge_precompE:
-  153|  1.06k|void ge_msub(ge_p1p1* r, const ge_p3* p, const ge_precomp* q) {
-  154|  1.06k|   FE_25519 t0;
+  153|  1.09k|void ge_msub(ge_p1p1* r, const ge_p3* p, const ge_precomp* q) {
+  154|  1.09k|   FE_25519 t0;
   155|       |
   156|       |   /* qhasm: YpX1 = Y1+X1 */
   157|       |   /* asm 1: fe_add(>YpX1=fe#1,<Y1=fe#12,<X1=fe#11); */
   158|       |   /* asm 2: fe_add(>YpX1=r->X,<Y1=p->Y,<X1=p->X); */
-  159|  1.06k|   fe_add(r->X, p->Y, p->X);
+  159|  1.09k|   fe_add(r->X, p->Y, p->X);
   160|       |
   161|       |   /* qhasm: YmX1 = Y1-X1 */
   162|       |   /* asm 1: fe_sub(>YmX1=fe#2,<Y1=fe#12,<X1=fe#11); */
   163|       |   /* asm 2: fe_sub(>YmX1=r->Y,<Y1=p->Y,<X1=p->X); */
-  164|  1.06k|   fe_sub(r->Y, p->Y, p->X);
+  164|  1.09k|   fe_sub(r->Y, p->Y, p->X);
   165|       |
   166|       |   /* qhasm: A = YpX1*ymx2 */
   167|       |   /* asm 1: fe_mul(>A=fe#3,<YpX1=fe#1,<ymx2=fe#16); */
   168|       |   /* asm 2: fe_mul(>A=r->Z,<YpX1=r->X,<ymx2=q->yminusx); */
-  169|  1.06k|   fe_mul(r->Z, r->X, q->yminusx);
+  169|  1.09k|   fe_mul(r->Z, r->X, q->yminusx);
   170|       |
   171|       |   /* qhasm: B = YmX1*ypx2 */
   172|       |   /* asm 1: fe_mul(>B=fe#2,<YmX1=fe#2,<ypx2=fe#15); */
   173|       |   /* asm 2: fe_mul(>B=r->Y,<YmX1=r->Y,<ypx2=q->yplusx); */
-  174|  1.06k|   fe_mul(r->Y, r->Y, q->yplusx);
+  174|  1.09k|   fe_mul(r->Y, r->Y, q->yplusx);
   175|       |
   176|       |   /* qhasm: C = xy2d2*T1 */
   177|       |   /* asm 1: fe_mul(>C=fe#4,<xy2d2=fe#17,<T1=fe#14); */
   178|       |   /* asm 2: fe_mul(>C=r->T,<xy2d2=q->xy2d,<T1=p->T); */
-  179|  1.06k|   fe_mul(r->T, q->xy2d, p->T);
+  179|  1.09k|   fe_mul(r->T, q->xy2d, p->T);
   180|       |
   181|       |   /* qhasm: D = 2*Z1 */
   182|       |   /* asm 1: fe_add(>D=fe#5,<Z1=fe#13,<Z1=fe#13); */
   183|       |   /* asm 2: fe_add(>D=t0,<Z1=p->Z,<Z1=p->Z); */
-  184|  1.06k|   fe_add(t0, p->Z, p->Z);
+  184|  1.09k|   fe_add(t0, p->Z, p->Z);
   185|       |
   186|       |   /* qhasm: X3 = A-B */
   187|       |   /* asm 1: fe_sub(>X3=fe#1,<A=fe#3,<B=fe#2); */
   188|       |   /* asm 2: fe_sub(>X3=r->X,<A=r->Z,<B=r->Y); */
-  189|  1.06k|   fe_sub(r->X, r->Z, r->Y);
+  189|  1.09k|   fe_sub(r->X, r->Z, r->Y);
   190|       |
   191|       |   /* qhasm: Y3 = A+B */
   192|       |   /* asm 1: fe_add(>Y3=fe#2,<A=fe#3,<B=fe#2); */
   193|       |   /* asm 2: fe_add(>Y3=r->Y,<A=r->Z,<B=r->Y); */
-  194|  1.06k|   fe_add(r->Y, r->Z, r->Y);
+  194|  1.09k|   fe_add(r->Y, r->Z, r->Y);
   195|       |
   196|       |   /* qhasm: Z3 = D-C */
   197|       |   /* asm 1: fe_sub(>Z3=fe#3,<D=fe#5,<C=fe#4); */
   198|       |   /* asm 2: fe_sub(>Z3=r->Z,<D=t0,<C=r->T); */
-  199|  1.06k|   fe_sub(r->Z, t0, r->T);
+  199|  1.09k|   fe_sub(r->Z, t0, r->T);
   200|       |
   201|       |   /* qhasm: T3 = D+C */
   202|       |   /* asm 1: fe_add(>T3=fe#4,<D=fe#5,<C=fe#4); */
   203|       |   /* asm 2: fe_add(>T3=r->T,<D=t0,<C=r->T); */
-  204|  1.06k|   fe_add(r->T, t0, r->T);
-  205|  1.06k|}
+  204|  1.09k|   fe_add(r->T, t0, r->T);
+  205|  1.09k|}
 ge.cpp:_ZN5Botan12_GLOBAL__N_113ge_p1p1_to_p2EPNS0_5ge_p2EPKNS0_7ge_p1p1E:
   211|  25.5k|void ge_p1p1_to_p2(ge_p2* r, const ge_p1p1* p) {
   212|  25.5k|   fe_mul(r->X, p->X, p->T);
@@ -5399,15 +5404,15 @@ _ZN5Botan9PK_SignerC2ERKNS_11Private_KeyERNS_21RandomNumberGeneratorENSt3__117ba
   ------------------
   260|      0|      BOTAN_ARG_CHECK(m_sig_element_size.has_value(), "This key does not support DER signatures");
   ------------------
-  |  |   32|      0|   do {                                                          \
-  |  |   33|      0|      if(!(expr))                                                \
+  |  |   34|      0|   do {                                                          \
+  |  |   35|      0|      if(!(expr))                                                \
   |  |  ------------------
-  |  |  |  Branch (33:10): [True: 0, False: 0]
+  |  |  |  Branch (35:10): [True: 0, False: 0]
   |  |  ------------------
-  |  |   34|      0|         Botan::throw_invalid_argument(msg, __func__, __FILE__); \
-  |  |   35|      0|   } while(0)
+  |  |   36|      0|         Botan::throw_invalid_argument(msg, __func__, __FILE__); \
+  |  |   37|      0|   } while(0)
   |  |  ------------------
-  |  |  |  Branch (35:12): [Folded - Ignored]
+  |  |  |  Branch (37:12): [Folded - Ignored]
   |  |  ------------------
   ------------------
   261|      0|   }
@@ -5445,15 +5450,15 @@ _ZN5Botan9PK_Signer9signatureERNS_21RandomNumberGeneratorE:
   ------------------
   361|      0|      BOTAN_ASSERT_NOMSG(m_sig_element_size.has_value());
   ------------------
-  |  |   62|      0|   do {                                                                     \
-  |  |   63|      0|      if(!(expr))                                                           \
+  |  |   64|      0|   do {                                                                     \
+  |  |   65|      0|      if(!(expr))                                                           \
   |  |  ------------------
-  |  |  |  Branch (63:10): [True: 0, False: 0]
+  |  |  |  Branch (65:10): [True: 0, False: 0]
   |  |  ------------------
-  |  |   64|      0|         Botan::assertion_failure(#expr, "", __func__, __FILE__, __LINE__); \
-  |  |   65|      0|   } while(0)
+  |  |   66|      0|         Botan::assertion_failure(#expr, "", __func__, __FILE__, __LINE__); \
+  |  |   67|      0|   } while(0)
   |  |  ------------------
-  |  |  |  Branch (65:12): [Folded - Ignored]
+  |  |  |  Branch (67:12): [Folded - Ignored]
   |  |  ------------------
   ------------------
   362|      0|      return der_encode_signature(sig, 2, m_sig_element_size.value());
@@ -5480,15 +5485,15 @@ _ZN5Botan11PK_VerifierC2ERKNS_10Public_KeyENSt3__117basic_string_viewIcNS4_11cha
   ------------------
   381|      0|      BOTAN_ARG_CHECK(m_sig_element_size.has_value(), "This key does not support DER signatures");
   ------------------
-  |  |   32|      0|   do {                                                          \
-  |  |   33|      0|      if(!(expr))                                                \
+  |  |   34|      0|   do {                                                          \
+  |  |   35|      0|      if(!(expr))                                                \
   |  |  ------------------
-  |  |  |  Branch (33:10): [True: 0, False: 0]
+  |  |  |  Branch (35:10): [True: 0, False: 0]
   |  |  ------------------
-  |  |   34|      0|         Botan::throw_invalid_argument(msg, __func__, __FILE__); \
-  |  |   35|      0|   } while(0)
+  |  |   36|      0|         Botan::throw_invalid_argument(msg, __func__, __FILE__); \
+  |  |   37|      0|   } while(0)
   |  |  ------------------
-  |  |  |  Branch (35:12): [Folded - Ignored]
+  |  |  |  Branch (37:12): [Folded - Ignored]
   |  |  ------------------
   ------------------
   382|      0|   }
@@ -5520,15 +5525,15 @@ _ZN5Botan11PK_Verifier15check_signatureEPKhm:
   465|       |
   466|      0|         BOTAN_ASSERT_NOMSG(m_sig_element_size.has_value());
   ------------------
-  |  |   62|      0|   do {                                                                     \
-  |  |   63|      0|      if(!(expr))                                                           \
+  |  |   64|      0|   do {                                                                     \
+  |  |   65|      0|      if(!(expr))                                                           \
   |  |  ------------------
-  |  |  |  Branch (63:10): [True: 0, False: 0]
+  |  |  |  Branch (65:10): [True: 0, False: 0]
   |  |  ------------------
-  |  |   64|      0|         Botan::assertion_failure(#expr, "", __func__, __FILE__, __LINE__); \
-  |  |   65|      0|   } while(0)
+  |  |   66|      0|         Botan::assertion_failure(#expr, "", __func__, __FILE__, __LINE__); \
+  |  |   67|      0|   } while(0)
   |  |  ------------------
-  |  |  |  Branch (65:12): [Folded - Ignored]
+  |  |  |  Branch (67:12): [Folded - Ignored]
   |  |  ------------------
   ------------------
   467|       |
@@ -6052,15 +6057,15 @@ _ZN5Botan9HMAC_DRBGC2ENSt3__110unique_ptrINS_25MessageAuthenticationCodeENS1_14d
    54|     50|      m_security_level(hmac_drbg_security_level(m_mac->output_length())) {
    55|     50|   BOTAN_ASSERT_NONNULL(m_mac);
   ------------------
-  |  |   89|     50|   do {                                                                                   \
-  |  |   90|     50|      if((ptr) == nullptr)                                                                \
+  |  |   91|     50|   do {                                                                                   \
+  |  |   92|     50|      if((ptr) == nullptr)                                                                \
   |  |  ------------------
-  |  |  |  Branch (90:10): [True: 0, False: 50]
+  |  |  |  Branch (92:10): [True: 0, False: 50]
   |  |  ------------------
-  |  |   91|     50|         Botan::assertion_failure(#ptr " is not null", "", __func__, __FILE__, __LINE__); \
-  |  |   92|     50|   } while(0)
+  |  |   93|     50|         Botan::assertion_failure(#ptr " is not null", "", __func__, __FILE__, __LINE__); \
+  |  |   94|     50|   } while(0)
   |  |  ------------------
-  |  |  |  Branch (92:12): [Folded - Ignored]
+  |  |  |  Branch (94:12): [Folded - Ignored]
   |  |  ------------------
   ------------------
    56|       |
@@ -6091,15 +6096,15 @@ _ZN5Botan9HMAC_DRBG15generate_outputENSt3__14spanIhLm18446744073709551615EEENS2_
   131|    150|void HMAC_DRBG::generate_output(std::span<uint8_t> output, std::span<const uint8_t> input) {
   132|    150|   BOTAN_ASSERT_NOMSG(!output.empty());
   ------------------
-  |  |   62|    150|   do {                                                                     \
-  |  |   63|    150|      if(!(expr))                                                           \
+  |  |   64|    150|   do {                                                                     \
+  |  |   65|    150|      if(!(expr))                                                           \
   |  |  ------------------
-  |  |  |  Branch (63:10): [True: 0, False: 150]
+  |  |  |  Branch (65:10): [True: 0, False: 150]
   |  |  ------------------
-  |  |   64|    150|         Botan::assertion_failure(#expr, "", __func__, __FILE__, __LINE__); \
-  |  |   65|    150|   } while(0)
+  |  |   66|    150|         Botan::assertion_failure(#expr, "", __func__, __FILE__, __LINE__); \
+  |  |   67|    150|   } while(0)
   |  |  ------------------
-  |  |  |  Branch (65:12): [Folded - Ignored]
+  |  |  |  Branch (67:12): [Folded - Ignored]
   |  |  ------------------
   ------------------
   133|       |
@@ -6255,15 +6260,15 @@ _ZN5Botan12Stateful_RNG23generate_batched_outputENSt3__14spanIhLm184467440737095
    38|    150|void Stateful_RNG::generate_batched_output(std::span<uint8_t> output, std::span<const uint8_t> input) {
    39|    150|   BOTAN_ASSERT_NOMSG(!output.empty());
   ------------------
-  |  |   62|    150|   do {                                                                     \
-  |  |   63|    150|      if(!(expr))                                                           \
+  |  |   64|    150|   do {                                                                     \
+  |  |   65|    150|      if(!(expr))                                                           \
   |  |  ------------------
-  |  |  |  Branch (63:10): [True: 0, False: 150]
+  |  |  |  Branch (65:10): [True: 0, False: 150]
   |  |  ------------------
-  |  |   64|    150|         Botan::assertion_failure(#expr, "", __func__, __FILE__, __LINE__); \
-  |  |   65|    150|   } while(0)
+  |  |   66|    150|         Botan::assertion_failure(#expr, "", __func__, __FILE__, __LINE__); \
+  |  |   67|    150|   } while(0)
   |  |  ------------------
-  |  |  |  Branch (65:12): [Folded - Ignored]
+  |  |  |  Branch (67:12): [Folded - Ignored]
   |  |  ------------------
   ------------------
    40|       |
@@ -6384,15 +6389,15 @@ _ZN5Botan12Stateful_RNG12reseed_checkEv:
   130|    100|   } else {
   131|    100|      BOTAN_ASSERT(m_reseed_counter != 0, "RNG is seeded");
   ------------------
-  |  |   53|    100|   do {                                                                                 \
-  |  |   54|    100|      if(!(expr))                                                                       \
+  |  |   55|    100|   do {                                                                                 \
+  |  |   56|    100|      if(!(expr))                                                                       \
   |  |  ------------------
-  |  |  |  Branch (54:10): [True: 0, False: 100]
+  |  |  |  Branch (56:10): [True: 0, False: 100]
   |  |  ------------------
-  |  |   55|    100|         Botan::assertion_failure(#expr, assertion_made, __func__, __FILE__, __LINE__); \
-  |  |   56|    100|   } while(0)
+  |  |   57|    100|         Botan::assertion_failure(#expr, assertion_made, __func__, __FILE__, __LINE__); \
+  |  |   58|    100|   } while(0)
   |  |  ------------------
-  |  |  |  Branch (56:12): [Folded - Ignored]
+  |  |  |  Branch (58:12): [Folded - Ignored]
   |  |  ------------------
   ------------------
   132|    100|      m_reseed_counter += 1;
@@ -6915,15 +6920,15 @@ _ZN5Botan11Memory_Pool8allocateEm:
   362|    250|         void* p = buckets[0].alloc();
   363|    250|         BOTAN_ASSERT_NOMSG(p != nullptr);
   ------------------
-  |  |   62|    250|   do {                                                                     \
-  |  |   63|    250|      if(!(expr))                                                           \
+  |  |   64|    250|   do {                                                                     \
+  |  |   65|    250|      if(!(expr))                                                           \
   |  |  ------------------
-  |  |  |  Branch (63:10): [True: 0, False: 250]
+  |  |  |  Branch (65:10): [True: 0, False: 250]
   |  |  ------------------
-  |  |   64|    250|         Botan::assertion_failure(#expr, "", __func__, __FILE__, __LINE__); \
-  |  |   65|    250|   } while(0)
+  |  |   66|    250|         Botan::assertion_failure(#expr, "", __func__, __FILE__, __LINE__); \
+  |  |   67|    250|   } while(0)
   |  |  ------------------
-  |  |  |  Branch (65:12): [Folded - Ignored]
+  |  |  |  Branch (67:12): [Folded - Ignored]
   |  |  ------------------
   ------------------
   364|    250|         return p;
@@ -7072,15 +7077,15 @@ _ZN5Botan6Bucket5allocEv:
   257|       |
   258|    750|         BOTAN_ASSERT(offset * m_item_size < m_page_size, "Offset is in range");
   ------------------
-  |  |   53|    750|   do {                                                                                 \
-  |  |   54|    750|      if(!(expr))                                                                       \
+  |  |   55|    750|   do {                                                                                 \
+  |  |   56|    750|      if(!(expr))                                                                       \
   |  |  ------------------
-  |  |  |  Branch (54:10): [True: 0, False: 750]
+  |  |  |  Branch (56:10): [True: 0, False: 750]
   |  |  ------------------
-  |  |   55|    750|         Botan::assertion_failure(#expr, assertion_made, __func__, __FILE__, __LINE__); \
-  |  |   56|    750|   } while(0)
+  |  |   57|    750|         Botan::assertion_failure(#expr, assertion_made, __func__, __FILE__, __LINE__); \
+  |  |   58|    750|   } while(0)
   |  |  ------------------
-  |  |  |  Branch (56:12): [Folded - Ignored]
+  |  |  |  Branch (58:12): [Folded - Ignored]
   |  |  ------------------
   ------------------
   259|    750|         return m_range + m_item_size * offset;
@@ -7103,15 +7108,15 @@ mem_pool.cpp:_ZN5Botan12_GLOBAL__N_16BitMap9find_freeEPm:
   223|    750|         const bitmask_type bmask = static_cast<bitmask_type>(1) << (free_bit % BITMASK_BITS);
   224|    750|         BOTAN_ASSERT_NOMSG((m_bits[i] & bmask) == 0);
   ------------------
-  |  |   62|    750|   do {                                                                     \
-  |  |   63|    750|      if(!(expr))                                                           \
+  |  |   64|    750|   do {                                                                     \
+  |  |   65|    750|      if(!(expr))                                                           \
   |  |  ------------------
-  |  |  |  Branch (63:10): [True: 0, False: 750]
+  |  |  |  Branch (65:10): [True: 0, False: 750]
   |  |  ------------------
-  |  |   64|    750|         Botan::assertion_failure(#expr, "", __func__, __FILE__, __LINE__); \
-  |  |   65|    750|   } while(0)
+  |  |   66|    750|         Botan::assertion_failure(#expr, "", __func__, __FILE__, __LINE__); \
+  |  |   67|    750|   } while(0)
   |  |  ------------------
-  |  |  |  Branch (65:12): [Folded - Ignored]
+  |  |  |  Branch (67:12): [Folded - Ignored]
   |  |  ------------------
   ------------------
   225|    750|         m_bits[i] |= bmask;
@@ -7203,29 +7208,29 @@ mem_pool.cpp:_ZN5Botan12_GLOBAL__N_16BitMap4freeEm:
   185|    750|      void free(size_t bit) {
   186|    750|         BOTAN_ASSERT_NOMSG(bit <= m_len);
   ------------------
-  |  |   62|    750|   do {                                                                     \
-  |  |   63|    750|      if(!(expr))                                                           \
+  |  |   64|    750|   do {                                                                     \
+  |  |   65|    750|      if(!(expr))                                                           \
   |  |  ------------------
-  |  |  |  Branch (63:10): [True: 0, False: 750]
+  |  |  |  Branch (65:10): [True: 0, False: 750]
   |  |  ------------------
-  |  |   64|    750|         Botan::assertion_failure(#expr, "", __func__, __FILE__, __LINE__); \
-  |  |   65|    750|   } while(0)
+  |  |   66|    750|         Botan::assertion_failure(#expr, "", __func__, __FILE__, __LINE__); \
+  |  |   67|    750|   } while(0)
   |  |  ------------------
-  |  |  |  Branch (65:12): [Folded - Ignored]
+  |  |  |  Branch (67:12): [Folded - Ignored]
   |  |  ------------------
   ------------------
   187|    750|         const size_t w = bit / BITMASK_BITS;
   188|    750|         BOTAN_ASSERT_NOMSG(w < m_bits.size());
   ------------------
-  |  |   62|    750|   do {                                                                     \
-  |  |   63|    750|      if(!(expr))                                                           \
+  |  |   64|    750|   do {                                                                     \
+  |  |   65|    750|      if(!(expr))                                                           \
   |  |  ------------------
-  |  |  |  Branch (63:10): [True: 0, False: 750]
+  |  |  |  Branch (65:10): [True: 0, False: 750]
   |  |  ------------------
-  |  |   64|    750|         Botan::assertion_failure(#expr, "", __func__, __FILE__, __LINE__); \
-  |  |   65|    750|   } while(0)
+  |  |   66|    750|         Botan::assertion_failure(#expr, "", __func__, __FILE__, __LINE__); \
+  |  |   67|    750|   } while(0)
   |  |  ------------------
-  |  |  |  Branch (65:12): [Folded - Ignored]
+  |  |  |  Branch (67:12): [Folded - Ignored]
   |  |  ------------------
   ------------------
   189|    750|         const bitmask_type mask = static_cast<bitmask_type>(1) << (bit % BITMASK_BITS);
@@ -7692,7 +7697,7 @@ _ZN5Botan2OS10page_namedEPvm:
   654|       |#else
   655|    256|   BOTAN_UNUSED(page, size);
   ------------------
-  |  |  120|    256|#define BOTAN_UNUSED Botan::ignore_params
+  |  |  122|    256|#define BOTAN_UNUSED Botan::ignore_params
   ------------------
   656|    256|#endif
   657|    256|}
@@ -8031,11 +8036,11 @@ _ZN5Botan11PK_Verifier15check_signatureENSt3__14spanIKhLm18446744073709551615EEE
   372|     50|      bool check_signature(std::span<const uint8_t> sig) { return check_signature(sig.data(), sig.size()); }
 
 _ZN5Botan16secure_allocatorIhE10deallocateEPhm:
-   51|    450|      void deallocate(T* p, std::size_t n) { deallocate_memory(p, n, sizeof(T)); }
+   54|    450|      void deallocate(T* p, std::size_t n) { deallocate_memory(p, n, sizeof(T)); }
 _ZN5Botan16secure_allocatorIhE8allocateEm:
-   49|    450|      T* allocate(std::size_t n) { return static_cast<T*>(allocate_memory(n, sizeof(T))); }
+   52|    450|      T* allocate(std::size_t n) { return static_cast<T*>(allocate_memory(n, sizeof(T))); }
 _ZN5BotanneIhhEEbRKNS_16secure_allocatorIT_EERKNS1_IT0_EE:
-   60|     50|inline bool operator!=(const secure_allocator<T>&, const secure_allocator<U>&) {
-   61|     50|   return false;
-   62|     50|}
+   63|     50|inline bool operator!=(const secure_allocator<T>&, const secure_allocator<U>&) {
+   64|     50|   return false;
+   65|     50|}
 
